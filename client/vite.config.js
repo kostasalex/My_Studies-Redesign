@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  build: {
-    rollupOptions: {
-      external: ['bootstrap/dist/css/bootstrap.min.css']
-    }
-  }
+  // build: {
+  //   rollupOptions: {
+  //     external: ['/bootstrap/dist/css/bootstrap.min.css']
+  //   }
+  // }
 });
