@@ -9,7 +9,7 @@ const LoginForm = () => {
 
   return (
     <div className={styles["login-form"]}>
-      <img src="/src/assets/logo-large.png" alt="Login" className={styles["login-image"]} />
+      <img src="./src/assets/logo-large.png" alt="Login" className={styles["login-image"]} />
       <h1>My - Studies</h1>
       <Form
         onSubmit={handleSubmit}
