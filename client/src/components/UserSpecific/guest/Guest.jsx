@@ -1,6 +1,10 @@
+import LoginSection from "./login/LoginSection"
+
 const Guest = () => {
   return (
-    <div>Guest</div>
+    <div>
+      <LoginSection/>
+    </div>
   )
 }
 
