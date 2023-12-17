@@ -1,11 +1,11 @@
 import Card from './Card';
-import { guestAnnouncementCardData  } from  "/src/locales/gr";
+import { guestAnnouncementCardData  } from  "@/locales/gr";
 
 import styles from './AnnouncementsSection.module.css';
 
-import image1 from '/src/assets/homepage/research.png';
-import image2 from '/src/assets/homepage/clubs.png';
-import image3 from '/src/assets/homepage/newteaching.png';
+import image1 from '@/assets/homepage/research.png';
+import image2 from '@/assets/homepage/clubs.png';
+import image3 from '@/assets/homepage/newteaching.png';
 
 const images = [image1, image2, image3];
 

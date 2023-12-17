@@ -1,5 +1,5 @@
 .login-section {
-    background-image: url('/src/assets/homepage/homebg.png');
+    background-image: url('@/assets/homepage/homebg.png');
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat; 

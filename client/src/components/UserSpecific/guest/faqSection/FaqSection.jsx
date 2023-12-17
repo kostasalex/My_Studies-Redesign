@@ -1,5 +1,5 @@
 
-import faqimage from '/src/assets/homepage/faq.png';
+import faqimage from '@/assets/homepage/faq.png';
 import styles from './FaqSection.module.css'
 
 const FaqSection = () => {
