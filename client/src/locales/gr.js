@@ -30,3 +30,13 @@ export const guestAnnouncementCardData = [
         title: 'Νέος Τρόπος Διδασκαλείας', 
     }
 ];
+
+export const studentDashboardButtons = [
+    "dashboard", 
+    "Δηλώσεις",
+    "Βαθμολογίες",
+    "Πιστοποιητικά",
+    "Προφίλ",
+    "Αποσύνδεση"
+  ];
+  
