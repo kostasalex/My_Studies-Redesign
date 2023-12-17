@@ -26,7 +26,9 @@ const App = () => {
       <div className={styles.content}>
         {renderUserComponent()}
       </div>
-      <Footer />
+      <div className='mt-5'>
+        <Footer />
+      </div>
     </div>
   );
 };
