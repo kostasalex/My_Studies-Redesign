@@ -6,7 +6,7 @@ const FaqSection = () => {
   return (
     <div className = {styles["faq-section"]}>
         <img src ={faqimage}/>
-        <h1>Χρείαζεσαι Βοήθεια?</h1>
+        <h1>Χρειάζεσαι Βοήθεια?</h1>
     </div>
   )
 }
