@@ -4,7 +4,7 @@ import NotificationsSection from "./NotificationsSection"
 import RegistrationSection from "./RegistrationSection"
 import GraduationBar from "./GraduationBar"
 
-import styles  from "./home.module.css"
+import styles  from "./Home.module.css"
 
 const Home = () => {
   return (
