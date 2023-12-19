@@ -6,6 +6,7 @@ import { studentDashboardButtons } from '@/locales/gr';
 import Home from "./home/Home"
 
 import styles from './Student.module.css';
+import Registration from './registration/Registration';
 
 
 export default function Student() {
@@ -20,7 +21,7 @@ export default function Student() {
   return (
     <div style={{ display: 'flex' }}>
       <Dashboard>
-      {['dashboard', 'declarations', 'grades', 'certificates'].map((path, index) => (
+      {['dashboard', 'registration', 'grades', 'certificates'].map((path, index) => (
           <button
             key={path}
             className={selected === path ? styles.selectedButton : ''}
@@ -34,7 +35,7 @@ export default function Student() {
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />
-          <Route path="declarations" element={<div>Δηλώσεις</div>} />
+          <Route path="registration" element={<Registration/>} />
           <Route path="grades" element={<div>Βαθμολογίες</div>} />
           <Route path="certificates" element={<div>Πιστοποιητικά</div>} />
           <Route path="profile" element={<div>Προφίλ</div>} />
