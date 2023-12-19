@@ -7,9 +7,10 @@ import Home from "./home/Home"
 
 import styles from './Student.module.css';
 import Registration from './registration/Registration';
-
+import Grades from './grades/Grades';
 
 export default function Student() {
+
   const navigate = useNavigate();
   const [selected, setSelected] = React.useState('dashboard'); // default selected state
 
@@ -36,7 +37,7 @@ export default function Student() {
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />
           <Route path="registration" element={<Registration/>} />
-          <Route path="grades" element={<div>Βαθμολογίες</div>} />
+          <Route path="grades" element={<Grades/>} />
           <Route path="certificates" element={<div>Πιστοποιητικά</div>} />
           <Route path="profile" element={<div>Προφίλ</div>} />
         </Routes>
