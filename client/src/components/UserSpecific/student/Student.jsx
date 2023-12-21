@@ -8,6 +8,8 @@ import Home from "./home/Home"
 import styles from './Student.module.css';
 import Registration from './registration/Registration';
 import Grades from './grades/Grades';
+import Certificates from './certificates/Certificates';
+import NewRegistration from './registration/newRegistration/NewRegistration';
 
 export default function Student() {
 
@@ -36,9 +38,11 @@ export default function Student() {
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />
-          <Route path="registration" element={<Registration/>} />
+          <Route path="registration" element={<Registration />}>
+            <Route path="new-registration" element={<NewRegistration />} />
+          </Route>
           <Route path="grades" element={<Grades/>} />
-          <Route path="certificates" element={<div>Πιστοποιητικά</div>} />
+          <Route path="certificates" element={<Certificates/>} />
           <Route path="profile" element={<div>Προφίλ</div>} />
         </Routes>
       </div>

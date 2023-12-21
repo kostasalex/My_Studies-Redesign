@@ -1,6 +1,6 @@
 
 
-import styles from "./OldRegistrations.module.css"
+import styles from "./OldRegistrationsSection.module.css"
 
 const OldRegistrations = () => {
   return (
