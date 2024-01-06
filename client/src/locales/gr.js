@@ -31,6 +31,24 @@ export const guestAnnouncementCardData = [
     }
 ];
 
+export const footerData = [
+    {
+        id: 1,
+        title: 'Πανεπιστήμιο',
+        link: 'https://www.uoa.gr'
+    },
+    {
+        id: 2,
+        title: 'FAQ',
+        link: '/faq'
+    },
+    {
+        id: 3,
+        title: 'Επικοινωνία',
+        link: '/contact'
+    }
+];
+
 export const studentDashboardButtons = [
     "dashboard", 
     "Δηλώσεις",
