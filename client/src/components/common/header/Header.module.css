@@ -7,3 +7,49 @@
     font-size: 24px;
   }
   
+
+  .button {
+      background-color: white;
+      color: black;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      margin-right: 10px;
+  }
+  
+  .button:hover,
+  .button:focus {
+      background-color: cyan;
+      color: white;
+  }
+  
+  .roundButton {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0; /* Προσθέστε αυτήν τη γραμμή για να καταργήσετε το padding */
+  }
+  
+  .roundButton img {
+    width: 100%; /* Κάντε την εικόνα να καλύπτει τον χώρο του κουμπιού */
+    height: auto;
+  }
+  
+  .roundButton:hover,
+  .roundButton:focus {
+    background-color: cyan;
+  }
+
+
+  .logo {
+    max-width: 100px; /* Προσαρμόστε το πλάτος όπως επιθυμείτε */
+    height: auto;
+  }
+  
+  .headerContainer {
+    display: flex;
+    align-items: center;
+  }
