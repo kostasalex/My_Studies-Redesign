@@ -57,3 +57,11 @@ export const studentDashboardButtons = [
     "Profile",
     "Logout"
 ];
+
+export const contactFormTexts = {
+    formTitle: 'Contact Form',
+    emailLabel: 'E-mail:',
+    nameLabel: 'Full Name:',
+    messageLabel: 'Message:',
+    submitButton: 'Send'
+};

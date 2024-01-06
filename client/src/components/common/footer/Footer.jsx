@@ -1,5 +1,5 @@
 import styles from './Footer.module.css';
-import {footerData} from "@/locales/gr.js";
+import {footerData} from '@/locales/gr';
 
 
 const Footer = () => (

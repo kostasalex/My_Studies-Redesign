@@ -57,4 +57,11 @@ export const studentDashboardButtons = [
     "Προφίλ",
     "Αποσύνδεση"
   ];
-  
+
+export const contactFormTexts = {
+    formTitle: 'Φόρμα Επικοινωνίας',
+    emailLabel: 'E-mail:',
+    nameLabel: 'Ονοματεπώνυμο:',
+    messageLabel: 'Μήνυμα:',
+    submitButton: 'Αποστολή'
+};
