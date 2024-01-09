@@ -1,29 +1,33 @@
 .header {
   display: flex;
   justify-content: center;
-  background-color: #f0f0f0;
+  background-color: white;
   padding: 10px;
   text-align: center;
   font-size: 24px;
 }
 
 .button {
-  background-color: white;
+  background-color: transparent;
   color: black;
-  font-size: 20px;
+  font-size: 24px;
+  padding: 10px 20px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: color 0.3s;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+  margin-right: 10px;
 }
 
-.button:hover,
-.button:focus {
-  background-color: #0d6efd;
-  color: white;
+.button:hover {
+  background-color: transparent;
+  color: #0d6efd;
 }
 
 .logoleft {
   max-width: 80px;
-  height: auto;
+  height: fit-content;
   margin-right: 600px;
 }
 
@@ -45,9 +49,10 @@
 
 .loginButtons {
   display: flex;
+  font-size: 24px;
   justify-content: flex-end;
 }
 
 .loginbutton {
-  margin-left: 320px;
+  margin-left: 200px;
 }

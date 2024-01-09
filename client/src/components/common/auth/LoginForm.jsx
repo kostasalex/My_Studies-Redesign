@@ -1,6 +1,6 @@
-import { Form, Field } from 'react-final-form';
-import { loginValidator, validateWithZod } from './validation';
-import styles from './LoginForm.module.css';
+import { Form, Field } from "react-final-form";
+import { loginValidator, validateWithZod } from "./validation";
+import styles from "./LoginForm.module.css";
 
 const LoginForm = () => {
   const handleSubmit = (values) => {
@@ -9,7 +9,15 @@ const LoginForm = () => {
 
   return (
     <div className={styles["login-form"]}>
-      <img src="https://res.cloudinary.com/drijmbypg/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1702593334/logo-large_uaskki.jpg?_s=public-apps" alt="Login" className={styles["login-image"]} />
+      <button className="register border-0 float-right" type="button">
+        Register →
+      </button>
+
+      <img
+        src="https://res.cloudinary.com/drijmbypg/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1702593334/logo-large_uaskki.jpg?_s=public-apps"
+        alt="Login"
+        className={styles["login-image"]}
+      />
       <h1>My - Studies</h1>
       <Form
         onSubmit={handleSubmit}
@@ -20,7 +28,7 @@ const LoginForm = () => {
               {({ input, meta }) => (
                 <div className={styles["input-group"]}>
                   <label htmlFor="userName">Username</label>
-                  <input {...input} type="text" placeholder="Username" />
+                  <input {...input} type="text" placeholder="Sdi YYXXXXX" />
                   {meta.error && meta.touched && <span>{meta.error}</span>}
                 </div>
               )}
@@ -29,13 +37,25 @@ const LoginForm = () => {
               {({ input, meta }) => (
                 <div className={styles["input-group"]}>
                   <label htmlFor="password">Password</label>
-                  <input {...input} type="password" placeholder="Password" />
+                  <input {...input} type="password" placeholder="•••••••••••" />
                   {meta.error && meta.touched && <span>{meta.error}</span>}
                 </div>
               )}
             </Field>
-            <div className='d-flex justify-content-center'>
-              <button className= "btn btn-primary" type="submit" disabled={submitting}>
+            <div className="d-flex justify-content-center mt-3">
+              <button
+                type="button"
+                onClick={() => console.log("Reset Password clicked")}
+                className="border-0 ml-2"
+              >
+                Reset Password
+              </button>
+
+              <button
+                className="btn btn-primary btn-lg mr-2"
+                type="submit"
+                disabled={submitting}
+              >
                 Login
               </button>
             </div>
