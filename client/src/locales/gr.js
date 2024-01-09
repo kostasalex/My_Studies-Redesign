@@ -32,7 +32,7 @@ export const guestAnnouncementCardData = [
 ];
 
 export const studentDashboardButtons = [
-    "dashboard", 
+    "Αρχική", 
     "Δηλώσεις",
     "Βαθμολογίες",
     "Πιστοποιητικά",

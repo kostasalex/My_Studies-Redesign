@@ -96,6 +96,17 @@ export default function Header() {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
+
+        <button
+          onClick={() => handleButtonClick()}
+          className="border-0 bg-transparent"
+        >
+          <img
+            src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png"
+            alt="User Icon"
+            style={{ width: "40px", height: "auto" }}
+          />
+        </button>
       </div>
     </div>
   );

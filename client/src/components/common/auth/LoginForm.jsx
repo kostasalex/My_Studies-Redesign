@@ -9,7 +9,10 @@ const LoginForm = () => {
 
   return (
     <div className={styles["login-form"]}>
-      <button className="register border-0 float-right" type="button">
+      <button
+        className="register border-0 bg-transparent float-right"
+        type="button"
+      >
         Register →
       </button>
 
