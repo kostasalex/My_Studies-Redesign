@@ -14,7 +14,9 @@ const OldRegistrations = () => {
                 <th scope="col">Κωδικός</th>
                 <th scope="col">Μάθημα</th>
                 <th scope="col">Εξάμηνο</th>
-                <th scope="col">Βαθμός</th>
+                <th scope="col">Καθηγητής</th>
+                <th scope="col">Υποχρεωτικό</th>
+                <th scope="col">Ειδίκευση</th>
               </tr>
             </thead>
             <tbody>
@@ -22,32 +24,49 @@ const OldRegistrations = () => {
                 <th scope="row">Κ15</th>
                 <td>Γραμμική Άλγεβρα</td>
                 <td>1ο</td>
-                <td>4.9</td>
+                <td>Ράπτης</td>
+                <td>Ναι</td>
+                <td>S1</td>
               </tr>
               <tr>
-                <th scope="row">K16</th>
-                <td>Διακριτά Μαθηματικά</td>
-                <td>1ο</td>
-                <td>9</td>
+                <th scope="row">Κ18</th>
+                <td>Ανάλυση Πολυπλοκότητας</td>
+                <td>3ο</td>
+                <td>Παπαδόπουλος</td>
+                <td>Όχι</td>
+                <td>S2</td>
               </tr>
               <tr>
-                <th scope="row">Κ15</th>
-                <td>Γραμμική Άλγεβρα</td>
-                <td>1ο</td>
-                <td>4.9</td>
+                <th scope="row">K23</th>
+                <td>Τεχνητή Νοημοσύνη</td>
+                <td>6ο</td>
+                <td>Κωστόπουλος</td>
+                <td>Ναι</td>
+                <td>S3</td>
               </tr>
-
               <tr>
-                <th scope="row">K21</th>
-                <td>Μεταγλωτιστές</td>
+                <th scope="row">K27</th>
+                <td>Προγραμματισμός Διαδικτύου</td>
+                <td>4ο</td>
+                <td>Σταμάτης</td>
+                <td>Ναι</td>
+                <td>S1</td>
+              </tr>
+              <tr>
+                <th scope="row">K30</th>
+                <td>Προηγμένες Βάσεις Δεδομένων</td>
                 <td>5ο</td>
-                <td>10</td>
+                <td>Βλαχάβας</td>
+                <td>Όχι</td>
+                <td>S2</td>
               </tr>
               <tr>
-                <th scope="row">K21</th>
-                <td>Μεταγλωτιστές</td>
-                <td>5ο</td>
-                <td>10</td>
+                <th scope="row">K35</th>
+                <td>Σύγχρονα Θέματα Πληροφορικής</td>
+                <td>8ο</td>
+                <td>Παναγιωτόπουλος</td>
+                <td>Ναι</td>
+                <td>S4</td>
               </tr>
             </tbody>
           </table>
@@ -56,6 +75,7 @@ const OldRegistrations = () => {
       <hr></hr>
       <div className={styles["table"]}>
         <h4>Χειμερινό 2022</h4>
+
         <div>
           <table className="table table-striped">
             <thead>
@@ -63,7 +83,9 @@ const OldRegistrations = () => {
                 <th scope="col">Κωδικός</th>
                 <th scope="col">Μάθημα</th>
                 <th scope="col">Εξάμηνο</th>
-                <th scope="col">Βαθμός</th>
+                <th scope="col">Καθηγητής</th>
+                <th scope="col">Υποχρεωτικό</th>
+                <th scope="col">Ειδίκευση</th>
               </tr>
             </thead>
             <tbody>
@@ -71,37 +93,49 @@ const OldRegistrations = () => {
                 <th scope="row">Κ15</th>
                 <td>Γραμμική Άλγεβρα</td>
                 <td>1ο</td>
-                <td>4.9</td>
+                <td>Ράπτης</td>
+                <td>Ναι</td>
+                <td>S1</td>
               </tr>
               <tr>
-                <th scope="row">Κ15</th>
-                <td>Γραμμική Άλγεβρα</td>
-                <td>1ο</td>
-                <td>4.9</td>
+                <th scope="row">Κ18</th>
+                <td>Ανάλυση Πολυπλοκότητας</td>
+                <td>3ο</td>
+                <td>Παπαδόπουλος</td>
+                <td>Όχι</td>
+                <td>S2</td>
               </tr>
               <tr>
-                <th scope="row">K16</th>
-                <td>Διακριτά Μαθηματικά</td>
-                <td>1ο</td>
-                <td>9</td>
+                <th scope="row">K23</th>
+                <td>Τεχνητή Νοημοσύνη</td>
+                <td>6ο</td>
+                <td>Κωστόπουλος</td>
+                <td>Ναι</td>
+                <td>S3</td>
               </tr>
               <tr>
-                <th scope="row">K21</th>
-                <td>Μεταγλωτιστές</td>
+                <th scope="row">K27</th>
+                <td>Προγραμματισμός Διαδικτύου</td>
+                <td>4ο</td>
+                <td>Σταμάτης</td>
+                <td>Ναι</td>
+                <td>S1</td>
+              </tr>
+              <tr>
+                <th scope="row">K30</th>
+                <td>Προηγμένες Βάσεις Δεδομένων</td>
                 <td>5ο</td>
-                <td>10</td>
+                <td>Βλαχάβας</td>
+                <td>Όχι</td>
+                <td>S2</td>
               </tr>
               <tr>
-                <th scope="row">K16</th>
-                <td>Διακριτά Μαθηματικά</td>
-                <td>1ο</td>
-                <td>9</td>
-              </tr>
-              <tr>
-                <th scope="row">K21</th>
-                <td>Μεταγλωτιστές</td>
-                <td>5ο</td>
-                <td>10</td>
+                <th scope="row">K35</th>
+                <td>Σύγχρονα Θέματα Πληροφορικής</td>
+                <td>8ο</td>
+                <td>Παναγιωτόπουλος</td>
+                <td>Ναι</td>
+                <td>S4</td>
               </tr>
             </tbody>
           </table>
@@ -109,7 +143,8 @@ const OldRegistrations = () => {
       </div>
       <hr></hr>
       <div className={styles["table"]}>
-        <h4>Σεμπτέμβριος 2021</h4>
+        <h4>Σεμπέμβριος 2021</h4>
+
         <div>
           <table className="table table-striped">
             <thead>
@@ -117,7 +152,9 @@ const OldRegistrations = () => {
                 <th scope="col">Κωδικός</th>
                 <th scope="col">Μάθημα</th>
                 <th scope="col">Εξάμηνο</th>
-                <th scope="col">Βαθμός</th>
+                <th scope="col">Καθηγητής</th>
+                <th scope="col">Υποχρεωτικό</th>
+                <th scope="col">Ειδίκευση</th>
               </tr>
             </thead>
             <tbody>
@@ -125,19 +162,49 @@ const OldRegistrations = () => {
                 <th scope="row">Κ15</th>
                 <td>Γραμμική Άλγεβρα</td>
                 <td>1ο</td>
-                <td>4.9</td>
+                <td>Ράπτης</td>
+                <td>Ναι</td>
+                <td>S1</td>
               </tr>
               <tr>
-                <th scope="row">K16</th>
-                <td>Διακριτά Μαθηματικά</td>
-                <td>1ο</td>
-                <td>9</td>
+                <th scope="row">Κ18</th>
+                <td>Ανάλυση Πολυπλοκότητας</td>
+                <td>3ο</td>
+                <td>Παπαδόπουλος</td>
+                <td>Όχι</td>
+                <td>S2</td>
               </tr>
               <tr>
-                <th scope="row">K21</th>
-                <td>Μεταγλωτιστές</td>
+                <th scope="row">K23</th>
+                <td>Τεχνητή Νοημοσύνη</td>
+                <td>6ο</td>
+                <td>Κωστόπουλος</td>
+                <td>Ναι</td>
+                <td>S3</td>
+              </tr>
+              <tr>
+                <th scope="row">K27</th>
+                <td>Προγραμματισμός Διαδικτύου</td>
+                <td>4ο</td>
+                <td>Σταμάτης</td>
+                <td>Ναι</td>
+                <td>S1</td>
+              </tr>
+              <tr>
+                <th scope="row">K30</th>
+                <td>Προηγμένες Βάσεις Δεδομένων</td>
                 <td>5ο</td>
-                <td>10</td>
+                <td>Βλαχάβας</td>
+                <td>Όχι</td>
+                <td>S2</td>
+              </tr>
+              <tr>
+                <th scope="row">K35</th>
+                <td>Σύγχρονα Θέματα Πληροφορικής</td>
+                <td>8ο</td>
+                <td>Παναγιωτόπουλος</td>
+                <td>Ναι</td>
+                <td>S4</td>
               </tr>
             </tbody>
           </table>
