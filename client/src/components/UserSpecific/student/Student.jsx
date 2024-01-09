@@ -21,10 +21,12 @@ export default function Student() {
     navigate(path);
   };
 
+  //! Fix when redirect to /dashboard , previous selected state (registration) doesnt change to dashboard
+  //! Fix when click Registration from new registration doesnt redirected back to the Registration
   return (
     <div style={{ display: 'flex' }}>
       <Dashboard>
-      {['dashboard', 'registration', 'grades', 'certificates'].map((path, index) => (
+        {['dashboard', 'registration', 'grades', 'certificates', 'profile'].map((path, index) => (
           <button
             key={path}
             className={selected === path ? styles.selectedButton : ''}
@@ -41,8 +43,8 @@ export default function Student() {
           <Route path="registration" element={<Registration />}>
             <Route path="new-registration" element={<NewRegistration />} />
           </Route>
-          <Route path="grades" element={<Grades/>} />
-          <Route path="certificates" element={<Certificates/>} />
+          <Route path="grades" element={<Grades />} />
+          <Route path="certificates" element={<Certificates />} />
           <Route path="profile" element={<div>Προφίλ</div>} />
         </Routes>
       </div>
