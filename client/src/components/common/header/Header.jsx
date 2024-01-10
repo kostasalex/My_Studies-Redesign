@@ -1,9 +1,12 @@
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import styles from "./Header.module.css";
 
-export default function Header() {
+const Header = () => {
   const navigate = useNavigate();
+  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
+  const [showUserDropdown, setShowUserDropdown] = useState(false);
 
   const handleUserChange = (userType) => {
     switch (userType) {
@@ -19,14 +22,25 @@ export default function Header() {
     }
   };
 
-  const handleLoginStudent = () => {
-    console.log("Σύνδεση Φοιτητή");
-  };
-
   const handleImageClick = (selectedOption) => {
     console.log(`Επιλογή: ${selectedOption}`);
   };
 
+  const handleLanguageDropdownToggle = () => {
+    setShowLanguageDropdown(!showLanguageDropdown);
+  };
+
+  const handleUserDropdownToggle = () => {
+    setShowUserDropdown(!showUserDropdown);
+  };
+
+  const handleProfileClick = () => {
+    console.log("Επιλέχθηκε το Προφίλ");
+  };
+
+  const handleLogoutClick = () => {
+    console.log("Επιλέχθηκε η Αποσύνδεση");
+  };
   return (
     <div className={`${styles.header} p-2`}>
       <div className={`${styles.headerContainer} m-2`}>
@@ -35,13 +49,15 @@ export default function Header() {
           alt="UOA Logo"
           className={`${styles.logoleft}`}
         />
+
         <button
           type="button"
           className={`${styles.button} btn btn-primary m-2`}
           onClick={() => handleUserChange("guest")}
         >
-          Αρχικη
+          Αρχική
         </button>
+
         <button
           type="button"
           className={`${styles.button} btn btn-primary m-2`}
@@ -49,6 +65,7 @@ export default function Header() {
         >
           Ανακοινώσεις
         </button>
+
         <button
           type="button"
           className={`${styles.button} btn btn-primary m-2`}
@@ -59,8 +76,8 @@ export default function Header() {
 
         <button
           type="button"
-          className={`${styles.loginbutton} btn btn-primary`}
-          onClick={() => handleUserChange("teacher")}
+          className={`${styles.loginbutton} btn btn-primary m-2`}
+          onClick={() => handleUserChange("student")}
         >
           Είσοδος Φοιτητών
         </button>
@@ -73,10 +90,13 @@ export default function Header() {
           Είσοδος Καθηγητών
         </button>
 
-        <Dropdown>
+        <Dropdown
+          show={showLanguageDropdown}
+          onToggle={handleLanguageDropdownToggle}
+        >
           <Dropdown.Toggle
             variant="primary"
-            id="dropdown-basic"
+            id="language-dropdown"
             className={`${styles.button} ${styles.logoright}`}
           >
             <img
@@ -86,8 +106,8 @@ export default function Header() {
             />
           </Dropdown.Toggle>
 
-          <Dropdown.Menu style={{ width: "10px", textAlign: "center" }}>
-            <Dropdown.Item onClick={() => handleImageClick("Option 1")}>
+          <Dropdown.Menu>
+            <Dropdown.Item onClick={() => handleImageClick("Greek")}>
               <img
                 src="https://static.vecteezy.com/system/resources/previews/025/863/131/original/united-kingdom-flag-circle-flag-of-uk-in-round-circle-png.png"
                 alt="English"
@@ -98,7 +118,7 @@ export default function Header() {
         </Dropdown>
 
         <button
-          onClick={() => handleButtonClick()}
+          onClick={handleUserDropdownToggle}
           className="border-0 bg-transparent"
         >
           <img
@@ -107,7 +127,25 @@ export default function Header() {
             style={{ width: "40px", height: "auto" }}
           />
         </button>
+
+        {showUserDropdown && (
+          <Dropdown
+            show={showUserDropdown}
+            onToggle={handleUserDropdownToggle}
+            drop="down"
+            className={`${styles.dropdownMenu} ${styles.userDropdown}`}
+          >
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={handleProfileClick}>Προφίλ</Dropdown.Item>
+              <Dropdown.Item onClick={handleLogoutClick}>
+                Αποσύνδεση
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        )}
       </div>
     </div>
   );
-}
+};
+
+export default Header;

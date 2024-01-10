@@ -1,12 +1,11 @@
-import Table from "./Table"
-
+import Table from "./Table";
 
 const OldCertificates = () => {
   return (
-    <div>
-        <Table/>
+    <div className="table">
+      <Table />
     </div>
-  )
-}
+  );
+};
 
-export default OldCertificates
+export default OldCertificates;
