@@ -1,20 +1,58 @@
-.registration-section{
-padding: 50px 0px;
+.registration-section {
+  padding: 50px 0px;
 }
 
-.registration-section h3{
-    padding: 10px 0;
+.registration-section h3 {
+  padding: 10px 0;
 }
 
-.table h4{
-    padding: 20px;
+.table h4 {
+  padding: 20px;
 }
 
-.table{
-    width: 1176px;
-    height: 160px;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.20);
-    background: #F6F5F5;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.table {
+  width: 1176px;
+  height: 160px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #f6f5f5;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: fit-content;
+}
+
+.right-align {
+  text-align: right;
+  margin-top: -10px;
+}
+
+.characteristics {
+  position: relative;
+  right: 20px;
+  top: -10px;
+  margin-top: 10px;
+  margin-left: 55px;
+  max-width: 700px;
+}
+.primaryButton button {
+  border: none;
+  outline: none;
+}
+
+.primaryButtonn {
+  display: flex;
+  align-items: center; /* Κατακόρυφος κεντραρισμός των στοιχείων */
+  background-color: #007bff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  max-width: fit-content;
+  margin-left: 290px;
+  height: fit-content;
+  box-shadow: none;
+  outline: none;
+}
+
+.tableandbutton {
+  display: flex;
 }
