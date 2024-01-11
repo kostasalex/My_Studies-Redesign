@@ -6,11 +6,11 @@ import { TeacherDashboardButtons } from "@/locales/gr";
 import Home from "./home/Home";
 
 import styles from "./Teacher.module.css";
-import Registration from "./registration/Registration";
-import Grades from "./grades/Grades";
-import Certificates from "./certificates/Certificates";
-import NewRegistration from "./registration/newRegistration/NewRegistration";
-import Profile from "./Profile/Profile";
+// import Registration from "./registration/Registration";
+// import Grades from "./grades/Grades";
+// import Certificates from "./certificates/Certificates";
+// import NewRegistration from "./registration/newRegistration/NewRegistration";
+// import Profile from "./Profile/Profile";
 
 export default function Teacher() {
   const navigate = useNavigate();
@@ -42,12 +42,12 @@ export default function Teacher() {
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />
-          <Route path="registration" element={<Registration />}>
+          {/* <Route path="registration" element={<Registration />}>
             <Route path="new-registration" element={<NewRegistration />} />
           </Route>
           <Route path="grades" element={<Grades />} />
           <Route path="certificates" element={<Certificates />} />
-          <Route path="profile" element={<Profile />} />
+          <Route path="profile" element={<Profile />} /> */}
         </Routes>
       </div>
     </div>
