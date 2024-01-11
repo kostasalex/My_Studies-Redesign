@@ -8,11 +8,17 @@ const Card = ({ title }) => {
             Swal.fire({
                 title: cardTexts.warningText,
                 icon: 'warning',
-                confirmButtonText: cardTexts.applyCert
-            }).then(() => {
-                handleClose();
-            });
 
+                showCancelButton: true,
+                cancelButtonText:  cardTexts.cancelCert,
+                confirmButtonColor: "#007fff",
+                cancelButtonColor: "#d33",
+                confirmButtonText: cardTexts.applyCert
+            }).then((result) => {
+            if (result.isConfirmed) {
+                handleClose();
+            }
+        });
 
     };
     const handleClose = () => {
@@ -20,6 +26,7 @@ const Card = ({ title }) => {
         Swal.fire({
             title: cardTexts.successMessage,
             icon: 'success',
+            confirmButtonColor: "#007fff",
             confirmButtonText: cardTexts.closeCert
         }).then(() => {
             navigate('/student/certificates');

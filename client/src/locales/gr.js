@@ -148,6 +148,7 @@ export const newCertificatesTexts = {
 export const cardTexts = {
     applyButton: "Αίτηση",
     applyCert: "Έκδοση Πιστοποιητικού",
+    cancelCert: "Ακύρωση",
     closeCert: "Κλείσιμο",
     warningText: "Είστε σίγουρος πως θέλετε να εκδώσετε αυτό το πιστοποιητικό ?",
     successMessage: "Το αίτημα έχει σταλεί !"
