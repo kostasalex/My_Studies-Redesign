@@ -3,7 +3,7 @@
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
-  color: #fff; /* Αλλάξτε το χρώμα του κειμένου σε λευκό */
+  color: #fff; /* White text color */
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -11,14 +11,16 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  background-color: #007bff; /* Μπλε χρώμα φόντου */
-  border: 1px solid #007bff; /* Σταθερό μπλε χρώμα για το περίγραμμα */
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  background-color: #007bff; /* Blue background color */
+  border: 1px solid #007bff; /* Solid blue border */
+  padding: 0.5rem 1rem; /* Increased padding for larger button size */
+  font-size: 1.1rem; /* Slightly larger font size */
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-right: 10px; /* Add gap between buttons */
 }
+
 
 .btnblue:hover {
   background-color: #0056b3; /* Μπλε χρώμα φόντου στην κατάσταση hover */

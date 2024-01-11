@@ -1,3 +1,42 @@
+.tableContainer {
+  width: 100%;
+  margin: auto;
+}
+
 .table {
   width: 100%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination a {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.pagination a:hover {
+  background-color: #eee;
+}
+
+.pagination .active a {
+  background-color: #40ff00;
+  color: white;
+  border-color: #007bff;
+}
+
+.clearFiltersButton {
+  background-color: #ff4500; /* Or any color of your choice */
+  color: white;
+  /* Other styling as needed */
 }

@@ -124,3 +124,60 @@ export const faqPage = {
     pageTitle: "Frequently Asked Questions",
 };
 
+export const newCertificatesTexts = {
+    title: "Application for a New Certificate:",
+    certificateTypes: [
+        "Student Status",
+        "Tax Purposes",
+        "Detailed Grades",
+        "Military Purposes"
+    ]
+};
+
+export const cardTexts = {
+    applyButton: "Apply",
+    applyCert: "Issue Certificate",
+    closeCert: "Close",
+    warningText: "Are you sure you want to request this certificate ?",
+    successMessage: "Certificate Successfully Requested !"
+};
+
+
+export const certificatesTexts = {
+    home: "Home",
+    certificates: "Certificates",
+    applicationSubject: "Application Subject",
+    applicationStatus: "Application Status",
+    requestYear: "Request Year",
+    studentStatus: "Student Status",
+    taxUse: "Tax Use",
+    detailedGrades: "Detailed Grades",
+    militaryUse: "Military Use",
+    approved: "Approved",
+    pending: "Pending",
+    rejected: "Rejected"
+};
+
+export const oldCertificatesTexts = {
+    applicationCode: "Application Code",
+    subject: "Subject",
+    date: "Date",
+    status: "Status",
+    btnshow: "Show",
+    clearfilter: "Claer Filters",
+    types: {
+        1: "Student Status",
+        2: "Tax Purposes",
+        3: "Detailed Grades",
+        4: "Military Purposes"
+    },
+    statuses: {
+        1: "Approved",
+        2: "Pending",
+        3: "Rejected",
+
+    }
+};
+
+
+

@@ -134,3 +134,60 @@ export const faqPage = {
     pageTitle: "Συχνές Ερωτήσεις",
 
 };
+
+export const newCertificatesTexts = {
+    title: "Αίτηση για νέο Πιστοποιητικό:",
+    certificateTypes: [
+        "Φοιτητικής Ιδιότητας",
+        "Φορολογικής Χρήσης",
+        "Αναλυτική Βαθμολογία",
+        "Στρατολογική Χρήση"
+    ]
+};
+
+export const cardTexts = {
+    applyButton: "Αίτηση",
+    applyCert: "Έκδοση Πιστοποιητικού",
+    closeCert: "Κλείσιμο",
+    warningText: "Είστε σίγουρος πως θέλετε να εκδώσετε αυτό το πιστοποιητικό ?",
+    successMessage: "Το αίτημα έχει σταλεί !"
+};
+
+
+export const certificatesTexts = {
+    home: "Αρχική",
+    certificates: "Πιστοποιητικά",
+    applicationSubject: "Θέμα Αίτησης",
+    applicationStatus: "Κατάσταση Αίτησης",
+    requestYear: "Έτος Αιτήματος",
+    studentStatus: "Φοιτητικής Ιδιότητας",
+    taxUse: "Φορολογικής Χρήσης",
+    detailedGrades: "Αναλυτική Βαθμολογία",
+    militaryUse: "Στρατολογική Χρήση",
+    approved: "Εγκρίθηκε",
+    pending: "Σε αναμονή",
+    rejected: "Απορίφθηκε"
+};
+
+export const oldCertificatesTexts = {
+    applicationCode: "Κωδικός Aίτησης",
+    subject: "Θέμα Αίτησης",
+    date: "Ημερομηνία Αίτησης",
+    status: "Κατάσταση Αίτησης",
+    clearfilter: "Απαλοιφή Φίλτρων",
+    btnshow: "Προβολή",
+    types: {
+        1: "Φοιτητικής Ιδιότητας",
+        2: "Φορολογικής Χρήσης",
+        3: "Αναλυτική Βαθμολογία",
+        4: "Στρατολογική Χρήση"
+    },
+    statuses: {
+        1: "Εγκρίθηκε",
+        2: "Σε αναμονή",
+        3: "Απορίφθηκε",
+
+    }
+};
+
+
