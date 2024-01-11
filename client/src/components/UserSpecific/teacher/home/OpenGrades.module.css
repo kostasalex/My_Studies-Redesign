@@ -1,0 +1,21 @@
+.open-grades-section {
+    background-color: #D9D9D9;
+    border-radius: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.open-grades-section h3 {
+    padding: 20px;
+}
+
+
+.open-grades-section li {
+    padding: 10px;
+}
+
+.open-grades-section button {
+    margin-top: 20px;
+}

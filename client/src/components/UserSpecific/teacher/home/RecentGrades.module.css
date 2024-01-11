@@ -1,0 +1,20 @@
+.recent-grades-section {
+    background-color: #D9D9D9;
+    border-radius: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.recent-grades-section h4 {
+    padding: 20px;
+}
+
+.recent-grades-section li {
+    padding: 10px;
+}
+
+.recent-grades-section button {
+    margin-top: 20px;
+}
