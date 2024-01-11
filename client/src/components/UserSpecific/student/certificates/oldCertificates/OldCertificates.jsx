@@ -85,7 +85,7 @@ const OldCertificates = () => {
 
             {isFilterApplied && (
                 <button className={stylesTable.btnblue} onClick={clearFilters}>
-                    Clear Filters
+                    {oldCertificatesTexts.clearfilter}
                 </button>
             )}
 

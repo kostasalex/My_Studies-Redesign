@@ -12,8 +12,9 @@ const Card = ({ title }) => {
                 showCancelButton: true,
                 cancelButtonText:  cardTexts.cancelCert,
                 confirmButtonColor: "#007fff",
-                cancelButtonColor: "#d33",
-                confirmButtonText: cardTexts.applyCert
+                cancelButtonColor: "#ab0d0d",
+                confirmButtonText: cardTexts.applyCert,
+                reverseButtons: true
             }).then((result) => {
             if (result.isConfirmed) {
                 handleClose();
