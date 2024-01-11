@@ -31,6 +31,24 @@ export const guestAnnouncementCardData = [
     }
 ];
 
+export const footerData = [
+    {
+        id: 1,
+        title: 'Πανεπιστήμιο',
+        link: 'https://www.uoa.gr'
+    },
+    {
+        id: 2,
+        title: 'FAQ',
+        link: '/faq'
+    },
+    {
+        id: 3,
+        title: 'Επικοινωνία',
+        link: '/contact'
+    }
+];
+
 export const studentDashboardButtons = [
     "Αρχική", 
     "Δηλώσεις",
@@ -39,4 +57,80 @@ export const studentDashboardButtons = [
     "Προφίλ",
     "Αποσύνδεση"
   ];
-  
+
+export const contactFormTexts = {
+    formTitle: 'Φόρμα Επικοινωνίας',
+    emailLabel: 'E-mail:',
+    nameLabel: 'Ονοματεπώνυμο:',
+    messageLabel: 'Μήνυμα:',
+    submitButton: 'Αποστολή'
+};
+
+export const faqTexts = {
+    items: [
+        {
+            id: 1,
+            question: 'Ερώτηση 1 στα Ελληνικά',
+            answer: 'Απάντηση 1 στα Ελληνικά.'
+        },
+        {
+            id: 2,
+            question: 'Ερώτηση 2 στα Ελληνικά',
+            answer: 'Απάντηση 2 στα Ελληνικά.'
+        },
+        ,
+        {
+            id: 3,
+            question: 'Ερώτηση 3 στα Ελληνικά',
+            answer: 'Απάντηση 3 στα Ελληνικά.'
+        }
+        ,
+        {
+            id: 4,
+            question: 'Ερώτηση 4 στα Ελληνικά',
+            answer: 'Απάντηση 4 στα Ελληνικά.'
+        }
+        ,
+        {
+            id: 5,
+            question: 'Ερώτηση 5 στα Ελληνικά',
+            answer: 'Απάντηση 5 στα Ελληνικά.'
+        }
+        ,
+        {
+            id: 6,
+            question: 'Ερώτηση 6 στα Ελληνικά',
+            answer: 'Απάντηση 6 στα Ελληνικά.'
+        }
+        ,
+        {
+            id: 7,
+            question: 'Ερώτηση 7 στα Ελληνικά',
+            answer: 'Απάντηση 7 στα Ελληνικά.'
+        }
+        ,
+        {
+            id: 8,
+            question: 'Ερώτηση 8 στα Ελληνικά',
+            answer: 'Απάντηση 8 στα Ελληνικά.'
+        },
+        {
+            id: 9,
+            question: 'Ερώτηση 9 στα Ελληνικά',
+            answer: 'Απάντηση 9 στα Ελληνικά.'
+        }
+        ,
+        {
+            id: 10,
+            question: 'Ερώτηση 10 στα Ελληνικά',
+            answer: 'Απάντηση 10 στα Ελληνικά.'
+        }
+
+    ]
+};
+
+export const faqPage = {
+    searchPlaceholder: "Αναζήτηση στις Συχνές Ερωτήσεις...",
+    pageTitle: "Συχνές Ερωτήσεις",
+
+};
