@@ -1,11 +1,12 @@
+import styles from "./Card.module.css";
 
-const Card = ({title}) => {
+const Card = ({ title }) => {
   return (
-    <div className="card p-4 m-2  d-flex align-items-center text-center">
-        <h5 className="mb-4">{title}</h5>
-        <button className="btn btn-secondary">Αίτηση</button>
+    <div className={styles.cardd}>
+      <h5 className={styles["cardd h5"]}>{title}</h5>
+      <button className={styles["cardd button"]}>Αίτηση</button>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

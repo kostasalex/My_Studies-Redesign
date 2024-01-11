@@ -1,4 +1,5 @@
-body{ 
-  background: cyan;
-  
+body {
+  height: fit-content;
+
+  background-color: #fff; /* Χρώμα φόντου λευκό */
 }

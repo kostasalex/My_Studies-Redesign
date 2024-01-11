@@ -1,0 +1,31 @@
+.cardd {
+  padding: 16px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column; /* Τοποθέτηση του περιεχομένου σε κατακόρυφη διάταξη */
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #0d6efd;
+  border-radius: 1.8rem;
+  height: 180px;
+  width: 250px;
+}
+
+.cardd h5 {
+  margin-top: 30px;
+}
+
+.cardd button {
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cardd button:hover {
+  background-color: #0d6dfdb2;
+}

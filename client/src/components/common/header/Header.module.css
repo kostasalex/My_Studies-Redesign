@@ -1,55 +1,58 @@
 .header {
-    display:flex;
-    justify-content: center;
-    background-color: #f0f0f0;
-    padding: 10px;
-    text-align: center;
-    font-size: 24px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+}
 
-  .button {
-      background-color: white;
-      color: black;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
-      margin-right: 10px;
-  }
-  
-  .button:hover,
-  .button:focus {
-      background-color: cyan;
-      color: white;
-  }
-  
-  .roundButton {
-    background-color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 50%;
-    overflow: hidden;
-    padding: 0; /* Προσθέστε αυτήν τη γραμμή για να καταργήσετε το padding */
-  }
-  
-  .roundButton img {
-    width: 100%; /* Κάντε την εικόνα να καλύπτει τον χώρο του κουμπιού */
-    height: auto;
-  }
-  
-  .roundButton:hover,
-  .roundButton:focus {
-    background-color: cyan;
-  }
+.button {
+  background-color: transparent;
+  color: black;
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+}
 
+.button:hover {
+  background-color: transparent;
+  color: #0d6efd;
+}
 
-  .logo {
-    max-width: 100px; /* Προσαρμόστε το πλάτος όπως επιθυμείτε */
-    height: auto;
-  }
-  
-  .headerContainer {
-    display: flex;
-    align-items: center;
-  }
+.logoleft {
+  max-width: 80px;
+  height: fit-content;
+  margin-right: 600px;
+}
+
+.logoright {
+  max-width: 80px;
+  height: auto;
+  margin-left: 20px;
+}
+
+.logoright img {
+  height: 30px;
+  width: 30px;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+}
+
+.loginButtons {
+  display: flex;
+  font-size: 24px;
+  justify-content: flex-end;
+}
+
+.loginbutton {
+  margin-left: 200px;
+}

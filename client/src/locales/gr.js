@@ -50,7 +50,7 @@ export const footerData = [
 ];
 
 export const studentDashboardButtons = [
-    "dashboard", 
+    "Αρχική", 
     "Δηλώσεις",
     "Βαθμολογίες",
     "Πιστοποιητικά",
