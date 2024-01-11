@@ -4,6 +4,7 @@ import React from "react";
 import Dashboard from "@/components/common/dashboard/Dashboard";
 import { TeacherDashboardButtons } from "@/locales/gr";
 import Home from "./home/Home";
+import Path from "./path/path.module.css";
 
 import styles from "./Teacher.module.css";
 import Profile from "./Profile/Profile";
@@ -25,24 +26,34 @@ export default function Teacher() {
   return (
     <div style={{ display: "flex" }}>
       <Dashboard>
-        {["dashboard", "current-semester", "old-semesters", "statistics", "profile"].map(
-          (path, index) => (
-            <button
-              key={path}
-              className={selected === path ? styles.selectedButton : ""}
-              onClick={() => handleButtonClick(path)}
-            >
-              {TeacherDashboardButtons[index]}
-            </button>
-          )
-        )}
+        {[
+          "dashboard",
+          "current-semester",
+          "old-semesters",
+          "statistics",
+          "profile",
+        ].map((path, index) => (
+          <button
+            key={path}
+            className={selected === path ? styles.selectedButton : ""}
+            onClick={() => handleButtonClick(path)}
+          >
+            {TeacherDashboardButtons[index]}
+          </button>
+        ))}
       </Dashboard>
       <div style={{ padding: "20px", flex: 1 }}>
         <div className="d-flex flex-column">
-          <div className="align-self-center">
+          <div
+            className="periodos"
+            style={{ textAlign: "right", fontSize: 20 }}
+          >
             Εξεταστική Περίοδος: Χειμερινό 2023 <br />
             Περίοδος Δηλώσεων : 1/2/2023 εως 28/2/2023
           </div>
+        </div>
+        <div className={Path["pathh"]}>
+          <button>• Αρχική /</button>
         </div>
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />

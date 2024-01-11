@@ -1,20 +1,51 @@
-.recent-grades-section {
-    background-color: #D9D9D9;
-    border-radius: 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
+.current-courses-section {
+  background-color: #d9d9d9;
+  border-radius: 48px;
+  padding: 20px;
+  max-width: 700px;
 }
 
-.recent-grades-section h4 {
-    padding: 20px;
+.current-courses-section-text {
+  margin-top: 20px;
+  margin-left: 30px;
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.current-courses-section h2 {
+  text-decoration: underline;
+  margin-left: 20px;
+}
+.current-courses-section h6 {
+  max-width: 500px;
 }
 
-.recent-grades-section li {
-    padding: 10px;
+.current-courses-section li {
+  font-size: 25px;
+  margin-top: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.current-courses-section ul {
+  margin-top: 30px;
 }
 
-.recent-grades-section button {
-    margin-top: 20px;
+.buttons {
+  margin-left: 150px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttons button {
+  background-color: #0d6efd;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
 }
