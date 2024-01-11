@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Profile.module.css";
-
+import Path from "../path/path.module.css";
 import photoprofile from "./photoprofile.png";
 
 const Profile = () => {
@@ -44,6 +44,10 @@ const Profile = () => {
 
   return (
     <div>
+      <div className={Path["pathh"]}>
+        <button>• Αρχική /</button>
+        <button>Προφίλ /</button>
+      </div>
       <h3 className={styles.profileTitle}>Στοιχεία Φοιτητή</h3>
       <div className={styles.student}>
         <div className={styles.studentlayer1}>

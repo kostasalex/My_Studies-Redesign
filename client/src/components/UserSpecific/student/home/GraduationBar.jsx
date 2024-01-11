@@ -1,11 +1,12 @@
-
-import styles from './GraduationBar.module.css';
-import barimg from "./temp2.png"
+import styles from "./GraduationBar.module.css";
+import barimg from "./temp2.png";
+import Path from "../path/path.module.css";
 
 const GraduationBar = () => {
   return (
-    <div className={styles["graduation-bar"]}>
-        <img src ={barimg}/>
+    <div className={Path["pathh"]}>
+      <button>• Αρχική /</button>
+      <img src={barimg} />
     </div>
   );
 };

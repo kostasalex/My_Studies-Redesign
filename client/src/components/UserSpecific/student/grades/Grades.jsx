@@ -1,9 +1,16 @@
 import Pagination from "@/components/common/Pagination";
 import Table from "./table/Table";
+import React from "react";
+import styles from "./Grades.module.css";
+import Path from "../path/path.module.css";
 
 const Grades = () => {
   return (
     <div>
+      <div className={Path["pathh"]}>
+        <button>• Αρχική /</button>
+        <button>Βαθμολογίες /</button>
+      </div>
       <div>
         <div className="btn-group m-5">
           <button
