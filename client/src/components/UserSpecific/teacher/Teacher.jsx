@@ -6,11 +6,10 @@ import { TeacherDashboardButtons } from "@/locales/gr";
 import Home from "./home/Home";
 
 import styles from "./Teacher.module.css";
-// import Registration from "./registration/Registration";
-// import Grades from "./grades/Grades";
-// import Certificates from "./certificates/Certificates";
-// import NewRegistration from "./registration/newRegistration/NewRegistration";
 import Profile from "./Profile/Profile";
+import CurrentSemester from "./currentSemester/CurrentSemester";
+import OldSemesters from "./oldSemesters/OldSemesters";
+import Statistics from "./statistics/Statistics";
 
 export default function Teacher() {
   const navigate = useNavigate();
@@ -26,7 +25,7 @@ export default function Teacher() {
   return (
     <div style={{ display: "flex" }}>
       <Dashboard>
-        {["dashboard", "registration", "grades", "certificates", "profile"].map(
+        {["dashboard", "current-semester", "old-semesters", "statistics", "profile"].map(
           (path, index) => (
             <button
               key={path}
@@ -48,11 +47,9 @@ export default function Teacher() {
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />
-          {/* <Route path="registration" element={<Registration />}>
-            <Route path="new-registration" element={<NewRegistration />} />
-          </Route>
-          <Route path="grades" element={<Grades />} />
-          <Route path="certificates" element={<Certificates />} /> */}
+          <Route path="current-semester" element={<CurrentSemester />} />
+          <Route path="old-semesters" element={<OldSemesters />} />
+          <Route path="statistics" element={<Statistics />} />
           <Route path="profile" element={<Profile />} />
         </Routes>
       </div>

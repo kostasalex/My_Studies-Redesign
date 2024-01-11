@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Profile.module.css";
 import Path from "../path/path.module.css";
 import photoprofile from "./teacher.jpg";
