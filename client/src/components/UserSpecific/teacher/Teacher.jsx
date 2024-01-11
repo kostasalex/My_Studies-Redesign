@@ -10,7 +10,7 @@ import styles from "./Teacher.module.css";
 // import Grades from "./grades/Grades";
 // import Certificates from "./certificates/Certificates";
 // import NewRegistration from "./registration/newRegistration/NewRegistration";
-// import Profile from "./Profile/Profile";
+import Profile from "./Profile/Profile";
 
 export default function Teacher() {
   const navigate = useNavigate();
@@ -39,6 +39,12 @@ export default function Teacher() {
         )}
       </Dashboard>
       <div style={{ padding: "20px", flex: 1 }}>
+        <div className="d-flex flex-column">
+          <div className="align-self-center">
+            Εξεταστική Περίοδος: Χειμερινό 2023 <br />
+            Περίοδος Δηλώσεων : 1/2/2023 εως 28/2/2023
+          </div>
+        </div>
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />
@@ -46,8 +52,8 @@ export default function Teacher() {
             <Route path="new-registration" element={<NewRegistration />} />
           </Route>
           <Route path="grades" element={<Grades />} />
-          <Route path="certificates" element={<Certificates />} />
-          <Route path="profile" element={<Profile />} /> */}
+          <Route path="certificates" element={<Certificates />} /> */}
+          <Route path="profile" element={<Profile />} />
         </Routes>
       </div>
     </div>
