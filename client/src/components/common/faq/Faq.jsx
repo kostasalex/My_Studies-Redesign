@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Bootstrap JavaScript
 
 import {useEffect, useState} from 'react';
 import styles from './Faq.module.css';
-import { faqTexts, faqPage } from '@/locales/gr';
+import { faqTexts, faqPage } from '@/locales/en';
 
 const Faq = () => {
     const [openItemId, setOpenItemId] = useState(faqTexts.items[0]?.id);
