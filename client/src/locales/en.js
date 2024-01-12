@@ -167,6 +167,7 @@ export const oldCertificatesTexts = {
     status: "Status",
     btnshow: "Show",
     btndownload: "Download",
+    searchbar: "Search Certificates ..",
     clearfilter: "Claer Filters",
     types: {
         1: "Student Status",

@@ -187,6 +187,7 @@ export const oldCertificatesTexts = {
     status: "Κατάσταση",
     clearfilter: "Απαλοιφή Φίλτρων",
     btnshow: "Προβολή",
+    searchbar: "Αναζήτηση Πιστοποιητικών ..",
     btndownload: "Λήψη",
     types: {
         1: "Φοιτητικής Ιδιότητας",
