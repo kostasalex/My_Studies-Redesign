@@ -1,8 +1,10 @@
-.btn,
-.btnblue {
+
+
+
+.btnform {
   display: inline-block;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1;
   color: #fff; /* White text color */
   text-align: center;
   text-decoration: none;
@@ -19,9 +21,13 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   margin-right: 10px; /* Add gap between buttons */
+
 }
-
-
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
 .btnblue:hover {
   background-color: #0056b3; /* Μπλε χρώμα φόντου στην κατάσταση hover */
   border-color: #004380; /* Σκούρο μπλε χρώμα περιγράμματος στην κατάσταση hover */

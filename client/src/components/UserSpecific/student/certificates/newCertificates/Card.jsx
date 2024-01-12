@@ -1,7 +1,7 @@
 import styles from "./Card.module.css";
 import { cardTexts } from '@/locales/gr';
 import Swal from 'sweetalert2';
-
+import CustomButton from "../../../../common/buttons/CustomButton.jsx";
 const Card = ({ title }) => {
     const handleNext = () => {
 
@@ -38,7 +38,9 @@ const Card = ({ title }) => {
   return (
     <div className={styles.cardd}>
       <h5 className={styles["cardd h5"]}>{title}</h5>
-      <button onClick={handleNext} className={styles["cardd button"]}>{cardTexts.applyButton}</button>
+        <CustomButton onClick={handleNext}>
+            {cardTexts.applyButton}
+        </CustomButton>
 
     </div>
   );

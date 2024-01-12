@@ -160,11 +160,12 @@ export const certificatesTexts = {
 };
 
 export const oldCertificatesTexts = {
-    applicationCode: "Application Code",
+    applicationCode: "ID",
     subject: "Subject",
     date: "Date",
     status: "Status",
     btnshow: "Show",
+    btndownload: "Download",
     clearfilter: "Claer Filters",
     types: {
         1: "Student Status",

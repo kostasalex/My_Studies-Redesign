@@ -181,11 +181,12 @@ export const certificatesTexts = {
 
 export const oldCertificatesTexts = {
     applicationCode: "Κωδικός Aίτησης",
-    subject: "Θέμα Αίτησης",
-    date: "Ημερομηνία Αίτησης",
-    status: "Κατάσταση Αίτησης",
+    subject: "Θέμα",
+    date: "Ημερομηνία",
+    status: "Κατάσταση",
     clearfilter: "Απαλοιφή Φίλτρων",
     btnshow: "Προβολή",
+    btndownload: "Λήψη",
     types: {
         1: "Φοιτητικής Ιδιότητας",
         2: "Φορολογικής Χρήσης",

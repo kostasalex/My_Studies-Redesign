@@ -1,6 +1,7 @@
 import { oldCertificatesTexts } from '@/locales/gr';
 import file from "../../../../../../public/test_doc.pdf";
-
+import CustomButton from "../../../../common/buttons/CustomButton.jsx";
+import styles from "./Table.module.css";
 const Table = ({ certificates }) => {
   const handleDownload = () => {
     const link = document.createElement('a');
@@ -11,6 +12,14 @@ const Table = ({ certificates }) => {
     document.body.removeChild(link);
   };
 
+  const handleOpen = () => {
+    const link = document.createElement('a');
+    link.href = file;
+    link.target = '_blank'; // Open in a new tab
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
 
   return (
@@ -34,9 +43,13 @@ const Table = ({ certificates }) => {
                 <td className={getStatusClass(certificate.statusId)}>
                   <h5>{oldCertificatesTexts.statuses[certificate.statusId]}</h5></td>
                 <td>
-                  <button onClick={handleDownload} className="btn btn-primary">
+                  <CustomButton onClick={handleOpen}>
                     {oldCertificatesTexts.btnshow}
-                  </button>
+                  </CustomButton>
+                  <CustomButton onClick={handleDownload}>
+                    {oldCertificatesTexts.btndownload}
+                  </CustomButton>
+
                 </td>
 
               </tr>
@@ -49,8 +62,10 @@ const Table = ({ certificates }) => {
 
 const getStatusClass = (statusId) => {
   switch (statusId) {
-    case 1: return "text-success";
-    case 2: return "text-warning";
+    case 1:
+      return "text-success";
+    case 2:
+      return "text-warning";
     case 3: return "text-danger";
     default: return "";
   }
