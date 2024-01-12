@@ -137,6 +137,7 @@ export const newCertificatesTexts = {
 export const cardTexts = {
     applyButton: "Apply",
     applyCert: "Issue Certificate",
+    certificate: "Certificate for",
     cancelCert: "Cancel",
     closeCert: "Close",
     warningText: "Are you sure you want to request this certificate ?",

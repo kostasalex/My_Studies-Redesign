@@ -7,6 +7,7 @@ import CustomTable from "@/components/common/table/TableDesign.jsx";
 import CustomSelect from "../../../../common/buttons/CustomSelect.jsx";
 import CustomButton from "../../../../common/buttons/CustomButton.jsx";
 import { oldCertificatesTexts } from '@/locales/gr';
+import CustomPagination from "../../../../common/buttons/CustomPagination.jsx";
 const OldCertificates = () => {
     const [certificates, setCertificates] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -101,17 +102,15 @@ const OldCertificates = () => {
             <CustomTable> <Table certificates={currentItems} /></CustomTable>
 
             {/* Pagination */}
-            <nav className={styles.pagination}>
-                <ul className="pagination">
-                    {pageNumbers.map(number => (
-                        <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
-                            <a onClick={() => paginate(number)} className="page-link">
-                                {number}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+            <CustomPagination>
+                {pageNumbers.map(number => (
+                    <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
+                        <a onClick={() => paginate(number)} className="page-link">
+                            {number}
+                        </a>
+                    </li>
+                ))}
+            </CustomPagination>
         </div>
     );
 };

@@ -149,13 +149,14 @@ export const newCertificatesTexts = {
     certificateTypes: [
         "Φοιτητικής Ιδιότητας",
         "Φορολογικής Χρήσης",
-        "Αναλυτική Βαθμολογία",
-        "Στρατολογική Χρήση"
+        "Αναλυτικής Βαθμολογίας",
+        "Στρατολογικής Χρήσης"
     ]
 };
 
 export const cardTexts = {
     applyButton: "Αίτηση",
+    certificate: "Πιστοποιητικο",
     applyCert: "Έκδοση Πιστοποιητικού",
     cancelCert: "Ακύρωση",
     closeCert: "Κλείσιμο",

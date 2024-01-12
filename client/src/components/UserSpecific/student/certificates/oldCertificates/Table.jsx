@@ -1,7 +1,7 @@
 import { oldCertificatesTexts } from '@/locales/gr';
 import file from "../../../../../../public/test_doc.pdf";
 import CustomButton from "../../../../common/buttons/CustomButton.jsx";
-import styles from "./Table.module.css";
+
 const Table = ({ certificates }) => {
   const handleDownload = () => {
     const link = document.createElement('a');
@@ -43,10 +43,14 @@ const Table = ({ certificates }) => {
                 <td className={getStatusClass(certificate.statusId)}>
                   <h5>{oldCertificatesTexts.statuses[certificate.statusId]}</h5></td>
                 <td>
-                  <CustomButton onClick={handleOpen}>
+                  <CustomButton
+                      onClick={handleOpen}
+                      disabled={certificate.statusId === 2 || certificate.statusId === 3}>
                     {oldCertificatesTexts.btnshow}
                   </CustomButton>
-                  <CustomButton onClick={handleDownload}>
+                  <CustomButton
+                      onClick={handleDownload}
+                      disabled={certificate.statusId === 2  || certificate.statusId === 3}>
                     {oldCertificatesTexts.btndownload}
                   </CustomButton>
 

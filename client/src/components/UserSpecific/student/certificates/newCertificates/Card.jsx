@@ -6,9 +6,9 @@ const Card = ({ title }) => {
     const handleNext = () => {
 
             Swal.fire({
-                title: cardTexts.warningText,
+                text: cardTexts.warningText,
                 icon: 'warning',
-
+                title: cardTexts.certificate+"\n"+title,
                 showCancelButton: true,
                 cancelButtonText:  cardTexts.cancelCert,
                 confirmButtonColor: "#007fff",

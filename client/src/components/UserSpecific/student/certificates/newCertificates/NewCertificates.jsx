@@ -7,7 +7,7 @@ const NewCertificates = () => {
           className={`${styles.newCertificates} d-flex flex-column align-items-center`}
           style={{ marginBottom: "20px" }}
       >
-        <h3 className="mb-4">{newCertificatesTexts.title}</h3>
+        <h3 className="mb-2">{newCertificatesTexts.title}</h3>
         <div className="d-flex">
           {newCertificatesTexts.certificateTypes.map((title, index) => (
               <Card key={index} title={title} />
