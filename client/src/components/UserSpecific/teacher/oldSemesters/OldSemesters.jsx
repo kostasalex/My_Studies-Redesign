@@ -1,63 +1,178 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./OldSemesters.module.css";
-import CustomButton from "../../../common/buttons/CustomButton.jsx";
-import CustomPagination from "../../../common/buttons/CustomPagination.jsx";
-import Path from "../path/path.module.css";
-
-
-
-  const courses = [
-    { title: "Χειμερινό 2023", summary: "Σύνοψη : 4 Μάθημα, 234 Μαθητές" },
-    { title: "Καλοκαιρινό 2023", summary: "Σύνοψη : 3 Μάθημα, 200 Μαθητές" },
-    { title: "Φθινοπωρινό 2023", summary: "Σύνοψη : 5 Μάθημα, 300 Μαθητές" },
-    { title: "Άνοιξη 2023", summary: "Σύνοψη : 4 Μάθημα, 220 Μαθητές" },
-    { title: "Χειμερινό 2022", summary: "Σύνοψη : 3 Μάθημα, 180 Μαθητές" },
-    { title: "Καλοκαιρινό 2022", summary: "Σύνοψη : 5 Μάθημα, 250 Μαθητές" },
-    { title: "Φθινοπωρινό 2022", summary: "Σύνοψη : 4 Μάθημα, 210 Μαθητές" },
-    { title: "Άνοιξη 2022", summary: "Σύνοψη : 3 Μάθημα, 190 Μαθητές" },
-    { title: "Χειμερινό 2021", summary: "Σύνοψη : 5 Μάθημα, 260 Μαθητές" },
-    { title: "Καλοκαιρινό 2021", summary: "Σύνοψη : 4 Μάθημα, 220 Μαθητές" },
-    
-  ];
-
-
-const handleButtonClick = () => {
-  // Handle button click logic
-  console.log("Button clicked!");
-};
 
 const OldSemesters = () => {
+  const Semesters = [
+    {
+      semester: "Φθινοπωρινό",
+      year: "2024",
+      lessons: "5 Μάθημα",
+      students: "280 Μαθητές",
+    },
+    {
+      semester: "Καλοκαιρινό",
+      year: "2023",
+      lessons: "4 Μάθημα",
+      students: "220 Μαθητές",
+    },
+    {
+      semester: "Άνοιξη",
+      year: "2022",
+      lessons: "3 Μάθημα",
+      students: "190 Μαθητές",
+    },
+    {
+      semester: "Χειμερινό",
+      year: "2021",
+      lessons: "5 Μάθημα",
+      students: "300 Μαθητές",
+    },
+    {
+      semester: "Φθινοπωρινό",
+      year: "2020",
+      lessons: "4 Μάθημα",
+      students: "234 Μαθητές",
+    },
+    {
+      semester: "Καλοκαιρινό",
+      year: "2019",
+      lessons: "3 Μάθημα",
+      students: "200 Μαθητές",
+    },
+    {
+      semester: "Άνοιξη",
+      year: "2018",
+      lessons: "4 Μάθημα",
+      students: "220 Μαθητές",
+    },
+    {
+      semester: "Χειμερινό",
+      year: "2017",
+      lessons: "5 Μάθημα",
+      students: "260 Μαθητές",
+    },
+    {
+      semester: "Φθινοπωρινό",
+      year: "2016",
+      lessons: "3 Μάθημα",
+      students: "180 Μαθητές",
+    },
+    {
+      semester: "Καλοκαιρινό",
+      year: "2015",
+      lessons: "5 Μάθημα",
+      students: "250 Μαθητές",
+    },
+  ];
+
+  const [selectedSemester, setSelectedSemester] = useState(null);
+  const [showRandomCourses, setShowRandomCourses] = useState(false);
+
+  const handleSemesterClick = (semester) => {
+    setSelectedSemester(semester);
+  };
+
+  const handleViewClick = () => {
+    setShowRandomCourses(true);
+  };
+
+  const handleBackClick = () => {
+    setShowRandomCourses(false);
+  };
+
+  const getRandomCourses = () => {
+    // Εδώ μπορείτε να υλοποιήσετε λογική για τη λήψη τυχαίων μαθημάτων.
+    // Για τους σκοπούς του παραδείγματος, απλά δημιουργούμε μερικά σταθερά.
+    return [
+      { code: "Τ123", title: "Γραμμική Άλγεβρα", semester: "1ο", period: "Χειμερινό", year: "2024" },
+      { code: "Τ456", title: "Διακριτά Μαθηματικά", semester: "3ο", period: "Χειμερινό", year: "2023" },
+      { code: "Τ789", title: "Μαθηματικά Ι", semester: "5ο", period: "Εαρινό", year: "2022" },
+      { code: "Τ101", title: "Γεωμετρία", semester: "8ο", period: "Χειμερινό", year: "2021" },
+      { code: "Τ202", title: "Τσοπανολογία", semester: "2ο", period: "Σεμπτέμβριος", year: "2020" },
+    ];
+  };
+
   return (
-    <div>
-      <div className={Path["pathh"]}>
-        <button>• Αρχική /</button>
-        <button>Παλιά Εξάμηνα /</button>
-      </div>
-      <center>
-        <h5>
-          Eπιλέξτε το εξάμηνο που επιθυμείτε για να δείτε περισσότερες
-          πληροφορίες σχετικά με αυτό
-        </h5>
-      </center>
-      <div className={`${styles.btnGroup} m-5`}>
-        <h5> Φίλτρα Αναζήτησης : </h5>
-        {/* Προσθέστε κώδικα για τα φίλτρα αναζήτησης */}
-      </div>
+    <div className="mt-5">
+      <h3>Ιστορικό Παλαιότερων Δηλώσεων</h3>
 
-      <div className={styles.Semesters}>
-        {courses.map((course, index) => (
-          <div key={index} className={styles.cardd}>
-            <h5>{course.title}</h5>
-            <h7>{course.summary}</h7>
-            <CustomButton onClick={handleButtonClick}>Apply Now</CustomButton>
-          </div>
-        ))}
-      </div>
-
-      <CustomPagination>
-        <h1>Εδώ το pagination</h1>
-      </CustomPagination>
-      <h1>aek</h1>
+      {showRandomCourses ? (
+        <div>
+          <button className="btn btn-primary float-end" onClick={handleBackClick}>
+            Πίσω
+          </button>
+          <h4>Τυχαία Μαθήματα</h4>
+          <table className={`table table-striped ${styles["Semesters-table"]}`}>
+            <thead>
+              <tr>
+                <th scope="col">Κωδικός</th>
+                <th scope="col">Μάθημα</th>
+                <th scope="col">Εξάμηνο</th>
+                <th scope="col">Περίοδος</th>
+                <th scope="col">Έτος</th>
+                <th scope="col">Προβολή</th>
+                <th scope="col">Κατέβασμα</th>
+              </tr>
+            </thead>
+            <tbody>
+              {getRandomCourses().map((course, index) => (
+                <tr key={index}>
+                  <td>{course.code}</td>
+                  <td>{course.title}</td>
+                  <td>{course.semester}</td>
+                  <td>{course.period}</td>
+                  <td>{course.year}</td>
+                  <td>
+                    <button className="btn btn-primary">Προβολή</button>
+                  </td>
+                  <td>
+                    <button className="btn btn-success">Κατέβασμα</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <table className={`table table-striped ${styles["Semesters-table"]}`}>
+          <thead>
+            <tr>
+              <th scope="col">Εξάμηνο</th>
+              <th scope="col">Έτος</th>
+              <th scope="col">Μαθήματα</th>
+              <th scope="col">Μαθητές</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {Semesters.map((semester, index) => (
+              <tr
+                key={index}
+                className={`${
+                  selectedSemester === semester ? styles["selected"] : ""
+                }`}
+                onClick={() => handleSemesterClick(semester)}
+              >
+                <td>{semester.semester}</td>
+                <td>{semester.year}</td>
+                <td>{semester.lessons}</td>
+                <td>{semester.students}</td>
+                <td>
+                  <button
+                    className="btn btn-primary"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleViewClick();
+                    }}
+                  >
+                    Προβολή
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 };
