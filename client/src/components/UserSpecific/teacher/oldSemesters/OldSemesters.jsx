@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./OldSemesters.module.css";
 import CustomButton from "../../../common/buttons/CustomButton.jsx";
 import CustomPagination from "../../../common/buttons/CustomPagination.jsx";
+import Path from "../path/path.module.css";
 const handleButtonClick = () => {
   // Handle button click logic
   console.log("Button clicked!");
@@ -10,6 +11,10 @@ const handleButtonClick = () => {
 const OldSemesters = () => {
   return (
     <div>
+        <div className={Path["pathh"]}>
+        <button>• Αρχική /</button>
+        <button>Παλιά Εξάμηνα /</button>
+      </div>
       <center>
         <h5>
           Eπιλέξτε το εξάμηνο που επιθυμείτε για να δείτε περισσότερες

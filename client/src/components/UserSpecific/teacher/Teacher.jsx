@@ -52,9 +52,7 @@ export default function Teacher() {
             Περίοδος Δηλώσεων : 1/2/2023 εως 28/2/2023
           </div>
         </div>
-        <div className={Path["pathh"]}>
-          <button>• Αρχική /</button>
-        </div>
+        
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />

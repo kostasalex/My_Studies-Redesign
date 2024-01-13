@@ -1,8 +1,13 @@
 
-
+import Path from "../path/path.module.css";
 const Statistics = () => {
     return (
-        <div>Statistics</div>
+        <div>
+            <div className={Path["pathh"]}>
+        <button>• Αρχική /</button>
+        <button>Στατιστικά /</button>
+      </div>
+            Statistics</div>
     )
 }
 

@@ -1,6 +1,6 @@
 import styles from "./CurrentSemester.module.css";
 import { useNavigate } from "react-router-dom";
-
+import Path from "../path/path.module.css";
 const CurrentSemester = () => {
   const navigate = useNavigate();
 
@@ -11,6 +11,10 @@ const CurrentSemester = () => {
 
   return (
     <div>
+      <div className={Path["pathh"]}>
+        <button>• Αρχική /</button>
+        <button>Tρέχων Εξάμηνο /</button>
+      </div>
       <div className={styles.mylessons}> Τα Μαθήματα μου :</div>
 
       <div className={styles["new-registration"]}>
