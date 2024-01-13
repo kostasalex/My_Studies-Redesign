@@ -48,7 +48,7 @@ const Profile = () => {
         <button>• Αρχική /</button>
         <button>Προφίλ /</button>
       </div>
-      <h3 className={styles.profileTitle}>Στοιχεία Φοιτητή</h3>
+      <h3 className={styles.profileTitle}>Στοιχεία Καθηγητή</h3>
       <div className={styles.student}>
         <div className={styles.studentlayer1}>
           <img src={photoprofile} alt="Profile" />
@@ -60,24 +60,17 @@ const Profile = () => {
           <h6>Αρ. Μητρώου : </h6>
           <h6>Όνομα :</h6>
           <h6>Επίθετο :</h6>
-          <h6>Όνομα Πατέρα :</h6>
-          <h6>Όνομα Μητέρας :</h6>
+          <h6>Ρόλος :</h6>
           <h6>Ημ. Γέννησης :</h6>
         </div>
-        <div className={styles.studentlayer3}>
-          <h4>Στοιχεία Ταυτοποίησης</h4>
-          <h6>Αρ. Πάσου : </h6>
-          <h6>Αρ. Ταυτότητας :</h6>
-          <h6>Εκδούσα Αρχή Α.Τ :</h6>
-          <h6>Ημ. Έκδοσης Α.Τ :</h6>
-          <h6>ΑΜΚΑ :</h6>
-        </div>
+        
         <div className={styles.studentlayer4}>
-          <h4>Στοιχεία Οικίας</h4>
-          <h6>Διεύθ. Κατοικίας : </h6>
-          <h6>Αρ. Κατοικίας : </h6>
+          <h4>Στοιχεία Επικοινωνίας</h4>
+          <h6>Αρ. Γραφείου : </h6>
+          <h6>Τμήμα : </h6>
           <h6>Περιοχή : </h6>
           <h6>Τ.Κ. : </h6>
+          <h6>Email : </h6>
         </div>
       </div>
       <h3 className={styles.profileTitle}>Στοιχεία Επικοινωνίας Φοιτητή</h3>
@@ -131,27 +124,24 @@ const Profile = () => {
         </div>
       </div>
 
-      <h3 className={styles.profileTitle}>Στοιχεία Σπουδών Φοιτητή</h3>
+      <h3 className={styles.profileTitle}>Στοιχεία Εγγραφής Καθηγητή</h3>
 
       <div className={styles.student}>
         <div className={styles.studentlayer111}>
-          <h5>Εξάμηνο Πρώτης Εγγραφής :</h5>
-          <h6>1ο Εξάμηνο</h6>
+          <h5>Έτος Εγγραφής :</h5>
+          <h6>1999</h6>
         </div>
 
         <div className={styles.studentlayer222}>
-          <h5>Ακαδημαϊκό Έτος Εγγραφής :</h5>
-          <h6>2018</h6>
+          <h5>Χρόνια Υπηρεσίας :</h5>
+          <h6>17</h6>
         </div>
 
         <div className={styles.studentlayer333}>
-          <h5>Ημερομηνία Εγγραφής :</h5>
-          <h6>30/9/2018</h6>
+          <h5>Μαθήματα που Διδάχτηκαν :</h5>
+          <h6>218</h6>
         </div>
-        <div className={styles.studentlayer444}>
-          <h5>Εξάμηνο Φοίτησης :</h5>
-          <h6>2018</h6>
-        </div>
+       
       </div>
     </div>
   );
