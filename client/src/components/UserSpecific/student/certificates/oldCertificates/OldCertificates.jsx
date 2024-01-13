@@ -101,7 +101,7 @@ const OldCertificates = () => {
 
             <CustomTable> <Table certificates={currentItems} /></CustomTable>
 
-            {/* Pagination */}
+            
             <CustomPagination>
                 {pageNumbers.map(number => (
                     <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
