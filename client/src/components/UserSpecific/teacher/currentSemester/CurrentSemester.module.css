@@ -79,3 +79,16 @@
   border: none;
   cursor: pointer;
 }
+
+
+.backButton {
+  float: right;
+  margin-right: 10px; 
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  max-height: fit-content;
+  border-radius: 15px;
+}

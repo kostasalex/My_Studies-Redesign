@@ -7,100 +7,136 @@ import Path from "../path/path.module.css";
 const CurrentSemester = () => {
   const navigate = useNavigate();
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [displayedCourses, setDisplayedCourses] = useState([
-    { title: "Γραμμική Άλγεβρα", code: "Κ23", deadline: "1/12/2023 23:59:59 μμ" },
-    { title: "Ανάλυση Αλγορίθμων", code: "Α45", deadline: "15/12/2023 23:59:59 μμ" },
-    { title: "Βάσεις Δεδομένων", code: "Β78", deadline: "5/1/2024 23:59:59 μμ" },
-    { title: "Εξελικτική Βιολογία", code: "Ε12", deadline: "20/1/2024 23:59:59 μμ" },
-  ]);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [file, setFile] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Προσθήκη αυτής της γραμμής
+  const [displayedCourses, setDisplayedCourses] = useState([
+    {
+      title: "Γραμμική Άλγεβρα",
+      code: "Κ23",
+      deadline: "1/12/2023 23:59:59 μμ",
+    },
+    {
+      title: "Ανάλυση Αλγορίθμων",
+      code: "Α45",
+      deadline: "15/12/2023 23:59:59 μμ",
+    },
+    {
+      title: "Βάσεις Δεδομένων",
+      code: "Β78",
+      deadline: "5/1/2024 23:59:59 μμ",
+    },
+    {
+      title: "Εξελικτική Βιολογία",
+      code: "Ε12",
+      deadline: "20/1/2024 23:59:59 μμ",
+    },
+  ]);
 
   const navigateToNewRegistration = (course) => {
-    setSelectedCourse(course);
-    setIsModalOpen(true);
+    setSelectedOption("grade-online");
     setDisplayedCourses([course]);
   };
 
   const closeModal = () => {
     setSelectedCourse(null);
-    setIsModalOpen(false);
+    setIsModalOpen(false); // Προσθήκη αυτής της γραμμής
+    setSelectedOption(null);
+    setFile(null);
     setDisplayedCourses([
-      { title: "Γραμμική Άλγεβρα", code: "Κ23", deadline: "1/12/2023 23:59:59 μμ" },
-      { title: "Ανάλυση Αλγορίθμων", code: "Α45", deadline: "15/12/2023 23:59:59 μμ" },
-      { title: "Βάσεις Δεδομένων", code: "Β78", deadline: "5/1/2024 23:59:59 μμ" },
-      { title: "Εξελικτική Βιολογία", code: "Ε12", deadline: "20/1/2024 23:59:59 μμ" },
+      {
+        title: "Γραμμική Άλγεβρα",
+        code: "Κ23",
+        deadline: "1/12/2023 23:59:59 μμ",
+      },
+      {
+        title: "Ανάλυση Αλγορίθμων",
+        code: "Α45",
+        deadline: "15/12/2023 23:59:59 μμ",
+      },
+      {
+        title: "Βάσεις Δεδομένων",
+        code: "Β78",
+        deadline: "5/1/2024 23:59:59 μμ",
+      },
+      {
+        title: "Εξελικτική Βιολογία",
+        code: "Ε12",
+        deadline: "20/1/2024 23:59:59 μμ",
+      },
     ]);
   };
 
-  const handleDropdownChange = (event) => {
-    setSelectedOption(event.target.value);
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    setFile(selectedFile);
+  };
+
+  const handleUpload = () => {
+    if (file) {
+      // Εδώ μπορείτε να κάνετε ό,τι χρειάζεται για τον χειρισμό του αρχείου.
+      console.log("Ανεβάζεται το αρχείο:", file);
+      // Καθαρίστε το state του αρχείου μετά το ανέβασμα.
+      setFile(null);
+    }
   };
 
   return (
     <div>
       <div className={Path["pathh"]}>
-        <button>• Αρχική /</button>
+        <button onClick={() => navigate("/")}>• Αρχική /</button>
         <button>Τρέχων Εξάμηνο /</button>
       </div>
 
-      <div className={styles.mylessons}> Τα Μαθήματα μου :</div>
+      <div className={styles.mylessons}>
+        Τα Μαθήματα μου :
+        {selectedOption === "grade-online" && (
+          <button className={styles.backButton} onClick={() => closeModal()}>
+            Πίσω
+          </button>
+        )}
+      </div>
 
       {displayedCourses.map((course, index) => (
-        <div key={index} className={styles["new-registration"]}>
-          <div className={styles["text"]}>
-            <h4>{course.title}</h4>
-            <p>Κωδικός Μαθήματος : {course.code}</p>
-            <p>Προθεσμία Υποβολής : {course.deadline}</p>
-          </div>
-          <div>
-            <button
-              className={`btn btn-secondary ${selectedCourse === course ? "btn-green" : ""}`}
-              onClick={() => navigateToNewRegistration(course)}
-            >
-              Βαθμολόγηση
-            </button>
-          </div>
-        </div>
-      ))}
-
-      {isModalOpen && selectedCourse && (
-        <div className="modal">
-          <LocalOnline course={selectedCourse} closeModal={closeModal} />
+  <div key={index} className={styles["new-registration"]}>
+    <div className={styles["text"]}>
+      <h4>{course.title}</h4>
+      <p>Κωδικός Μαθήματος : {course.code}</p>
+      <p>Προθεσμία Υποβολής : {course.deadline}</p>
+    </div>
+    <div>
+      <button
+        className={`btn btn-secondary ${selectedCourse === course ? "btn-green" : ""}`}
+        onClick={() => navigateToNewRegistration(course)}
+      >
+        Βαθμολόγηση Online
+      </button>
+      <button
+        className="btn btn-secondary"
+        onClick={() => {
+          setSelectedOption("upload-file");
+          setSelectedCourse(course);
+        }}
+      >
+        Ανεβάστε Βαθμολόγιο
+      </button>
+      {selectedCourse === course && (
+        <div>
+          <input type="file" id="gradeFile" onChange={handleFileChange} />
+          <button
+            className="btn btn-secondary"
+            onClick={handleUpload}
+            disabled={!file}
+          >
+            Ανεβάστε το Αρχείο
+          </button>
         </div>
       )}
-
-<div className={styles["dropdown-container"]}>
-  <select className="form-select" onChange={handleDropdownChange}>
-    <option value="" disabled selected>
-      Επιλέξτε μια επιλογή
-    </option>
-    <option value="new-grade">Δημιουργία Νέου Βαθμολογίου Online</option>
-    <option value="upload-file">Ανεβάστε Έτοιμο Αρχείο Βαθμολογιών</option>
-  </select>
-</div>
-
-{/* Εμφάνιση πλαισίων και κουμπιών */}
-{selectedOption === "new-grade" && (
-  <div className={styles["action-box"]}>
-    <div>Κατεβάστε απο εδώ το βαθμολόγιο</div>
-    <button className="btn btn-download">Κατεβάστε</button>
+    </div>
   </div>
-)}
-
-{selectedOption === "upload-file" && (
-  <div className={styles["action-box"]}>
-    <div>Ανεβάστε το εδώ</div>
-    <button className="btn btn-upload">Ανεβάστε</button>
-  </div>
-)}
+))}
     </div>
   );
 };
 
 export default CurrentSemester;
-
-
-
-
-
