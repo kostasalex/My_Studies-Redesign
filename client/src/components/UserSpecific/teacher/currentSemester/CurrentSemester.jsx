@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LocalOnline from "./LocalOnline";
 import styles from "./CurrentSemester.module.css";
 import Path from "../path/path.module.css";
+import Students from "./Table.jsx";
 
 const CurrentSemester = () => {
   const navigate = useNavigate();
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
   const [file, setFile] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Προσθήκη αυτής της γραμμής
+  const [disabledUpload, setDisabledUpload] = useState(new Set());
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [displayedCourses, setDisplayedCourses] = useState([
     {
       title: "Γραμμική Άλγεβρα",
@@ -34,13 +35,15 @@ const CurrentSemester = () => {
   ]);
 
   const navigateToNewRegistration = (course) => {
+    setSelectedCourse(course);
     setSelectedOption("grade-online");
     setDisplayedCourses([course]);
+    setDisabledUpload(new Set());
   };
 
   const closeModal = () => {
     setSelectedCourse(null);
-    setIsModalOpen(false); // Προσθήκη αυτής της γραμμής
+    setIsModalOpen(false);
     setSelectedOption(null);
     setFile(null);
     setDisplayedCourses([
@@ -74,9 +77,7 @@ const CurrentSemester = () => {
 
   const handleUpload = () => {
     if (file) {
-      // Εδώ μπορείτε να κάνετε ό,τι χρειάζεται για τον χειρισμό του αρχείου.
       console.log("Ανεβάζεται το αρχείο:", file);
-      // Καθαρίστε το state του αρχείου μετά το ανέβασμα.
       setFile(null);
     }
   };
@@ -98,43 +99,49 @@ const CurrentSemester = () => {
       </div>
 
       {displayedCourses.map((course, index) => (
-  <div key={index} className={styles["new-registration"]}>
-    <div className={styles["text"]}>
-      <h4>{course.title}</h4>
-      <p>Κωδικός Μαθήματος : {course.code}</p>
-      <p>Προθεσμία Υποβολής : {course.deadline}</p>
-    </div>
-    <div>
-      <button
-        className={`btn btn-secondary ${selectedCourse === course ? "btn-green" : ""}`}
-        onClick={() => navigateToNewRegistration(course)}
-      >
-        Βαθμολόγηση Online
-      </button>
-      <button
-        className="btn btn-secondary"
-        onClick={() => {
-          setSelectedOption("upload-file");
-          setSelectedCourse(course);
-        }}
-      >
-        Ανεβάστε Βαθμολόγιο
-      </button>
-      {selectedCourse === course && (
-        <div>
-          <input type="file" id="gradeFile" onChange={handleFileChange} />
-          <button
-            className="btn btn-secondary"
-            onClick={handleUpload}
-            disabled={!file}
-          >
-            Ανεβάστε το Αρχείο
-          </button>
+        <div key={index} className={styles["new-registration"]}>
+          <div className={styles["text"]}>
+            <h4>{course.title}</h4>
+            <p>Κωδικός Μαθήματος: {course.code}</p>
+            <p>Προθεσμία Υποβολής: {course.deadline}</p>
+          </div>
+          <div>
+            <button
+              className={`btn btn-secondary ${selectedCourse === course ? "btn-green" : ""}`}
+              onClick={() => navigateToNewRegistration(course)}
+            >
+              Βαθμολόγηση Online
+            </button>
+            <button
+              className="btn btn-secondary"
+              onClick={() => {
+                setSelectedOption("upload-file");
+                setSelectedCourse(course);
+              }}
+              disabled={disabledUpload.has(course.code)}
+            >
+              Ανεβάστε Βαθμολόγιο
+            </button>
+            {selectedCourse === course && selectedOption === "grade-online" && (
+              <div>
+                <input type="file" id="gradeFile" onChange={handleFileChange} />
+                <button
+                  className="btn btn-secondary"
+                  onClick={handleUpload}
+                  disabled={!file}
+                >
+                  Ανεβάστε το Αρχείο
+                </button>
+              </div>
+            )}
+          </div>
         </div>
+      ))}
+      
+      {/* Προσθήκη του LocalOnline component */}
+      {selectedOption === "grade-online" && selectedCourse && (
+        <Students/>
       )}
-    </div>
-  </div>
-))}
     </div>
   );
 };
