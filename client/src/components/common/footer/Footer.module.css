@@ -10,16 +10,16 @@
 
     bottom: 0;
     width: 100%;
-<<<<<<< Updated upstream
+
 }
 
 .footer div:first-of-type {
     display: flex;
     flex-direction: row;
     gap: 40px;
-=======
+
     gap: 30px;
->>>>>>> Stashed changes
+
 }
 
 .footer a {
@@ -36,14 +36,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-<<<<<<< Updated upstream
+
     padding: 7px;
     font-size: 15px;
-=======
+
     padding: 3px;
     font-size: 13px;
     position: fixed;
->>>>>>> Stashed changes
+
     bottom: 0;
     width: 100%;
     gap: 70px;
