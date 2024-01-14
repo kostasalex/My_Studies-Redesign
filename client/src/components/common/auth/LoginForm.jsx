@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { Form, Field } from "react-final-form";
-import { loginValidator, validateWithZod } from "./validation";
+// import { loginValidator, validateWithZod } from "./validation";
 import styles from "./LoginForm.module.css";
+import CustomButton from "../buttons/CustomButton.jsx";
 
 const LoginForm = () => {
   const [showLoginForm, setShowLoginForm] = useState(true);
+  const [userinput, setuserinput] = useState("");
 
+  const handleChangeuser = (event) => {
+    setuserinput(event.target.value);
+  };
+  const [passinput, setpassinput] = useState("");
+
+  const handleChangepass = (event) => {
+    setpassinput(event.target.value);
+  };
   const handleRegisterClick = () => {
     setShowLoginForm(false);
   };
@@ -17,7 +27,35 @@ const LoginForm = () => {
   const handleSubmit = (values) => {
     console.log("Form submitted", values);
   };
+  const handleLogin = (values) => {
+    // Prevent default form submission
+    event.preventDefault();
 
+    const xhr = new XMLHttpRequest();
+    const url = "https://mystudies.panosgio.org:4010/loginuser"; // Replace with your Node.js server URL
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          //window.location.href = "/student";
+        }else if (xhr.status === 401) {
+          alert("Wrong Credentials. Please try again");
+        } else {
+          alert("Login failed: Error occurred");
+        }
+      }
+    };
+
+    const data = JSON.stringify({
+      username: userinput.toString(), // Using the name "username" as defined in your Field component
+      password: passinput.toString()  // Using the name "password" as defined in your Field component
+    });
+
+    xhr.send(data);
+  };
   return (
     <div className={styles["login-form"]}>
       {showLoginForm ? (
@@ -37,25 +75,24 @@ const LoginForm = () => {
           />
           <h1>My - Studies</h1>
           <Form
-            onSubmit={handleSubmit}
-            validate={validateWithZod(loginValidator)}
-            render={({ handleSubmit, submitting }) => (
+              onSubmit={handleLogin} // Attach handleLogin to the Form's onSubmit
+              render={({ handleSubmit, submitting, form }) => (
               <form onSubmit={handleSubmit}>
-                <Field name="userName">
+                <Field  name="username">
                   {({ input, meta }) => (
                     <div className={styles["input-group"]}>
-                      <label htmlFor="userName">Username</label>
-                      <input {...input} type="text" placeholder="Sdi YYXXXXX" />
+                      <label htmlFor="username">Username</label>
+                      <input value={userinput} onChange={handleChangeuser}  type="text" placeholder="Sdi YYXXXXX" />
                       {meta.error && meta.touched && <span>{meta.error}</span>}
                     </div>
                   )}
+
                 </Field>
                 <Field name="password">
                   {({ input, meta }) => (
                     <div className={styles["input-group"]}>
                       <label htmlFor="password">Password</label>
-                      <input
-                        {...input}
+                      <input value={passinput} onChange={handleChangepass}
                         type="password"
                         placeholder="•••••••••••"
                       />
@@ -72,20 +109,14 @@ const LoginForm = () => {
                     Reset Password
                   </button>
 
-                  <button
-                    className="btn btn-primary btn-lg mr-2"
-                    type="submit"
-                    disabled={submitting}
-                  >
-                    Login
-                  </button>
+                  <CustomButton type="submit">Login</CustomButton>
                 </div>
               </form>
             )}
-          />
-        </React.Fragment>
-      ) : (
-        <Form
+            />
+          </React.Fragment>
+            ) : (
+           <Form
           onSubmit={handleSubmit}
           render={({ handleSubmit, submitting }) => (
             <form onSubmit={handleSubmit}>

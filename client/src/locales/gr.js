@@ -204,3 +204,11 @@ export const oldCertificatesTexts = {
 };
 
 
+export const headerTexts = {
+    home: "Αρχική",
+    about: "Σχετικά",
+    contact: "Επικοινωνία",
+    studentPortal: "Πύλη Φοιτητών",
+    teacherPortal: "Πύλη Καθηγητών"
+};
+

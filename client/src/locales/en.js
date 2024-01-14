@@ -183,5 +183,13 @@ export const oldCertificatesTexts = {
     }
 };
 
+export const headerTexts = {
+    home: "Home",
+    about: "About",
+    contact: "Contact",
+    studentPortal: "Student Portal",
+    teacherPortal: "Teacher Portal"
+};
+
 
 

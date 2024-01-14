@@ -1,58 +1,69 @@
 .header {
   display: flex;
-  justify-content: center;
-  background-color: white;
-  padding: 10px;
-  text-align: center;
-  font-size: 24px;
-}
-
-.button {
-  background-color: transparent;
-  color: black;
-  font-size: 24px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: color 0.3s;
-  text-decoration: underline;
-  border: none;
-  outline: none;
-  margin-right: 10px;
-}
-
-.button:hover {
-  background-color: transparent;
-  color: #0d6efd;
-}
-
-.logoleft {
-  max-width: 80px;
-  height: fit-content;
-  margin-right: 600px;
-}
-
-.logoright {
-  max-width: 80px;
-  height: auto;
-  margin-left: 20px;
-}
-
-.logoright img {
-  height: 30px;
-  width: 30px;
-}
-
-.headerContainer {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 0px 20px;
+  background-color: #f8f0f7;
+  color: #000000;
 }
 
-.loginButtons {
-  display: flex;
-  font-size: 24px;
-  justify-content: flex-end;
+.logo {
+  /* Styles for the logo area */
 }
 
-.loginbutton {
-  margin-left: 200px;
+.nav a {
+  color: #000000;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+.logoleft {
+  max-width: 300px;
+  height: fit-content;
+  /*margin-right: 1200px;*/
+}
+.icon {
+  margin-left: 20px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.languageSwitcher {
+  position: relative;
+  cursor: pointer;
+  /* Additional styles as needed */
+}
+
+.languageDropdown {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px;
+  text-align: left;
+}
+
+.languageDropdown div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.languageDropdown div:hover {
+  background-color: #f0f0f0;
+}
+
+/* Add styles for the flags */
+.imgl {
+  width: 20px; /* Adjust size as needed */
+  margin-right: 5px;
+}
+
+/* Additional icon styles */
+.icon {
+  margin-left: 40px;
 }
