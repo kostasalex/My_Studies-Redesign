@@ -10,12 +10,19 @@ import CustomButton from "../buttons/CustomButton.jsx";
 
 
 import {LanguageContext} from "../../../context/LanguageContext.jsx";
+import {StudetTeacherContext} from "../../../context/HeaderButtonContext.jsx";
+
 import { headerTexts as headerTextsEn } from '@/locales/en';
 import { headerTexts as headerTextsGr } from '@/locales/gr';
 
 const Header = () => {
     const { language, changeLanguage } = useContext(LanguageContext);
     const headerTexts = language === 'en' ? headerTextsEn : headerTextsGr;
+
+    const { user, changeUser } = useContext(StudetTeacherContext);
+    const usermode = user === true ? true : false;
+
+
     const handleLanguageChange = (language) => {
         changeLanguage(language);
     };
@@ -25,10 +32,9 @@ const Header = () => {
 
 
     const location = useLocation();
-    const [showTeacherButton, setShowTeacherButton] = useState(true); // Initial state set to show teacher button
 
-    const toggleButton = () => {
-        setShowTeacherButton(prevState => !prevState); // Toggle the state
+    const toggleButton = (user) => {
+        changeUser(user)
     };
 
 
@@ -46,15 +52,15 @@ const Header = () => {
             <div className={styles.loginbtn}>
                 {location.pathname === '/' && (
                     <>
-                        {showTeacherButton ? (
+                        {usermode ? (
                             <div className={styles.loginbtn}>
-                                <CustomButton onClick={toggleButton}>
+                                <CustomButton onClick={() => toggleButton(false)}>
                                     {headerTexts.teacherPortal}
                                 </CustomButton>
                             </div>
                         ) : (
                             <div className={styles.loginbtn}>
-                                <CustomButton onClick={toggleButton}>
+                                <CustomButton onClick={() => toggleButton(true)}>
                                     {headerTexts.studentPortal}
                                 </CustomButton>
                             </div>

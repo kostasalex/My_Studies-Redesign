@@ -3,14 +3,18 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header, Footer, Guest, Student, Teacher, Contact, Faq } from './components';
 import styles from './App.module.css';
 import { LanguageProvider } from './context/LanguageContext';
+import {StudetTeacherProvider} from "./context/HeaderButtonContext.jsx";
 
 const App = () => {
 
   return (
       <LanguageProvider>
+        <StudetTeacherProvider>
     <Router>
       <div className={styles.appContainer}>
+
         <Header />
+
         <div className={styles.content}>
           <Routes>
             <Route path="/" element={<Guest />} />
@@ -23,6 +27,7 @@ const App = () => {
         <Footer />
       </div>
     </Router>
+        </StudetTeacherProvider>
       </LanguageProvider>
   );
 };

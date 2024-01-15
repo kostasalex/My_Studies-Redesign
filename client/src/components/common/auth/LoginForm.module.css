@@ -18,12 +18,17 @@
 }
 
 .login-form h1 {
-  padding: 10px;
+
   color: #000;
   font-family: Inter;
-  font-size: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
   font-weight: 700;
   line-height: normal;
+
 }
 
 .login-image {

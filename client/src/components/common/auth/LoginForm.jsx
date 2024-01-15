@@ -6,11 +6,18 @@ import CustomButton from "../buttons/CustomButton.jsx";
 import { LoginAuth as LoginAuthTextsEn } from '@/locales/en';
 import { LoginAuth as LoginAuthTextsGr } from '@/locales/gr';
 import {LanguageContext} from "../../../context/LanguageContext.jsx";
+import {StudetTeacherContext} from "../../../context/HeaderButtonContext.jsx";
 const LoginForm = () => {
   const [showLoginForm, setShowLoginForm] = useState(true);
   const [userinput, setuserinput] = useState("");
   const {language} = useContext(LanguageContext);
   const LoginAuth = language === 'en' ? LoginAuthTextsEn : LoginAuthTextsGr;
+
+
+  const { user } = useContext(StudetTeacherContext);
+  const usermode = user === true ? "My Studies" : "My Studies Professor";
+
+
   const handleChangeuser = (event) => {
     setuserinput(event.target.value);
   };
@@ -62,65 +69,67 @@ const LoginForm = () => {
   return (
     <div className={styles["login-form"]}>
       {showLoginForm ? (
-        <React.Fragment>
-          <button
-            className="register border-0 bg-transparent float-right"
-            type="button"
-            onClick={handleRegisterClick}
-          >
-            {LoginAuth.register}
-          </button>
+          <React.Fragment>
+            <button
+                className="register border-0 bg-transparent float-right"
+                type="button"
+                onClick={handleRegisterClick}
+            >
+              {LoginAuth.register}
+            </button>
 
-          <img
-            src="https://res.cloudinary.com/drijmbypg/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1702593334/logo-large_uaskki.jpg?_s=public-apps"
-            alt="Login"
-            className={styles["login-image"]}
-          />
-          <h1>My - Studies</h1>
-          <Form
-              onSubmit={handleLogin} // Attach handleLogin to the Form's onSubmit
-              render={({ handleSubmit, submitting, form }) => (
-                  <form onSubmit={handleSubmit}>
-                    <Field name="username">
-                      {({input, meta}) => (
-                          <div className={styles["input-group"]}>
-                            <label htmlFor="username">{LoginAuth.username}</label>
-                            <input value={userinput} onChange={handleChangeuser} type="text" placeholder="Sdi YYXXXXX"/>
-                            {meta.error && meta.touched && <span>{meta.error}</span>}
-                          </div>
-                      )}
+            <img
+                src="https://res.cloudinary.com/drijmbypg/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1702593334/logo-large_uaskki.jpg?_s=public-apps"
+                alt="Login"
+                className={styles["login-image"]}
+            />
+            
+            <h1>{usermode}</h1>
+            <Form
+                onSubmit={handleLogin} // Attach handleLogin to the Form's onSubmit
+                render={({handleSubmit, submitting, form}) => (
+                    <form onSubmit={handleSubmit}>
+                      <Field name="username">
+                        {({input, meta}) => (
+                            <div className={styles["input-group"]}>
+                              <label htmlFor="username">{LoginAuth.username}</label>
+                              <input value={userinput} onChange={handleChangeuser} type="text"
+                                     placeholder="Sdi YYXXXXX"/>
+                              {meta.error && meta.touched && <span>{meta.error}</span>}
+                            </div>
+                        )}
 
-                    </Field>
-                    <Field name="password">
-                      {({input, meta}) => (
-                          <div className={styles["input-group"]}>
-                            <label htmlFor="password">{LoginAuth.password}</label>
-                            <input value={passinput} onChange={handleChangepass}
-                                   type="password"
-                                   placeholder="•••••••••••"
-                            />
-                            {meta.error && meta.touched && <span>{meta.error}</span>}
-                          </div>
-                      )}
-                    </Field>
-                    <div className="d-flex justify-content-center mt-3">
+                      </Field>
+                      <Field name="password">
+                        {({input, meta}) => (
+                            <div className={styles["input-group"]}>
+                              <label htmlFor="password">{LoginAuth.password}</label>
+                              <input value={passinput} onChange={handleChangepass}
+                                     type="password"
+                                     placeholder="•••••••••••"
+                              />
+                              {meta.error && meta.touched && <span>{meta.error}</span>}
+                            </div>
+                        )}
+                      </Field>
+                      <div className="d-flex justify-content-center mt-3">
 
-                      <CustomButton type="submit">{LoginAuth.loginbtn}</CustomButton>
-                    </div>
-                    <div className="d-flex justify-content-center mt-3">
-                      <button
-                          type="button"
-                          onClick={() => console.log("Reset Password clicked")}
-                          className="border-0 ml-2 m"
-                      >
-                        {LoginAuth.resetpsw}
-                      </button>
+                        <CustomButton type="submit">{LoginAuth.loginbtn}</CustomButton>
+                      </div>
+                      <div className="d-flex justify-content-center mt-3">
+                        <button
+                            type="button"
+                            onClick={() => console.log("Reset Password clicked")}
+                            className="border-0 ml-2 m"
+                        >
+                          {LoginAuth.resetpsw}
+                        </button>
 
-                    </div>
-                  </form>
-              )}
-          />
-        </React.Fragment>
+                      </div>
+                    </form>
+                )}
+            />
+          </React.Fragment>
       ) : (
           <Form
               onSubmit={handleSubmit}
@@ -131,7 +140,7 @@ const LoginForm = () => {
                         alt="Login"
                 className={styles["login-image"]}
               />
-              <h1>My - Studies </h1>
+
               <Field name="newUsername">
                 {({ input, meta }) => (
                   <div className={styles["input-group"]}>
