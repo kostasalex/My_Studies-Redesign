@@ -4,7 +4,6 @@ import React from "react";
 import Dashboard from "@/components/common/dashboard/Dashboard";
 import { TeacherDashboardButtons } from "@/locales/gr";
 import Home from "./home/Home";
-import Path from "./path/path.module.css";
 
 import styles from "./Teacher.module.css";
 import Profile from "./Profile/Profile";
