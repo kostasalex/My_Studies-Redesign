@@ -1,23 +1,23 @@
-import GradesSection from "./GradesSection";
-import LatestGrades from "./LatestGradesSection";
-import NotificationsSection from "./NotificationsSection";
-import RegistrationSection from "./RegistrationSection";
-import GraduationBar from "./GraduationBar";
+import GradesSection from "./GradesSection"
+import LatestGrades from "./LatestGradesSection"
+import NotificationsSection from "./NotificationsSection"
+import RegistrationSection from "./RegistrationSection"
+import GraduationBar from "./GraduationBar"
 
-import styles from "./Home.module.css";
+import styles  from "./Home.module.css"
 
 const Home = () => {
   return (
     <div>
-      <GraduationBar />
-      <div className={styles["section-wrapper"]}>
-        <GradesSection />
-        <NotificationsSection />
-        <LatestGrades />
-        <RegistrationSection />
-      </div>
+        <GraduationBar />
+        <div className={styles["section-wrapper"]}>
+          <GradesSection/>
+          <NotificationsSection />
+          <LatestGrades />
+          <RegistrationSection />
+        </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
