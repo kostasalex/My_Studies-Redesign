@@ -28,17 +28,19 @@ export default function Student() {
   //! Fix when click Registration from new registration doesnt redirected back to the Registration
   return (
     <div style={{ display: "flex" }}>
+
       <Dashboard>
+        <h2 >My Studies</h2>
         {["dashboard", "registration", "grades", "certificates", "profile"].map(
-          (path, index) => (
-            <button
-              key={path}
-              className={selected === path ? styles.selectedButton : ""}
-              onClick={() => handleButtonClick(path)}
-            >
-              {studentDashboardButtons[index]}
-            </button>
-          )
+            (path, index) => (
+                <button
+                    key={path}
+                    className={selected === path ? styles.selectedButton : ""}
+                    onClick={() => handleButtonClick(path)}
+                >
+                  {studentDashboardButtons[index]}
+                </button>
+            )
         )}
       </Dashboard>
       <div style={{ padding: "20px", flex: 1 }}>

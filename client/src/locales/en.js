@@ -53,7 +53,7 @@ export const footerData = [
 ];
 
 export const studentDashboardButtons = [
-    "dashboard",
+    "Dashboard",
     "Registrations",
     "Grades",
     "Certificates",
@@ -208,4 +208,13 @@ export const faqSectionTexts = {
     description: "Read our Frequently Asked Questions and, if you can't find what you're looking for, our experts are happy to answer your questions.",
     readFaqsButton: "Read the FAQs",
     askQuestionButton: "Ask a Question"
+};
+export const gradesTexts = {
+    homeButton: "• Home /",
+    gradesButton: "Grades /",
+    periodButton: "Period",
+    yearButton: "Year",
+    downloadButton: "Download here",
+    semesterWinter: "Winter ",
+    semesterSpring: "Spring "
 };

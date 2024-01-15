@@ -4,6 +4,7 @@ import { faqSectionTexts as faqTextsGr } from '@/locales/gr';
 import faqimage from "@/assets/homepage/faq.png";
 import styles from "./FaqSection.module.css";
 import {LanguageContext} from "../../../../context/LanguageContext.jsx";
+import CustomButton from "../../../common/buttons/CustomButton.jsx";
 
 const FaqSection = () => {
     const { language } = useContext(LanguageContext);
@@ -24,8 +25,8 @@ const FaqSection = () => {
                 </div>
 
                 <div className={styles["buttons-container"]}>
-                    <button className={styles["button"]}>{faqTexts.readFaqsButton}</button>
-                    <button className={styles["button"]}>{faqTexts.askQuestionButton}</button>
+                    <CustomButton className={styles["button"]}>{faqTexts.readFaqsButton}</CustomButton>
+                    <CustomButton className={styles["button"]}>{faqTexts.askQuestionButton}</CustomButton>
                 </div>
             </div>
         </div>

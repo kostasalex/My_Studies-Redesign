@@ -228,3 +228,13 @@ export const faqSectionTexts = {
     readFaqsButton: "Διαβάστε τα FAQS",
     askQuestionButton: "Κάνε μια Ερώτηση"
 };
+
+export const gradesTexts = {
+    homeButton: "• Αρχική /",
+    gradesButton: "Βαθμολογίες /",
+    periodButton: "Περίοδος",
+    yearButton: "Έτος",
+    downloadButton: "Κατέβασε εδώ",
+    semesterWinter: "Χειμερινό ",
+    semesterSpring: "Εαρινό "
+};

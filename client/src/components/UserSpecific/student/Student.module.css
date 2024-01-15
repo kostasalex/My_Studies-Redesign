@@ -10,3 +10,11 @@ body {
   margin: 0;
   background-color: #fff; /* Χρώμα φόντου λευκό */
 }
+
+.parent {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  height: 100%;            /* Ensure the parent has a height */
+
+}
