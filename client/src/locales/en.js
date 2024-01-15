@@ -31,6 +31,9 @@ export const guestAnnouncementCardData = [
     }
 ];
 
+export const guestAnnouncement = {
+    latestnews: 'Lateset news :'
+};
 export const footerData = [
     {
         id: 1,
@@ -200,3 +203,9 @@ export const LoginAuth = {
     register: "Register"
 };
 
+export const faqSectionTexts = {
+    title: "Need Help?",
+    description: "Read our Frequently Asked Questions and, if you can't find what you're looking for, our experts are happy to answer your questions.",
+    readFaqsButton: "Read the FAQs",
+    askQuestionButton: "Ask a Question"
+};

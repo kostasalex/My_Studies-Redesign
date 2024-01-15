@@ -30,7 +30,9 @@ export const guestAnnouncementCardData = [
         title: 'Νέος Τρόπος Διδασκαλείας',
     }
 ];
-
+export const guestAnnouncement = {
+    latestnews: 'Τελευταίες Ανακοινώσεις :'
+};
 export const footerData = [
     {
         id: 1,
@@ -219,4 +221,10 @@ export const LoginAuth = {
     password: "Κωδικός Πρόσβασης",
     resetpsw: "Επαναφορά κωδικού Πρόσβασης",
     register: "Εγγραφή"
+};
+export const faqSectionTexts = {
+    title: "Χρειάζεσαι Βοήθεια;",
+    description: "Διαβάστε τις Συχνές Ερωτήσεις μας και, αν δεν μπορείτε να βρείτε αυτό που ψάχνετε, οι ειδικοί μας θα χαρούν να απαντήσουν στις ερωτήσεις σας.",
+    readFaqsButton: "Διαβάστε τα FAQS",
+    askQuestionButton: "Κάνε μια Ερώτηση"
 };

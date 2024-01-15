@@ -1,6 +1,6 @@
 import Card from "./Card";
 import styles from "./NewCertificates.module.css";
-import { newCertificatesTexts } from '@/locales/gr';
+
 import {useContext} from "react";
 import {LanguageContext} from "../../../../../context/LanguageContext.jsx";
 import { newCertificatesTexts as TextsEn } from '@/locales/en';
