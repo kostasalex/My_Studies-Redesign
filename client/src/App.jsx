@@ -2,10 +2,12 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header, Footer, Guest, Student, Teacher, Contact, Faq } from './components';
 import styles from './App.module.css';
+import { LanguageProvider } from './context/LanguageContext';
 
 const App = () => {
 
   return (
+      <LanguageProvider>
     <Router>
       <div className={styles.appContainer}>
         <Header />
@@ -21,6 +23,7 @@ const App = () => {
         <Footer />
       </div>
     </Router>
+      </LanguageProvider>
   );
 };
 

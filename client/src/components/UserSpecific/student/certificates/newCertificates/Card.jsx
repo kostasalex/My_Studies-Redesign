@@ -1,7 +1,10 @@
 import styles from "./Card.module.css";
-import { cardTexts } from '@/locales/gr';
 import Swal from 'sweetalert2';
 import CustomButton from "../../../../common/buttons/CustomButton.jsx";
+import { cardTexts as cardTextsTextsEn } from '@/locales/en';
+import { cardTexts as cardTextsTextsGr } from '@/locales/gr';
+import {useContext} from "react";
+import {LanguageContext} from "../../../../../context/LanguageContext.jsx";
 const Card = ({ title }) => {
     const handleNext = () => {
 
@@ -35,6 +38,8 @@ const Card = ({ title }) => {
 
 
     };
+    const {language} = useContext(LanguageContext);
+    const cardTexts = language === 'en' ? cardTextsTextsEn : cardTextsTextsGr;
   return (
     <div className={styles.cardd}>
       <h5 className={styles["cardd h5"]}>{title}</h5>

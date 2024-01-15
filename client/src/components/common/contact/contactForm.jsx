@@ -2,8 +2,13 @@
 import styles from './contactForm.module.css';
 // Import the appropriate locale data based on the user's language preference
 import { contactFormTexts } from '@/locales/gr';
-
+import {useContext} from "react";
+import {LanguageContext} from "../../../context/LanguageContext.jsx";
+import { contactFormTexts as LanguageContextTextsEn } from '@/locales/en';
+import { contactFormTexts as LanguageContextTextsGr } from '@/locales/gr';
 const ContactForm = () => {
+    const {language} = useContext(LanguageContext);
+    const contactFormTexts = language === 'en' ? LanguageContextTextsEn : LanguageContextTextsGr;
     return (
         <div className={styles.formContainer}>
             <form className={styles.contactForm}>

@@ -1,21 +1,29 @@
-import { useState } from 'react';
+import {useContext, useState} from 'react';
 import styles from './Header.module.css';
 import { FaGlobe, FaUser } from 'react-icons/fa';
 import englishFlag from '../../../../public/english.png';
 import greekFlag from '../../../../public/greek.png';
 import files from "../../../../public/uoalogo.png";
 import { useLocation } from 'react-router-dom';
-import {headerTexts} from '@/locales/gr';
+
 import CustomButton from "../buttons/CustomButton.jsx";
+
+
+import {LanguageContext} from "../../../context/LanguageContext.jsx";
+import { headerTexts as headerTextsEn } from '@/locales/en';
+import { headerTexts as headerTextsGr } from '@/locales/gr';
+
 const Header = () => {
+    const { language, changeLanguage } = useContext(LanguageContext);
+    const headerTexts = language === 'en' ? headerTextsEn : headerTextsGr;
+    const handleLanguageChange = (language) => {
+        changeLanguage(language);
+    };
     const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
 
     const toggleLanguageDropdown = () => setShowLanguageDropdown(!showLanguageDropdown);
 
-    const handleLanguageChange = (language) => {
-        console.log(`Language changed to ${language}`);
-        // Implement your language change logic here
-    };
+
     const location = useLocation();
     const [showTeacherButton, setShowTeacherButton] = useState(true); // Initial state set to show teacher button
 

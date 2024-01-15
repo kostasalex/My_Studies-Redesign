@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect, useContext} from 'react';
 import Table from './Table'; // Adjust the path as necessary
 import certificateData from './certificatesData.json';
 import styles from './OldCertificates.module.css';
@@ -6,9 +6,14 @@ import stylesTable from './Table.module.css';
 import CustomTable from "@/components/common/table/TableDesign.jsx";
 import CustomSelect from "../../../../common/buttons/CustomSelect.jsx";
 import CustomButton from "../../../../common/buttons/CustomButton.jsx";
-import { oldCertificatesTexts } from '@/locales/gr';
+
+import { oldCertificatesTexts as TextsEn } from '@/locales/en';
+import { oldCertificatesTexts as TextsGr } from '@/locales/gr';
 import CustomPagination from "../../../../common/buttons/CustomPagination.jsx";
+import {LanguageContext} from "../../../../../context/LanguageContext.jsx";
 const OldCertificates = () => {
+    const {language} = useContext(LanguageContext);
+    const oldCertificatesTexts = language === 'en' ? TextsEn : TextsGr;
     const [certificates, setCertificates] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedType, setSelectedType] = useState(null);

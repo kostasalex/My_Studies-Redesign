@@ -1,8 +1,13 @@
-import { oldCertificatesTexts } from '@/locales/gr';
+
 import file from "../../../../../../public/test_doc.pdf";
 import CustomButton from "../../../../common/buttons/CustomButton.jsx";
-
+import {useContext} from "react";
+import {LanguageContext} from "../../../../../context/LanguageContext.jsx";
+import { oldCertificatesTexts as TextsEn } from '@/locales/en';
+import { oldCertificatesTexts as TextsGr } from '@/locales/gr';
 const Table = ({ certificates }) => {
+  const {language} = useContext(LanguageContext);
+  const oldCertificatesTexts = language === 'en' ? TextsEn : TextsGr;
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = file;

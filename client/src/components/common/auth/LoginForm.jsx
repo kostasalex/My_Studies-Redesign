@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import { Form, Field } from "react-final-form";
 // import { loginValidator, validateWithZod } from "./validation";
 import styles from "./LoginForm.module.css";
 import CustomButton from "../buttons/CustomButton.jsx";
-import {LoginAuth} from "../../../locales/gr.js";
-
+import { LoginAuth as LoginAuthTextsEn } from '@/locales/en';
+import { LoginAuth as LoginAuthTextsGr } from '@/locales/gr';
+import {LanguageContext} from "../../../context/LanguageContext.jsx";
 const LoginForm = () => {
   const [showLoginForm, setShowLoginForm] = useState(true);
   const [userinput, setuserinput] = useState("");
-
+  const {language} = useContext(LanguageContext);
+  const LoginAuth = language === 'en' ? LoginAuthTextsEn : LoginAuthTextsGr;
   const handleChangeuser = (event) => {
     setuserinput(event.target.value);
   };

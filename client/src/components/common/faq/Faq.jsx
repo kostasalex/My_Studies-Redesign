@@ -2,11 +2,17 @@
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Bootstrap JavaScript
 
-import {useEffect, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import styles from './Faq.module.css';
-import { faqTexts, faqPage } from '@/locales/en';
-
+import { faqTexts as faqTextsTextsEn } from '@/locales/en';
+import { faqTexts as faqTextsTextsGr } from '@/locales/gr';
+import { faqPage as faqPageTextsEn } from '@/locales/en';
+import { faqPage as faqPageTextsGr } from '@/locales/gr';
+import {LanguageContext} from "../../../context/LanguageContext.jsx";
 const Faq = () => {
+    const {language} = useContext(LanguageContext);
+    const faqTexts = language === 'en' ? faqTextsTextsEn : faqTextsTextsGr;
+    const faqPage = language === 'en' ? faqPageTextsEn : faqPageTextsGr;
     const [openItemId, setOpenItemId] = useState(faqTexts.items[0]?.id);
     const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
