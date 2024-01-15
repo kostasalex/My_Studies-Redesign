@@ -43,31 +43,6 @@ module.exports = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Enable all CORS requests
 app.use(cors());
 app.use(express.json());
@@ -75,18 +50,10 @@ app.use(express.urlencoded({ extended: false }));
 
 const setupUserRoute = require("./routes/user");
 setupUserRoute.attachRoutes(app);
-// const setupRentRoute = require("./routes/rent");
-// setupRentRoute.attachRoutes(app);
+
 const setupLoginRoute = require("./routes/login");
 setupLoginRoute.attachRoutes(app);
-// const setupReviewRoute = require("./routes/reviews");
-// setupReviewRoute.attachRoutes(app);
-// const setupReservationRoute = require("./routes/reservations");
-// setupReservationRoute.attachRoutes(app);
-// const setuploggingRoute = require("./routes/logging");
-// setuploggingRoute.attachRoutes(app);
-// const setupMatrixRoute = require("./Matrix-Factorization/matrix");
-// setupMatrixRoute.attachRoutes(app);
+
 const {uploadf,path, attachRoutes} = require("./routes/file");
 attachRoutes(app);
 
@@ -100,101 +67,6 @@ app.use(express.static('public', {
    
   }
 }));
-
-
-// app.use(express.static(path.join(__dirname, "FINAL/rento")));
-// app.get('/', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/index.html'));
-// });
-// // Define a route to handle the page load
-// app.get('/account', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/Account Settings/index.html'));
-// });
-// app.use(express.static(path.join(__dirname, "FINAL/rento/Pages/Dashboard")));
-// app.get('/dashboard', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/Dashboard/dashboard.html'));
-// });
-// app.get('/approveusers', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/Dashboard/checkusers.html'));
-// });
-// app.get('/allusers', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/Dashboard/allusers.html'));
-// });
-// app.use(express.static(path.join(__dirname, "FINAL/rento/Pages/Contact Us")));
-// app.get('/contactus', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/Contact Us/contactus.html'));
-// });
-// app.use(express.static(path.join(__dirname, "FINAL/rento/Pages/Login")));
-// app.get('/login', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/Login/login.html'));
-// });
-// app.get('/register', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/Login/register.html'));
-// });
-// app.get('/password', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/Login/password.html'));
-// });
-// app.use(express.static(path.join(__dirname, "FINAL/rento/Pages/SearchNew")));
-// app.get('/housesearch', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/SearchNew/index.html'));
-// });
-// app.use(express.static(path.join(__dirname, "FINAL/rento/Pages/HouseUpload")));
-// app.get('/houseadd_next', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/HouseUpload/index.html'));
-// });
-// app.get('/houseadd', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/Dashboard/addnewhouse.html'));
-// });
-// app.use(express.static(path.join(__dirname, "FINAL/rento/Pages/HouseEdit")));
-// app.get('/houseedit', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/HouseEdit/index.html'));
-// });
-// app.use(express.static(path.join(__dirname, "FINAL/rento/Pages/HouseDetails")));
-// app.get('/house', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/HouseDetails/house.html'));
-// });
-// app.use(express.static(path.join(__dirname, "FINAL/rento/Pages/UserDetails")));
-// app.get('/user', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/UserDetails/userdetails.html'));
-// });
-// app.get('/reviewowner', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/UserDetails/review.html'));
-// });
-// app.use(express.static(path.join(__dirname, "FINAL/rento/Pages/MyListings")));
-// app.get('/mylistings', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/MyListings/index.html'));
-// });
-// app.get('/homepage', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/index.html'));
-// });
-// app.get('/gethousesbyuser', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/MyListings/mylistingsbyid.html'));
-// });
-// app.get('/suggestions', (req, res) => {
-//   // Load the page from the 'pages' directory
-//   res.sendFile(path.join(__dirname, 'FINAL/rento/Pages/MyListings/housesuggestions.html'));
-// });
-
-
 
 
 
