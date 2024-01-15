@@ -3,6 +3,7 @@ import StudentGradesChart from "./StudentGradesChart";
 import Path from "../path/path.module.css";
 import "./Four_Panel.css";
 import DonutChart from "./DonutChart";
+import CustomButton from "../../../common/buttons/CustomButton.jsx";
 const Statistics = () => {
   const gradesData = [80, 92, 75, 88]; // Παράδειγμα δεδομένων με βαθμούς
   return (
@@ -12,10 +13,10 @@ const Statistics = () => {
         <button>Στατιστικά /</button>
       </div>
       <h6>Φίλτρα Αναζήτησης</h6>
-      <button>Μάθημα</button>
-      <button>Περίοδος</button>
-      <button>Εξάμηνο</button>
-      <button>Έτος</button>
+      <CustomButton>Μάθημα</CustomButton>
+      <CustomButton>Περίοδος</CustomButton>
+      <CustomButton>Εξάμηνο</CustomButton>
+      <CustomButton>Έτος</CustomButton>
       <div className="four-panels-container">
         <div className="panel">
           <DonutChart> </DonutChart>

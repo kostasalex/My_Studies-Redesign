@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./OldSemesters.module.css";
+import CustomButton from "../../../common/buttons/CustomButton.jsx";
 
 const OldSemesters = () => {
   const Semesters = [
@@ -84,11 +85,41 @@ const OldSemesters = () => {
     // Εδώ μπορείτε να υλοποιήσετε λογική για τη λήψη τυχαίων μαθημάτων.
     // Για τους σκοπούς του παραδείγματος, απλά δημιουργούμε μερικά σταθερά.
     return [
-      { code: "Τ123", title: "Γραμμική Άλγεβρα", semester: "1ο", period: "Χειμερινό", year: "2024" },
-      { code: "Τ456", title: "Διακριτά Μαθηματικά", semester: "3ο", period: "Χειμερινό", year: "2023" },
-      { code: "Τ789", title: "Μαθηματικά Ι", semester: "5ο", period: "Εαρινό", year: "2022" },
-      { code: "Τ101", title: "Γεωμετρία", semester: "8ο", period: "Χειμερινό", year: "2021" },
-      { code: "Τ202", title: "Τσοπανολογία", semester: "2ο", period: "Σεμπτέμβριος", year: "2020" },
+      {
+        code: "Τ123",
+        title: "Γραμμική Άλγεβρα",
+        semester: "1ο",
+        period: "Χειμερινό",
+        year: "2024",
+      },
+      {
+        code: "Τ456",
+        title: "Διακριτά Μαθηματικά",
+        semester: "3ο",
+        period: "Χειμερινό",
+        year: "2023",
+      },
+      {
+        code: "Τ789",
+        title: "Μαθηματικά Ι",
+        semester: "5ο",
+        period: "Εαρινό",
+        year: "2022",
+      },
+      {
+        code: "Τ101",
+        title: "Γεωμετρία",
+        semester: "8ο",
+        period: "Χειμερινό",
+        year: "2021",
+      },
+      {
+        code: "Τ202",
+        title: "Τσοπανολογία",
+        semester: "2ο",
+        period: "Σεμπτέμβριος",
+        year: "2020",
+      },
     ];
   };
 
@@ -98,7 +129,10 @@ const OldSemesters = () => {
 
       {showRandomCourses ? (
         <div>
-          <button className="btn btn-primary float-end" onClick={handleBackClick}>
+          <button
+            className="btn btn-primary float-end"
+            onClick={handleBackClick}
+          >
             Πίσω
           </button>
           <h4>Τυχαία Μαθήματα</h4>
