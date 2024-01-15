@@ -2,14 +2,15 @@ import GradesSection from "./GradesSection";
 import LatestGrades from "./LatestGradesSection";
 import NotificationsSection from "./NotificationsSection";
 import RegistrationSection from "./RegistrationSection";
-import GraduationBar from "./GraduationBar";
+import App from "./GraduationBar";
 
 import styles from "./Home.module.css";
 
 const Home = () => {
   return (
     <div>
-      <GraduationBar />
+      <h4>Τρέχων Εξάμηνο:</h4>
+      <App />
       <RegistrationSection />
       <div className={styles["section-wrapper"]}>
         <GradesSection />

@@ -1,5 +1,5 @@
 import styles from "./Registration.module.css";
-
+import CustomButton from "../../../common/buttons/CustomButton.jsx";
 const RegistrationSection = () => {
   return (
     <div className={styles["registration-section"]}>
@@ -19,7 +19,7 @@ const RegistrationSection = () => {
             </h6>
           </div>
           <div className={`${styles["primaryButtonn"]}`}>
-            <button>Προβολή</button>
+            <CustomButton>Προβολή</CustomButton>
           </div>
         </div>
       </div>

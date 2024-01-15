@@ -43,14 +43,13 @@
 
 .primaryButtonn {
   display: flex;
-  align-items: center; /* Κατακόρυφος κεντραρισμός των στοιχείων */
-  background-color: #007bff;
+  align-items: center;
   border: none;
-  padding: 10px 15px;
+
   border-radius: 5px;
   cursor: pointer;
   max-width: fit-content;
-  margin-left: 290px;
+  margin-left: 400px;
   height: fit-content;
   box-shadow: none;
   outline: none;
