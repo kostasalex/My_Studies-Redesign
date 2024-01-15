@@ -7,8 +7,8 @@ const DonutChart = () => {
     datasets: [
       {
         data: [30, 15, 5],
-        backgroundColor: ["#36A2EB", "#FFCE56", "#FF6384"],
-        hoverBackgroundColor: ["#36A2EB", "#FFCE56", "#FF6384"],
+        backgroundColor: ["#36A2EB", "#e72e2e", "#ceccd2"],
+        hoverBackgroundColor: ["#61b9f5", "#fa4f4f", "#D9D2E9"],
       },
     ],
   };

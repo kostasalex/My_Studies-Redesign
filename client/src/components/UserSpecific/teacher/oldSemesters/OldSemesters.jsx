@@ -124,7 +124,7 @@ const OldSemesters = () => {
   };
 
   return (
-    <div className="mt-5">
+    <div className={styles["background"]}>
       <h3>Ιστορικό Παλαιότερων Δηλώσεων</h3>
 
       {showRandomCourses ? (
