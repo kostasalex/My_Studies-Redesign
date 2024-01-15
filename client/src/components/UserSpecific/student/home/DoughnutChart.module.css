@@ -1,6 +1,6 @@
 .doughnutChartCanvas {
-  max-height: 400px;
+  max-height: 300px;
   max-width: 400px;
-  margin-top: 60px;
-  margin-left: 120px;
+  margin-top: 20px;
+  margin-left: 60px;
 }

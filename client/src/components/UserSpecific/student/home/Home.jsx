@@ -10,11 +10,13 @@ const Home = () => {
   return (
     <div>
       <GraduationBar />
+      <RegistrationSection />
       <div className={styles["section-wrapper"]}>
         <GradesSection />
-        <NotificationsSection />
-        <LatestGrades />
-        <RegistrationSection />
+        <div className="wrapper">
+          <NotificationsSection />
+          <LatestGrades />
+        </div>
       </div>
     </div>
   );

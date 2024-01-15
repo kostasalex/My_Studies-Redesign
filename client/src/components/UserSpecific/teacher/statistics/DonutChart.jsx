@@ -3,7 +3,7 @@ import { Doughnut } from "react-chartjs-2";
 
 const DonutChart = () => {
   const data = {
-    labels: ["Περασμένοι", "Κόπηκαν", "Δεν Έδωσαν"],
+    labels: ["Πέρασαν το Μάθημα", "Κόπηκαν στο Μάθημα", "Δεν Έδωσαν το Μάθημα"],
     datasets: [
       {
         data: [30, 15, 5],

@@ -1,47 +1,172 @@
 import React from "react";
 import styles from "./OldRegistrationsSection.module.css";
-
+import CustomPagination from "../../../common/buttons/CustomPagination.jsx";
 // Λίστα παλαιότερων δηλώσεων ανά εξάμηνο
 const oldRegistrationsData = [
   {
     semester: "Εαρινό 2022",
     courses: [
-      { code: "Κ15", title: "Γραμμική Άλγεβρα", semester: "1ο", professor: "Ράπτης", mandatory: "Ναι", specialization: "S1" },
-      { code: "Κ18", title: "Ανάλυση Πολυπλοκότητας", semester: "3ο", professor: "Παπαδόπουλος", mandatory: "Όχι", specialization: "S2" },
-      { code: "K23", title: "Τεχνητή Νοημοσύνη", semester: "6ο", professor: "Κωστόπουλος", mandatory: "Ναι", specialization: "S3" },
-      { code: "K27", title: "Προγραμματισμός Διαδικτύου", semester: "4ο", professor: "Σταμάτης", mandatory: "Ναι", specialization: "S1" },
-      { code: "K30", title: "Προηγμένες Βάσεις Δεδομένων", semester: "5ο", professor: "Βλαχάβας", mandatory: "Όχι", specialization: "S2" },
-      { code: "K35", title: "Σύγχρονα Θέματα Πληροφορικής", semester: "8ο", professor: "Παναγιωτόπουλος", mandatory: "Ναι", specialization: "S4" },
+      {
+        code: "Κ15",
+        title: "Γραμμική Άλγεβρα",
+        semester: "1ο",
+        professor: "Ράπτης",
+        mandatory: "Ναι",
+        specialization: "S1",
+      },
+      {
+        code: "Κ18",
+        title: "Ανάλυση Πολυπλοκότητας",
+        semester: "3ο",
+        professor: "Παπαδόπουλος",
+        mandatory: "Όχι",
+        specialization: "S2",
+      },
+      {
+        code: "K23",
+        title: "Τεχνητή Νοημοσύνη",
+        semester: "6ο",
+        professor: "Κωστόπουλος",
+        mandatory: "Ναι",
+        specialization: "S3",
+      },
+      {
+        code: "K27",
+        title: "Προγραμματισμός Διαδικτύου",
+        semester: "4ο",
+        professor: "Σταμάτης",
+        mandatory: "Ναι",
+        specialization: "S1",
+      },
+      {
+        code: "K30",
+        title: "Προηγμένες Βάσεις Δεδομένων",
+        semester: "5ο",
+        professor: "Βλαχάβας",
+        mandatory: "Όχι",
+        specialization: "S2",
+      },
+      {
+        code: "K35",
+        title: "Σύγχρονα Θέματα Πληροφορικής",
+        semester: "8ο",
+        professor: "Παναγιωτόπουλος",
+        mandatory: "Ναι",
+        specialization: "S4",
+      },
     ],
   },
   {
     semester: "Χειμερινό 2022",
     courses: [
-      { code: "Κ15", title: "Γραμμική Άλγεβρα", semester: "1ο", professor: "Ράπτης", mandatory: "Ναι", specialization: "S1" },
-      { code: "Κ18", title: "Ανάλυση Πολυπλοκότητας", semester: "3ο", professor: "Παπαδόπουλος", mandatory: "Όχι", specialization: "S2" },
-      { code: "K23", title: "Τεχνητή Νοημοσύνη", semester: "6ο", professor: "Κωστόπουλος", mandatory: "Ναι", specialization: "S3" },
-      { code: "K27", title: "Προγραμματισμός Διαδικτύου", semester: "4ο", professor: "Σταμάτης", mandatory: "Ναι", specialization: "S1" },
-      { code: "K30", title: "Προηγμένες Βάσεις Δεδομένων", semester: "5ο", professor: "Βλαχάβας", mandatory: "Όχι", specialization: "S2" },
-      { code: "K35", title: "Σύγχρονα Θέματα Πληροφορικής", semester: "8ο", professor: "Παναγιωτόπουλος", mandatory: "Ναι", specialization: "S4" },
+      {
+        code: "Κ15",
+        title: "Γραμμική Άλγεβρα",
+        semester: "1ο",
+        professor: "Ράπτης",
+        mandatory: "Ναι",
+        specialization: "S1",
+      },
+      {
+        code: "Κ18",
+        title: "Ανάλυση Πολυπλοκότητας",
+        semester: "3ο",
+        professor: "Παπαδόπουλος",
+        mandatory: "Όχι",
+        specialization: "S2",
+      },
+      {
+        code: "K23",
+        title: "Τεχνητή Νοημοσύνη",
+        semester: "6ο",
+        professor: "Κωστόπουλος",
+        mandatory: "Ναι",
+        specialization: "S3",
+      },
+      {
+        code: "K27",
+        title: "Προγραμματισμός Διαδικτύου",
+        semester: "4ο",
+        professor: "Σταμάτης",
+        mandatory: "Ναι",
+        specialization: "S1",
+      },
+      {
+        code: "K30",
+        title: "Προηγμένες Βάσεις Δεδομένων",
+        semester: "5ο",
+        professor: "Βλαχάβας",
+        mandatory: "Όχι",
+        specialization: "S2",
+      },
+      {
+        code: "K35",
+        title: "Σύγχρονα Θέματα Πληροφορικής",
+        semester: "8ο",
+        professor: "Παναγιωτόπουλος",
+        mandatory: "Ναι",
+        specialization: "S4",
+      },
     ],
   },
   {
     semester: "Σεμπέμβριος 2021",
     courses: [
-      { code: "Κ15", title: "Γραμμική Άλγεβρα", semester: "1ο", professor: "Ράπτης", mandatory: "Ναι", specialization: "S1" },
-      { code: "Κ18", title: "Ανάλυση Πολυπλοκότητας", semester: "3ο", professor: "Παπαδόπουλος", mandatory: "Όχι", specialization: "S2" },
-      { code: "K23", title: "Τεχνητή Νοημοσύνη", semester: "6ο", professor: "Κωστόπουλος", mandatory: "Ναι", specialization: "S3" },
-      { code: "K27", title: "Προγραμματισμός Διαδικτύου", semester: "4ο", professor: "Σταμάτης", mandatory: "Ναι", specialization: "S1" },
-      { code: "K30", title: "Προηγμένες Βάσεις Δεδομένων", semester: "5ο", professor: "Βλαχάβας", mandatory: "Όχι", specialization: "S2" },
-      { code: "K35", title: "Σύγχρονα Θέματα Πληροφορικής", semester: "8ο", professor: "Παναγιωτόπουλος", mandatory: "Ναι", specialization: "S4" },
+      {
+        code: "Κ15",
+        title: "Γραμμική Άλγεβρα",
+        semester: "1ο",
+        professor: "Ράπτης",
+        mandatory: "Ναι",
+        specialization: "S1",
+      },
+      {
+        code: "Κ18",
+        title: "Ανάλυση Πολυπλοκότητας",
+        semester: "3ο",
+        professor: "Παπαδόπουλος",
+        mandatory: "Όχι",
+        specialization: "S2",
+      },
+      {
+        code: "K23",
+        title: "Τεχνητή Νοημοσύνη",
+        semester: "6ο",
+        professor: "Κωστόπουλος",
+        mandatory: "Ναι",
+        specialization: "S3",
+      },
+      {
+        code: "K27",
+        title: "Προγραμματισμός Διαδικτύου",
+        semester: "4ο",
+        professor: "Σταμάτης",
+        mandatory: "Ναι",
+        specialization: "S1",
+      },
+      {
+        code: "K30",
+        title: "Προηγμένες Βάσεις Δεδομένων",
+        semester: "5ο",
+        professor: "Βλαχάβας",
+        mandatory: "Όχι",
+        specialization: "S2",
+      },
+      {
+        code: "K35",
+        title: "Σύγχρονα Θέματα Πληροφορικής",
+        semester: "8ο",
+        professor: "Παναγιωτόπουλος",
+        mandatory: "Ναι",
+        specialization: "S4",
+      },
     ],
   },
-  // Προσθέστε περισσότερα εξάμηνα αν χρειάζεται
 ];
 
 const OldRegistrations = () => {
   return (
-    <div className="mt-5">
+    <div className={styles.background}>
       <h3>Ιστορικό Παλαιότερων Δηλώσεων</h3>
       {oldRegistrationsData.map((semester, index) => (
         <div key={index} className={styles["table"]}>
@@ -76,7 +201,22 @@ const OldRegistrations = () => {
       ))}
 
       <div className="d-flex justify-content-center mt-3">
-        <button className="btn btn-primary w-100 h-50">Προβολή Όλων</button>
+        <CustomPagination>
+          {/* {pageNumbers.map((number) => (
+            <li
+              key={number}
+              className={`page-item ${currentPage === number ? "active" : ""}`}
+            >
+              <a onClick={() => paginate(number)} className="page-link">
+                {number}
+              </a>
+            </li>
+          ))} */}
+          <p>
+            FIX HERE - CustomPagination - OldRegistrationsSection.jsx - Κατω
+            κατω
+          </p>
+        </CustomPagination>
       </div>
     </div>
   );
