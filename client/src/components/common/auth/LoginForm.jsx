@@ -42,7 +42,7 @@ const LoginForm = () => {
     event.preventDefault();
 
     const xhr = new XMLHttpRequest();
-    const url = "https://mystudies.panosgio.org:4010/loginuser"; // Replace with your Node.js server URL
+    const url = "/loginuser"; // Replace with your Node.js server URL
 
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -50,7 +50,7 @@ const LoginForm = () => {
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-          window.location.href = "/student";
+          //window.location.href = "/student";
         }else if (xhr.status === 401) {
           alert("Wrong Credentials. Please try again");
         } else {
