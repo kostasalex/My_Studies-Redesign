@@ -208,7 +208,15 @@ export const headerTexts = {
     home: "Αρχική",
     about: "Σχετικά",
     contact: "Επικοινωνία",
-    studentPortal: "Πύλη Φοιτητών",
-    teacherPortal: "Πύλη Καθηγητών"
+    studentPortal: "Είσοδος Φοιτητών",
+    teacherPortal: "Είσοδος Καθηγητών"
 };
 
+
+export const LoginAuth = {
+    loginbtn: "Είσοδος",
+    username: "Όνομα Χρήστη",
+    password: "Κωδικός Πρόσβασης",
+    resetpsw: "Επαναφορά κωδικού Πρόσβασης",
+    register: "Εγγραφή"
+};

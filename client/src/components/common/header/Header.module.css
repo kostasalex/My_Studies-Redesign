@@ -67,3 +67,9 @@
 .icon {
   margin-left: 40px;
 }
+
+.loginbtn{
+  position: relative;
+  cursor: pointer;
+  margin-right: -200px;
+}

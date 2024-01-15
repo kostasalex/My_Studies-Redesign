@@ -3,6 +3,7 @@ import { Form, Field } from "react-final-form";
 // import { loginValidator, validateWithZod } from "./validation";
 import styles from "./LoginForm.module.css";
 import CustomButton from "../buttons/CustomButton.jsx";
+import {LoginAuth} from "../../../locales/gr.js";
 
 const LoginForm = () => {
   const [showLoginForm, setShowLoginForm] = useState(true);
@@ -40,7 +41,7 @@ const LoginForm = () => {
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-          //window.location.href = "/student";
+          window.location.href = "/student";
         }else if (xhr.status === 401) {
           alert("Wrong Credentials. Please try again");
         } else {
@@ -65,7 +66,7 @@ const LoginForm = () => {
             type="button"
             onClick={handleRegisterClick}
           >
-            Register →
+            {LoginAuth.register}
           </button>
 
           <img
@@ -77,59 +78,62 @@ const LoginForm = () => {
           <Form
               onSubmit={handleLogin} // Attach handleLogin to the Form's onSubmit
               render={({ handleSubmit, submitting, form }) => (
-              <form onSubmit={handleSubmit}>
-                <Field  name="username">
-                  {({ input, meta }) => (
-                    <div className={styles["input-group"]}>
-                      <label htmlFor="username">Username</label>
-                      <input value={userinput} onChange={handleChangeuser}  type="text" placeholder="Sdi YYXXXXX" />
-                      {meta.error && meta.touched && <span>{meta.error}</span>}
-                    </div>
-                  )}
+                  <form onSubmit={handleSubmit}>
+                    <Field name="username">
+                      {({input, meta}) => (
+                          <div className={styles["input-group"]}>
+                            <label htmlFor="username">{LoginAuth.username}</label>
+                            <input value={userinput} onChange={handleChangeuser} type="text" placeholder="Sdi YYXXXXX"/>
+                            {meta.error && meta.touched && <span>{meta.error}</span>}
+                          </div>
+                      )}
 
-                </Field>
-                <Field name="password">
-                  {({ input, meta }) => (
-                    <div className={styles["input-group"]}>
-                      <label htmlFor="password">Password</label>
-                      <input value={passinput} onChange={handleChangepass}
-                        type="password"
-                        placeholder="•••••••••••"
-                      />
-                      {meta.error && meta.touched && <span>{meta.error}</span>}
-                    </div>
-                  )}
-                </Field>
-                <div className="d-flex justify-content-center mt-3">
-                  <button
-                    type="button"
-                    onClick={() => console.log("Reset Password clicked")}
-                    className="border-0 ml-2"
-                  >
-                    Reset Password
-                  </button>
+                    </Field>
+                    <Field name="password">
+                      {({input, meta}) => (
+                          <div className={styles["input-group"]}>
+                            <label htmlFor="password">{LoginAuth.password}</label>
+                            <input value={passinput} onChange={handleChangepass}
+                                   type="password"
+                                   placeholder="•••••••••••"
+                            />
+                            {meta.error && meta.touched && <span>{meta.error}</span>}
+                          </div>
+                      )}
+                    </Field>
+                    <div className="d-flex justify-content-center mt-3">
 
-                  <CustomButton type="submit">Login</CustomButton>
-                </div>
-              </form>
-            )}
-            />
-          </React.Fragment>
-            ) : (
-           <Form
-          onSubmit={handleSubmit}
-          render={({ handleSubmit, submitting }) => (
-            <form onSubmit={handleSubmit}>
-              <img
-                src="https://res.cloudinary.com/drijmbypg/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1702593334/logo-large_uaskki.jpg?_s=public-apps"
-                alt="Login"
+                      <CustomButton type="submit">{LoginAuth.loginbtn}</CustomButton>
+                    </div>
+                    <div className="d-flex justify-content-center mt-3">
+                      <button
+                          type="button"
+                          onClick={() => console.log("Reset Password clicked")}
+                          className="border-0 ml-2 m"
+                      >
+                        {LoginAuth.resetpsw}
+                      </button>
+
+                    </div>
+                  </form>
+              )}
+          />
+        </React.Fragment>
+      ) : (
+          <Form
+              onSubmit={handleSubmit}
+              render={({handleSubmit, submitting}) => (
+                  <form onSubmit={handleSubmit}>
+                    <img
+                        src="https://res.cloudinary.com/drijmbypg/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1702593334/logo-large_uaskki.jpg?_s=public-apps"
+                        alt="Login"
                 className={styles["login-image"]}
               />
-              <h1>My - Studies</h1>
+              <h1>My - Studies </h1>
               <Field name="newUsername">
                 {({ input, meta }) => (
                   <div className={styles["input-group"]}>
-                    <label htmlFor="newUsername">Username</label>
+                    <label htmlFor="newUsername">{LoginAuth.username}</label>
                     <input {...input} type="text" placeholder="New Username" />
                     {meta.error && meta.touched && <span>{meta.error}</span>}
                   </div>

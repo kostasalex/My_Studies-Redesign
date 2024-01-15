@@ -187,9 +187,16 @@ export const headerTexts = {
     home: "Home",
     about: "About",
     contact: "Contact",
-    studentPortal: "Student Portal",
-    teacherPortal: "Teacher Portal"
+    studentPortal: "Student Login",
+    teacherPortal: "Teacher Login"
 };
 
 
+export const LoginAuth = {
+    loginbtn: "Login",
+    username: "Username",
+    password: "Password",
+    resetpsw: "Reset Password",
+    register: "Register"
+};
 
