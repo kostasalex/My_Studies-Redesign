@@ -13,6 +13,9 @@
 }
 
 .download {
-  
   margin-right: -40px;
+}
+
+td {
+  font-weight: 500;
 }

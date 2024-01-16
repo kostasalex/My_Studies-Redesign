@@ -46,6 +46,15 @@ export const studentDashboardButtons = [
     "Logout"
 ];
 
+export const TeacherDashboardButtons = [
+    "Dashboard",
+    "Current Semester",
+    "Previous Semester's",
+    "Statisticts",
+    "Profile",
+    "Logout"
+];
+
 export const contactFormTexts = {
     formTitle: 'Contact Form',
     emailLabel: 'E-mail:',

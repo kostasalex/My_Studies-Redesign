@@ -7,6 +7,7 @@
 
 .student h4 {
   text-decoration: underline;
+  margin-left: 0px;
 }
 
 .studentlayer1 {
@@ -43,6 +44,11 @@
   max-width: fit-content;
 }
 
+.studentlayer2 h4 {
+  display: flex;
+  text-align: left;
+}
+
 .studentlayer3 {
   flex: 1;
   padding: 10px;
@@ -77,7 +83,7 @@
   flex: 2;
   padding: 10px;
   max-width: fit-content;
-  margin-left: 380px;
+  margin-left: 230px;
   text-align: center;
 }
 
@@ -85,7 +91,7 @@
   flex: 1;
   padding: 10px;
   max-width: fit-content;
-  margin-left: 360px;
+  margin-left: 260px;
   text-align: center;
 }
 
@@ -100,29 +106,33 @@
 .studentlayer111 {
   flex: 1;
   padding: 10px;
-  max-width: fit-content;
-  margin-left: 70px;
+  max-width: 200px;
+  margin-left: 30px;
+  text-align: center;
 }
 
 .studentlayer222 {
   flex: 2;
   padding: 10px;
-  max-width: fit-content;
-  margin-left: 400px;
+  max-width: 200px;
+  margin-left: 270px;
+  text-align: center;
 }
 
 .studentlayer333 {
   flex: 1;
   padding: 10px;
-  max-width: fit-content;
-  margin-left: 360px;
+  max-width: 200px;
+  margin-left: 270px;
+  text-align: center;
 }
 
 .studentlayer444 {
   flex: 1;
   padding: 10px;
-  max-width: fit-content;
+  max-width: 150px;
   margin-left: 150px;
+  text-align: center;
 }
 
 .studentlayer111 h6 {

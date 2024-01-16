@@ -43,6 +43,15 @@ export const studentDashboardButtons = [
     "Αποσύνδεση"
 ];
 
+export const TeacherDashboardButtons = [
+    "Πίνακας Ελέγχου",
+    "Τρέχων Εξάμηνο",
+    "Ιστορικό Δηλώσεων",
+    "Στατιστικά",
+    "Προφίλ",
+    "Αποσύνδεση"
+];
+
 export const contactFormTexts = {
     formTitle: 'Φόρμα Επικοινωνίας',
     emailLabel: 'E-mail:',
