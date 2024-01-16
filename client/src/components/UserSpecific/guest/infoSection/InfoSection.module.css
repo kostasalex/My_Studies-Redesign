@@ -1,25 +1,22 @@
 .info-section {
-    margin-top: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .info-section div {
-    margin: 2px;
-    max-width: 300px;
+  margin: 2px;
+  max-width: 300px;
 }
 
 .card {
-    display: flex;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    align-items: center;
-
+  display: flex;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  align-items: center;
 }
 
-
 .card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
