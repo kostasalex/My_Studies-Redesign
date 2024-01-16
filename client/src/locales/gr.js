@@ -2,14 +2,17 @@ export const guestAnnouncementCardData = [
     {
         id: 1,
         title: 'Έρευνα και Φοιτητές',
+        link: 'https://www.uoa.gr/anakoinoseis_kai_ekdiloseis/proboli_ekdilosis/epeteiaki_ekdilosi_saranta_chronia_paidagogiko_tmima_dimotikis_ekpaideysis/',
     },
     {
         id: 2,
         title: 'Συνέλευση Συλλόγων',
+        link: 'https://www.uoa.gr/anakoinoseis_kai_ekdiloseis/proboli_ekdilosis/epeteiaki_ekdilosi_saranta_chronia_paidagogiko_tmima_dimotikis_ekpaideysis/',
     },
     {
         id: 3,
         title: 'Νέα Μέθοδος Διδασκαλίας',
+        link: 'https://www.uoa.gr/anakoinoseis_kai_ekdiloseis/proboli_ekdilosis/epeteiaki_ekdilosi_saranta_chronia_paidagogiko_tmima_dimotikis_ekpaideysis/',
     }
 ];
 
