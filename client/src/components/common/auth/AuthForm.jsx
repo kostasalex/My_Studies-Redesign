@@ -20,14 +20,41 @@ const AuthForm = ({ redirectUrl }) => {
   const usermode = user === true ? "My Studies" : "My Studies Professor";
 
   const handleLogin = async (values) => {
+    try {
+      const response = await fetch('https://mystudies.panosgio.org:4010/loginuser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: values.username,
+          password: values.password,
+        }),
+      });
 
-    await Swal.fire({
-      title: 'Success!',
-      text: LoginAuth.loginSuccessMessage,
-      icon: 'success',
-      confirmButtonText: 'OK'
-    });
-    redirectUrl ? navigate(redirectUrl) : navigate("/");
+      if (!response.ok) {
+        throw new Error('Login failed');
+      }
+
+      const data = await response.json();
+
+      await Swal.fire({
+        title: 'Success!',
+        text: LoginAuth.loginSuccessMessage,
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+
+      redirectUrl ? navigate(redirectUrl) : navigate("/");
+    } catch (error) {
+
+      await Swal.fire({
+        title: 'Error!',
+        text: 'Login failed. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    }
   };
 
   const handleRegister = async (values) => {
