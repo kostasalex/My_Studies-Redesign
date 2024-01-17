@@ -50,7 +50,7 @@ export default function Teacher() {
           </button>
         ))}
       </Dashboard>
-      <div style={{ padding: "20px", flex: 1 }}>
+      <div className="container" style={{ padding: "20px", flex: 1 }}>
         <div className="d-flex flex-column">
           <div
             className="periodos"

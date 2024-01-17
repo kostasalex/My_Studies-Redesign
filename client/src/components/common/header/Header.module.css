@@ -21,11 +21,13 @@
 .nav a:hover {
   text-decoration: underline;
 }
+
 .logoleft {
   max-width: 300px;
   height: fit-content;
   /*margin-right: 1200px;*/
 }
+
 .icon {
   margin-left: 20px;
   cursor: pointer;
@@ -59,7 +61,8 @@
 
 /* Add styles for the flags */
 .imgl {
-  width: 20px; /* Adjust size as needed */
+  width: 20px;
+  /* Adjust size as needed */
   margin-right: 5px;
 }
 
@@ -68,7 +71,7 @@
   margin-left: 40px;
 }
 
-.loginbtn{
+.loginbtn {
   position: relative;
   cursor: pointer;
   margin-right: -200px;

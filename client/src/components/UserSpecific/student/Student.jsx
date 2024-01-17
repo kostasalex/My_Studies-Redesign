@@ -37,7 +37,7 @@ export default function Student() {
 
 
   return (
-    <div style={{ display: "flex" }}>
+    <div className='d-flex '>
 
       <Dashboard>
         <h2 >My Studies</h2>
@@ -53,7 +53,7 @@ export default function Student() {
           )
         )}
       </Dashboard>
-      <div style={{ padding: "20px", flex: 1 }}>
+      <div className="container" >
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />
