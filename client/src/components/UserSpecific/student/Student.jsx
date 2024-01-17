@@ -1,6 +1,5 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
-import { Navigate } from "react-router-dom";
-import React, {useContext} from "react";
+import React, { useEffect, useContext } from 'react';
+import { Route, Routes, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import Dashboard from "@/components/common/dashboard/Dashboard";
 import Home from "./home/Home";
 
@@ -12,35 +11,46 @@ import NewRegistration from "./registration/newRegistration/NewRegistration";
 import Profile from "./Profile/Profile";
 import { studentDashboardButtons as TextsEn } from '@/locales/en';
 import { studentDashboardButtons as TextsGr } from '@/locales/gr';
-import {LanguageContext} from "../../../context/LanguageContext.jsx";
+import { LanguageContext } from "../../../context/LanguageContext.jsx";
+
 export default function Student() {
-  const {language} = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
   const studentDashboardButtons = language === 'en' ? TextsEn : TextsGr;
   const navigate = useNavigate();
-  const [selected, setSelected] = React.useState("dashboard"); // default selected state
+  const location = useLocation();
+  const [selected, setSelected] = React.useState("dashboard");
+
+  useEffect(() => {
+    const currentPath = location.pathname.split('/').pop(); // Get the last part of the URL
+    if (["dashboard", "registration", "grades", "certificates", "profile"].includes(currentPath)) {
+      setSelected(currentPath);
+    } else {
+      setSelected("dashboard");
+      navigate("/student/dashboard");
+    }
+  }, [location, navigate]);
 
   const handleButtonClick = (path) => {
     setSelected(path);
     navigate(path);
   };
 
-  //! Fix when redirect to /dashboard , previous selected state (registration) doesnt change to dashboard
-  //! Fix when click Registration from new registration doesnt redirected back to the Registration
+
   return (
     <div style={{ display: "flex" }}>
 
       <Dashboard>
         <h2 >My Studies</h2>
         {["dashboard", "registration", "grades", "certificates", "profile"].map(
-            (path, index) => (
-                <button
-                    key={path}
-                    className={selected === path ? styles.selectedButton : ""}
-                    onClick={() => handleButtonClick(path)}
-                >
-                  {studentDashboardButtons[index]}
-                </button>
-            )
+          (path, index) => (
+            <button
+              key={path}
+              className={selected === path ? styles.selectedButton : ""}
+              onClick={() => handleButtonClick(path)}
+            >
+              {studentDashboardButtons[index]}
+            </button>
+          )
         )}
       </Dashboard>
       <div style={{ padding: "20px", flex: 1 }}>
