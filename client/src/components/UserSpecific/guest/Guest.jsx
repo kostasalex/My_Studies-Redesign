@@ -5,7 +5,7 @@ import FaqSection from "./faqSection/FaqSection"
 
 const Guest = () => {
   return (
-    <div>
+    <div className="container">
       <LoginSection />
       <InfoSection />
       <AnnouncementsSection />
