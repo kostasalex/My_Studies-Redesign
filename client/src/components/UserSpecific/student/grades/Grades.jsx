@@ -17,7 +17,7 @@ const Grades = () => {
     const [selectedSemester, setSelectedSemester] = useState(null);
     const [selectedGrade, setSelectedGrade] = useState(null);
     const [selectedPass, setSelectedPass] = useState(null);
-    const isFilterSelected = selectedType || selectedSemester || selectedGrade;
+    const isFilterSelected = selectedType || selectedSemester || selectedGrade || selectedPass;
     useEffect(() => {
         setCertificates(certificateData);
     }, []);
@@ -86,17 +86,17 @@ const Grades = () => {
 
     const renderPassFilter = () => {
         return (
-        <CustomSelect
-            onChange={(e) => setSelectedPass(parseInt(e.target.value, 10))}
-            value={selectedPass || ''}
-        >
-            <option value=''>{GradesTexts.pass}</option>
-            {Object.entries(GradesTexts.passed).map(([id, label]) => (
-                <option key={id} value={id}>
-                    {label}
-                </option>
-            ))}
-        </CustomSelect>
+            <CustomSelect
+                onChange={(e) => setSelectedPass(parseInt(e.target.value, 10))}
+                value={selectedPass || ''}
+            >
+                <option value=''>{GradesTexts.pass}</option>
+                {Object.entries(GradesTexts.passed).map(([id, label]) => (
+                    <option key={id} value={id}>
+                        {label}
+                    </option>
+                ))}
+            </CustomSelect>
         );
     };
 
@@ -117,11 +117,10 @@ const Grades = () => {
                     (selectedType ? certificate.lessonID === selectedType : true) &&
                     (selectedSemester ? certificate.semester === selectedSemester : true) &&
                     (selectedGrade ? certificate.grade === selectedGrade : true) &&
-                    (selectedPass ? certificate.grade === selectedGrade : true)
+                    (selectedPass ? certificate.passed === selectedPass : true)
                 );
             });
 
-            // Check if there are any matching certificates before rendering the table
             if (filteredCertificatesForPost.length > 0) {
                 return (
                     <div key={postId}>
@@ -132,7 +131,7 @@ const Grades = () => {
                     </div>
                 );
             } else {
-                // Skip rendering empty CustomTable
+
                 return null;
             }
         });
@@ -145,14 +144,21 @@ const Grades = () => {
             {renderTypeFilter()}
             {renderSemesterFilter()}
             {renderGradeFilter()}
-            {renderPassFilter}
+            {renderPassFilter()}
 
             {isFilterSelected && (
                 <CustomButton onClick={clearFilters}>
                     {GradesTexts.clearfilter}
                 </CustomButton>
             )}
-
+            {<CustomSelect>
+                <option value=''>{GradesTexts.download}</option>
+                {Object.entries(GradesTexts.downloads).map(([id, label]) => (
+                    <option key={id} value={id}>
+                        {label}
+                    </option>
+                ))}
+            </CustomSelect>}
             {renderTables()}
         </div>
     );
