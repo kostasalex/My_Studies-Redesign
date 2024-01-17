@@ -3,13 +3,17 @@ import styles from './InfoSection.module.css';
 import { Card } from 'react-bootstrap';
 import { guestInfoCardData as guestInfoCardDataTextsEn } from '@/locales/en';
 import { guestInfoCardData as guestInfoCardDataTextsGr } from '@/locales/gr';
+import { LoginAuth as LoginAuthEn } from '@/locales/en';
+import { LoginAuth as LoginAuthGr } from '@/locales/gr';
 import { LanguageContext } from "../../../../context/LanguageContext.jsx";
+
 import ModalComponent, { useModalControl } from '@/components/common/ModalComponent';
 import AuthForm from '../../../common/auth/AuthForm.jsx';
 
 const InfoSection = () => {
     const { language } = useContext(LanguageContext);
     const guestInfoCardData = language === 'en' ? guestInfoCardDataTextsEn : guestInfoCardDataTextsGr;
+    const loginAuth = language === 'en' ? LoginAuthEn : LoginAuthGr;
 
     const { isOpen, openModal, closeModal } = useModalControl();
     const [selectedCard, setSelectedCard] = useState(null);
@@ -42,7 +46,7 @@ const InfoSection = () => {
             ))}
 
             {selectedCard && (
-                <ModalComponent isOpen={isOpen} closeModal={closeModal} title={selectedCard.title}>
+                <ModalComponent isOpen={isOpen} closeModal={closeModal} title={loginAuth.authentication}>
                     <AuthForm redirectUrl={getRedirectUrl(selectedCard.id)} />
                 </ModalComponent>
             )}
