@@ -7,16 +7,17 @@ import { LoginAuth as LoginAuthTextsEn } from '@/locales/en';
 import { LoginAuth as LoginAuthTextsGr } from '@/locales/gr';
 import { LanguageContext } from "../../../context/LanguageContext.jsx";
 import { StudetTeacherContext } from "../../../context/HeaderButtonContext.jsx";
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-
-const AuthForm = () => {
+const AuthForm = ({ redirectUrl }) => {
   const [key, setKey] = useState('login');
 
   const [userinput, setuserinput] = useState("");
   const { language } = useContext(LanguageContext);
   const LoginAuth = language === 'en' ? LoginAuthTextsEn : LoginAuthTextsGr;
 
-
+  const navigate = useNavigate();
   const { user } = useContext(StudetTeacherContext);
   const usermode = user === true ? "My Studies" : "My Studies Professor";
 
@@ -31,12 +32,32 @@ const AuthForm = () => {
   };
 
 
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     console.log("Form submitted", values);
+    await Swal.fire({
+      title: 'Success!',
+      text: LoginAuth.registerSuccessMessage,
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
+
+    redirectUrl ? navigate(redirectUrl) : navigate("/");
   };
-  const handleLogin = (values) => {
+
+
+  const handleLogin = async (values) => {
+    console.log("Form login", values);
     // Prevent default form submission
     event.preventDefault();
+    await Swal.fire({
+      title: 'Success!',
+      text: LoginAuth.loginSuccessMessage,
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
+
+    redirectUrl ? navigate(redirectUrl) : navigate("/");
+    return;
 
     const xhr = new XMLHttpRequest();
     const url = "https://mystudies.panosgio.org:4010/loginuser"; // Replace with your Node.js server URL
@@ -63,6 +84,7 @@ const AuthForm = () => {
 
     xhr.send(data);
   };
+
   return (
     <Card className="m-3" style={{ maxWidth: '400px', margin: '0 auto' }}>
       <Card.Body>

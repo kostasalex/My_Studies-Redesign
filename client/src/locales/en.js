@@ -200,7 +200,10 @@ export const LoginAuth = {
     username: "Username",
     password: "Password",
     resetpsw: "Reset Password",
-    register: "Register"
+    register: "Register",
+    authentication: "Authentication",
+    loginSuccessMessage: "Welcome",
+    registerSuccessMessage: "Succesfully registered"
 };
 
 export const faqSectionTexts = {

@@ -1,6 +1,25 @@
 .info-section {
-    margin-top:100px;
+    margin-top: 100px;
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
+
+}
+
+.info-section div {
+    margin: 2px;
+    max-width: 300px;
+}
+
+.card {
+    display: flex;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    align-items: center;
+
+}
+
+
+.card:hover {
+    transform: scale(1.05);
 }

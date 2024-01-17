@@ -220,7 +220,10 @@ export const LoginAuth = {
     username: "Όνομα Χρήστη",
     password: "Κωδικός Πρόσβασης",
     resetpsw: "Επαναφορά κωδικού Πρόσβασης",
-    register: "Εγγραφή"
+    register: "Εγγραφή",
+    authentication: "Έλεγχος ταυτότητας",
+    loginSuccessMessage: "Καλώς ήλθες ",
+    registerSuccessMessage: "Εγγραφήκατε επιτυχώς!"
 };
 export const faqSectionTexts = {
     title: "Χρειάζεσαι Βοήθεια;",
