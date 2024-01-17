@@ -199,12 +199,17 @@ export const LoginAuth = {
     loginbtn: "Login",
     username: "Username",
     password: "Password",
+    passwordConfirmation: "Confirm Password",
     resetpsw: "Reset Password",
     register: "Register",
     authentication: "Authentication",
     loginSuccessMessage: "Welcome",
-    registerSuccessMessage: "Succesfully registered"
+    registerSuccessMessage: "Succesfully registered",
+    studentId: "Student ID",
+    firstName: "First Name",
+    lastName: "Last Name"
 };
+
 
 export const faqSectionTexts = {
     title: "Need Help?",

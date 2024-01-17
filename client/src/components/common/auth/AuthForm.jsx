@@ -1,234 +1,167 @@
+
 import { useContext, useState } from "react";
 import { Form, Field } from "react-final-form";
-import { Tab, Tabs, Card } from 'react-bootstrap';
-import { loginValidator, validateWithZod } from "./validation.js";
-import styles from "./AuthForm.module.css";
+import { Tab, Tabs, Card, Button, Row, Col } from 'react-bootstrap';
 import { LoginAuth as LoginAuthTextsEn } from '@/locales/en';
 import { LoginAuth as LoginAuthTextsGr } from '@/locales/gr';
 import { LanguageContext } from "../../../context/LanguageContext.jsx";
 import { StudetTeacherContext } from "../../../context/HeaderButtonContext.jsx";
 import { useNavigate } from 'react-router-dom';
+import { validateWithZod, loginSchema, registerSchema } from "./validation.js";
+import styles from "./AuthForm.module.css";
 import Swal from 'sweetalert2';
 
 const AuthForm = ({ redirectUrl }) => {
   const [key, setKey] = useState('login');
-
-  const [userinput, setuserinput] = useState("");
   const { language } = useContext(LanguageContext);
   const LoginAuth = language === 'en' ? LoginAuthTextsEn : LoginAuthTextsGr;
-
   const navigate = useNavigate();
   const { user } = useContext(StudetTeacherContext);
   const usermode = user === true ? "My Studies" : "My Studies Professor";
 
-
-  const handleChangeuser = (event) => {
-    setuserinput(event.target.value);
-  };
-  const [passinput, setpassinput] = useState("");
-
-  const handleChangepass = (event) => {
-    setpassinput(event.target.value);
-  };
-
-
-  const handleSubmit = async (values) => {
-    console.log("Form submitted", values);
-    await Swal.fire({
-      title: 'Success!',
-      text: LoginAuth.registerSuccessMessage,
-      icon: 'success',
-      confirmButtonText: 'OK'
-    });
-
-    redirectUrl ? navigate(redirectUrl) : navigate("/");
-  };
-
-
   const handleLogin = async (values) => {
-    console.log("Form login", values);
-    // Prevent default form submission
-    event.preventDefault();
+
     await Swal.fire({
       title: 'Success!',
       text: LoginAuth.loginSuccessMessage,
       icon: 'success',
       confirmButtonText: 'OK'
     });
-
     redirectUrl ? navigate(redirectUrl) : navigate("/");
-    return;
+  };
 
-    const xhr = new XMLHttpRequest();
-    const url = "https://mystudies.panosgio.org:4010/loginuser"; // Replace with your Node.js server URL
+  const handleRegister = async (values) => {
 
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          window.location.href = "/student";
-        } else if (xhr.status === 401) {
-          alert("Wrong Credentials. Please try again");
-        } else {
-          alert("Login failed: Error occurred");
-        }
-      }
-    };
-
-    const data = JSON.stringify({
-      username: userinput.toString(), // Using the name "username" as defined in your Field component
-      password: passinput.toString()  // Using the name "password" as defined in your Field component
+    await Swal.fire({
+      title: 'Success!',
+      text: LoginAuth.registerSuccessMessage,
+      icon: 'success',
+      confirmButtonText: 'OK'
     });
-
-    xhr.send(data);
+    redirectUrl ? navigate(redirectUrl) : navigate("/");
   };
 
   return (
-    <Card className="m-3" style={{ maxWidth: '400px', margin: '0 auto' }}>
+    <Card className="m-3" style={{ maxWidth: '400px', margin: 'auto' }}>
       <Card.Body>
-
-
-        <div className="d-flex flex-column justify-content-center align-items-center">
+        <div className="d-flex justify-content-center flex-column text-center ">
           <img
             src="https://res.cloudinary.com/drijmbypg/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1702593334/logo-large_uaskki.jpg?_s=public-apps"
             alt="Login"
             className={styles["login-image"]}
           />
-
           <h4 className="text-black">{usermode}</h4>
         </div>
-
         <Tabs id="auth-tabs" activeKey={key} onSelect={(k) => setKey(k)} className="mb-3">
-
           <Tab eventKey="login" title="Login">
-            {/* <div className={styles["login-form"]}> */}
-
-            <>
-              {/* <button
-                className="register border-0 bg-transparent float-right"
-                type="button"
-                onClick={handleRegisterClick}
-              >
-                {LoginAuth.register}
-              </button> */}
-
-              <Form
-                onSubmit={handleLogin} // Attach handleLogin to the Form's onSubmit
-                validate={validateWithZod(loginValidator)}
-                render={({ handleSubmit, submitting, form }) => (
-                  <form onSubmit={handleSubmit}>
-                    <Field name="username">
-                      {({ input, meta }) => (
-                        <div className={styles["input-group"]}>
-                          <label htmlFor="userName">{LoginAuth.username}</label>
-                          <input value={userinput} onChange={handleChangeuser} type="text"
-                            placeholder="Sdi YYXXXXX" />
-                          {meta.error && meta.touched && <span>{meta.error}</span>}
-                        </div>
-                      )}
-
-                    </Field>
-                    <Field name="password">
-                      {({ input, meta }) => (
-                        <div className={styles["input-group"]}>
-                          <label htmlFor="password">{LoginAuth.password}</label>
-                          <input value={passinput} onChange={handleChangepass}
-                            type="password"
-                            placeholder="•••••••••••"
-                          />
-                          {meta.error && meta.touched && <span>{meta.error}</span>}
-                        </div>
-                      )}
-                    </Field>
-                    <div className="d-flex justify-content-center mt-3">
-
-                      <button
-                        className="btn btn-primary  mr-2 text-small"
-                        type="submit"
-                        disabled={submitting}
-                      >
-                        {LoginAuth.loginbtn}
-                      </button>
-                    </div>
-
-                    <div className="d-flex justify-content-center mt-3">
-                      {/* <button
-                        type="button"
-                        onClick={() => console.log("Reset Password clicked")}
-                        className="border-0 ml-2 m"
-                      >
-                        {LoginAuth.resetpsw}
-                      </button> */}
-
-                    </div>
-                  </form>
-                )}
-              />
-            </>
-          </Tab>
-          <Tab eventKey="register" title="Register">
             <Form
-              onSubmit={handleSubmit}
+              validate={validateWithZod(loginSchema, language)}
+              onSubmit={handleLogin}
               render={({ handleSubmit, submitting }) => (
                 <form onSubmit={handleSubmit}>
-
-
-                  <Field name="newUsername">
+                  <Field name="username">
                     {({ input, meta }) => (
-                      <div className={styles["input-group"]}>
-                        <label htmlFor="newUsername">{LoginAuth.username}</label>
-                        <input {...input} type="text" placeholder="New Username" />
-                        {meta.error && meta.touched && <span>{meta.error}</span>}
+                      <div>
+                        <label>{LoginAuth.username}</label>
+                        <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                        {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
                       </div>
                     )}
                   </Field>
-                  <Field name="newPassword">
+                  <Field name="password">
                     {({ input, meta }) => (
-                      <div className={styles["input-group"]}>
-                        <label htmlFor="newPassword">Password</label>
-                        <input
-                          {...input}
-                          type="password"
-                          placeholder="New Password"
-                        />
-                        {meta.error && meta.touched && <span>{meta.error}</span>}
+                      <div>
+                        <label>{LoginAuth.password}</label>
+                        <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                        {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
                       </div>
                     )}
                   </Field>
-                  <Field name="confirmPassword">
-                    {({ input, meta }) => (
-                      <div className={styles["input-group"]}>
-                        <label htmlFor="confirmPassword">Confirm Password</label>
-                        <input
-                          {...input}
-                          type="password"
-                          placeholder="Confirm Password"
-                        />
-                        {meta.error && meta.touched && <span>{meta.error}</span>}
-                      </div>
-                    )}
-                  </Field>
-
-                  <div className="d-flex justify-content-center mt-3">
-
-                    <button
-                      className="btn btn-primary  mr-2"
-                      type="submit"
-                      disabled={submitting}
-                    >
-                      Register
-                    </button>
-                  </div>
+                  <Button className="mt-4 " variant="primary" type="submit" disabled={submitting}>Login</Button>
                 </form>
               )}
             />
-
+          </Tab>
+          <Tab eventKey="register" title="Register">
+            <Form
+              validate={validateWithZod(registerSchema, language)}
+              onSubmit={handleRegister}
+              render={({ handleSubmit, submitting }) => (
+                <form onSubmit={handleSubmit}>
+                  <Row>
+                    <Col md={6}>
+                      <Field name="newUsername" component="input">
+                        {({ input, meta }) => (
+                          <div>
+                            <label>{LoginAuth.username}</label>
+                            <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                            {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                          </div>
+                        )}
+                      </Field>
+                    </Col>
+                    <Col md={6}>
+                      <Field name="studentId" component="input">
+                        {({ input, meta }) => (
+                          <div>
+                            <label>{LoginAuth.studentId}</label>
+                            <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                            {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                          </div>
+                        )}
+                      </Field>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={6}>
+                      <Field name="firstName" component="input">
+                        {({ input, meta }) => (
+                          <div>
+                            <label>{LoginAuth.firstName}</label>
+                            <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                            {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                          </div>
+                        )}
+                      </Field>
+                    </Col>
+                    <Col md={6}>
+                      <Field name="lastName" component="input">
+                        {({ input, meta }) => (
+                          <div>
+                            <label>{LoginAuth.lastName}</label>
+                            <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                            {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                          </div>
+                        )}
+                      </Field>
+                    </Col>
+                  </Row>
+                  <Field name="newPassword" component="input">
+                    {({ input, meta }) => (
+                      <div>
+                        <label>{LoginAuth.password}</label>
+                        <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                        {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                      </div>
+                    )}
+                  </Field>
+                  <Field name="confirmPassword" component="input">
+                    {({ input, meta }) => (
+                      <div>
+                        <label>{LoginAuth.passwordConfirmation}</label>
+                        <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                        {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                      </div>
+                    )}
+                  </Field>
+                  <Button className="mt-4 " variant="primary" type="submit" disabled={submitting}>Register</Button>
+                </form>
+              )}
+            />
           </Tab>
         </Tabs>
       </Card.Body>
-    </Card >
+    </Card>
   );
 };
 
