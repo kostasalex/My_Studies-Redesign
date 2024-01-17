@@ -1,5 +1,5 @@
 import styles from "./LoginSection.module.css";
-import LoginForm from "../../../common/auth/LoginForm";
+import LoginForm from "../../../common/auth/AuthForm";
 
 const LoginSection = () => {
   return (

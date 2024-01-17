@@ -219,8 +219,15 @@ export const LoginAuth = {
     loginbtn: "Είσοδος",
     username: "Όνομα Χρήστη",
     password: "Κωδικός Πρόσβασης",
+    passwordConfirmation: "Επιβεβαίωση Κωδικού Πρόσβασης",
     resetpsw: "Επαναφορά κωδικού Πρόσβασης",
-    register: "Εγγραφή"
+    register: "Εγγραφή",
+    authentication: "Έλεγχος ταυτότητας",
+    loginSuccessMessage: "Καλώς ήλθες ",
+    registerSuccessMessage: "Εγγραφήκατε επιτυχώς!",
+    studentId: "Αριθμός Μητρώου",
+    firstName: "Όνομα",
+    lastName: "Επίθετο"
 };
 export const faqSectionTexts = {
     title: "Χρειάζεσαι Βοήθεια;",

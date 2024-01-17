@@ -1,10 +1,8 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
-import { Navigate } from "react-router-dom";
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import { Route, Routes, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import Dashboard from "@/components/common/dashboard/Dashboard";
 import { TeacherDashboardButtons } from "@/locales/gr";
 import Home from "./home/Home";
-import Path from "./path/path.module.css";
 
 import styles from "./Teacher.module.css";
 import Profile from "./Profile/Profile";
@@ -14,15 +12,25 @@ import Statistics from "./statistics/Statistics";
 
 export default function Teacher() {
   const navigate = useNavigate();
-  const [selected, setSelected] = React.useState("dashboard"); // default selected state
+  const location = useLocation();
+  const [selected, setSelected] = useState("dashboard");
+
+  useEffect(() => {
+    const pathSegments = location.pathname.split('/').filter(Boolean);
+    const currentPath = pathSegments[1] || 'dashboard'; // Assuming 'teacher' is the first segment
+    if (["dashboard", "current-semester", "old-semesters", "statistics", "profile"].includes(currentPath)) {
+      setSelected(currentPath);
+    } else {
+      navigate("/dashboard");
+    }
+  }, [location, navigate]);
 
   const handleButtonClick = (path) => {
     setSelected(path);
     navigate(path);
   };
 
-  //! Fix when redirect to /dashboard , previous selected state (registration) doesnt change to dashboard
-  //! Fix when click Registration from new registration doesnt redirected back to the Registration
+
   return (
     <div style={{ display: "flex" }}>
       <Dashboard>
@@ -52,7 +60,7 @@ export default function Teacher() {
             Περίοδος Δηλώσεων : 1/2/2023 εως 28/2/2023
           </div>
         </div>
-        
+
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />
