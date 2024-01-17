@@ -1,25 +1,7 @@
-export const guestInfoCardData = [
-    {
-        id: 1,
-        title: 'Δές Βαθμολογίες',
-        text: 'Ανακάλυψε τη βαθμολογία σου με έναν απλό και γρήγορο τρόπο. Κάνε είσοδο και ελέγξε τις επιδόσεις σου με μια ματιά!'
-    },
-    {
-        id: 2,
-        title: 'Δήλωσε Ένα Μάθημα',
-        text: 'Κάνε τη δήλωση των μαθημάτων σου τώρα, εύκολα και γρήγορα, με μια απλή διαδικτυακή φόρμα εδώ!'
-    },
-    {
-        id: 3,
-        title: 'Πάρε Πιστοποιητικά',
-        text: 'Ζήσε την εμπειρία αποκτήσεως πιστοποιητικών με μια απλή διαδικασία!'
-    }
-];
-
 export const guestAnnouncementCardData = [
     {
         id: 1,
-        title: 'Έρευνα Και Φοιτητές',
+        title: 'Έρευνα και Φοιτητές',
     },
     {
         id: 2,
@@ -27,11 +9,12 @@ export const guestAnnouncementCardData = [
     },
     {
         id: 3,
-        title: 'Νέος Τρόπος Διδασκαλείας',
+        title: 'Νέα Μέθοδος Διδασκαλίας',
     }
 ];
+
 export const guestAnnouncement = {
-    latestnews: 'Τελευταίες Ανακοινώσεις :'
+    latestnews: 'Τελευταία Νέα:'
 };
 export const footerData = [
     {
@@ -41,7 +24,7 @@ export const footerData = [
     },
     {
         id: 2,
-        title: 'FAQ',
+        title: 'Συχνές Ερωτήσεις',
         link: '/faq'
     },
     {
@@ -52,19 +35,10 @@ export const footerData = [
 ];
 
 export const studentDashboardButtons = [
-    "Αρχική",
-    "Δηλώσεις",
+    "Πίνακας Ελέγχου",
+    "Εγγραφές",
     "Βαθμολογίες",
     "Πιστοποιητικά",
-    "Προφίλ",
-    "Αποσύνδεση"
-];
-
-export const TeacherDashboardButtons = [
-    "Αρχική",
-    "Τρέχων Εξάμηνο",
-    "Παλιά Εξάμηνα",
-    "Στατιστικά",
     "Προφίλ",
     "Αποσύνδεση"
 ];
@@ -76,7 +50,6 @@ export const contactFormTexts = {
     messageLabel: 'Μήνυμα:',
     submitButton: 'Αποστολή'
 };
-
 export const faqTexts = {
     items: [
         {
@@ -89,37 +62,31 @@ export const faqTexts = {
             question: 'Ερώτηση 2 στα Ελληνικά',
             answer: 'Απάντηση 2 στα Ελληνικά.'
         },
-        ,
         {
             id: 3,
             question: 'Ερώτηση 3 στα Ελληνικά',
             answer: 'Απάντηση 3 στα Ελληνικά.'
-        }
-        ,
+        },
         {
             id: 4,
             question: 'Ερώτηση 4 στα Ελληνικά',
             answer: 'Απάντηση 4 στα Ελληνικά.'
-        }
-        ,
+        },
         {
             id: 5,
             question: 'Ερώτηση 5 στα Ελληνικά',
             answer: 'Απάντηση 5 στα Ελληνικά.'
-        }
-        ,
+        },
         {
             id: 6,
             question: 'Ερώτηση 6 στα Ελληνικά',
             answer: 'Απάντηση 6 στα Ελληνικά.'
-        }
-        ,
+        },
         {
             id: 7,
             question: 'Ερώτηση 7 στα Ελληνικά',
             answer: 'Απάντηση 7 στα Ελληνικά.'
-        }
-        ,
+        },
         {
             id: 8,
             question: 'Ερώτηση 8 στα Ελληνικά',
@@ -129,140 +96,156 @@ export const faqTexts = {
             id: 9,
             question: 'Ερώτηση 9 στα Ελληνικά',
             answer: 'Απάντηση 9 στα Ελληνικά.'
-        }
-        ,
+        },
         {
             id: 10,
             question: 'Ερώτηση 10 στα Ελληνικά',
             answer: 'Απάντηση 10 στα Ελληνικά.'
         }
-
     ]
 };
-
 export const faqPage = {
-    searchPlaceholder: "Αναζήτηση στις Συχνές Ερωτήσεις...",
+    searchPlaceholder: "Αναζήτηση Συχνών Ερωτήσεων...",
     pageTitle: "Συχνές Ερωτήσεις",
-
 };
 
 export const newCertificatesTexts = {
-    title: "Αίτηση για νέο Πιστοποιητικό:",
+    title: "Αίτηση για Νέο Πιστοποιητικό:",
     certificateTypes: [
-        "Φοιτητικής Ιδιότητας",
-        "Φορολογικής Χρήσης",
-        "Αναλυτικής Βαθμολογίας",
-        "Στρατολογικής Χρήσης"
+        "Κατάσταση Φοιτητή",
+        "Φορολογικούς Σκοπούς",
+        "Λεπτομερείς Βαθμολογίες",
+        "Στρατιωτικούς Σκοπούς"
     ]
 };
 
 export const cardTexts = {
-    applyButton: "Αίτηση",
-    certificate: "Πιστοποιητικο",
+    applyButton: "Υποβολή",
     applyCert: "Έκδοση Πιστοποιητικού",
-    cancelCert: "Ακύρωση",
+    certificate: "Πιστοποιητικό για",
+    cancelCert: "Άκυρο",
     closeCert: "Κλείσιμο",
-    warningText: "Είστε σίγουρος πως θέλετε να εκδώσετε αυτό το πιστοποιητικό ?",
-    successMessage: "Το αίτημα έχει σταλεί !"
+    warningText: "Είστε σίγουρος ότι θέλετε να ζητήσετε αυτό το πιστοποιητικό ;",
+    successMessage: "Το πιστοποιητικό ζητήθηκε με επιτυχία!"
 };
-
 
 export const certificatesTexts = {
     home: "Αρχική",
     certificates: "Πιστοποιητικά",
     applicationSubject: "Θέμα Αίτησης",
     applicationStatus: "Κατάσταση Αίτησης",
-    requestYear: "Έτος Αιτήματος",
-    studentStatus: "Φοιτητικής Ιδιότητας",
-    taxUse: "Φορολογικής Χρήσης",
-    detailedGrades: "Αναλυτική Βαθμολογία",
-    militaryUse: "Στρατολογική Χρήση",
+    requestYear: "Έτος Αίτησης",
+    studentStatus: "Κατάσταση Φοιτητή",
+    taxUse: "Φορολογική Χρήση",
+    detailedGrades: "Λεπτομερείς Βαθμολογίες",
+    militaryUse: "Στρατιωτική Χρήση",
     approved: "Εγκρίθηκε",
-    pending: "Σε αναμονή",
-    rejected: "Απορίφθηκε"
+    pending: "Εκκρεμεί",
+    rejected: "Απορρίφθηκε"
 };
 
 export const oldCertificatesTexts = {
-    applicationCode: "Κωδικός Aίτησης",
+    applicationCode: "ID",
     subject: "Θέμα",
     date: "Ημερομηνία",
     status: "Κατάσταση",
-    clearfilter: "Απαλοιφή Φίλτρων",
-    btnshow: "Προβολή",
-    searchbar: "Αναζήτηση Πιστοποιητικών ..",
+    btnshow: "Εμφάνιση",
     btndownload: "Λήψη",
+    searchbar: "Αναζήτηση Πιστοποιητικών ..",
+    clearfilter: "Καθαρισμός Φίλτρων",
     types: {
-        1: "Φοιτητικής Ιδιότητας",
-        2: "Φορολογικής Χρήσης",
-        3: "Αναλυτική Βαθμολογία",
-        4: "Στρατολογική Χρήση"
+        1: "Κατάσταση Φοιτητή",
+        2: "Φορολογικούς Σκοπούς",
+        3: "Λεπτομερείς Βαθμολογίες",
+        4: "Στρατιωτικούς Σκοπούς"
     },
     statuses: {
         1: "Εγκρίθηκε",
-        2: "Σε αναμονή",
-        3: "Απορίφθηκε",
-
+        2: "Εκκρεμεί",
+        3: "Απορρίφθηκε",
     }
 };
-
 
 export const headerTexts = {
     home: "Αρχική",
     about: "Σχετικά",
     contact: "Επικοινωνία",
-    studentPortal: "Είσοδος Φοιτητών",
-    teacherPortal: "Είσοδος Καθηγητών"
+    studentPortal: "Σύνδεση Φοιτητή",
+    teacherPortal: "Σύνδεση Καθηγητή"
 };
-
 
 export const LoginAuth = {
-    loginbtn: "Είσοδος",
+    loginbtn: "Σύνδεση",
     username: "Όνομα Χρήστη",
     password: "Κωδικός Πρόσβασης",
-    passwordConfirmation: "Επιβεβαίωση Κωδικού Πρόσβασης",
-    resetpsw: "Επαναφορά κωδικού Πρόσβασης",
+    passwordConfirmation: "Επιβεβαίωση Κωδικού",
+    resetpsw: "Επαναφορά Κωδικού",
     register: "Εγγραφή",
-    authentication: "Έλεγχος ταυτότητας",
-    loginSuccessMessage: "Καλώς ήλθες ",
-    registerSuccessMessage: "Εγγραφήκατε επιτυχώς!",
-    studentId: "Αριθμός Μητρώου",
+    authentication: "Πιστοποίηση",
+    loginSuccessMessage: "Καλώς ήλθατε",
+    registerSuccessMessage: "Εγγραφή επιτυχής",
+    studentId: "Αριθμός Φοιτητή",
     firstName: "Όνομα",
-    lastName: "Επίθετο"
-};
-export const faqSectionTexts = {
-    title: "Χρειάζεσαι Βοήθεια;",
-    description: "Διαβάστε τις Συχνές Ερωτήσεις μας και, αν δεν μπορείτε να βρείτε αυτό που ψάχνετε, οι ειδικοί μας θα χαρούν να απαντήσουν στις ερωτήσεις σας.",
-    readFaqsButton: "Διαβάστε τα FAQS",
-    askQuestionButton: "Κάνε μια Ερώτηση"
+    lastName: "Επώνυμο"
 };
 
+export const faqSectionTexts = {
+    title: "Χρειάζεστε Βοήθεια;",
+    description: "Διαβάστε τις Συχνές Ερωτήσεις μας και, αν δεν μπορείτε να βρείτε αυτό που ψάχνετε, οι ειδικοί μας είναι ευτυχείς να απαντήσουν στις ερωτήσεις σας.",
+    readFaqsButton: "Διαβάστε τις ΣΕ",
+    askQuestionButton: "Κάντε μια Ερώτηση"
+};
 export const gradesTexts = {
     homeButton: "• Αρχική /",
-    gradesButton: "Βαθμολογίες /",
+    gradesButton: "Βαθμοί /",
     periodButton: "Περίοδος",
     yearButton: "Έτος",
-    downloadButton: "Κατέβασε εδώ",
+    downloadButton: "Λήψη εδώ",
     semesterWinter: "Χειμερινό ",
     semesterSpring: "Εαρινό "
 };
 
+export const guestInfoCardData = [
+    {
+        id: 1,
+        title: 'Έλεγχος Βαθμολογίας',
+        text: 'Ανακαλύψτε τον βαθμό σας με έναν απλό και γρήγορο τρόπο. Συνδεθείτε και ελέγξτε την απόδοσή σας με μια ματιά!'
+    },
+    {
+        id: 2,
+        title: 'Εγγραφή σε Μάθημα',
+        text: 'Εγγραφείτε τώρα στα μαθήματά σας, εύκολα και γρήγορα, με ένα απλό ηλεκτρονικό φόρμα εδώ!'
+    },
+    {
+        id: 3,
+        title: 'Λήψη Πιστοποιητικών',
+        text: 'Βιώστε τη διαδικασία απόκτησης πιστοποιητικών με έναν απλό τρόπο!'
+    }
+];
 
 export const GradesTexts = {
-    subject: "Subject",
-    clearfilter: "Clear Filters",
+    semester: "Εξάμηνο",
+    subject: "Μάθημα",
+    pass: "Επιτυχία",
+    grade: "Βαθμοί",
+    passed:{
+        1: "Ναι",
+        2: "Όχι"
+    },
+    clearfilter: "Καθαρισμός Φίλτρων",
     tableHeaders: {
-        code: "Code",
-        subject: "Subject",
-        semester: "Semester",
-        grade: "Grade"
+        code: "Κωδικός",
+        subject: "Μάθημα",
+        semester: "Εξάμηνο",
+        grade: "Βαθμός"
     },
     tableMessages: {
-        noData: "No data available",
-        loading: "Loading data..."
+        noData: "Δεν υπάρχουν διαθέσιμα δεδομένα",
+        loading: "Φόρτωση δεδομένων..."
     },
     tableActions: {
-        show: "Show",
-        download: "Download"
+        show: "Εμφάνιση",
+        download: "Λήψη"
     },
 
     lessons: {
@@ -270,14 +253,25 @@ export const GradesTexts = {
         2: "Διακριτά Μαθηματικά",
         3: "Μεταγλωτιστές",
         4: "Λειτουργικά Συστήματα",
-        5: "Αλγόριθμοι και Πολυπλοκότητα",
+        5: "Αλγόριθμοι",
         6: "Διακριτά Μαθηματικά",
         7: "Τεχνητή Νοημοσύνη Ι"
     },
-    statuses: {
-        1: "aa",
-        2: "aa",
-        3: "Rejected",
-
+    semesters: {
+        1: "1ο",
+        2: "2ο",
+        3: "3ο",
+        4: "4ο",
+        5: "5ο",
+        6: "6ο",
+        7: "7ο",
+        8: "8ο"
+    },
+    download: "Λήψη των Βαθμών σας",
+    downloads: {
+        1: "Λήψη ως PDF",
+        2: "Λήψη ως Εικόνα",
+        3: "Λήψη ως Φύλλο Εργασίας",
     }
-}
+
+};
