@@ -1,0 +1,92 @@
+.accordionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 2rem;
+}
+.header {
+    margin-bottom: 2rem;
+}
+.searchBarContainer {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 4rem;
+}
+
+.searchBar {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.accordionWrapper {
+    width: 80%;
+    max-width: 900px;
+}
+
+.accordionItem {
+    margin-bottom: 1rem;
+    border: 1px solid rgba(206, 25, 25, 0.1);
+    border-radius: 0.25rem;
+}
+
+.accordionButton {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #f7f7f7;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordionButton:hover {
+    background-color: #e7e7e7;
+}
+
+.accordionContent {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    padding: 0 1rem;
+    font-size: 1.15rem;
+}
+
+.accordionContent.active {
+    height: auto;
+}
+
+.accordionContent p {
+    margin: 0;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #eee;
+}
+
+.pagination .active a {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}

@@ -245,3 +245,39 @@ export const gradesTexts = {
     semesterWinter: "Χειμερινό ",
     semesterSpring: "Εαρινό "
 };
+
+
+export const GradesTexts = {
+    subject: "Subject",
+    clearfilter: "Clear Filters",
+    tableHeaders: {
+        code: "Code",
+        subject: "Subject",
+        semester: "Semester",
+        grade: "Grade"
+    },
+    tableMessages: {
+        noData: "No data available",
+        loading: "Loading data..."
+    },
+    tableActions: {
+        show: "Show",
+        download: "Download"
+    },
+
+    lessons: {
+        1: "Γραμμική Άλγεβρα",
+        2: "Διακριτά Μαθηματικά",
+        3: "Μεταγλωτιστές",
+        4: "Λειτουργικά Συστήματα",
+        5: "Αλγόριθμοι και Πολυπλοκότητα",
+        6: "Διακριτά Μαθηματικά",
+        7: "Τεχνητή Νοημοσύνη Ι"
+    },
+    statuses: {
+        1: "aa",
+        2: "aa",
+        3: "Rejected",
+
+    }
+}

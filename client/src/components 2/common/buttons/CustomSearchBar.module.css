@@ -1,0 +1,34 @@
+.CustomSearchBar {
+    border: 0px solid #000000;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px 15px;
+    min-width: fit-content;
+    font-size: 16px;
+    line-height: 1;
+    border-radius: 15px;
+    height: 40px;
+    background: no-repeat right #d4cbcb;
+    -webkit-appearance: none;
+    background-position-x: 170px;
+    margin-right: 10px;
+}
+.CustomSearchBar:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+.CustomSearchBar option:hover {
+    background-color: #e0e0e0;
+}
+.CustomSearchBar:disabled {
+    background-color: #f6f5f5;
+    color: #d4d4d4;
+    cursor: not-allowed;
+}
+
+.CustomSearchBar:disabled:hover {
+    background-color: #f6f5f5;
+    color: #d4d4d4;
+}
+
+

@@ -1,0 +1,19 @@
+.selectedButton {
+  background-color: #e0e0e0 !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+body {
+  height: fit-content;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #fff; /* Χρώμα φόντου λευκό */
+}
+
+.parent {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Ensure the parent has a height */
+}

@@ -1,0 +1,7 @@
+[
+  { "code": "K15", "subject": "Γραμμική Άλγεβρα", "semester": "1ο", "grade": 4.9 },
+  { "code": "K16", "subject": "Διακριτά Μαθηματικά", "semester": "1ο", "grade": 9 },
+  { "code": "K21", "subject": "Μεταγλωτιστές", "semester": "5ο", "grade": 10 },
+  { "code": "K22", "subject": "Αρχές Λειτουργικών Συστημάτων", "semester": "4ο", "grade": 8.5 },
+  { "code": "K30", "subject": "Αλγόριθμοι και Πολυπλοκότητα", "semester": "3ο", "grade": 7.2 }
+]

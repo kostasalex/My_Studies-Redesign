@@ -1,0 +1,13 @@
+.edit-button {
+    background-color: blue; 
+    color: white;
+    padding: 5px 10px;
+    border: none; 
+    border-radius: 4px;}
+.tableBackground {
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.striped tbody tr:nth-child(odd) {
+    background-color: #f5f5f5; /* Adjust the background color as needed */
+}

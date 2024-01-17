@@ -1,0 +1,84 @@
+.login-form {
+  width: 542px;
+  height: 700px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.login-form h1 {
+
+  color: #000;
+  font-family: Inter;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: normal;
+
+}
+
+.login-image {
+  align-self: center;
+  width: 30%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 30px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-group span {
+  color: red;
+}
+
+.login-button,
+.register-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-group button {
+  background-color: #007bff;
+  color: white;
+}
+
+.register-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.registerbtn {
+  width: 100px;
+  height: 40px;
+  padding: 6px 12px;
+  font-size: 16px;
+}

@@ -1,0 +1,17 @@
+.custom_select {
+    border: 1px solid #000000;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px 30px; /* This creates space inside the select */
+    min-width: fit-content;
+    font-size: 16px;
+    line-height: 1;
+    border-radius: 15px;
+    height: 40px;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right 10px center #f6f5f5;
+    -webkit-appearance: none;
+    margin-right: 10px;
+}
+.custom_select:hover {
+    background-color: #e0e0e0;
+}

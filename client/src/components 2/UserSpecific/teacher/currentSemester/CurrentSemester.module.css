@@ -1,0 +1,94 @@
+.mylessons {
+  text-align: left;
+  color: #333;
+
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.new-registration {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #f6f5f5;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  align-items: center;
+}
+
+.new-registration button {
+  margin-right: 30px;
+  margin-bottom: 5px;
+}
+
+.text {
+  padding: 10px;
+  margin-top: 0px;
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+.text p {
+  margin-top: 0px;
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+
+
+.dropdown-container {
+  margin-top: 80px;
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 620px;
+  margin-bottom: 60px;
+}
+
+.action-box {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.btn-download,
+.btn-upload {
+  margin-top: 10px;
+}
+
+
+
+.btn-download {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-upload {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.backButton {
+  float: right;
+  margin-right: 10px; 
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  max-height: fit-content;
+  border-radius: 15px;
+}

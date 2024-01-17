@@ -1,0 +1,75 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  background-color: #f8f0f7;
+  color: #000000;
+}
+
+.logo {
+  /* Styles for the logo area */
+}
+
+.nav a {
+  color: #000000;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+.logoleft {
+  max-width: 300px;
+  height: fit-content;
+  /*margin-right: 1200px;*/
+}
+.icon {
+  margin-left: 20px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.languageSwitcher {
+  position: relative;
+  cursor: pointer;
+  /* Additional styles as needed */
+}
+
+.languageDropdown {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px;
+  text-align: left;
+}
+
+.languageDropdown div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.languageDropdown div:hover {
+  background-color: #f0f0f0;
+}
+
+/* Add styles for the flags */
+.imgl {
+  width: 20px; /* Adjust size as needed */
+  margin-right: 5px;
+}
+
+/* Additional icon styles */
+.icon {
+  margin-left: 40px;
+}
+
+.loginbtn{
+  position: relative;
+  cursor: pointer;
+  margin-right: -200px;
+}
