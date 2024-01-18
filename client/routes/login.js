@@ -27,9 +27,9 @@ const attachRoutes = (app) => {
       await client.connect();
 
       // Get a reference to the users collection
-      const usersCollection = client.db('test').collection('users');
+      const usersCollection = client.db('mystudies').collection('users');
       const user = await usersCollection.findOne({ username: username });
-      // console.log("res: " + user.username + " " + user.password);
+      console.log("res: " + user.username + " " + user.password);
       if (user == null) {
         res.status(401).send();
       } else {
@@ -42,7 +42,8 @@ const attachRoutes = (app) => {
             // res.cookie("token", token);
             client.close();
             console.log("res: " + user.username + " logged in");
-            if(user.role == "1"){
+            console.log("res: " + user.role);
+            if(user.role){
               //student login
               res.status(200).send();
             } else {
