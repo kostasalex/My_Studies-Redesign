@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom';
 import { validateWithZod, loginSchema, registerSchema } from "./validation.js";
 import styles from "./AuthForm.module.css";
 import Swal from 'sweetalert2';
+import { authform as TextsEn } from '@/locales/en';
+import { authform as TextsGr } from '@/locales/gr';
 
 const AuthForm = ({ redirectUrl }) => {
   const [key, setKey] = useState('login');
@@ -18,7 +20,7 @@ const AuthForm = ({ redirectUrl }) => {
   const navigate = useNavigate();
   const { user } = useContext(StudetTeacherContext);
   const usermode = user === true ? "My Studies" : "My Studies Professor";
-
+    const authform = language === 'en' ? TextsEn : TextsGr;
   const handleLogin = async (values) => {
 
       // Prevent default form submission
@@ -67,38 +69,24 @@ const AuthForm = ({ redirectUrl }) => {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                  window.location.href = "/student";
-                    // Swal.fire({
-                    //     text: cardTexts.warningText,
-                    //     icon: 'warning',
-                    //     title: cardTexts.certificate+"\n"+title,
-                    //     showCancelButton: true,
-                    //     cancelButtonText:  cardTexts.cancelCert,
-                    //     confirmButtonColor: "#007fff",
-                    //     cancelButtonColor: "#ab0d0d",
-                    //     confirmButtonText: cardTexts.applyCert,
-                    //     reverseButtons: true
-                    // }).then((result) => {
-                    //     if (result.isConfirmed) {
-                    //         handleClose();
-                    //     }
-                    // });
-                }else if (xhr.status === 201) {
-                  window.location.href = "/teacher";
-                    // Swal.fire({
-                    //     text: cardTexts.warningText,
-                    //     icon: 'warning',
-                    //     title: cardTexts.certificate+"\n"+title,
-                    //     showCancelButton: true,
-                    //     cancelButtonText:  cardTexts.cancelCert,
-                    //     confirmButtonColor: "#007fff",
-                    //     cancelButtonColor: "#ab0d0d",
-                    //     confirmButtonText: cardTexts.applyCert,
-                    //     reverseButtons: true
-                    // }).then((result) => {
-                    //     if (result.isConfirmed) {
-                    //         handleClose();
-                    //     }});
+
+                    Swal.fire({
+                        text: authform.signintext,
+                        icon: 'success',
+                        title: authform.accountcreated,
+                        confirmButtonColor: "#007fff",
+                        confirmButtonText: authform.signin,
+                        reverseButtons: true
+                    });
+                } else if (xhr.status === 201) {
+                    Swal.fire({
+                        text: authform.signintext,
+                        icon: 'success',
+                        title: authform.accountcreated,
+                        confirmButtonColor: "#007fff",
+                        confirmButtonText: authform.signin,
+                        reverseButtons: true
+                    });
                 } else {
                     alert("Login failed: Error occurred");
                 }

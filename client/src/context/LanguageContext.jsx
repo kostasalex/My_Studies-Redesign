@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('en'); // Default language
+    const [language, setLanguage] = useState('gr'); // Default language
 
     useEffect(() => {
         // Load language from cookie when the component mounts

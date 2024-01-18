@@ -284,3 +284,8 @@ export const GradesTexts = {
     }
 
 };
+export const authform = {
+    signintext: "Παρακαλώ προχωρήστε στην είσοδο για να να χρησιμοποιήσετε το λογαριασμό σας",
+    accountcreated: "Ο Λογαριασμός Δημιουργήθηκε !",
+    signin: "Είσοδος",
+};

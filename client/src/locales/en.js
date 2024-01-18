@@ -296,3 +296,8 @@ export const GradesTexts = {
 
 };
 
+export const authform = {
+    signintext: "Please sign in to use your account",
+    accountcreated: "Account Created !",
+    signin: "Sign in",
+};
