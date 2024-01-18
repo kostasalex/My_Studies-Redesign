@@ -35,18 +35,19 @@ const attachRoutes = (app) => {
       } else {
         if (user.username == username) {
           if (user.password == password) {
-            if (user.approved === "no") {
-              res.status(402).send();
+            delete user.password;
+
+            const token = jwt.sign(user, "secretpass", { expiresIn: "1y" });
+            res.cookie('token', token);
+            // res.cookie("token", token);
+            client.close();
+            console.log("res: " + user.username + " logged in");
+            if(user.role == "1"){
+              //student login
+              res.status(200).send();
             } else {
-              delete user.password;
-
-              const token = jwt.sign(user, "secretpass", { expiresIn: "1y" });
-              res.cookie('token', token);
-              // res.cookie("token", token);
-              client.close();
-              console.log("res: " + user.username + " logged in");
-              res.status(200).send(); //regular login
-
+               //teacher login
+              res.status(201).send();
             }
 
           } else {

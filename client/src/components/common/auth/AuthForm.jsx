@@ -21,13 +21,35 @@ const AuthForm = ({ redirectUrl }) => {
 
   const handleLogin = async (values) => {
 
-    await Swal.fire({
-      title: 'Success!',
-      text: LoginAuth.loginSuccessMessage,
-      icon: 'success',
-      confirmButtonText: 'OK'
-    });
-    redirectUrl ? navigate(redirectUrl) : navigate("/");
+      // Prevent default form submission
+      event.preventDefault();
+
+      const xhr = new XMLHttpRequest();
+      const url = "https://mystudies.panosgio.org:4010/loginuser"; // Replace with your Node.js server URL
+
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+              if (xhr.status === 200) {
+                  window.location.href = "/student";
+              }else if (xhr.status === 201) {
+                  window.location.href = "/teacher";
+              }else if (xhr.status === 401) {
+                  alert("Wrong Credentials. Please try again");
+              } else {
+                  alert("Login failed: Error occurred");
+              }
+          }
+      };
+
+      const data = JSON.stringify({
+          username: values.username, // Using the name "username" as defined in your Field component
+          password: values.password  // Using the name "password" as defined in your Field component
+      });
+
+      xhr.send(data);
   };
 
   const handleRegister = async (values) => {
