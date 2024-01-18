@@ -67,7 +67,7 @@ const AuthForm = ({ redirectUrl }) => {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                    // window.location.href = "/student";
+                  window.location.href = "/student";
                     // Swal.fire({
                     //     text: cardTexts.warningText,
                     //     icon: 'warning',
@@ -84,6 +84,7 @@ const AuthForm = ({ redirectUrl }) => {
                     //     }
                     // });
                 }else if (xhr.status === 201) {
+                  window.location.href = "/teacher";
                     // Swal.fire({
                     //     text: cardTexts.warningText,
                     //     icon: 'warning',

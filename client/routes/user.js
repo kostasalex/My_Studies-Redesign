@@ -50,8 +50,7 @@ const attachRoutes = (app) => {
       // Get a reference to the users collection
       const usersCollection = client.db('mystudies').collection('users');
   
-      const user_check = await usersCollection.findOne({ identityNumber: req.body.identityNumber });
-      if (user_check == null) {
+  
         const user = new User({
           registrationNumber: req.body.registrationNumber,
           firstName: req.body.firstName,
@@ -66,10 +65,15 @@ const attachRoutes = (app) => {
         const result = await usersCollection.insertOne(user);
         console.log(`New user created with the following id: ${result.insertedId}`);
   
-        res.status(200).send('User created successfully');
-      } else {
-        res.status(200).send('User with this username already exists');
-      }
+        if(user.role == true){
+         
+          res.status(200).send('User created successfully'); //student
+        } else
+        {
+        
+          res.status(201).send('User created successfully'); //teacher
+        }
+     
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: error.message });
