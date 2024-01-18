@@ -45,24 +45,76 @@ const AuthForm = ({ redirectUrl }) => {
       };
 
       const data = JSON.stringify({
-          username: values.username, // Using the name "username" as defined in your Field component
-          password: values.password  // Using the name "password" as defined in your Field component
+          username: values.username,
+          password: values.password
       });
 
       xhr.send(data);
   };
 
-  const handleRegister = async (values) => {
+    const usermoderegister = user === true ? true : false;
+    const handleRegister = async (values) => {
 
-    await Swal.fire({
-      title: 'Success!',
-      text: LoginAuth.registerSuccessMessage,
-      icon: 'success',
-      confirmButtonText: 'OK'
-    });
-    redirectUrl ? navigate(redirectUrl) : navigate("/");
-  };
+        // Prevent default form submission
+        event.preventDefault();
 
+        const xhr = new XMLHttpRequest();
+        const url = "https://mystudies.panosgio.org:4010/adduser"; // Replace with your Node.js server URL
+
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    // window.location.href = "/student";
+                    // Swal.fire({
+                    //     text: cardTexts.warningText,
+                    //     icon: 'warning',
+                    //     title: cardTexts.certificate+"\n"+title,
+                    //     showCancelButton: true,
+                    //     cancelButtonText:  cardTexts.cancelCert,
+                    //     confirmButtonColor: "#007fff",
+                    //     cancelButtonColor: "#ab0d0d",
+                    //     confirmButtonText: cardTexts.applyCert,
+                    //     reverseButtons: true
+                    // }).then((result) => {
+                    //     if (result.isConfirmed) {
+                    //         handleClose();
+                    //     }
+                    // });
+                }else if (xhr.status === 201) {
+                    // Swal.fire({
+                    //     text: cardTexts.warningText,
+                    //     icon: 'warning',
+                    //     title: cardTexts.certificate+"\n"+title,
+                    //     showCancelButton: true,
+                    //     cancelButtonText:  cardTexts.cancelCert,
+                    //     confirmButtonColor: "#007fff",
+                    //     cancelButtonColor: "#ab0d0d",
+                    //     confirmButtonText: cardTexts.applyCert,
+                    //     reverseButtons: true
+                    // }).then((result) => {
+                    //     if (result.isConfirmed) {
+                    //         handleClose();
+                    //     }});
+                } else {
+                    alert("Login failed: Error occurred");
+                }
+            }
+        };
+
+        const data = JSON.stringify({
+            username: values.newUsername,
+            password: values.newPassword,
+            registrationNumber: values.studentId,
+            firstName: values.firstName,
+            lastName: values.lastName,
+            role:usermoderegister
+        });
+
+        xhr.send(data);
+    };
   return (
     <Card className="m-3" style={{ maxWidth: '400px', margin: 'auto' }}>
       <Card.Body>
