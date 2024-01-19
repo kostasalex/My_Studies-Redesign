@@ -65,14 +65,26 @@ const NewRegistration = () => {
     };
 
     const handleCheckboxChange = (isChecked, courseId) => {
-        setSelectedCourses(prevCourses => {
-            if (isChecked) {
-                return [...prevCourses, courseId];
-            } else {
-                return prevCourses.filter(id => id !== courseId);
-            }
-        });
+        if (isChecked && selectedCourses.length >= 10) {
+            // Αν ο χρήστης προσπαθεί να προσθέσει περισσότερα από 10 μαθήματα, εμφανίστε το pop-up μήνυμα
+            Swal.fire({
+                title: 'Περιορισμός Μαθημάτων',
+                text: 'Μπορείτε να επιλέξετε μέχρι 10 μαθήματα.',
+                icon: 'warning',
+                confirmButtonText: 'ΟΚ'
+            });
+        } else {
+            // Ενημέρωση των επιλεγμένων μαθημάτων με βάση το checkbox
+            setSelectedCourses(prevCourses => {
+                if (isChecked) {
+                    return [...prevCourses, courseId];
+                } else {
+                    return prevCourses.filter(id => id !== courseId);
+                }
+            });
+        }
     };
+    
 
     const handleTabChange = (semester) => {
         setActiveSemester(semester);
