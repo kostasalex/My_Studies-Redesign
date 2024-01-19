@@ -69,6 +69,11 @@ const CurrentSemester = () => {
       },
     ]);
   };
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+
+  const toggleSuccessModal = () => {
+    setIsSuccessModalOpen(!isSuccessModalOpen);
+  };
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
@@ -79,6 +84,7 @@ const CurrentSemester = () => {
     if (file) {
       console.log("Ανεβάζεται το αρχείο:", file);
       setFile(null);
+      toggleSuccessModal(); // Open success modal when file is uploaded
     }
   };
 
@@ -106,23 +112,27 @@ const CurrentSemester = () => {
             <p>Προθεσμία Υποβολής: {course.deadline}</p>
           </div>
           <div>
-          <button
-        className={`btn btn-secondary ${selectedCourse === course ? "btn-green" : ""}`}
-        onClick={() => navigateToNewRegistration(course)}
-      >
-        Βαθμολόγηση Online
-      </button>
-      <button
-        className="btn btn-secondary"
-        onClick={() => {
-          setSelectedOption("upload-file");
-          setSelectedCourse(course);
-        }}
-        disabled={disabledUpload.has(course.code)}
-      >
-        {selectedOption === "upload-file" ? "Ανεβάστε το Αρχείο" : "Ανεβαστε Βαθμολόγιο"}
-      </button>
-      {selectedCourse === course && selectedOption === "upload-file" && (
+            <button
+              className={`btn btn-secondary ${
+                selectedCourse === course ? "btn-green" : ""
+              }`}
+              onClick={() => navigateToNewRegistration(course)}
+            >
+              Βαθμολόγηση Online
+            </button>
+            <button
+              className="btn btn-secondary"
+              onClick={() => {
+                setSelectedOption("upload-file");
+                setSelectedCourse(course);
+              }}
+              disabled={disabledUpload.has(course.code)}
+            >
+              {selectedOption === "upload-file"
+                ? "Ανεβάστε το Αρχείο"
+                : "Ανεβαστε Βαθμολόγιο"}
+            </button>
+            {selectedCourse === course && selectedOption === "upload-file" && (
         <div>
           <input type="file" id="gradeFile" onChange={handleFileChange} />
           <button
@@ -134,14 +144,19 @@ const CurrentSemester = () => {
           </button>
         </div>
       )}
-    </div>
-  </div>
-))}
-      
-      {/* Προσθήκη του LocalOnline component */}
-      {selectedOption === "grade-online" && selectedCourse && (
-        <Students/>
+      {isSuccessModalOpen && (
+        <div className={styles.successModal}>
+          <p>Το αρχείο ανέβηκε με επιτυχία!</p>
+          <button onClick={toggleSuccessModal}>OK</button>
+        </div>
       )}
+    
+
+          </div>
+        </div>
+      ))}
+
+      {selectedOption === "grade-online" && selectedCourse && <Students />}
     </div>
   );
 };
