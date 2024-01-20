@@ -38,7 +38,7 @@ const AuthForm = ({ redirectUrl }) => {
     redirectAfterLogin()
 
     // Prevent default form submission
-    event.preventDefault(); return;
+    return;
     const xhr = new XMLHttpRequest();
     const url = "https://mystudies.panosgio.org:4010/loginuser"; // Replace with your Node.js server URL
 
@@ -211,24 +211,30 @@ const AuthForm = ({ redirectUrl }) => {
                     </Field>
                   </Col>
                 </Row>
-                <Field name="newPassword" component="input">
-                  {({ input, meta }) => (
-                    <div>
-                      <label>{LoginAuth.password}</label>
-                      <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
-                      {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
-                    </div>
-                  )}
-                </Field>
-                <Field name="confirmPassword" component="input">
-                  {({ input, meta }) => (
-                    <div>
-                      <label>{LoginAuth.passwordConfirmation}</label>
-                      <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
-                      {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
-                    </div>
-                  )}
-                </Field>
+                <Row>
+                  <Col md={6}>
+                    <Field name="newPassword" component="input">
+                      {({ input, meta }) => (
+                        <div>
+                          <label>{LoginAuth.password}</label>
+                          <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                          {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                        </div>
+                      )}
+                    </Field>
+                  </Col>
+                  <Col md={6}>
+                    <Field name="confirmPassword" component="input">
+                      {({ input, meta }) => (
+                        <div>
+                          <label>{LoginAuth.passwordConfirmation}</label>
+                          <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                          {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                        </div>
+                      )}
+                    </Field>
+                  </Col>
+                </Row>
                 <Button className="mt-4 " variant="primary" type="submit" disabled={submitting}>Register</Button>
               </form>
             )}

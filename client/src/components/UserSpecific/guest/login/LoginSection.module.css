@@ -1,9 +1,10 @@
 .login-section {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(255, 253, 253);
-  padding: 50px;
+
 }
 
 .login-section img {
@@ -15,7 +16,7 @@
 .image-container {
   display: none;
   padding: 2px;
-  height: 600px;
+  height: 500px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -24,8 +25,5 @@
     display: block
   }
 
-  .login-section {
-
-    border: 1px solid rgb(230, 230, 230);
-  }
+  .login-section {}
 }
