@@ -1,9 +1,8 @@
 
 import { useContext, useState } from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { FaGlobe, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 import styles from './Header.module.css';
-import { FaGlobe, FaUser } from 'react-icons/fa';
-import englishFlag from '../../../../public/english.png';
-import greekFlag from '../../../../public/greek.png';
 import files from "../../../../public/uoalogo.svg";
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -23,14 +22,14 @@ const Header = () => {
     const { user, changeUser, studentColor, teacherColor } = useContext(StudetTeacherContext);
 
     const isUserLoggedIn = localStorage.getItem("isUserLoggedIn") === "true";
-    console.log("header: ", isUserLoggedIn)
     const navigate = useNavigate()
 
     const toggleLanguage = () => {
         changeLanguage();
     };
+    const [expanded, setExpanded] = useState(false);
 
-    console.log(isUserLoggedIn)
+    const toggleNavbar = () => setExpanded(expanded => !expanded);
 
     const toggleUser = () => {
         let nextUser = user === "student" ? "teacher" : "student";
@@ -42,41 +41,51 @@ const Header = () => {
         localStorage.setItem('isUserLoggedIn', 'false');
         navigate("/")
     }
+    const loggedOutColor = 'white';
 
-    console.log(user);
+    const headerBackgroundColor = isUserLoggedIn
+        ? (user === "student" ? studentColor : teacherColor)
+        : loggedOutColor;
+
     return (
-        <header style={{ background: user === "student" ? studentColor : teacherColor }} className={styles.header}>
-            <a href="/" className={styles.logo}>
-                <img src={`${files}`} alt="UOA Logo" className={styles.logoleft} />
-            </a>
-            <nav className={styles.nav}>
-                <a href="/">{headerTexts.home}</a>
-                <a href="/about">{headerTexts.about}</a>
-                <a href="/contact">{headerTexts.contact}</a>
+        <Navbar expanded={expanded} expand="lg" style={{ background: headerBackgroundColor }} className={styles.header}>
+            <Container>
+                <Navbar.Brand href="/">
+                    <img src={files} alt="UOA Logo" className={styles.logoleft} />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleNavbar}>
+                    {expanded ? <FaTimes /> : <FaBars />} {/* Conditional rendering */}
+                </Navbar.Toggle>
+                <Navbar.Collapse id="basic-navbar-nav" className={styles.navbarCollapse}>
+                    <Nav className="me-auto">
+                        <Nav.Link href="/">{headerTexts.home}</Nav.Link>
+                        <Nav.Link href="/about">{headerTexts.about}</Nav.Link>
+                        <Nav.Link href="/contact">{headerTexts.contact}</Nav.Link>
+                    </Nav>
+                    <div className={styles.languagelogin}>
+                        <div className={styles.languageSwitcher}>
+                            <FaGlobe onClick={toggleLanguage} />
+                            <span className={styles.languageLabel} onClick={toggleLanguage}>
+                                {language === 'en' ? 'English' : 'Ελληνικά'}
+                            </span>
+                        </div>
+                        <div >
+                            {isUserLoggedIn ?
+                                (<button onClick={logOut}><FaUser className={styles.icon} /></button>) :
 
-            </nav>
-            <div className='d-flex '>
-                <div className={styles.languageSwitcher}>
-                    <FaGlobe onClick={toggleLanguage} />
-                    <span className={styles.languageLabel} onClick={toggleLanguage}>
-                        {language === 'en' ? 'English' : 'Ελληνικά'}
-                    </span>
-                </div>
-                <div >
-                    {isUserLoggedIn ?
-                        (<button onClick={logOut}><FaUser className={styles.icon} /></button>) :
+                                (<div className={styles.loginbtn}>
+                                    <button style={{ background: user === "student" ? teacherColor : studentColor }} onClick={toggleUser}>
+                                        {user === "student" ? headerTexts.teacherPortal : headerTexts.studentPortal}
+                                    </button>
+                                </div>)
 
-                        (<div className={styles.loginbtn}>
-                            <button style={{ background: user === "student" ? teacherColor : studentColor }} onClick={toggleUser}>
-                                {user === "student" ? headerTexts.teacherPortal : headerTexts.studentPortal}
-                            </button>
-                        </div>)
+                            }
+                        </div>
+                    </div>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar >
 
-                    }
-                </div>
-            </div>
-
-        </header >
     );
 };
 

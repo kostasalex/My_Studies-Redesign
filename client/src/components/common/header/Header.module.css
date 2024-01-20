@@ -1,4 +1,5 @@
 .header {
+  max-width: 1900px;
   display: flex;
   position: relative;
   justify-content: space-between;
@@ -6,14 +7,12 @@
   padding: 0px 20px;
   background-color: #f8f0f7;
   color: #000000;
-  border-radius: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header button {
   background-color: transparent;
 }
-
-.logo {}
 
 .nav a {
   color: #000000;
@@ -40,8 +39,6 @@
 }
 
 .languageSwitcher {
-  position: relative;
-  right: 170px;
 
   cursor: pointer;
 }
@@ -50,46 +47,75 @@
   margin-left: 10px;
 }
 
-.languageDropdown {
-  position: absolute;
-  right: 0;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 150px;
-  text-align: left;
-}
-
-.languageDropdown div {
-  padding: 8px;
-  cursor: pointer;
-}
-
-.languageDropdown div:hover {
-  background-color: #f0f0f0;
-}
-
-/* Add styles for the flags */
 .imgl {
   width: 20px;
-  /* Adjust size as needed */
   margin-right: 5px;
 }
 
-/* Additional icon styles */
 .icon {
-  margin-left: 40px;
+  margin-top: 10px;
+  margin-left: 0;
+}
+
+.languagelogin {
+  display: flex;
+  flex-direction: column;
 }
 
 .loginbtn {
-  display: flex;
-  position: absolute;
+  margin-top: 10px;
+}
 
-  height: 100%;
-  right: 0;
-  top: 0;
-  justify-self: end;
-  margin-left: 100px;
-  cursor: pointer;
 
+@media screen and (min-width: 992px) {
+  .languagelogin {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .languageSwitcher {
+    margin-right: 150px;
+  }
+
+  .loginbtn {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    justify-self: end;
+    margin-left: 100px;
+    cursor: pointer;
+    margin-top: 0;
+  }
+
+  .icon {
+    margin-left: 40px;
+  }
+
+  .navbarCollapse {
+    margin-left: 0px;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .languageSwitcher {
+    margin-right: 180px;
+  }
+
+  .navbarCollapse {
+    margin-left: 100px;
+  }
+
+}
+
+@media screen and (min-width: 1400px) {
+  .languageSwitcher {
+    margin-right: 220px;
+  }
+
+  .navbarCollapse {
+    margin-left: 300px;
+  }
 }
