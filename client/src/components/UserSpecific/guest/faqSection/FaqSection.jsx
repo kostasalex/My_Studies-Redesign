@@ -17,11 +17,11 @@ const FaqSection = () => {
             </div>
 
             <div className={styles["right-section"]}>
-                <h1>{faqTexts.title}</h1>
+                <h3>{faqTexts.title}</h3>
                 <div className={styles.newline}>
-                    <h4>
+                    <p>
                         {faqTexts.description}
-                    </h4>
+                    </p>
                 </div>
 
                 <div className={styles["buttons-container"]}>

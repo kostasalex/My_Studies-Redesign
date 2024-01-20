@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import styles from './InfoSection.module.css';
 import { Card } from 'react-bootstrap';
 import { studentInfoCardData as studentInfoCardDataTextsEn } from '@/locales/en';
@@ -17,7 +17,7 @@ import { StudetTeacherContext } from "../../../../context/HeaderButtonContext.js
 import ModalComponent, { useModalControl } from '@/components/common/ModalComponent';
 import AuthForm from '../../../common/auth/AuthForm.jsx';
 
-const InfoSection = () => {
+const InfoSection = ({ setIsModalOpen }) => {
     const { language } = useContext(LanguageContext);
     const { user } = useContext(StudetTeacherContext);
 
@@ -37,8 +37,16 @@ const InfoSection = () => {
 
     const handleCardClick = (card) => {
         setSelectedCard(card);
+        setIsModalOpen(true);
         openModal();
     };
+
+    useEffect(() => {
+        if (!isOpen) {
+            setIsModalOpen(false);
+            console.log("false modal")
+        }
+    }, [isOpen]);
 
     const getRedirectUrl = (cardId) => {
         if (user === "student") {
@@ -77,7 +85,7 @@ const InfoSection = () => {
 
                 {selectedCard && (
                     <ModalComponent isOpen={isOpen} closeModal={closeModal} title={loginAuth.authentication}>
-                        <AuthForm redirectUrl={getRedirectUrl(selectedCard.id)} />
+                        <AuthForm redirectUrl={getRedirectUrl(selectedCard.id)} opacity={100} />
                     </ModalComponent>
                 )}
             </div>

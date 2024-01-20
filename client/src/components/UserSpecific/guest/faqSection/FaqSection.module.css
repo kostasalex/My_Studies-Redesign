@@ -1,9 +1,8 @@
 .faq-section {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .left-section {
@@ -14,6 +13,7 @@
 
 .left-section img {
   margin-left: 0px;
+  width: 100%;
 }
 
 .right-section {
@@ -38,4 +38,11 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media screen and (min-width: 1200px) {
+  .faq-section {
+    display: flex;
+    flex-direction: row;
+  }
 }
