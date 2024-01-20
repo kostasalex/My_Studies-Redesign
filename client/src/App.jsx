@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header, Footer, Guest, Student, Teacher, Contact, Faq } from './components';
 import styles from './App.module.css';
@@ -6,7 +7,6 @@ import { StudetTeacherProvider } from "./context/HeaderButtonContext.jsx";
 
 const App = () => {
 
-
   return (
     <LanguageProvider>
       <StudetTeacherProvider>
@@ -14,7 +14,7 @@ const App = () => {
           <div className={styles.appContainer}>
 
             <Header />
-                      <div className={styles.content}>
+            <div className={styles.content}>
               <Routes>
                 <Route path="/" element={<Guest />} />
                 <Route path="/student/*" element={<Student />} />

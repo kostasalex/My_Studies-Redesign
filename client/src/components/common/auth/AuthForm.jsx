@@ -13,7 +13,8 @@ import Swal from 'sweetalert2';
 import { authform as TextsEn } from '@/locales/en';
 import { authform as TextsGr } from '@/locales/gr';
 
-const AuthForm = ({ redirectUrl }) => {
+const AuthForm = ({ redirectUrl, opacity }) => {
+  console.log(opacity)
   const [key, setKey] = useState('login');
   const { language } = useContext(LanguageContext);
   const LoginAuth = language === 'en' ? LoginAuthTextsEn : LoginAuthTextsGr;
@@ -118,7 +119,7 @@ const AuthForm = ({ redirectUrl }) => {
     xhr.send(data);
   };
   return (
-    <div className={styles.authform}>
+    <div style={{ opacity: opacity }} className={styles.authform}>
       <div className="mb-3 d-flex justify-content-center flex-column text-center align-items-center ">
         {/* <img
           src="https://res.cloudinary.com/drijmbypg/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1702593334/logo-large_uaskki.jpg?_s=public-apps"
