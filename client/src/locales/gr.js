@@ -217,7 +217,7 @@ export const gradesTexts = {
     semesterSpring: "Εαρινό "
 };
 
-export const guestInfoCardData = [
+export const studentInfoCardData = [
     {
         id: 1,
         title: 'Έλεγχος Βαθμολογίας',
@@ -235,12 +235,37 @@ export const guestInfoCardData = [
     }
 ];
 
+export const teacherInfoCardData = [
+    {
+        id: 1,
+        title: 'Βαθμολόγηση',
+        text: 'Βαθμολογήστε αποτελεσματικά τους φοιτητές απλά ανεβάζοντας ένα αρχείο. Απλοποιήστε τη διαδικασία αξιολόγησης ανεβάζοντας απλά ένα αρχείο.'
+    },
+    {
+        id: 2,
+        title: 'Πρόσβαση σε Παλαιότερους Βαθμούς',
+        text: 'Προσπελάστε εύκολα βαθμούς από προηγούμενες περιόδους με λίγα κλικ.'
+    },
+    {
+        id: 3,
+        title: 'Προβολή Στατιστικών',
+        text: 'Αποκτήστε μια πλήρη κατανόηση της απόδοσης των φοιτητών. Αναλύστε τα στατιστικά στοιχεία της τάξης για να ενισχύσετε τις διδακτικές σας στρατηγικές και μεθόδους.'
+    }
+];
+
+
+export const studentSectionTitle = "Ενέργειες Φοιτητών";
+export const teacherSectionTitle = "Εργαλεία Διδασκαλίας";
+
+
+
+
 export const GradesTexts = {
     semester: "Εξάμηνο",
     subject: "Μάθημα",
     pass: "Επιτυχία",
     grade: "Βαθμοί",
-    passed:{
+    passed: {
         1: "Ναι",
         2: "Όχι"
     },

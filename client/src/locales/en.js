@@ -224,7 +224,7 @@ export const gradesTexts = {
     semesterSpring: "Spring "
 };
 
-export const guestInfoCardData = [
+export const studentInfoCardData = [
     {
         id: 1,
         title: 'Check Grades',
@@ -242,8 +242,25 @@ export const guestInfoCardData = [
     }
 ];
 
-
-
+export const teacherInfoCardData = [
+    {
+        id: 1,
+        title: 'Grading',
+        text: 'Efficiently grade students by simply uploading a file. Streamline the assessment process by just uploading a file.'
+    },
+    {
+        id: 2,
+        title: 'Access Older Grades',
+        text: 'Retrieve historical grades with ease. Quickly access and review academic performance from past terms.'
+    },
+    {
+        id: 3,
+        title: 'View Statistics',
+        text: 'Gain a comprehensive understanding of student performance. Analyze class statistics to enhance your teaching strategies and methods.'
+    }
+];
+export const studentSectionTitle = "Student Actions";
+export const teacherSectionTitle = "Teacher Tools";
 
 
 export const GradesTexts = {
@@ -251,7 +268,7 @@ export const GradesTexts = {
     subject: "Subject",
     pass: "Pass",
     grade: "Grades",
-    passed:{
+    passed: {
         1: "Yes",
         2: "No"
     },
