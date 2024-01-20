@@ -1,19 +1,20 @@
 .login-section {
-  background-image: url("@/assets/homepage/homebg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  border: 1px solid rgb(230, 230, 230);
+  background-color: rgb(255, 253, 253);
+  /* 2 parts for the image, 1 part for the form */
+  gap: 20px;
+  /* Adjust the gap between the image and the form as needed */
   padding: 50px;
 }
 
-.login-section h1 {
-  color: #fff;
-  font-feature-settings: "clig" off, "liga" off;
-  font-family: Poppins;
-  font-size: 64px;
-  font-weight: 600;
-  margin-left: 20%;
+.login-section img {
+  width: 50%;
+  /* Make the image take the full width of its grid column */
+  height: 50%;
+  /* Maintain the aspect ratio of the image */
 }
+
+/* Rest of your CSS */

@@ -1,10 +1,11 @@
+
 import { useContext, useState } from 'react';
 import styles from './Header.module.css';
 import { FaGlobe, FaUser } from 'react-icons/fa';
 import englishFlag from '../../../../public/english.png';
 import greekFlag from '../../../../public/greek.png';
-import files from "../../../../public/uoalogo.png";
-import { useLocation } from 'react-router-dom';
+import files from "../../../../public/uoalogo.svg";
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import CustomButton from "../buttons/CustomButton.jsx";
 
@@ -19,9 +20,11 @@ const Header = () => {
     const { language, changeLanguage } = useContext(LanguageContext);
     const headerTexts = language === 'en' ? headerTextsEn : headerTextsGr;
 
-    const { user, changeUser } = useContext(StudetTeacherContext);
-    const usermode = user === true ? true : false;
+    const { user, changeUser, studentColor, teacherColor } = useContext(StudetTeacherContext);
 
+    const isUserLoggedIn = localStorage.getItem("isUserLoggedIn") === "true";
+    console.log("header: ", isUserLoggedIn)
+    const navigate = useNavigate()
 
     const handleLanguageChange = (language) => {
         changeLanguage(language);
@@ -30,60 +33,62 @@ const Header = () => {
 
     const toggleLanguageDropdown = () => setShowLanguageDropdown(!showLanguageDropdown);
 
+    console.log(isUserLoggedIn)
 
-    const location = useLocation();
-
-    const toggleButton = (user) => {
-        changeUser(user)
+    const toggleUser = () => {
+        let nextUser = user === "student" ? "teacher" : "student";
+        changeUser(nextUser)
     };
 
+    const logOut = () => {
+        console.log("logout!");
+        localStorage.setItem('isUserLoggedIn', 'false');
+        navigate("/")
+    }
 
+    console.log(user);
     return (
-        <header className={styles.header}>
-            <div className={styles.logo}>
+        <header style={{ background: user === "student" ? studentColor : teacherColor }} className={styles.header}>
+            <a href="/" className={styles.logo}>
                 <img src={`${files}`} alt="UOA Logo" className={styles.logoleft} />
-            </div>
+            </a>
             <nav className={styles.nav}>
                 <a href="/">{headerTexts.home}</a>
                 <a href="/about">{headerTexts.about}</a>
                 <a href="/contact">{headerTexts.contact}</a>
 
             </nav>
-            <div className={styles.loginbtn}>
-                {location.pathname === '/' && (
-                    <>
-                        {usermode ? (
-                            <div className={styles.loginbtn}>
-                                <CustomButton onClick={() => toggleButton(false)}>
-                                    {headerTexts.teacherPortal}
-                                </CustomButton>
-                            </div>
-                        ) : (
-                            <div className={styles.loginbtn}>
-                                <CustomButton onClick={() => toggleButton(true)}>
-                                    {headerTexts.studentPortal}
-                                </CustomButton>
-                            </div>
-                        )}
-                    </>
-                )}
-            </div>
-            <div className={styles.languageSwitcher}>
+            <div className='d-flex '>
+                <div className={styles.languageSwitcher}>
 
-                <FaGlobe onClick={toggleLanguageDropdown} />
-                {showLanguageDropdown && (
-                    <div className={styles.languageDropdown}>
-                        <div onClick={() => handleLanguageChange('en')}>
-                            <img className={styles.imgl} src={englishFlag} alt="English" /> English
+                    <FaGlobe onClick={toggleLanguageDropdown} />
+                    {showLanguageDropdown && (
+                        <div className={styles.languageDropdown}>
+                            <div onClick={() => handleLanguageChange('en')}>
+                                <img className={styles.imgl} src={englishFlag} alt="English" /> English
+                            </div>
+                            <div onClick={() => handleLanguageChange('gr')}>
+                                <img className={styles.imgl} src={greekFlag} alt="Greek" /> Ελληνικά
+                            </div>
                         </div>
-                        <div onClick={() => handleLanguageChange('gr')}>
-                            <img className={styles.imgl} src={greekFlag} alt="Greek" /> Ελληνικά
-                        </div>
-                    </div>
-                )}
-                <FaUser className={styles.icon} />
-                {/* Profile icon logic here */}
+                    )}
+
+                    {/* Profile icon logic here */}
+                </div>
+                <div className="text-center">
+                    {isUserLoggedIn ?
+                        (<button onClick={logOut}><FaUser className={styles.icon} /></button>) :
+
+                        (<div className={styles.loginbtn}>
+                            <button style={{ background: user === "student" ? teacherColor : studentColor }} onClick={toggleUser}>
+                                {user === "student" ? headerTexts.teacherPortal : headerTexts.studentPortal}
+                            </button>
+                        </div>)
+
+                    }
+                </div>
             </div>
+
         </header>
     );
 };

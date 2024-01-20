@@ -13,7 +13,7 @@ export const useModalControl = () => {
 
 const ModalComponent = ({ isOpen, closeModal, title, children }) => {
     return (
-        <Modal show={isOpen} onHide={closeModal}>
+        <Modal className='d-flex justify-content-center ' show={isOpen} onHide={closeModal}>
             <Modal.Header closeButton>
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>

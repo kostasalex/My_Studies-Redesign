@@ -12,7 +12,7 @@ const englishMessages = {
 };
 
 const greekMessages = {
-  newUsername: 'Απαιτείται όνομα χρήστη',
+  username: 'Απαιτείται όνομα χρήστη',
   password: 'Απαιτείται κωδικός',
   newPassword: 'Ο κωδικός πρέπει να έχει τουλάχιστον 6 χαρακτήρες',
   confirmPassword: 'Η επιβεβαίωση του κωδικού πρέπει να έχει τουλάχιστον 6 χαρακτήρες',
@@ -28,7 +28,7 @@ export const loginSchema = z.object({
 });
 
 export const registerSchema = z.object({
-  newUsername: z.string().min(1, { message: greekMessages.newUsername }),
+  newUsername: z.string().min(1, { message: greekMessages.username }),
   newPassword: z.string().min(6, { message: englishMessages.newPassword }),
   confirmPassword: z.string().min(6, { message: englishMessages.confirmPassword }),
   studentId: z.string().min(1, { message: englishMessages.studentId }),
@@ -51,7 +51,7 @@ export const validateWithZod = (schema, language) => {
         if (issue.path[0] === 'confirmPassword') {
           errors[issue.path[0]] = messages.confirmPasswordMatch; // Custom message for confirmPassword
         } else {
-          errors[issue.path[0]] = messages[issue.path[0]] || messages.confirmPasswordMatch;
+          errors[issue.path[0]] = messages[issue.path[0]];
         }
       }
       console.log(errors);

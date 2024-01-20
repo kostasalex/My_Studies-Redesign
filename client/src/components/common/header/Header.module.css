@@ -1,15 +1,19 @@
 .header {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
   background-color: #f8f0f7;
   color: #000000;
+  border-radius: 10px 0;
 }
 
-.logo {
-  /* Styles for the logo area */
+.header button {
+  background-color: transparent;
 }
+
+.logo {}
 
 .nav a {
   color: #000000;
@@ -25,6 +29,7 @@
 .logoleft {
   max-width: 300px;
   height: fit-content;
+
   /*margin-right: 1200px;*/
 }
 
@@ -35,6 +40,7 @@
 }
 
 .languageSwitcher {
+  margin-right: 200px;
   position: relative;
   cursor: pointer;
   /* Additional styles as needed */
@@ -72,7 +78,14 @@
 }
 
 .loginbtn {
-  position: relative;
+  display: flex;
+  position: absolute;
+
+  height: 100%;
+  right: 0;
+  top: 0;
+  justify-self: end;
+  margin-left: 100px;
   cursor: pointer;
-  margin-right: -200px;
+
 }
