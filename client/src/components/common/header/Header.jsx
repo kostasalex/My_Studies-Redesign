@@ -26,12 +26,9 @@ const Header = () => {
     console.log("header: ", isUserLoggedIn)
     const navigate = useNavigate()
 
-    const handleLanguageChange = (language) => {
-        changeLanguage(language);
+    const toggleLanguage = () => {
+        changeLanguage();
     };
-    const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
-
-    const toggleLanguageDropdown = () => setShowLanguageDropdown(!showLanguageDropdown);
 
     console.log(isUserLoggedIn)
 
@@ -60,22 +57,12 @@ const Header = () => {
             </nav>
             <div className='d-flex '>
                 <div className={styles.languageSwitcher}>
-
-                    <FaGlobe onClick={toggleLanguageDropdown} />
-                    {showLanguageDropdown && (
-                        <div className={styles.languageDropdown}>
-                            <div onClick={() => handleLanguageChange('en')}>
-                                <img className={styles.imgl} src={englishFlag} alt="English" /> English
-                            </div>
-                            <div onClick={() => handleLanguageChange('gr')}>
-                                <img className={styles.imgl} src={greekFlag} alt="Greek" /> Ελληνικά
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Profile icon logic here */}
+                    <FaGlobe onClick={toggleLanguage} />
+                    <span className={styles.languageLabel} onClick={toggleLanguage}>
+                        {language === 'en' ? 'English' : 'Ελληνικά'}
+                    </span>
                 </div>
-                <div className="text-center">
+                <div >
                     {isUserLoggedIn ?
                         (<button onClick={logOut}><FaUser className={styles.icon} /></button>) :
 
@@ -89,7 +76,7 @@ const Header = () => {
                 </div>
             </div>
 
-        </header>
+        </header >
     );
 };
 

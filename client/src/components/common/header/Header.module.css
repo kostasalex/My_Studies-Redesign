@@ -40,10 +40,14 @@
 }
 
 .languageSwitcher {
-  margin-right: 200px;
   position: relative;
+  right: 170px;
+
   cursor: pointer;
-  /* Additional styles as needed */
+}
+
+.languageSwitcher span {
+  margin-left: 10px;
 }
 
 .languageDropdown {

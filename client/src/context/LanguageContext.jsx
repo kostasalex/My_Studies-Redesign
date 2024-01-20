@@ -14,10 +14,11 @@ export const LanguageProvider = ({ children }) => {
         }
     }, []);
 
-    const changeLanguage = (lang) => {
-
-        setLanguage(lang);
-        Cookies.set('language', lang, { expires: 365 }); // Cookie expires in 365 days
+    const changeLanguage = () => {
+        const storedLanguage = Cookies.get('language');
+        let language = storedLanguage === "en" ? "gr" : "en"
+        setLanguage(language);
+        Cookies.set('language', language, { expires: 365 }); // Cookie expires in 365 days
     };
 
     return (
