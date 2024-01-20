@@ -6,9 +6,11 @@
     min-height: 100vh;
     padding-top: 2rem;
 }
+
 .header {
     margin-bottom: 2rem;
 }
+
 .searchBarContainer {
     width: 80%;
     max-width: 600px;
@@ -63,6 +65,7 @@
 .accordionContent p {
     margin: 0;
 }
+
 .pagination {
     display: flex;
     justify-content: center;

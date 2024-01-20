@@ -17,12 +17,13 @@
 
 .cards {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 30px;
   justify-content: center;
   padding: 20px;
 }
 
 .card-title {
-  margin-top: 5px; /* Ρυθμίστε το κενό επάνω από τον τίτλο όπως επιθυμείτε */
-  text-decoration: underline; /* Προσθέστε υπογράμμιση στον τίτλο */
+  margin-top: 5px;
+  text-decoration: underline;
 }

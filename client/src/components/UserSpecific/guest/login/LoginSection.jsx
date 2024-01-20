@@ -12,7 +12,11 @@ const LoginSection = () => {
   console.log("user from loginsection: ", user)
   return (
     <div className={styles["login-section"]}>
-      <img src={imagebg} />
+      <div className={styles["image-container"]}>
+        <img src={imagebg} />
+      </div>
+
+
       {/* <h1>
         Ιστορία που διαφωτίζει, <br /> Γνώση που εξελίσεται...
       </h1> */}

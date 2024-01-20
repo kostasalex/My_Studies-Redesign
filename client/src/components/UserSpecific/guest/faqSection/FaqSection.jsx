@@ -3,7 +3,7 @@ import { faqSectionTexts as faqTextsEn } from '@/locales/en';
 import { faqSectionTexts as faqTextsGr } from '@/locales/gr';
 import faqimage from "@/assets/homepage/faq.png";
 import styles from "./FaqSection.module.css";
-import {LanguageContext} from "../../../../context/LanguageContext.jsx";
+import { LanguageContext } from "../../../../context/LanguageContext.jsx";
 import CustomButton from "../../../common/buttons/CustomButton.jsx";
 
 const FaqSection = () => {
