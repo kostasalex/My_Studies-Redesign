@@ -122,7 +122,7 @@ const attachRoutes = (app) => {
       // Connect to the MongoDB cluster
       await client.connect();
       // Get a reference to the users collection
-      const usersCollection = client.db('test').collection('users');
+      const usersCollection = client.db('mystudies').collection('users');
 
       // Find the user by username
       const user = await usersCollection.findOne({ username: req.user });
@@ -130,6 +130,7 @@ const attachRoutes = (app) => {
       if (user) {
         // Send the user data as a response
         delete user.password;
+        console.error("send data for user : "+user.username);
         res.status(200).json(user);
       } else {
         res.status(404).send('User not found');

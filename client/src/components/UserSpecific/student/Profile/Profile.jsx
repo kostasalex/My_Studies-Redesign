@@ -1,8 +1,35 @@
-import { useState } from "react";
+import React, { useEffect, useState } from 'react';
 import styles from "./Profile.module.css";
 import photoprofile from "./photoprofile.png";
 
 const Profile = () => {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        // Make a GET request to your backend endpoint
+        const response = await fetch('/getuser', {
+          method: 'GET',
+        });
+
+        if (response.ok) {
+          // If the response is successful, parse the JSON data
+          const data = await response.json();
+          setUserData(data);
+        } else {
+          // Handle error case
+          console.error('Error fetching user data:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error.message);
+      }
+    };
+
+   
+    getUserData();
+  }, []); 
+
   const [phone, setPhone] = useState(""); // Κατάσταση του τηλεφώνου
   const [email, setEmail] = useState(""); // Κατάσταση του email
   const [landline, setLandline] = useState(""); // Κατάσταση του σταθερού τηλεφώνου
@@ -49,25 +76,32 @@ const Profile = () => {
           <img src={photoprofile} alt="Profile" />
           <button className={styles.changeProfileButton}>Αλλαγή Προφίλ</button>
         </div>
-
-        <div className={styles.studentlayer2}>
+        {userData ? (
+        <div> 
+          <div className={styles.studentlayer2}>
           <h4>Βασικά Στοιχεία</h4>
-          <h6>Αρ. Μητρώου : </h6>
-          <h6>Όνομα :</h6>
-          <h6>Επίθετο :</h6>
+          <h6>Αρ. Μητρώου : {userData.registrationNumber}</h6>
+          <h6>Όνομα : {userData.firstName}</h6>
+          <h6>Επίθετο : {userData.lastName}</h6>
           <h6>Όνομα Πατέρα : Δημήτριος</h6>
           <h6>Όνομα Μητέρας : Παναγιώτα</h6>
           <h6>Ημ. Γέννησης : 02/12/2002</h6>
         </div>
-        <div className={styles.studentlayer3}>
+       
+       
+        </div>
+         ) : (
+        <p>Loading...</p>
+      )}
+       <div className={styles.studentlayer3}>
           <h4>Στοιχεία Ταυτοποίησης</h4>
-          <h6>Αρ. Πάσου : 1115202000283</h6>
+          <h6>Αρ. Πάσου : 123456789</h6>
           <h6>Αρ. Ταυτότητας : ΑΙ-235135</h6>
           <h6>Εκδούσα Αρχή Α.Τ : Χίου</h6>
           <h6>Ημ. Έκδοσης Α.Τ : 05/12/2014</h6>
           <h6>ΑΜΚΑ : 015204927582</h6>
         </div>
-        <div className={styles.studentlayer4}>
+       <div className={styles.studentlayer4}>
           <h4>Στοιχεία Οικίας</h4>
           <h6>Διεύθ. Κατοικίας : Μιχαλακοπούλου </h6>
           <h6>Αρ. Κατοικίας : 21</h6>
@@ -75,6 +109,8 @@ const Profile = () => {
           <h6>Τ.Κ. : 21021</h6>
         </div>
       </div>
+
+     
       <h3 className={styles.profileTitle}>Στοιχεία Επικοινωνίας Φοιτητή</h3>
       <div className={styles.student}>
         <div className={styles.studentlayer11}>

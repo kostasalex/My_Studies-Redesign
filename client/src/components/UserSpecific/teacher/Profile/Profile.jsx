@@ -1,8 +1,34 @@
-import { useState } from "react";
+import React, { useEffect, useState } from 'react';
 import styles from "./Profile.module.css";
 import photoprofile from "./teacher.jpg";
 
 const Profile = () => {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        // Make a GET request to your backend endpoint
+        const response = await fetch('/getuser', {
+          method: 'GET',
+        });
+
+        if (response.ok) {
+          // If the response is successful, parse the JSON data
+          const data = await response.json();
+          setUserData(data);
+        } else {
+          // Handle error case
+          console.error('Error fetching user data:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error.message);
+      }
+    };
+
+   
+    getUserData();
+  }, []); 
   const [phone, setPhone] = useState(""); // Κατάσταση του τηλεφώνου
   const [email, setEmail] = useState(""); // Κατάσταση του email
   const [landline, setLandline] = useState(""); // Κατάσταση του σταθερού τηλεφώνου
@@ -49,16 +75,21 @@ const Profile = () => {
           <img src={photoprofile} alt="Profile" />
           <button className={styles.changeProfileButton}>Αλλαγή Προφίλ</button>
         </div>
-
+        {userData ? (
+        <div> 
         <div className={styles.studentlayer2}>
           <h4>Βασικά Στοιχεία</h4>
-          <h6>Αρ. Μητρώου : 1820173928</h6>
-          <h6>Όνομα :</h6>
-          <h6>Επίθετο :</h6>
+
+          <h6>Αρ. Μητρώου : {userData.registrationNumber}</h6>
+          <h6>Όνομα : {userData.firstName}</h6>
+          <h6>Επίθετο : {userData.lastName}</h6>
           <h6>Ρόλος : Καθηγητής</h6>
           <h6>Ημ. Γέννησης : 25 / 03 / 1821</h6>
         </div>
-
+        </div>
+         ) : (
+        <p>Loading...</p>
+      )}
         <div className={styles.studentlayer4}>
           <h4>Στοιχεία Επικοινωνίας</h4>
           <h6>Αρ. Γραφείου : Α69</h6>
