@@ -14,10 +14,10 @@ export default function StudentsTable({ data, onEdit, onSave }) {
                 <td>{item.studentID}</td>
                 <td>{item.firstName}</td>
                 <td>{item.lastName}</td>
-                <td>
+                <td className={styles.numberInput}>
                   {item.editing ? (
                     <input
-                      className={styles.numberInput}
+
                       type="number"
                       min="0"
                       max="10"

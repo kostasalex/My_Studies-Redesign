@@ -1,1 +1,3 @@
-.numberInput {}
+.numberInput input {
+    width: 50px !important;
+}
