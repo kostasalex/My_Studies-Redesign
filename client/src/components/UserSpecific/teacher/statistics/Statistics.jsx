@@ -1,6 +1,4 @@
-import React from "react";
 import StudentGradesChart from "./StudentGradesChart";
-import Path from "../path/path.module.css";
 import "./Four_Panel.css";
 import DonutChart from "./DonutChart";
 import CustomButton from "../../../common/buttons/CustomButton.jsx";
@@ -9,10 +7,6 @@ const Statistics = () => {
   const gradesData = [80, 92, 75, 88]; // Παράδειγμα δεδομένων με βαθμούς
   return (
     <div>
-      <div className={Path["pathh"]}>
-        <button>• Αρχική /</button>
-        <button>Στατιστικά /</button>
-      </div>
       <h6>Φίλτρα Αναζήτησης</h6>
       <CustomButton>Μάθημα</CustomButton>
       <CustomButton>Περίοδος</CustomButton>

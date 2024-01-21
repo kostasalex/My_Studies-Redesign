@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./CurrentSemester.module.css";
-import Path from "../path/path.module.css";
 import Students from "./Table.jsx";
 
 const CurrentSemester = () => {
@@ -90,11 +89,6 @@ const CurrentSemester = () => {
 
   return (
     <div>
-      <div className={Path["pathh"]}>
-        <button onClick={() => navigate("/")}>• Αρχική /</button>
-        <button>Τρέχων Εξάμηνο /</button>
-      </div>
-
       <div className={styles.mylessons}>
         Τα Μαθήματα μου :
         {selectedOption === "grade-online" && (

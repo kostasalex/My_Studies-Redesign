@@ -9,6 +9,7 @@ import Profile from "./Profile/Profile";
 import CurrentSemester from "./currentSemester/CurrentSemester";
 import OldSemesters from "./oldSemesters/OldSemesters";
 import Statistics from "./statistics/Statistics";
+import Breadcrumb from '@/components/common/Breadcrumbs';
 
 export default function Teacher() {
   const navigate = useNavigate();
@@ -51,6 +52,7 @@ export default function Teacher() {
         ))}
       </Dashboard>
       <div className="container" style={{ padding: "20px", flex: 1 }}>
+        <Breadcrumb />
         <div className="d-flex flex-column">
           <div
             className="periodos"

@@ -12,6 +12,7 @@ import Profile from "./Profile/Profile";
 import { studentDashboardButtons as TextsEn } from '@/locales/en';
 import { studentDashboardButtons as TextsGr } from '@/locales/gr';
 import { LanguageContext } from "../../../context/LanguageContext.jsx";
+import Breadcrumb from '@/components/common/Breadcrumbs';
 
 export default function Student() {
   const { language } = useContext(LanguageContext);
@@ -54,6 +55,7 @@ export default function Student() {
         )}
       </Dashboard>
       <div className="container" >
+        <Breadcrumb />
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />
