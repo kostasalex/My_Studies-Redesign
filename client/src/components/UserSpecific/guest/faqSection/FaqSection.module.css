@@ -1,25 +1,32 @@
 .faq-section {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .left-section {
-  flex: 1;
+  display: flex;
+  justify-content: center;
   margin-left: 0px;
   margin-bottom: 20px;
 }
 
+.faq-section p {
+  max-width: 400px;
+}
+
 .left-section img {
   margin-left: 0px;
-  width: 100%;
+  width: 90%;
 }
 
 .right-section {
-  flex: 2;
+  display: flex;
+  flex-direction: column;
   padding: 0 20px;
   text-align: center;
+  justify-content: center;
   max-width: 800px;
   margin-right: 0px;
 }
