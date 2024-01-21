@@ -5,12 +5,12 @@
   padding: 0px 20px;
   background-color: #f8f0f7;
   color: #000000;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header button {
   background-color: transparent;
+  border-radius: 10px;
 }
 
 .nav a {
@@ -65,6 +65,14 @@
 
 .loginbtn {
   margin-top: 10px;
+  font-weight: 500;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.loginbtn:hover {
+  color: white;
+
 }
 
 

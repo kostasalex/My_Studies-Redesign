@@ -2,8 +2,8 @@ import { createContext, useState } from 'react';
 
 export const StudetTeacherContext = createContext();
 
-const studentColor = "#F8F0F7";
-const teacherColor = "rgb(93, 163, 158, 0.30)"
+const studentColor = "rgb(230, 206, 228, 0.7)";
+const teacherColor = "rgb(93, 163, 158, 0.7)";
 
 export const StudetTeacherProvider = ({ children }) => {
     const [user, setUserMode] = useState("student");
