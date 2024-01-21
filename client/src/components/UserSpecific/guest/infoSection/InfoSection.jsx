@@ -19,7 +19,7 @@ import AuthForm from '../../../common/auth/AuthForm.jsx';
 
 const InfoSection = ({ setIsModalOpen }) => {
     const { language } = useContext(LanguageContext);
-    const { user } = useContext(StudetTeacherContext);
+    const { user, studentColor, teacherColor } = useContext(StudetTeacherContext);
 
     const infoCardData = user === 'student'
         ? (language === 'en' ? studentInfoCardDataTextsEn : studentInfoCardDataTextsGr)
@@ -28,6 +28,9 @@ const InfoSection = ({ setIsModalOpen }) => {
     const sectionTitle = user === 'student'
         ? (language === 'en' ? studentSectionTitleEn : studentSectionTitleGr)
         : (language === 'en' ? teacherSectionTitleEn : teacherSectionTitleGr);
+
+    const authFormColor = user === 'student'
+        ? studentColor : teacherColor;
 
 
     const loginAuth = language === 'en' ? LoginAuthEn : LoginAuthGr;
@@ -85,7 +88,7 @@ const InfoSection = ({ setIsModalOpen }) => {
 
                 {selectedCard && (
                     <ModalComponent isOpen={isOpen} closeModal={closeModal} title={loginAuth.authentication}>
-                        <AuthForm redirectUrl={getRedirectUrl(selectedCard.id)} opacity={100} />
+                        <AuthForm redirectUrl={getRedirectUrl(selectedCard.id)} opacity={100} bgcolor={authFormColor} />
                     </ModalComponent>
                 )}
             </div>

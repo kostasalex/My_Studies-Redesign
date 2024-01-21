@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 import { authform as TextsEn } from '@/locales/en';
 import { authform as TextsGr } from '@/locales/gr';
 
-const AuthForm = ({ redirectUrl, opacity }) => {
+const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
   console.log(opacity)
   const [key, setKey] = useState('login');
   const { language } = useContext(LanguageContext);
@@ -119,8 +119,8 @@ const AuthForm = ({ redirectUrl, opacity }) => {
     xhr.send(data);
   };
   return (
-    <div style={{ opacity: opacity }} className={styles.authform}>
-      <div className="mb-3 d-flex justify-content-center flex-column text-center align-items-center ">
+    <div style={{ opacity: opacity, background: bgcolor }} className={styles.authform}>
+      <div className="mb-2 d-flex justify-content-center flex-column text-center align-items-center ">
         {/* <img
           src="https://res.cloudinary.com/drijmbypg/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1702593334/logo-large_uaskki.jpg?_s=public-apps"
           alt="Login"
@@ -128,8 +128,8 @@ const AuthForm = ({ redirectUrl, opacity }) => {
         /> */}
         <h4 className="text-black">{usermode}</h4>
       </div>
-      <Tabs id="auth-tabs" activeKey={key} onSelect={(k) => setKey(k)} className="mb-3">
-        <Tab eventKey="login" title="Login">
+      <Tabs id="auth-tabs" activeKey={key} onSelect={(k) => setKey(k)} className="mb-2" >
+        <Tab eventKey="login" title={<span className={styles.tab}>Login</span>}>
           <Form
             validate={validateWithZod(loginSchema, language)}
             onSubmit={handleLogin}
@@ -140,7 +140,7 @@ const AuthForm = ({ redirectUrl, opacity }) => {
                     <div>
                       <label>{LoginAuth.username}</label>
                       <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
-                      {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                      {meta.error && meta.touched && <p>{meta.error}</p>}
                     </div>
                   )}
                 </Field>
@@ -149,100 +149,100 @@ const AuthForm = ({ redirectUrl, opacity }) => {
                     <div>
                       <label>{LoginAuth.password}</label>
                       <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
-                      {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                      {meta.error && meta.touched && <p>{meta.error}</p>}
                     </div>
                   )}
                 </Field>
-                <Button className="mt-4 " variant="primary" type="submit" disabled={submitting}>Login</Button>
+                <Button className="mt-3" variant="primary" type="submit" disabled={submitting}>Login</Button>
               </form>
             )}
           />
         </Tab>
-        <Tab eventKey="register" title="Register">
+        <Tab eventKey="register" title={<span className={styles.tab}>Register</span>}>
           <Form
             validate={validateWithZod(registerSchema, language)}
             onSubmit={handleRegister}
             render={({ handleSubmit, submitting }) => (
               <form onSubmit={handleSubmit}>
                 <Row>
-                  <Col md={6}>
+                  <Col xs={6}>
                     <Field name="newUsername" component="input">
                       {({ input, meta }) => (
                         <div>
                           <label>{LoginAuth.username}</label>
                           <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
-                          {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                          {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
                     </Field>
                   </Col>
-                  <Col md={6}>
+                  <Col xs={6}>
                     <Field name="studentId" component="input">
                       {({ input, meta }) => (
                         <div>
                           <label>{LoginAuth.studentId}</label>
                           <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
-                          {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                          {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
                     </Field>
                   </Col>
                 </Row>
                 <Row>
-                  <Col md={6}>
+                  <Col xs={6}>
                     <Field name="firstName" component="input">
                       {({ input, meta }) => (
                         <div>
                           <label>{LoginAuth.firstName}</label>
                           <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
-                          {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                          {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
                     </Field>
                   </Col>
-                  <Col md={6}>
+                  <Col xs={6}>
                     <Field name="lastName" component="input">
                       {({ input, meta }) => (
                         <div>
                           <label>{LoginAuth.lastName}</label>
                           <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
-                          {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                          {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
                     </Field>
                   </Col>
                 </Row>
                 <Row>
-                  <Col md={6}>
+                  <Col xs={6}>
                     <Field name="newPassword" component="input">
                       {({ input, meta }) => (
                         <div>
                           <label>{LoginAuth.password}</label>
                           <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
-                          {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                          {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
                     </Field>
                   </Col>
-                  <Col md={6}>
+                  <Col xs={6}>
                     <Field name="confirmPassword" component="input">
                       {({ input, meta }) => (
                         <div>
                           <label>{LoginAuth.passwordConfirmation}</label>
                           <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
-                          {meta.error && meta.touched && <div className="invalid-feedback">{meta.error}</div>}
+                          {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
                     </Field>
                   </Col>
                 </Row>
-                <Button className="mt-4 " variant="primary" type="submit" disabled={submitting}>Register</Button>
+                <Button className="mt-3" variant="primary" type="submit" disabled={submitting}>Register</Button>
               </form>
             )}
           />
         </Tab>
       </Tabs>
-    </div>
+    </div >
   );
 };
 

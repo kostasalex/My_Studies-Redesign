@@ -1,5 +1,5 @@
 .info-section {
-  margin-top: 80px;
+  margin-top: 170px;
   display: flex;
 
   justify-content: center;
@@ -26,4 +26,10 @@
 
 .card:hover {
   transform: scale(1.05);
+}
+
+@media screen and (min-width: 576px) {
+  .info-section {
+    margin-top: 80px;
+  }
 }

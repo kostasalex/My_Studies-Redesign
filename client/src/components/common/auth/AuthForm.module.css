@@ -2,17 +2,31 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 440px;
-  height: 500px;
+  width: 330px;
+  height: 550px;
   padding: 20px;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   transition: opacity 0.5s ease-in;
+}
+
+.authform p {
+  color: rgb(59, 6, 6);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 0px;
 }
 
 .authform img {
   height: 100px;
   width: 100px;
+}
+
+.authform label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 6px;
 }
 
 .login-form form {
@@ -67,4 +81,26 @@
 .button-group button {
   background-color: #007bff;
   color: white;
+
+}
+
+.tab {
+  color: black;
+  font-weight: 500;
+}
+
+
+@media screen and (min-width: 576px) {
+  .authform label {
+    font-size: 18px;
+  }
+
+  .authform {
+    width: 440px;
+    height: 500px;
+  }
+
+  .authform p {
+    font-size: 13px;
+  }
 }
