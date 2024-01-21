@@ -1,7 +1,43 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./CurrentSemester.module.css";
 import Students from "./Table.jsx";
+
+
+const sampleData = [
+  {
+    studentID: "Κ12345",
+    firstName: "Γιάννης",
+    lastName: "Παπαδόπουλος",
+    grade: 8.5,
+  },
+  {
+    studentID: "Κ67890",
+    firstName: "Μαρία",
+    lastName: "Κωνσταντίνου",
+    grade: 9.2,
+  },
+  {
+    studentID: "Κ11223",
+    firstName: "Νίκος",
+    lastName: "Σταυρίδης",
+    grade: 7.8,
+  },
+  {
+    studentID: "Κ44556",
+    firstName: "Ελένη",
+    lastName: "Παπαδοπούλου",
+    grade: 6.4,
+  },
+  {
+    studentID: "Κ78901",
+    firstName: "Αλέξης",
+    lastName: "Παπανικολάου",
+    grade: 9.8,
+  },
+];
+
+
 
 const CurrentSemester = () => {
   const navigate = useNavigate();
@@ -32,6 +68,37 @@ const CurrentSemester = () => {
       deadline: "20/1/2024 23:59:59 μμ",
     },
   ]);
+
+  const [studentsData, setStudentsData] = useState(sampleData);
+
+  const handleEdit = (index, value) => {
+    let numericValue;
+
+    if (value === '') {
+      numericValue = 0;
+    } else {
+      const stringValue = String(value).replace(',', '.');
+      numericValue = parseFloat(stringValue);
+
+      if (!isNaN(numericValue) && numericValue >= 0 && numericValue <= 10) {
+        numericValue = Math.round(numericValue * 10) / 10;
+      } else {
+        return;
+      }
+    }
+
+    const updatedData = [...studentsData];
+    updatedData[index] = { ...updatedData[index], grade: numericValue, editing: true };
+    setStudentsData(updatedData);
+  };
+
+
+
+  const handleSave = (index) => {
+    const updatedData = [...studentsData];
+    updatedData[index] = { ...updatedData[index], editing: false };
+    setStudentsData(updatedData);
+  };
 
   const navigateToNewRegistration = (course) => {
     setSelectedCourse(course);
@@ -107,9 +174,8 @@ const CurrentSemester = () => {
           </div>
           <div>
             <button
-              className={`btn btn-secondary ${
-                selectedCourse === course ? "btn-green" : ""
-              }`}
+              className={`btn btn-secondary ${selectedCourse === course ? "btn-green" : ""
+                }`}
               onClick={() => navigateToNewRegistration(course)}
             >
               Βαθμολόγηση Online
@@ -127,30 +193,32 @@ const CurrentSemester = () => {
                 : "Ανεβαστε Βαθμολόγιο"}
             </button>
             {selectedCourse === course && selectedOption === "upload-file" && (
-        <div>
-          <input type="file" id="gradeFile" onChange={handleFileChange} />
-          <button
-            className="btn btn-secondary"
-            onClick={handleUpload}
-            disabled={!file}
-          >
-            Ανεβάστε το Αρχείο
-          </button>
-        </div>
-      )}
-      {isSuccessModalOpen && (
-        <div className={styles.successModal}>
-          <p>Το αρχείο ανέβηκε με επιτυχία!</p>
-          <button onClick={toggleSuccessModal}>OK</button>
-        </div>
-      )}
-    
+              <div>
+                <input type="file" id="gradeFile" onChange={handleFileChange} />
+                <button
+                  className="btn btn-secondary"
+                  onClick={handleUpload}
+                  disabled={!file}
+                >
+                  Ανεβάστε το Αρχείο
+                </button>
+              </div>
+            )}
+            {isSuccessModalOpen && (
+              <div className={styles.successModal}>
+                <p>Το αρχείο ανέβηκε με επιτυχία!</p>
+                <button onClick={toggleSuccessModal}>OK</button>
+              </div>
+            )}
+
 
           </div>
         </div>
       ))}
 
-      {selectedOption === "grade-online" && selectedCourse && <Students />}
+      {selectedOption === "grade-online" && selectedCourse && (
+        <Students data={studentsData} onEdit={handleEdit} onSave={handleSave} />
+      )}
     </div>
   );
 };
