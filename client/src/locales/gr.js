@@ -39,7 +39,7 @@ export const footerData = [
 
 export const studentDashboardButtons = [
     "Πίνακας Ελέγχου",
-    "Εγγραφές",
+    "Δηλώσεις",
     "Βαθμολογίες",
     "Πιστοποιητικά",
     "Προφίλ",

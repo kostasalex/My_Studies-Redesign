@@ -166,13 +166,13 @@ const oldRegistrationsData = [
 
 const OldRegistrations = () => {
   return (
-    <div className={styles.background}>
+    <div >
       <h3>Ιστορικό Παλαιότερων Δηλώσεων</h3>
       {oldRegistrationsData.map((semester, index) => (
         <div key={index} className={styles["table"]}>
           <h4>{semester.semester}</h4>
           <div>
-            <table className="table table-striped">
+            <table className="table table-striped size">
               <thead>
                 <tr>
                   <th scope="col">Κωδικός</th>
@@ -186,7 +186,7 @@ const OldRegistrations = () => {
               <tbody>
                 {semester.courses.map((course, idx) => (
                   <tr key={idx}>
-                    <th scope="row">{course.code}</th>
+                    <td scope="row">{course.code}</td>
                     <td>{course.title}</td>
                     <td>{course.semester}</td>
                     <td>{course.professor}</td>

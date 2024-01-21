@@ -5,6 +5,8 @@ import {useContext} from "react";
 import {LanguageContext} from "../../../../context/LanguageContext.jsx";
 import { GradesTexts as TextsEn } from '@/locales/en';
 import { GradesTexts as TextsGr } from '@/locales/gr';
+
+
 const Table = ({ certificates }) => {
   const {language} = useContext(LanguageContext);
   const GradesTexts = language === 'en' ? TextsEn : TextsGr;
@@ -20,29 +22,53 @@ const Table = ({ certificates }) => {
 
 
   return (
-      <div>
-        <table className="table table-striped mb-1">
-          <thead>
+    <div>
+      <table className="table table-striped mb-1">
+        <thead>
           <tr>
-            <th scope="col"><h5>{GradesTexts.applicationCode}</h5></th>
-            <th scope="col"><h5>{GradesTexts.subject}</h5></th>
-            <th scope="col"><h5>{GradesTexts.semester}</h5></th>
-            <th scope="col"><h5>{GradesTexts.grade}</h5></th>
+            <th style={{ fontSize: '18px' }} scope="col">
+              <h5>{GradesTexts.applicationCode}</h5>
+            </th>
+            <th style={{ fontSize: '18px' }} scope="col">
+              <h5>{GradesTexts.subject}</h5>
+            </th>
+            <th style={{ fontSize: '18px' }} scope="col">
+              <h5>{GradesTexts.semester}</h5>
+            </th>
+            <th style={{ fontSize: '18px' }} scope="col">
+              <h5>{GradesTexts.grade}</h5>
+            </th>
           </tr>
-          </thead>
-          <tbody>
-          {certificates.map(certificate => (
-              <tr  key={certificate.id}>
-                <th style={{color: certificate.grade < 5 ? 'red' : 'black'}} scope="row"><h5>{certificate.id}</h5></th>
-                <td style={{color: certificate.grade < 5 ? 'red' : 'black'}}><h5>{GradesTexts.lessons[certificate.lessonID]}</h5></td>
-                <td style={{color: certificate.grade < 5 ? 'red' : 'black'}}><h5>{GradesTexts.semesters[certificate.semester]}</h5></td>
-                <td style={{color: certificate.grade < 5 ? 'red' : 'black'}}>{certificate.grade}</td>
-              </tr>
+        </thead>
+        <tbody>
+          {certificates.map((certificate) => (
+            <tr key={certificate.id}>
+              <th
+                style={{ color: certificate.grade < 5 ? 'red' : 'black', fontSize: '18px' }}
+                scope="row"
+              >
+                <h5>{certificate.id}</h5>
+              </th>
+              <td
+                style={{ color: certificate.grade < 5 ? 'red' : 'black', fontSize: '18px' }}
+              >
+                <h5>{GradesTexts.lessons[certificate.lessonID]}</h5>
+              </td>
+              <td
+                style={{ color: certificate.grade < 5 ? 'red' : 'black', fontSize: '18px' }}
+              >
+                <h5>{GradesTexts.semesters[certificate.semester]}</h5>
+              </td>
+              <td style={{ color: certificate.grade < 5 ? 'red' : 'black', fontSize: '18px' }}>
+                {certificate.grade}
+              </td>
+            </tr>
           ))}
-          </tbody>
-        </table>
-      </div>
+        </tbody>
+      </table>
+    </div>
   );
+  
 };
 
 export default Table;

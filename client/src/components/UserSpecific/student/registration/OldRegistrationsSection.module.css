@@ -25,3 +25,16 @@
   margin-top: 10px;
   margin-left: 20px;
 }
+
+
+th {
+  font-size: 18px !important;
+}
+td {
+  font-size: 18px !important;
+}
+
+h4{
+  font-weight: bold !important;
+  font-size: 18px !important;
+}
