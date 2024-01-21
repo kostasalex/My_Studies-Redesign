@@ -201,9 +201,9 @@ export const LoginAuth = {
 
 export const faqSectionTexts = {
     title: "Need Help?",
-    description: "Read our Frequently Asked Questions and, if you can't find what you're looking for, our experts are happy to answer your questions.",
+    description: "Read our Frequently Asked Questions and, if you can't find what you're looking for, contact us.",
     readFaqsButton: "Read the FAQs",
-    askQuestionButton: "Ask a Question"
+    askQuestionButton: "contact us"
 };
 export const gradesTexts = {
     homeButton: "• Home /",
@@ -237,12 +237,12 @@ export const teacherInfoCardData = [
     {
         id: 1,
         title: 'Grading',
-        text: 'Efficiently grade students by simply uploading a file. Streamline the assessment process by just uploading a file.'
+        text: 'Streamline your grading process by utilizing our easy upload feature.'
     },
     {
         id: 2,
         title: 'Access Older Grades',
-        text: 'Retrieve historical grades with ease. Quickly access and review academic performance from past terms.'
+        text: 'Retrieve older grades with ease. Quickly access and review academic performance from past terms.'
     },
     {
         id: 3,
