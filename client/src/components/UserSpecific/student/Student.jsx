@@ -62,7 +62,7 @@ export default function Student() {
           </button>
         ))}
       </Dashboard>
-      <div className="container" >
+      <div className={`container ${styles["student-content"]}`} >
         <Breadcrumb />
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />

@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header, Footer, Guest, Student, Teacher, Contact, Faq } from './components';
 import styles from './App.module.css';
 import { LanguageProvider } from './context/LanguageContext';
 import { StudetTeacherProvider } from "./context/HeaderButtonContext.jsx";
+import ScrollToTop from './components/common/ScrollToTop';
 
 const App = () => {
 
@@ -11,8 +11,8 @@ const App = () => {
     <LanguageProvider>
       <StudetTeacherProvider>
         <Router>
+          <ScrollToTop />
           <div className={styles.appContainer}>
-
             <Header />
             <div className={styles.content}>
               <Routes>

@@ -3,23 +3,34 @@
   flex-direction: column;
 }
 
+.teacher-content {
+  margin-top: 120px
+}
+
 .selectedButton {
   background-color: #e0e0e0 !important;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   font-weight: 600;
 }
 
-body {
-  height: fit-content;
-  min-height: 100vh;
-  margin: 0;
-  background-color: #fff;
-  /* Χρώμα φόντου λευκό */
-}
 
 @media screen and (min-width: 992px) {
   .teacher {
     display: flex;
     flex-direction: row;
+  }
+
+  .teacher .teacher-content {
+    margin-top: 0;
+    margin-left: 60px;
+  }
+
+}
+
+
+
+@media screen and (min-width: 1200px) {
+  .teacher .teacher-content {
+    margin-left: 160px;
   }
 }

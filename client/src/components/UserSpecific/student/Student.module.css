@@ -3,33 +3,39 @@
   flex-direction: column;
 }
 
+.student-content {
+  margin-top: 130px
+}
+
 .selectedButton {
   background-color: #e0e0e0 !important;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   font-weight: 600;
 }
 
-body {
-  height: fit-content;
-  min-height: 100vh;
-  margin: 0;
-  background-color: #fff;
-  /* Χρώμα φόντου λευκό */
-}
-
 .parent {
   display: flex;
   justify-content: center;
-  /* Center horizontally */
   align-items: center;
-  /* Center vertically */
   height: 100%;
-  /* Ensure the parent has a height */
 }
 
 @media screen and (min-width: 992px) {
   .student {
     display: flex;
     flex-direction: row;
+  }
+
+  .student .student-content {
+    margin-top: 0;
+    margin-left: 60px;
+  }
+
+}
+
+
+@media screen and (min-width: 1200px) {
+  .student .student-content {
+    margin-left: 160px;
   }
 }

@@ -51,7 +51,7 @@ export default function Teacher() {
 
   return (
     <div className={styles.teacher}>
-      
+
       <Dashboard>
         {[
           "dashboard",
@@ -70,7 +70,7 @@ export default function Teacher() {
           </button>
         ))}
       </Dashboard>
-      <div className="container" style={{ padding: "20px", flex: 1 }}>
+      <div className={`container ${styles["teacher-content"]}`} style={{ padding: "20px", flex: 1 }}>
         <Breadcrumb />
         <div className="d-flex flex-column">
           <div
