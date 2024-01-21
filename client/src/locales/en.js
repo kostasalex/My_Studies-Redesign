@@ -179,7 +179,7 @@ export const headerTexts = {
     about: "About",
     contact: "Contact",
     studentPortal: "Student Login",
-    teacherPortal: "Teacher Login"
+    teacherPortal: "Professor Login"
 };
 
 
@@ -251,7 +251,7 @@ export const teacherInfoCardData = [
     }
 ];
 export const studentSectionTitle = "Student Actions";
-export const teacherSectionTitle = "Teacher Tools";
+export const teacherSectionTitle = "Professor Tools";
 
 export const TeacherDashboardButtons = [
     "Dashboard",

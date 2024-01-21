@@ -20,7 +20,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
   const LoginAuth = language === 'en' ? LoginAuthTextsEn : LoginAuthTextsGr;
   const navigate = useNavigate();
   const { user } = useContext(StudetTeacherContext);
-  const usermode = user === "student" ? "My Studies" : "My Studies Professor";
+  const usermode = user === "student" ? "My Studies Student" : "My Studies Professor";
   const authform = language === 'en' ? TextsEn : TextsGr;
   console.log("auth: ", localStorage.getItem("isUserLoggedIn") === "true")
 
@@ -126,7 +126,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
           alt="Login"
 
         /> */}
-        <h4 className="text-black">{usermode}</h4>
+        <h4 className="text-black mt-1 mb-2">{usermode}</h4>
       </div>
       <Tabs id="auth-tabs" activeKey={key} onSelect={(k) => setKey(k)} className="mb-2" >
         <Tab eventKey="login" title={<span className={styles.tab}>Login</span>}>
