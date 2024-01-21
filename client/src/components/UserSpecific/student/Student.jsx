@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from 'react';
+import { FaHome, FaRegListAlt, FaGraduationCap, FaCertificate, FaUser } from 'react-icons/fa';
 import { Route, Routes, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import Dashboard from "@/components/common/dashboard/Dashboard";
 import Home from "./home/Home";
@@ -13,6 +14,14 @@ import { studentDashboardButtons as TextsEn } from '@/locales/en';
 import { studentDashboardButtons as TextsGr } from '@/locales/gr';
 import { LanguageContext } from "../../../context/LanguageContext.jsx";
 import Breadcrumb from '@/components/common/Breadcrumbs';
+
+const icons = {
+  "dashboard": <FaHome />,
+  "registration": <FaRegListAlt />,
+  "grades": <FaGraduationCap />,
+  "certificates": <FaCertificate />,
+  "profile": <FaUser />
+};
 
 export default function Student() {
   const { language } = useContext(LanguageContext);
@@ -38,21 +47,20 @@ export default function Student() {
 
 
   return (
-    <div className='d-flex '>
+    <div className={styles.student}>
 
       <Dashboard>
-        <h2 >My Studies</h2>
-        {["dashboard", "registration", "grades", "certificates", "profile"].map(
-          (path, index) => (
-            <button
-              key={path}
-              className={selected === path ? styles.selectedButton : ""}
-              onClick={() => handleButtonClick(path)}
-            >
-              {studentDashboardButtons[index]}
-            </button>
-          )
-        )}
+        {/* <h2 >My Studies</h2> */}
+        {["dashboard", "registration", "grades", "certificates", "profile"].map((path, index) => (
+          <button
+            key={path}
+            className={selected === path ? styles.selectedButton : ""}
+            onClick={() => handleButtonClick(path)}
+            title={studentDashboardButtons[index]}
+          >
+            {icons[path]} <span>{studentDashboardButtons[index]}</span>
+          </button>
+        ))}
       </Dashboard>
       <div className="container" >
         <Breadcrumb />

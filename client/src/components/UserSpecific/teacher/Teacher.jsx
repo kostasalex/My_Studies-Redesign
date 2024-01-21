@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { FaHome, FaBook, FaHistory, FaChartBar, FaUser } from 'react-icons/fa';
 import { Route, Routes, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import Dashboard from "@/components/common/dashboard/Dashboard";
-import { TeacherDashboardButtons } from "@/locales/gr";
+import { LanguageContext } from "@/context/LanguageContext";
 import Home from "./home/Home";
+import { TeacherDashboardButtons as TeacherDashboardButtonsEn } from '@/locales/en';
+import { TeacherDashboardButtons as TeacherDashboardButtonsGr } from '@/locales/gr';
 
 import styles from "./Teacher.module.css";
 import Profile from "./Profile/Profile";
@@ -11,10 +14,24 @@ import OldSemesters from "./oldSemesters/OldSemesters";
 import Statistics from "./statistics/Statistics";
 import Breadcrumb from '@/components/common/Breadcrumbs';
 
+const icons = {
+  "dashboard": <FaHome />,
+  "current-semester": <FaBook />,
+  "old-semesters": <FaHistory />,
+  "statistics": <FaChartBar />,
+  "profile": <FaUser />
+};
+
 export default function Teacher() {
   const navigate = useNavigate();
   const location = useLocation();
   const [selected, setSelected] = useState("dashboard");
+  const { language } = useContext(LanguageContext);
+
+  const TeacherDashboardButtons = language === 'en'
+    ? TeacherDashboardButtonsEn
+    : TeacherDashboardButtonsGr;
+
 
   useEffect(() => {
     const pathSegments = location.pathname.split('/').filter(Boolean);
@@ -33,7 +50,8 @@ export default function Teacher() {
 
 
   return (
-    <div style={{ display: "flex" }}>
+    <div className={styles.teacher}>
+      
       <Dashboard>
         {[
           "dashboard",
@@ -46,8 +64,9 @@ export default function Teacher() {
             key={path}
             className={selected === path ? styles.selectedButton : ""}
             onClick={() => handleButtonClick(path)}
+            title={TeacherDashboardButtons[index]}
           >
-            {TeacherDashboardButtons[index]}
+            {icons[path]} <span>{TeacherDashboardButtons[index]}</span>
           </button>
         ))}
       </Dashboard>

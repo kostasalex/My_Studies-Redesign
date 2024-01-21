@@ -1,3 +1,8 @@
+.teacher {
+  display: flex;
+  flex-direction: column;
+}
+
 .selectedButton {
   background-color: #e0e0e0 !important;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -8,5 +13,13 @@ body {
   height: fit-content;
   min-height: 100vh;
   margin: 0;
-  background-color: #fff; /* Χρώμα φόντου λευκό */
+  background-color: #fff;
+  /* Χρώμα φόντου λευκό */
+}
+
+@media screen and (min-width: 992px) {
+  .teacher {
+    display: flex;
+    flex-direction: row;
+  }
 }
