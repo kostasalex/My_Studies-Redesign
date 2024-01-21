@@ -5,11 +5,12 @@
     margin: 10px;
     padding: 16px;
     background-color: white;
+    max-width: 300px;
 }
 
 .card h2 {
     font-family: Poppins;
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 34px;
     letter-spacing: 0.5px;

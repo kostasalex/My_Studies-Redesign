@@ -1,11 +1,10 @@
 .info-section {
-  margin-top: 170px;
   display: flex;
-
   justify-content: center;
   flex-direction: column;
   align-items: center;
   gap: 14px;
+  padding: 100px 0;
 }
 
 .info-section div {
@@ -26,10 +25,4 @@
 
 .card:hover {
   transform: scale(1.05);
-}
-
-@media screen and (min-width: 576px) {
-  .info-section {
-    margin-top: 80px;
-  }
 }

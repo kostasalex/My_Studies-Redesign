@@ -10,8 +10,11 @@ const Guest = () => {
   return (
     <div className="container">
       <LoginSection isModalOpen={isModalOpen} />
+      <hr />
       <InfoSection setIsModalOpen={setIsModalOpen} />
+      <hr />
       <AnnouncementsSection />
+      <hr />
       <FaqSection />
     </div>
   )
