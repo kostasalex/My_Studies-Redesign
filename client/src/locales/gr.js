@@ -126,8 +126,8 @@ export const newCertificatesTexts = {
     certificateTypes: [
         "Κατάσταση Φοιτητή",
         "Φορολογικούς Σκοπούς",
-        "Λεπτομερείς Βαθμολογίες",
-        "Στρατιωτικούς Σκοπούς"
+        "Αναλυτική Βαθμολογία",
+        "Στρατιωτική Χρήση"
     ]
 };
 
@@ -149,8 +149,8 @@ export const certificatesTexts = {
     requestYear: "Έτος Αίτησης",
     studentStatus: "Κατάσταση Φοιτητή",
     taxUse: "Φορολογική Χρήση",
-    detailedGrades: "Λεπτομερείς Βαθμολογίες",
-    militaryUse: "Στρατιωτική Χρήση",
+    detailedGrades: "Αναλυτική Βαθμολογία",
+    militaryUse: "Στρατιωτική Χρήση", 
     approved: "Εγκρίθηκε",
     pending: "Εκκρεμεί",
     rejected: "Απορρίφθηκε"
@@ -168,7 +168,7 @@ export const oldCertificatesTexts = {
     types: {
         1: "Κατάσταση Φοιτητή",
         2: "Φορολογικούς Σκοπούς",
-        3: "Λεπτομερείς Βαθμολογίες",
+        3: "Αναλυτική Βαθμολογία",
         4: "Στρατιωτικούς Σκοπούς"
     },
     statuses: {

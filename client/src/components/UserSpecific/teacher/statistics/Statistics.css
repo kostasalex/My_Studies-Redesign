@@ -1,0 +1,40 @@
+.custom-dropdown-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.custom-dropdown {
+  position: relative;
+  margin-right: 10px;
+}
+
+.custom-button {
+  background-color: #bbbbbb;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.selected-option {
+  margin-top: 5px;
+  padding: 5px;
+  background-color: #d4edda;
+  border-radius: 5px;
+}

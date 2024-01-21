@@ -17,6 +17,14 @@
   margin-right: -40px;
 }
 
-td {
-  font-weight: 500;
+.table td {
+  font-size: 25px !important;
+}
+
+.table h5 {
+  font-size: 18px !important;
+}
+
+h5 {
+  font-size: 18px !important;
 }
