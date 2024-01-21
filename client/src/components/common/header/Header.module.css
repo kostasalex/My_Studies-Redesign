@@ -38,7 +38,6 @@
 }
 
 .languageSwitcher {
-
   cursor: pointer;
 }
 
@@ -72,9 +71,7 @@
 
 .loginbtn:hover {
   color: white;
-
 }
-
 
 @media screen and (min-width: 992px) {
   .languagelogin {
@@ -109,7 +106,6 @@
   .navbarCollapse {
     margin-left: 0px;
   }
-
 }
 
 @media screen and (min-width: 1200px) {
@@ -120,7 +116,6 @@
   .navbarCollapse {
     margin-left: 100px;
   }
-
 }
 
 @media screen and (min-width: 1400px) {
