@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import StudentGradesChart from "./StudentGradesChart";
+import Comments from "./Comments";
+import MesosOrosComponent from "./MesosOrosComponent";
 import "./Four_Panel.css";
 import DonutChart from "./DonutChart";
 import "./Statistics.css";
@@ -126,21 +128,13 @@ const Statistics = () => {
           <StudentGradesChart gradesData={gradesData} />
         </div>
         <div className="panel">
-          <h5>Μέσος Όρος Προηγούμενων Χρόνων:</h5>
-          <div className="previous-averages">
-            <h6>Μ.Ο. Μαθητών 2022: 7.97/10</h6>
-            <h6>Μ.Ο. Μαθητών 2021: 8.32/10</h6>
-            <h6>Μ.Ο. Μαθητών 2020: 8.15/10</h6>
-            <h6>Μ.Ο. Μαθητών 2019: 7.88/10</h6>
-            <h6>Μ.Ο. Μαθητών 2019: 7.88/10</h6>
-            <h6>Μ.Ο. Μαθητών 2019: 7.88/10</h6>
-            <h6>Μ.Ο. Μαθητών 2019: 7.88/10</h6>
-            <h6>Μ.Ο. Μαθητών 2019: 7.88/10</h6>
-            <h6>Μ.Ο. Μαθητών 2019: 7.88/10</h6>
-          </div>
+          {" "}
+          <MesosOrosComponent />{" "}
         </div>
 
-        <div className="panel">Panel 4</div>
+        <div className="panel">
+          <Comments />
+        </div>
       </div>
     </div>
   );

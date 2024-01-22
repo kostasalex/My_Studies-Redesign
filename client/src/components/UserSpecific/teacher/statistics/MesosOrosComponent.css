@@ -1,0 +1,13 @@
+.mesosoros-container {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.mesosoros-averages {
+  margin-top: 10px;
+}
+
+.mesosoros-averages h6 {
+  margin: 5px 0;
+}

@@ -1,0 +1,17 @@
+/* Πλαίσια με background ανά γραμμή για ξεχωριστική εμφάνιση */
+.comment {
+  background-color: #f0f0f0; /* Χρώμα φόντου των πλαισίων */
+  margin-bottom: 10px; /* Απόσταση μεταξύ των πλαισίων */
+  padding: 15px; /* Εσωτερικό περιεχόμενο των πλαισίων */
+  border-radius: 8px; /* Κυκλικοί γωνίες για αισθητικό λόγο */
+}
+
+.panel h2 {
+  font-size: 22px !important;
+  font-weight: bold;
+  max-width: fit-content !important;
+  display: flex;
+  align-items: center !important ;
+  text-align: center !important ;
+  margin-bottom: 20px;
+}
