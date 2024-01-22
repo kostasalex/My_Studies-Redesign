@@ -1,4 +1,7 @@
-import React from "react";
+import { useState, useContext } from 'react';
+import { LanguageContext } from "../../../../../context/LanguageContext.jsx";
+import { newRegistrationTexts as TextsEn } from '@/locales/en';
+import { newRegistrationTexts as TextsGr } from '@/locales/gr';
 import Table from "./Table"
 import { Stepper } from 'react-form-stepper';
 import NavTabs from "./NavTabs";
@@ -34,9 +37,11 @@ const courses = [
 const tabs = ["Εξάμηνο 1", "Εξάμηνο 2", "Εξάμηνο 3", "Εξάμηνο 4", "Ελεύθερα Μαθήματα"];
 
 const NewRegistration = () => {
-    const [selectedCourses, setSelectedCourses] = React.useState([]);
-    const [activeSemester, setActiveSemester] = React.useState("Εξάμηνο 1");
-    const [activeStep, setActiveStep] = React.useState(0);
+    const [selectedCourses, setSelectedCourses] = useState([]);
+    const [activeSemester, setActiveSemester] = useState("Εξάμηνο 1");
+    const [activeStep, setActiveStep] = useState(0);
+    const { language } = useContext(LanguageContext);
+    const newRegistrationTexts = language === 'en' ? TextsEn : TextsGr;
 
     const navigate = useNavigate();
 

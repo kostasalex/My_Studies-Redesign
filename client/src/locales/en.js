@@ -321,3 +321,35 @@ export const authform = {
     accountcreated: "Account Created !",
     signin: "Sign in",
 };
+
+
+export const oldRegistrationsTexts = {
+    historyOfOldRegistrations: "History of Old Registrations",
+    semesters: {
+        "Εαρινό": "Spring",
+        "Χειμερινό": "Winter",
+        "Σεμπέμβριος": "September"
+    },
+    years: {
+        "2022": "2022",
+        "2021": "2021"
+    },
+    semester: "Semester",
+    professor: "Professor",
+    mandatory: "Mandatory",
+    specialization: "Specialization",
+    clearFilter: "Clear Filter",
+    course: "Select Course",
+    semes: "Select Semester",
+    year: "Select Year",
+    selectProfessor: "Select Professor"
+};
+
+
+export const newRegistrationTexts = {
+    stepLabels: ["Course Selection", "Declaration Preview", "Final Submission"],
+    selectedCourses: "Selected Courses",
+    nextButton: "Next",
+    backButton: "Back",
+    finalSubmitButton: "Final Submit",
+};

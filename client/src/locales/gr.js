@@ -317,3 +317,34 @@ export const authform = {
     accountcreated: "Ο Λογαριασμός Δημιουργήθηκε !",
     signin: "Είσοδος",
 };
+
+
+export const oldRegistrationsTexts = {
+    historyOfOldRegistrations: "Ιστορικό Παλαιότερων Δηλώσεων",
+    semesters: {
+        "Εαρινό": "Εαρινό",
+        "Χειμερινό": "Χειμερινό",
+        "Σεμπέμβριος": "Σεμπέμβριος"
+    },
+    years: {
+        "2022": "2022",
+        "2021": "2021"
+    },
+    semester: "Εξάμηνο",
+    professor: "Καθηγητής",
+    mandatory: "Υποχρεωτικό",
+    specialization: "Ειδίκευση",
+    clearFilter: "Καθαρισμός Φίλτρων",
+    course: "Επιλογή Μαθήματος",
+    semes: "Επιλογή Εξαμήνου",
+    year: "Επιλογή Χρονολογίας",
+    selectProfessor: "Επιλέξτε Καθηγητή"
+};
+
+export const newRegistrationTexts = {
+    stepLabels: ["Επιλογή μαθημάτων", "Προεπισκόπηση Δήλωσης", "Οριστική Υποβολή"],
+    selectedCourses: "Επιλεγμένα μαθήματα",
+    nextButton: "Επόμενο",
+    backButton: "Πίσω",
+    finalSubmitButton: "Οριστική Υποβολή",
+};
