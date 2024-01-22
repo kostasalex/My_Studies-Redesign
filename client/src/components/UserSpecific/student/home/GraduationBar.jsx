@@ -30,7 +30,7 @@ const App = () => (
     />
     <Steps.Item
       title="5ο Εξάμηνο"
-      icon={<FaGraduationCap style={{ fontSize: 20 }} />}
+      icon={<FaGraduationCap style={{ fontSize: 20, color: "blue" }} />}
     />
     <Steps.Item
       title="6ο Εξάμηνο"
