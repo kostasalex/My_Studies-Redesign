@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { LanguageContext } from "../../../../../context/LanguageContext.jsx";
 import { newRegistrationTexts as TextsEn } from '@/locales/en';
 import { newRegistrationTexts as TextsGr } from '@/locales/gr';
@@ -6,7 +6,7 @@ import Table from "./Table"
 import { Stepper } from 'react-form-stepper';
 import NavTabs from "./NavTabs";
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const selectionColumns = ["Κωδικός Μαθήματος", "Μάθημα", "Καθηγητής", "Ειδίκευση", "Υποχρεωτικό", "Ects"];
 const previewColumns = ["Κωδικός Μαθήματος", "Μάθημα", "Εξάμηνο", "Καθηγητής", "Ειδίκευση", "Υποχρεωτικό", "Ects"];
@@ -34,14 +34,26 @@ const courses = [
     { id: "15101182", subject: "ΒΙΟΛΟΓΙΑ ΚΥΤΤΑΡΟΥ", semester: "ελεύθερα", professor: "Μαριάννα Αντωνέλου", specialization: "-", mandatory: "Προαιρετικό", ects: "9.5" }
 ];
 
-const tabs = ["Εξάμηνο 1", "Εξάμηνο 2", "Εξάμηνο 3", "Εξάμηνο 4", "Ελεύθερα Μαθήματα"];
+const tabs = ["Εξάμηνο 1", "Εξάμηνο 3", "Εξάμηνο 5", "Εξάμηνο 7", "Ελεύθερα Μαθήματα"];
 
 const NewRegistration = () => {
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const stepFromQuery = queryParams.get('step');
+    const [activeStep, setActiveStep] = useState(stepFromQuery ? parseInt(stepFromQuery) : 0);
     const [selectedCourses, setSelectedCourses] = useState([]);
     const [activeSemester, setActiveSemester] = useState("Εξάμηνο 1");
-    const [activeStep, setActiveStep] = useState(0);
     const { language } = useContext(LanguageContext);
     const newRegistrationTexts = language === 'en' ? TextsEn : TextsGr;
+
+    useEffect(() => {
+        if (stepFromQuery === '1') {
+            const savedCourses = JSON.parse(localStorage.getItem('selectedCourses'));
+            if (savedCourses) {
+                setSelectedCourses(savedCourses);
+            }
+        }
+    }, [stepFromQuery]);
 
     const navigate = useNavigate();
 
@@ -62,7 +74,18 @@ const NewRegistration = () => {
                 navigate('/student');
             });
         }
+    };
 
+    const handleFinalSubmit = () => {
+        localStorage.setItem('finalSubmission', JSON.stringify(true));
+        localStorage.removeItem('selectedCourses');
+        Swal.fire({
+            title: 'Η δήλωση καταχωρήθηκε επιτυχώς!',
+            icon: 'success',
+            confirmButtonText: 'ΟΚ'
+        }).then(() => {
+            navigate('/student');
+        });
     };
 
     const handleBack = () => {
@@ -89,7 +112,18 @@ const NewRegistration = () => {
             });
         }
     };
-    
+
+    const handleTemporarySave = () => {
+        localStorage.setItem('selectedCourses', JSON.stringify(selectedCourses));
+        Swal.fire({
+            title: 'Αποθήκευση Επιτυχής!',
+            text: 'Τα επιλεγμένα μαθήματα αποθηκεύτηκαν προσωρινά.',
+            icon: 'success',
+            confirmButtonText: 'ΟΚ'
+        });
+        navigate("/student")
+    };
+
 
     const handleTabChange = (semester) => {
         setActiveSemester(semester);
@@ -141,11 +175,17 @@ const NewRegistration = () => {
             <div className="d-flex justify-content-center align-items-center">
                 <h5 className="p-5">Επιλεγμένα μαθήματα: {selectedCourses.length}</h5>
                 <div className="d-flex p-5 ml-5">
-                    {activeStep > 0 && <button className="btn btn-secondary m-3" onClick={handleBack}>Πίσω</button>}
+                    {activeStep > 0 && (
+                        <>
+                            <button className=" btn btn-secondary m-3" onClick={handleBack}>Πίσω</button>
+                            <button className="btn btn-warning m-3" onClick={handleTemporarySave}>Προσωρινή Αποθήκευση</button>
+                        </>
+
+                    )}
                     {activeStep < 1 ?
-                        <button className="btn btn-primary m-3" onClick={handleNext}>Επόμενο</button>
+                        <button disabled={!selectedCourses.length} className="btn btn-primary m-3" onClick={handleNext}>Επόμενο</button>
                         :
-                        <button className="btn btn-success m-3" onClick={handleNext}>Οριστική Υποβολή</button>
+                        <button className="btn btn-success m-3" onClick={handleFinalSubmit}>Οριστική Υποβολή</button>
                     }
                 </div>
 

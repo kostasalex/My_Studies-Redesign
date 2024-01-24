@@ -1,19 +1,20 @@
-import React from "react";
+
 import NewRegistrationSection from "./NewRegistrationSection";
 import OldRegistrations from "./OldRegistrationsSection";
-import NewRegistration from "./newRegistration/NewRegistration";
+import RegistrationStatus from "../RegistrationStatus"; // Import the new component
 
 const Registration = () => {
-  const [newRegistration, setNewRegistration] = React.useState(false);
+
+  const savedCourses = JSON.parse(localStorage.getItem('selectedCourses'));
+  const finalSubmission = JSON.parse(localStorage.getItem('finalSubmission'));
   return (
     <div>
-      {!newRegistration && (
-        <div>
-          <NewRegistrationSection setNewRegistration={setNewRegistration} />
-          <OldRegistrations />
-        </div>
-      )}
-      {newRegistration && <NewRegistration />}
+      <RegistrationStatus />
+      {!(savedCourses || finalSubmission) &&
+
+        <NewRegistrationSection />
+      }
+      <OldRegistrations />
     </div>
   );
 };

@@ -32,7 +32,7 @@ export default function Student() {
 
   useEffect(() => {
     const currentPath = location.pathname.split('/').pop(); // Get the last part of the URL
-    if (["dashboard", "registration", "grades", "certificates", "profile"].includes(currentPath)) {
+    if (["dashboard", "registration", "grades", "certificates", "profile", "new-registration"].includes(currentPath)) {
       setSelected(currentPath);
     } else {
       setSelected("dashboard");
@@ -67,9 +67,8 @@ export default function Student() {
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />
-          <Route path="registration" element={<Registration />}>
-            <Route path="new-registration" element={<NewRegistration />} />
-          </Route>
+          <Route path="registration" element={<Registration />} />
+          <Route path="registration/new-registration" element={<NewRegistration />} />
           <Route path="grades" element={<Grades />} />
           <Route path="certificates" element={<Certificates />} />
           <Route path="profile" element={<Profile />} />

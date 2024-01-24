@@ -1,8 +1,10 @@
 import styles from "./NewRegistrationSection.module.css";
+import { useNavigate } from "react-router-dom";
 
-const NewRegistrationSection = ({ setNewRegistration }) => {
+const NewRegistrationSection = () => {
+  const navigate = useNavigate();
   const navigateToNewRegistration = () => {
-    setNewRegistration(true);
+    navigate("/student/registration/new-registration")
   };
 
   return (
