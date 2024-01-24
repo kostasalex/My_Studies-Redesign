@@ -205,7 +205,7 @@ export const faqSectionTexts = {
     title: "Χρειάζεστε Βοήθεια;",
     description: "Διαβάστε τις Συχνές Ερωτήσεις μας και, αν δεν μπορείτε να βρείτε αυτό που ψάχνετε, επικοινωνήστε μαζί μας.",
     readFaqsButton: "Διαβάστε τις ερωτήσεις",
-    askQuestionButton: "επικοινωνήστε μαζί μας"
+    askQuestionButton: "Επικοινωνήστε μαζί μας"
 };
 export const gradesTexts = {
     homeButton: "• Αρχική /",
