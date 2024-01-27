@@ -197,6 +197,7 @@ export const LoginAuth = {
     loginSuccessMessage: "Welcome",
     registerSuccessMessage: "Succesfully registered",
     studentId: "Student ID",
+    professorId: "Professor ID",
     firstName: "First Name",
     lastName: "Last Name"
 };

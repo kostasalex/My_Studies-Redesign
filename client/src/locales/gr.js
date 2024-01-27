@@ -204,6 +204,7 @@ export const LoginAuth = {
     loginSuccessMessage: "Καλώς ήλθατε",
     registerSuccessMessage: "Εγγραφή επιτυχής",
     studentId: "Αριθμός Φοιτητή",
+    professorId: "Αριθμός Καθηγητή",
     firstName: "Όνομα",
     lastName: "Επώνυμο"
 };

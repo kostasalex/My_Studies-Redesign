@@ -175,7 +175,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
                       {({ input, meta }) => (
                         <div className="form-floating mb-2">
                           <input {...input} id="studentId" placeholder=" " className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
-                          <label htmlFor="studentId">{LoginAuth.studentId}</label>
+                          <label htmlFor="studentId">{user === "student" ? LoginAuth.studentId : LoginAuth.professorId}</label>
                           {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
