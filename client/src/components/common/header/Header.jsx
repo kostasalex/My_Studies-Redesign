@@ -76,14 +76,15 @@ const Header = () => {
               <Nav.Link href="/">{headerTexts.home}</Nav.Link>
               <Nav.Link href="/about">{headerTexts.about}</Nav.Link>
               <Nav.Link href="/contact">{headerTexts.contact}</Nav.Link>
-            </Nav>
-            <div className={styles.languagelogin}>
               <div className={styles.languageSwitcher}>
                 <FaGlobe onClick={toggleLanguage} />
-                <span className={styles.languageLabel} onClick={toggleLanguage}>
+                <span  onClick={toggleLanguage}>
                   {language === "en" ? "English" : "Ελληνικά"}
                 </span>
               </div>
+            </Nav>
+            <div className={styles.languagelogin}>
+
               <div>
                 {isUserLoggedIn ? (
                   <Dropdown align="end">

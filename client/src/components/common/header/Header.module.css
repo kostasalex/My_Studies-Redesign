@@ -40,6 +40,7 @@
 
 .languageSwitcher {
   cursor: pointer;
+  margin-top: 8px;
 }
 
 .languageSwitcher span {
@@ -56,19 +57,16 @@
   margin-left: 0;
 }
 
-.languagelogin {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  margin-top: -70px;
-}
-
 .loginbtn:hover {
   color: white;
 }
 
 .loginbtn {
   margin: 20px 0;
+}
+
+.loginbtn button {
+  padding: 5px;
 }
 
 .dropdown-menu {
@@ -85,23 +83,13 @@
     padding-bottom: 0 !important;
   }
 
-  .languagelogin {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 0;
-
+  .languageSwitcher {
+    margin-left: 100px;
   }
 
-  .loginbtn {
-    display: flex;
-    position: absolute;
-    height: 100%;
-    right: 0;
-    top: 30px;
-    justify-self: end;
-    cursor: pointer;
-    margin-top: 0;
+
+  .loginbtn button {
+    padding: 10px;
   }
 
   .icon {
