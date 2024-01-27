@@ -193,7 +193,7 @@ export const LoginAuth = {
     passwordConfirmation: "Confirm Password",
     resetpsw: "Reset Password",
     register: "Register",
-    authentication: "Authentication",
+    authentication: "Login to : ",
     loginSuccessMessage: "Welcome",
     registerSuccessMessage: "Succesfully registered",
     studentId: "Student ID",

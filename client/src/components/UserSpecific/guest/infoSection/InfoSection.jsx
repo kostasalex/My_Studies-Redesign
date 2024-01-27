@@ -87,7 +87,7 @@ const InfoSection = ({ setIsModalOpen }) => {
                 ))}
 
                 {selectedCard && (
-                    <ModalComponent isOpen={isOpen} closeModal={closeModal} title={loginAuth.authentication}>
+                    <ModalComponent isOpen={isOpen} closeModal={closeModal} title={loginAuth.authentication + selectedCard.title}>
                         <AuthForm redirectUrl={getRedirectUrl(selectedCard.id)} opacity={100} bgcolor={authFormColor} />
                     </ModalComponent>
                 )}

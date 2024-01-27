@@ -5,6 +5,7 @@ import { StudetTeacherContext } from "@/context/HeaderButtonContext.jsx";
 import studentbgImage from "@/assets/homepage/studentbg.png"
 import teacherbgImage from "@/assets/homepage/teacherbg.png"
 
+
 const LoginSection = ({ isModalOpen }) => {
 
   const { user, studentColor, teacherColor } = useContext(StudetTeacherContext);

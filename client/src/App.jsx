@@ -11,7 +11,7 @@ import { invalidPathMsg as invalidPathMsgGr } from '@/locales/gr';
 
 import Swal from 'sweetalert2';
 
-const validPaths = ['/', '/contact', '/faq'];
+const validPaths = ['/', '/contact', '/faq', '/about'];
 
 const MainComponentSelector = () => {
   const { user, isUserLoggedIn } = useContext(StudetTeacherContext);

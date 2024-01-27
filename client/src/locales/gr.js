@@ -200,7 +200,7 @@ export const LoginAuth = {
     passwordConfirmation: "Επιβεβαίωση Κωδικού",
     resetpsw: "Επαναφορά Κωδικού",
     register: "Εγγραφή",
-    authentication: "Πιστοποίηση",
+    authentication: "Συνδέσου για : ",
     loginSuccessMessage: "Καλώς ήλθατε",
     registerSuccessMessage: "Εγγραφή επιτυχής",
     studentId: "Αριθμός Φοιτητή",

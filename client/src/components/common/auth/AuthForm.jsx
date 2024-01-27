@@ -19,7 +19,10 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
   const LoginAuth = language === 'en' ? LoginAuthTextsEn : LoginAuthTextsGr;
 
   const { user, changeUser } = useContext(StudetTeacherContext);
-  const usermode = user === "student" ? "My Studies Student" : "My Studies Professor";
+  const usermodeStudent = language === "en" ? "Student Authentication" : "Πιστοποίηση Φοιτητή";
+  const usermodeTeacher = language === "en" ? "Professor Authentication" : "Πιστοποίηση Καθηγητή";
+  const usermode = user === "student" ? usermodeStudent : usermodeTeacher;
+
   const authform = language === 'en' ? TextsEn : TextsGr;
 
 
