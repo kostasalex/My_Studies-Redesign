@@ -1,28 +1,28 @@
 .pagination {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 1rem;
-
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem;
 }
 
 .pagination li {
-    margin: 0 5px;
+  margin: 0 5px;
 }
 
 .pagination a {
-    cursor: pointer;
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #5d6369;
+  color: white;
 }
 
 .pagination a:hover {
-    background-color: #eee;
+  background-color: #5d6369;
 }
 
 .pagination .active a {
-    background-color: #40ff00;
-    color: white;
-    border-color: #007bff;
+  color: white;
+  border-color: #5d6369;
 }
