@@ -49,7 +49,7 @@ export const studentDashboardButtons = [
 export const TeacherDashboardButtons = [
     "Πίνακας Ελέγχου",
     "Τρέχων Εξάμηνο",
-    "Ιστορικό Δηλώσεων",
+    "Παλαιότερα Εξάμηνα",
     "Στατιστικά",
     "Προφίλ",
     "Αποσύνδεση"
