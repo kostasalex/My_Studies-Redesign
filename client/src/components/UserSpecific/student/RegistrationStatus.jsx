@@ -1,48 +1,75 @@
-import { useNavigate } from 'react-router-dom';
+import styles from "./RegistrationStatus.module.css";
+import { useNavigate } from "react-router-dom";
 
 const RegistrationStatus = () => {
-    const navigate = useNavigate();
-    const savedCourses = JSON.parse(localStorage.getItem('selectedCourses')) || [];
-    const finalSubmission = JSON.parse(localStorage.getItem('finalSubmission'));
+  const navigate = useNavigate();
+  const savedCourses = JSON.parse(localStorage.getItem('selectedCourses')) || [];
+  const finalSubmission = JSON.parse(localStorage.getItem('finalSubmission'));
 
-    const handleOpenTemporarySavedCourses = () => {
-        navigate(`/registration/new-registration?step=1`);
-    };
+  const navigateToNewRegistration = () => {
+    navigate("/registration/new-registration");
+  };
 
-    const handleDeleteFinalSubmission = () => {
-        localStorage.removeItem('finalSubmission');
-        navigate('/');
-    };
-    console.log(savedCourses)
+  const handleOpenTemporarySavedCourses = () => {
+    navigate(`/registration/new-registration?step=1`);
+  };
 
+  const handleDeleteFinalSubmission = () => {
+    localStorage.removeItem('finalSubmission');
+    navigate('/');
+  };
+
+  // Case 1: Final Submission
+  if (finalSubmission) {
     return (
-        <>
-            {(savedCourses?.length || finalSubmission) &&
-                <div className="card w-50 mx-auto">
-                    <div className="card-body">
-                        {finalSubmission ? (
-                            <div>
-                                <h5 className="card-title">Τελική Υποβολή</h5>
-                                <p className="card-text">Δηλώσατε επιτυχώς Μαθήματα για το τρέχον εξάμηνο!</p>
-                                <button className="btn btn-danger" onClick={handleDeleteFinalSubmission}>Διαγραφή</button>
-                            </div>
-                        ) : (
-                            <div>
-                                <h5 className="card-title">Αποθηκευμένη Δήλωση</h5>
-                                <p className="card-text">Έχετε αποθηκευμένη δήλωση με {savedCourses.length} μαθήματα.</p>
-                                <button className="btn btn-primary" onClick={handleOpenTemporarySavedCourses}>Προβολή</button>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            }
-        </>
-
+      <div className={styles["center"]}>
+        <div className={styles["registration-status"]}>
+          <div className={styles["text"]}>
+            <h5>Τελική Υποβολή</h5>
+            <p>Δηλώσατε επιτυχώς Μαθήματα για το τρέχον εξάμηνο!</p>
+          </div>
+          <button className="btn btn-danger" onClick={handleDeleteFinalSubmission}>Διαγραφή</button>
+        </div>
+      </div>
     );
+  }
+
+  // Case 2: Temporary Submission
+  else if (savedCourses.length > 0) {
+    return (
+      <div className={styles["center"]}>
+        <div className={styles["registration-status"]}>
+          <div className={styles["text"]}>
+            <h5>Αποθηκευμένη Δήλωση</h5>
+            <p>Έχετε αποθηκευμένη δήλωση με {savedCourses.length} μαθήματα.</p>
+          </div>
+          <button className="btn btn-primary" onClick={handleOpenTemporarySavedCourses}>Προβολή</button>
+        </div>
+      </div>
+    );
+  }
+
+  // Case 3: New Registration
+  else {
+    return (
+      <div className={styles["center"]}>
+        <div className={styles["registration-status"]}>
+          <div className={styles["text"]}>
+            <h5>Δημιουργία Νέας Δήλωσης Μαθημάτων</h5>
+            <p>Προθεσμία Υποβολής : 1/12/2023 23:59:59 μμ</p>
+          </div>
+          <div>
+            <button
+              className="btn btn-secondary"
+              onClick={navigateToNewRegistration}
+            >
+              Δημιουργία
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 };
 
 export default RegistrationStatus;
-
-
-
-RegistrationStatus
