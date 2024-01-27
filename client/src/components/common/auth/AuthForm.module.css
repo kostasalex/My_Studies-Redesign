@@ -10,6 +10,10 @@
   transition: opacity 0.5s ease-in;
 }
 
+.authform input {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 .authform p {
   color: rgb(59, 6, 6);
   font-size: 12px;
@@ -49,13 +53,14 @@
   padding-left: 10px;
   padding-bottom: 0;
   padding-top: 12px;
+
 }
 
 .authform form p {
   border-radius: 15px;
   text-align: center;
-  color: #dc3545;
-  background-color: white;
+  color: #e20f24;
+  text-shadow: 1px 1px #863939;
 }
 
 .login-image {
@@ -71,14 +76,14 @@
 }
 
 .input-group span {
-  color: red;
+  color: rgb(214, 185, 185);
 }
 
 
 .button-group button {
   background-color: #007bff;
   color: white;
-
+  ;
 }
 
 .tab {

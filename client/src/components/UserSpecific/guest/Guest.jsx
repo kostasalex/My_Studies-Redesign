@@ -16,7 +16,15 @@ const Guest = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   return (
     <div className="container">
-      <h1 className='text-center mt-2'>{Header}</h1>
+      <h1
+        className="text-center mt-2 mb-4 font-weight-bold text-dark"
+        style={{
+          fontSize: "2rem",
+          textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+        }}
+      >
+        {Header}
+      </h1>
       <LoginSection isModalOpen={isModalOpen} />
       <hr />
       <InfoSection setIsModalOpen={setIsModalOpen} />

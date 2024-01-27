@@ -28,7 +28,7 @@ const icons = {
 };
 
 const validPaths = [
-  "/", "registration", "grades", "certificates", "profile", "registration/new-registration"
+  "/", "registration", "grades", "certificates", "profile", "registration/new-registration",
 ];
 export default function Student() {
   const { language } = useContext(LanguageContext);
