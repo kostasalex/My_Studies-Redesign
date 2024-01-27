@@ -6,12 +6,12 @@ const RegistrationStatus = () => {
     const finalSubmission = JSON.parse(localStorage.getItem('finalSubmission'));
 
     const handleOpenTemporarySavedCourses = () => {
-        navigate(`/student/registration/new-registration?step=1`);
+        navigate(`/registration/new-registration?step=1`);
     };
 
     const handleDeleteFinalSubmission = () => {
         localStorage.removeItem('finalSubmission');
-        navigate('/student');
+        navigate('/');
     };
     console.log(savedCourses)
 

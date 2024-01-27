@@ -3,22 +3,25 @@ import Swal from 'sweetalert2';
 import CustomButton from "../../../../common/buttons/CustomButton.jsx";
 import { cardTexts as cardTextsTextsEn } from '@/locales/en';
 import { cardTexts as cardTextsTextsGr } from '@/locales/gr';
-import {useContext} from "react";
-import {LanguageContext} from "../../../../../context/LanguageContext.jsx";
+import { useContext } from "react";
+import { LanguageContext } from "../../../../../context/LanguageContext.jsx";
+import { useNavigate } from "react-router-dom";
+
 const Card = ({ title }) => {
+    const navigate = useNavigate();
     const handleNext = () => {
 
-            Swal.fire({
-                text: cardTexts.warningText,
-                icon: 'warning',
-                title: cardTexts.certificate+"\n"+title,
-                showCancelButton: true,
-                cancelButtonText:  cardTexts.cancelCert,
-                confirmButtonColor: "#007fff",
-                cancelButtonColor: "#ab0d0d",
-                confirmButtonText: cardTexts.applyCert,
-                reverseButtons: true
-            }).then((result) => {
+        Swal.fire({
+            text: cardTexts.warningText,
+            icon: 'warning',
+            title: cardTexts.certificate + "\n" + title,
+            showCancelButton: true,
+            cancelButtonText: cardTexts.cancelCert,
+            confirmButtonColor: "#007fff",
+            cancelButtonColor: "#ab0d0d",
+            confirmButtonText: cardTexts.applyCert,
+            reverseButtons: true
+        }).then((result) => {
             if (result.isConfirmed) {
                 handleClose();
             }
@@ -33,22 +36,22 @@ const Card = ({ title }) => {
             confirmButtonColor: "#007fff",
             confirmButtonText: cardTexts.closeCert
         }).then(() => {
-            navigate('/student/certificates');
+            navigate('/certificates');
         });
 
 
     };
-    const {language} = useContext(LanguageContext);
+    const { language } = useContext(LanguageContext);
     const cardTexts = language === 'en' ? cardTextsTextsEn : cardTextsTextsGr;
-  return (
-    <div className={styles.cardd}>
-      <h5 className={styles["cardd h5"]}>{title}</h5>
-        <CustomButton onClick={handleNext}>
-            {cardTexts.applyButton}
-        </CustomButton>
+    return (
+        <div className={styles.cardd}>
+            <h5 className={styles["cardd h5"]}>{title}</h5>
+            <CustomButton onClick={handleNext}>
+                {cardTexts.applyButton}
+            </CustomButton>
 
-    </div>
-  );
+        </div>
+    );
 };
 
 export default Card;

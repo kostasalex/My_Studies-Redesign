@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
+import Swal from 'sweetalert2';
 import { FaHome, FaBook, FaHistory, FaChartBar, FaUser } from 'react-icons/fa';
 import { Route, Routes, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import Dashboard from "@/components/common/dashboard/Dashboard";
@@ -8,6 +9,8 @@ import { TeacherDashboardButtons as TeacherDashboardButtonsEn } from '@/locales/
 import { TeacherDashboardButtons as TeacherDashboardButtonsGr } from '@/locales/gr';
 import { ExamPeriodTexts as ExamPeriodTextsEn } from '@/locales/en';
 import { ExamPeriodTexts as ExamPeriodTextsGr } from '@/locales/gr';
+import { invalidPathMsg as invalidPathMsgEn } from '@/locales/en';
+import { invalidPathMsg as invalidPathMsgGr } from '@/locales/gr';
 import styles from "./Teacher.module.css";
 import Profile from "./Profile/Profile";
 import CurrentSemester from "./currentSemester/CurrentSemester";
@@ -16,35 +19,48 @@ import Statistics from "./statistics/Statistics";
 import Breadcrumb from '@/components/common/Breadcrumbs';
 
 const icons = {
-  "dashboard": <FaHome />,
+  "/": <FaHome />,
   "current-semester": <FaBook />,
   "old-semesters": <FaHistory />,
   "statistics": <FaChartBar />,
   "profile": <FaUser />
 };
 
+const validPaths = [
+  "/", "current-semester", "old-semesters", "statistics", "profile"
+];
+
+
 export default function Teacher() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [selected, setSelected] = useState("dashboard");
+  const [selected, setSelected] = useState(location.pathname.slice(1) || '/');
   const { language } = useContext(LanguageContext);
+
 
   const TeacherDashboardButtons = language === 'en'
     ? TeacherDashboardButtonsEn
     : TeacherDashboardButtonsGr;
-
-  const ExamPeriodTexts = language === 'en' ? ExamPeriodTextsEn : ExamPeriodTextsGr;
+  const pathErrorMsg = language === 'gr' ? invalidPathMsgGr : invalidPathMsgEn;
 
 
   useEffect(() => {
-    const pathSegments = location.pathname.split('/').filter(Boolean);
-    const currentPath = pathSegments[1] || 'dashboard'; // Assuming 'teacher' is the first segment
-    if (["dashboard", "current-semester", "old-semesters", "statistics", "profile"].includes(currentPath)) {
-      setSelected(currentPath);
+    const currentPath = location.pathname.slice(1) || '/';
+    if (!validPaths.includes(currentPath)) {
+      navigate("/");
+      Swal.fire({
+        title: 'Oops...',
+        text: pathErrorMsg,
+        icon: 'warning',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK'
+      });
     } else {
-      navigate("/dashboard");
+      setSelected(currentPath);
     }
   }, [location, navigate]);
+
+  const ExamPeriodTexts = language === 'en' ? ExamPeriodTextsEn : ExamPeriodTextsGr;
 
   const handleButtonClick = (path) => {
     setSelected(path);
@@ -56,7 +72,7 @@ export default function Teacher() {
 
       <Dashboard>
         {[
-          "dashboard",
+          "/",
           "current-semester",
           "old-semesters",
           "statistics",
@@ -77,7 +93,7 @@ export default function Teacher() {
         <div className="d-flex flex-column">
           <div
             className="periodos"
-            style={{ textAlign: "right", fontSize: 20, marginTop: -60,marginBottom:-40 }}
+            style={{ textAlign: "right", fontSize: 20, marginTop: -60, marginBottom: -40 }}
           >
             {ExamPeriodTexts.examPeriod} <br />
             {ExamPeriodTexts.gradingPeriod}
@@ -85,8 +101,7 @@ export default function Teacher() {
         </div>
 
         <Routes>
-          <Route path="/" element={<Navigate replace to="dashboard" />} />
-          <Route path="dashboard" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="current-semester" element={<CurrentSemester />} />
           <Route path="old-semesters" element={<OldSemesters />} />
           <Route path="statistics" element={<Statistics />} />

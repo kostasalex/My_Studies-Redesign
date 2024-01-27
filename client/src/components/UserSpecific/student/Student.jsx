@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { FaHome, FaRegListAlt, FaGraduationCap, FaCertificate, FaUser } from 'react-icons/fa';
-import { Route, Routes, useNavigate, useLocation, Navigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import Dashboard from "@/components/common/dashboard/Dashboard";
 import Home from "./home/Home";
 
@@ -12,31 +13,46 @@ import NewRegistration from "./registration/newRegistration/NewRegistration";
 import Profile from "./Profile/Profile";
 import { studentDashboardButtons as TextsEn } from '@/locales/en';
 import { studentDashboardButtons as TextsGr } from '@/locales/gr';
+import { invalidPathMsg as invalidPathMsgEn } from '@/locales/en';
+import { invalidPathMsg as invalidPathMsgGr } from '@/locales/gr';
+
 import { LanguageContext } from "../../../context/LanguageContext.jsx";
 import Breadcrumb from '@/components/common/Breadcrumbs';
 
 const icons = {
-  "dashboard": <FaHome />,
+  "/": <FaHome />,
   "registration": <FaRegListAlt />,
   "grades": <FaGraduationCap />,
   "certificates": <FaCertificate />,
   "profile": <FaUser />
 };
 
+const validPaths = [
+  "/", "registration", "grades", "certificates", "profile", "registration/new-registration"
+];
 export default function Student() {
   const { language } = useContext(LanguageContext);
   const studentDashboardButtons = language === 'en' ? TextsEn : TextsGr;
+  const pathErrorMsg = language === 'gr' ? invalidPathMsgGr : invalidPathMsgEn;
+
   const navigate = useNavigate();
   const location = useLocation();
-  const [selected, setSelected] = React.useState("dashboard");
+  const [selected, setSelected] = React.useState(location.pathname);
 
   useEffect(() => {
-    const currentPath = location.pathname.split('/').pop(); // Get the last part of the URL
-    if (["dashboard", "registration", "grades", "certificates", "profile", "new-registration"].includes(currentPath)) {
-      setSelected(currentPath);
+    console.log(language)
+    const currentPath = location.pathname.slice(1) || '/';
+    if (!validPaths.includes(currentPath)) {
+      navigate("/");
+      Swal.fire({
+        title: 'Oops...',
+        text: pathErrorMsg,
+        icon: 'warning',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK'
+      });
     } else {
-      setSelected("dashboard");
-      navigate("/student/dashboard");
+      setSelected(currentPath);
     }
   }, [location, navigate]);
 
@@ -51,7 +67,7 @@ export default function Student() {
 
       <Dashboard>
         {/* <h2 >My Studies</h2> */}
-        {["dashboard", "registration", "grades", "certificates", "profile"].map((path, index) => (
+        {["/", "registration", "grades", "certificates", "profile"].map((path, index) => (
           <button
             key={path}
             className={selected === path ? styles.selectedButton : ""}
@@ -74,8 +90,7 @@ export default function Student() {
           </div>
         </div>
         <Routes>
-          <Route path="/" element={<Navigate replace to="dashboard" />} />
-          <Route path="dashboard" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="registration" element={<Registration />} />
           <Route path="registration/new-registration" element={<NewRegistration />} />
           <Route path="grades" element={<Grades />} />

@@ -3,9 +3,7 @@ import { Navbar, Nav, Container, Dropdown, DropdownButton } from "react-bootstra
 import { FaGlobe, FaUser, FaBars, FaTimes, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import styles from "./Header.module.css";
 import files from "../../../../public/uoalogo.svg";
-import { useLocation, useNavigate } from "react-router-dom";
-
-import CustomButton from "../buttons/CustomButton.jsx";
+import { useNavigate } from "react-router-dom";
 
 import { LanguageContext } from "../../../context/LanguageContext.jsx";
 import { StudetTeacherContext } from "../../../context/HeaderButtonContext.jsx";
@@ -17,7 +15,7 @@ const Header = () => {
   const { language, changeLanguage } = useContext(LanguageContext);
   const headerTexts = language === "en" ? headerTextsEn : headerTextsGr;
 
-  const { user, changeUser, studentColor, teacherColor } =
+  const { user, changeUser, studentColor, teacherColor, setIsUserLogged } =
     useContext(StudetTeacherContext);
 
   const isUserLoggedIn = localStorage.getItem("isUserLoggedIn") === "true";
@@ -43,6 +41,7 @@ const Header = () => {
   const logOut = () => {
     console.log("logout!");
     localStorage.setItem("isUserLoggedIn", "false");
+    setIsUserLogged(false);
     navigate("/");
   };
   const loggedOutColor = "white";
@@ -78,7 +77,7 @@ const Header = () => {
               <Nav.Link href="/contact">{headerTexts.contact}</Nav.Link>
               <div className={styles.languageSwitcher}>
                 <FaGlobe onClick={toggleLanguage} />
-                <span  onClick={toggleLanguage}>
+                <span onClick={toggleLanguage}>
                   {language === "en" ? "English" : "Ελληνικά"}
                 </span>
               </div>

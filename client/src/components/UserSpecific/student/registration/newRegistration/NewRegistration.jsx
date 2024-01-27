@@ -71,7 +71,7 @@ const NewRegistration = () => {
                 icon: 'success',
                 confirmButtonText: 'ΟΚ'
             }).then(() => {
-                navigate('/student');
+                navigate('/');
             });
         }
     };
@@ -84,7 +84,7 @@ const NewRegistration = () => {
             icon: 'success',
             confirmButtonText: 'ΟΚ'
         }).then(() => {
-            navigate('/student');
+            navigate('/');
         });
     };
 
@@ -121,7 +121,7 @@ const NewRegistration = () => {
             icon: 'success',
             confirmButtonText: 'ΟΚ'
         });
-        navigate("/student")
+        navigate("/")
     };
 
 

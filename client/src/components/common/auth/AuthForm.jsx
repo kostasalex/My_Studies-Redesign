@@ -18,11 +18,9 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
   const { language } = useContext(LanguageContext);
   const LoginAuth = language === 'en' ? LoginAuthTextsEn : LoginAuthTextsGr;
 
-  const { user } = useContext(StudetTeacherContext);
+  const { user, changeUser } = useContext(StudetTeacherContext);
   const usermode = user === "student" ? "My Studies Student" : "My Studies Professor";
   const authform = language === 'en' ? TextsEn : TextsGr;
-  console.log("auth: ", localStorage.getItem("isUserLoggedIn") === "true")
-
 
 
   const handleLogin = (values) => {
@@ -31,7 +29,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
 
 
     const xhr = new XMLHttpRequest();
-    const url = "https://mystudies.panosgio.org:4010/loginuser"; 
+    const url = "https://mystudies.panosgio.org:4010/loginuser";
 
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -40,10 +38,16 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           localStorage.setItem('isUserLoggedIn', 'true');
-          window.location.href = "/student";
+          localStorage.setItem('user', 'student');
+          console.log("student")
+          changeUser("student")
+          window.location.href = redirectUrl ? redirectUrl : "/";
         } else if (xhr.status === 201) {
           localStorage.setItem('isUserLoggedIn', 'true');
-          window.location.href = "/teacher";
+          localStorage.setItem('user', 'teacher');
+          console.log("teacher")
+          changeUser("teacher")
+          window.location.href = redirectUrl ? redirectUrl : "/";
         } else if (xhr.status === 401) {
           alert("Wrong Credentials. Please try again");
         } else {
@@ -108,6 +112,8 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
 
     xhr.send(data);
   };
+
+
   return (
     <div style={{ opacity: opacity, background: bgcolor }} className={styles.authform}>
       <div className="mb-2 d-flex justify-content-center flex-column text-center align-items-center ">

@@ -182,6 +182,7 @@ export const headerTexts = {
     teacherPortal: "Professor Login"
 };
 
+export const invalidPathMsg = "The path you're trying to access does not exist. You've been redirected to the home page.";
 
 export const LoginAuth = {
     loginbtn: "Login",

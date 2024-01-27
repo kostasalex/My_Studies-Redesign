@@ -54,17 +54,17 @@ const InfoSection = ({ setIsModalOpen }) => {
     const getRedirectUrl = (cardId) => {
         if (user === "student") {
             switch (cardId) {
-                case 1: return '/student/grades';
-                case 2: return '/student/registration';
-                case 3: return '/student/certificates';
+                case 1: return '/grades';
+                case 2: return '/registration';
+                case 3: return '/certificates';
                 default: return '/';
             }
         }
         else {
             switch (cardId) {
-                case 1: return '/teacher/current-semester';
-                case 2: return '/teacher/old-semesters';
-                case 3: return '/teacher/statistics';
+                case 1: return '/current-semester';
+                case 2: return '/old-semesters';
+                case 3: return '/statistics';
                 default: return '/';
             }
         }

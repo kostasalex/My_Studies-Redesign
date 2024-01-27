@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const NewRegistrationSection = () => {
   const navigate = useNavigate();
   const navigateToNewRegistration = () => {
-    navigate("/student/registration/new-registration")
+    navigate("/registration/new-registration")
   };
 
   return (

@@ -155,7 +155,7 @@ export const certificatesTexts = {
     studentStatus: "Κατάσταση Φοιτητή",
     taxUse: "Φορολογική Χρήση",
     detailedGrades: "Αναλυτική Βαθμολογία",
-    militaryUse: "Στρατιωτική Χρήση", 
+    militaryUse: "Στρατιωτική Χρήση",
     approved: "Εγκρίθηκε",
     pending: "Εκκρεμεί",
     rejected: "Απορρίφθηκε"
@@ -221,6 +221,8 @@ export const gradesTexts = {
     semesterWinter: "Χειμερινό ",
     semesterSpring: "Εαρινό "
 };
+
+export const invalidPathMsg = "Η διαδρομή που προσπαθείτε να ανοίξετε δεν υπάρχει. Έχετε ανακατευθυνθεί στην αρχική σελίδα.";
 
 export const studentInfoCardData = [
     {
