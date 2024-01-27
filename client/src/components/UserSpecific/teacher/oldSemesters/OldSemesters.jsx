@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./OldSemesters.module.css";
-import CustomButton from "../../../common/buttons/CustomButton.jsx";
+import CustomButtonTeacher from "../../../common/buttons/CustomButton_Teacher.jsx";
 
 const OldSemesters = () => {
   const Semesters = [
@@ -129,12 +129,15 @@ const OldSemesters = () => {
 
       {showRandomCourses ? (
         <div>
-          <button
-            className="btn btn-primary float-end"
-            onClick={handleBackClick}
-          >
-            Πίσω
-          </button>
+          <CustomButtonTeacher
+  className="float-end"
+  onClick={handleBackClick}
+  style={{ textAlign: 'right' }}
+>
+  Πίσω
+</CustomButtonTeacher>
+
+          
           <h4>Τυχαία Μαθήματα</h4>
           <table className={`table table-striped ${styles["Semesters-table"]}`}>
             <thead>
@@ -157,10 +160,11 @@ const OldSemesters = () => {
                   <td>{course.period}</td>
                   <td>{course.year}</td>
                   <td>
-                    <button className="btn btn-primary">Προβολή</button>
+                    
+                    <CustomButtonTeacher>Προβολή</CustomButtonTeacher>
                   </td>
                   <td>
-                    <button className="btn btn-success">Κατέβασμα</button>
+                  <CustomButtonTeacher>Κατέβασμα</CustomButtonTeacher>
                   </td>
                 </tr>
               ))}
@@ -192,7 +196,7 @@ const OldSemesters = () => {
                 <td>{semester.lessons}</td>
                 <td>{semester.students}</td>
                 <td>
-                  <button
+                  <CustomButtonTeacher
                     className="btn btn-primary"
                     onClick={(e) => {
                       e.stopPropagation();
@@ -200,7 +204,7 @@ const OldSemesters = () => {
                     }}
                   >
                     Προβολή
-                  </button>
+                  </CustomButtonTeacher>
                 </td>
               </tr>
             ))}

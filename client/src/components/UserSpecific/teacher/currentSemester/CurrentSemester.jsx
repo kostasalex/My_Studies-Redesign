@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./CurrentSemester.module.css";
 import Students from "./Table.jsx";
-
+import CustomButtonTeacher from "../../../common/buttons/CustomButton_Teacher.jsx";
 
 const sampleData = [
   {
@@ -159,9 +159,9 @@ const CurrentSemester = () => {
       <div className={styles.mylessons}>
         Τα Μαθήματα μου :
         {selectedOption === "grade-online" && (
-          <button className={styles.backButton} onClick={() => closeModal()}>
+          <CustomButtonTeacher className={styles.backButton} onClick={() => closeModal()}>
             Πίσω
-          </button>
+          </CustomButtonTeacher>
         )}
       </div>
 

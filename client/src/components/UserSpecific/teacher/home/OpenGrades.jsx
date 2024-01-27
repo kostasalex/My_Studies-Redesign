@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./OpenGrades.module.css";
-import CustomButton from "../../../common/buttons/CustomButton.jsx";
+import CustomButtonTeacher from "../../../common/buttons/CustomButton_Teacher.jsx";
 // Λίστα μαθημάτων
 const grades = [
   { title: "Μηχανική Μάθηση", semester: "Εαρινό Εξάμηνο 2023", students: 237 },
@@ -26,7 +26,7 @@ const OpenGrades = () => {
               <h6>{`${grade.semester} - ${grade.students} Μαθητές`}</h6>
             </div>
             <div className={styles["buttons"]}>
-              <CustomButton className="primary">Προβολή</CustomButton>
+              <CustomButtonTeacher className="primary">Προβολή</CustomButtonTeacher>
             </div>
           </li>
         ))}

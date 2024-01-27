@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./CurrentCourses.module.css";
-import CustomButton from "../../../common/buttons/CustomButton.jsx";
+import CustomButtonTeacher from "../../../common/buttons/CustomButton_Teacher.jsx";
 // Λίστα μαθημάτων
 const courses = [
   {
@@ -63,7 +63,7 @@ const CurrentCourses = () => {
                 <h6>{`${course.semester} - ${course.students} Μαθητές`}</h6>
               </div>
               <div className={styles["buttons"]}>
-                <CustomButton className="primary">Προβολή</CustomButton>
+                <CustomButtonTeacher className="primary">Προβολή</CustomButtonTeacher>
               </div>
             </li>
           ))}

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./RecentGrades.module.css";
-import CustomButton from "../../../common/buttons/CustomButton.jsx";
+import CustomButtonTeacher from "../../../common/buttons/CustomButton_Teacher.jsx";
 
 // Λίστα πρόσφατων βαθμολογιών
 const recentGrades = [
@@ -39,7 +39,7 @@ const RecentGrades = () => {
               <h6>{`${grade.semester} - ${grade.students} Μαθητές`}</h6>
             </div>
             <div className={styles["buttons"]}>
-              <CustomButton className="primary">Προβολή</CustomButton>
+              <CustomButtonTeacher className="primary">Προβολή</CustomButtonTeacher>
             </div>
           </li>
         ))}

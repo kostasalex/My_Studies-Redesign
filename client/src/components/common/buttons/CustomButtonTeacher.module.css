@@ -1,0 +1,31 @@
+.custom_button_teacher {
+    border: 0px solid #ffffff;
+
+    font-weight: 500;
+    padding: 10px 15px;
+    min-width: fit-content;
+    font-size: 16px;
+    line-height: 1;
+    border-radius: 15px;
+    height: 40px;
+    color: #e0e0e0;
+    background: no-repeat right #6c757d;
+    -webkit-appearance: none;
+
+}
+.custom_button_teacher:hover {
+    background: no-repeat right #5d6369;
+}
+.custom_button_teacher option:hover {
+    background-color: #e0e0e0;
+}
+.custom_button_teacher:disabled {
+    background-color: #f6f5f5;
+    color: #d4d4d4;
+    cursor: not-allowed;
+}
+
+.custom_button_teacher:disabled:hover {
+    background-color: #f6f5f5;
+    color: #d4d4d4;
+}
