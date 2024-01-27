@@ -64,6 +64,15 @@ export default function Student() {
       </Dashboard>
       <div className={`container ${styles["student-content"]}`} >
         <Breadcrumb />
+        <div className="d-flex flex-column">
+          <div
+            className="periodos"
+            style={{ textAlign: "right", fontSize: 20 }}
+          >
+            Εξεταστική Περίοδος: Χειμερινό 2023 <br />
+            Περίοδος Δηλώσεων : 1/2/2023 εως 28/2/2023
+          </div>
+        </div>
         <Routes>
           <Route path="/" element={<Navigate replace to="dashboard" />} />
           <Route path="dashboard" element={<Home />} />

@@ -13,7 +13,7 @@ const DoughnutChart = ({ passed, failed, noGrade }) => {
       myChart = new Chart(ctx, {
         type: "doughnut",
         data: {
-          labels: ["Περασμένα", "Κοπές", "Χωρίς Βαθμό"],
+          labels: ["Περασμένα", "Κομμένα", "Χωρίς Βαθμό"],
           datasets: [
             {
               data: [passed, failed, noGrade],
