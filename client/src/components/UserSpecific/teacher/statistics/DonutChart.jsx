@@ -15,7 +15,7 @@ const DonutChart = () => {
 
   const options = {
     maintainAspectRatio: false,
-    cutoutPercentage: 70,
+    cutoutPercentage: 50,
     legend: {
       display: true,
       position: "bottom",
@@ -31,7 +31,7 @@ const DonutChart = () => {
             return previousValue + currentValue;
           });
           var currentValue = dataset.data[tooltipItem.index];
-          var percentage = Math.floor((currentValue / total) * 100 + 0.5);
+          var percentage = Math.floor(currentValue / total);
           return percentage + "%";
         },
       },

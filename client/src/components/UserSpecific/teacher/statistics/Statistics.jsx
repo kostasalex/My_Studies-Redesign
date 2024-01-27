@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import StudentGradesChart from "./StudentGradesChart";
 import Comments from "./Comments";
-import MesosOrosComponent from "./MesosOrosComponent";
 import "./Four_Panel.css";
 import DonutChart from "./DonutChart";
 import "./Statistics.css";
@@ -127,10 +126,10 @@ const Statistics = () => {
         <div className="panel">
           <StudentGradesChart gradesData={gradesData} />
         </div>
-        <div className="panel">
+        {/* <div className="panel">
           {" "}
           <MesosOrosComponent />{" "}
-        </div>
+        </div> */}
 
         <div className="panel">
           <Comments />
