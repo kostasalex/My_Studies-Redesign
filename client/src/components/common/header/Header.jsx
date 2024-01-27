@@ -73,7 +73,7 @@ const Header = () => {
           >
             <Nav className="me-auto">
               <Nav.Link href="/">{headerTexts.home}</Nav.Link>
-              <Nav.Link href="/about">{headerTexts.about}</Nav.Link>
+              <Nav.Link href="/faq">{headerTexts.faq}</Nav.Link>
               <Nav.Link href="/contact">{headerTexts.contact}</Nav.Link>
               <div className={styles.languageSwitcher}>
                 <FaGlobe onClick={toggleLanguage} />

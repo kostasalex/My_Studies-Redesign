@@ -190,7 +190,8 @@ export const headerTexts = {
     studentPortal: "Σύνδεση Φοιτητή",
     teacherPortal: "Σύνδεση Καθηγητή",
     logout: "Αποσύνδεση",
-    profile: "Προφίλ"
+    profile: "Προφίλ",
+    faq: "Συχνές Ερωτήσεις"
 };
 
 export const LoginAuth = {
