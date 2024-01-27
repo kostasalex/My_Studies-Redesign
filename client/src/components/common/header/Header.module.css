@@ -2,14 +2,13 @@
   display: flex;
   position: relative;
   justify-content: space-between;
-  padding: 0px 20px;
+  padding-bottom: 10px;
   background-color: #f8f0f7;
   color: #000000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header button {
-  margin-top: 30px;
   background-color: transparent;
   border-radius: 10px;
   max-height: 50px;
@@ -64,22 +63,34 @@
   margin-top: -70px;
 }
 
-
-
 .loginbtn:hover {
   color: white;
 }
 
+.loginbtn {
+  margin: 20px 0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  background-color: white;
+  padding: 20px;
+}
+
 @media screen and (min-width: 992px) {
+  .header {
+    align-items: center;
+    padding-bottom: 0 !important;
+  }
+
   .languagelogin {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 0;
-  }
 
-  .languageSwitcher {
-    margin-right: 150px;
   }
 
   .loginbtn {
@@ -87,9 +98,8 @@
     position: absolute;
     height: 100%;
     right: 0;
-    top: 0;
+    top: 30px;
     justify-self: end;
-    margin-left: 100px;
     cursor: pointer;
     margin-top: 0;
   }
@@ -106,9 +116,6 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .languageSwitcher {
-    margin-right: 180px;
-  }
 
   .navbarCollapse {
     margin-left: 100px;
@@ -116,9 +123,6 @@
 }
 
 @media screen and (min-width: 1400px) {
-  .languageSwitcher {
-    margin-right: 220px;
-  }
 
   .navbarCollapse {
     margin-left: 300px;
