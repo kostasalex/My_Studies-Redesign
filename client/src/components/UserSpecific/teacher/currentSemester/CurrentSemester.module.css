@@ -1,11 +1,25 @@
 .mylessons {
-  text-align: left;
   color: #333;
-
   font-weight: bold;
   margin-bottom: 20px;
   margin-top: 10px;
   font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mylessons .text {
+  margin-right: 20px;
+}
+
+.mylessons .backButton {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
 }
 
 .new-registration {
