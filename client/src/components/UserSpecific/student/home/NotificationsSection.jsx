@@ -6,19 +6,21 @@ const NotificationsSection = () => {
       <h3>Ειδοποιήσεις:</h3>
       <ul>
         <li>
-          <h5 style={{ color: "blue", textDecoration: "underline" }}>
+
+          <a href="/certificates" style={{color: "blue", textDecoration: "underline", cursor: "pointer"}}>
             Εγκρίθηκε το Πιστοποιητικό Φοιτητικής Ιδιότητας.
-          </h5>
+          </a>
+
         </li>
         <li>
-          <h5 style={{ color: "blue", textDecoration: "underline" }}>
+          <a href="/grades" style={{color: "blue", textDecoration: "underline", cursor: "pointer"}}>
             Νέος Βαθμός στην Γραμμική Άλγεβρα!
-          </h5>
+          </a>
         </li>
         <li>
-          <h5 style={{ color: "blue", textDecoration: "underline" }}>
+          <a href="/registration" style={{color: "blue", textDecoration: "underline", cursor: "pointer"}}>
             Η Περίοδος Δήλωσης Μαθημάτων Ξεκίνησε.
-          </h5>
+          </a>
         </li>
       </ul>
     </div>
