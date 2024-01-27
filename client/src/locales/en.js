@@ -198,6 +198,10 @@ export const LoginAuth = {
     lastName: "Last Name"
 };
 
+export const ExamPeriodTexts = {
+    examPeriod: "Examination Period: Winter 2023",
+    gradingPeriod: "Grading Period: 2/1/2023 to 2/28/2023",
+};
 
 export const faqSectionTexts = {
     title: "Need Help?",
@@ -352,4 +356,25 @@ export const newRegistrationTexts = {
     nextButton: "Next",
     backButton: "Back",
     finalSubmitButton: "Final Submit",
+};
+
+export const CurrentCoursesTexts = {
+    heading: "Current Courses ",
+    studentsLabel: "Students",
+    viewButton: "View",
+
+};
+
+
+export const OpenGradesTexts = {
+    heading: "Not Registered Grades",
+    studentsLabel: "Students",
+    viewButton: "View",
+
+};
+export const RecentGradesTexts = {
+    heading: "Recent Grade Submissions",
+    studentsLabel: "Students",
+    viewButton: "View",
+
 };
