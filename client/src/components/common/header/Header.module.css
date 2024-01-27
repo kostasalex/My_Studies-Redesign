@@ -72,12 +72,18 @@
 .dropdown-menu {
   position: absolute;
   top: 100px;
-  right: 100px;
+  left: 20px;
   background-color: white;
   padding: 20px;
 }
 
 @media screen and (min-width: 992px) {
+
+  .dropdown-menu {
+    top: 100px;
+    right: 100px;
+  }
+
   .header {
     align-items: center;
     padding-bottom: 0 !important;

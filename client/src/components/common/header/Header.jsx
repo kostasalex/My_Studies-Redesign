@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Navbar, Nav, Container, Dropdown, DropdownButton } from "react-bootstrap";
+import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
 import { FaGlobe, FaUser, FaBars, FaTimes, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import styles from "./Header.module.css";
 import files from "../../../../public/uoalogo.svg";
@@ -86,11 +86,10 @@ const Header = () => {
 
               <div>
                 {isUserLoggedIn ? (
-                  <Dropdown align="end">
+                  <Dropdown align="mid">
                     <Dropdown.Toggle variant="" id="dropdown-user">
                       <FaUser className={styles.icon} />
                     </Dropdown.Toggle>
-
                     <Dropdown.Menu>
                       <Dropdown.Item onClick={handleProfileRedirect}>
                         <FaUserCircle /> Profile
