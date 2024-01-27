@@ -25,21 +25,12 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
   console.log("auth: ", localStorage.getItem("isUserLoggedIn") === "true")
 
 
-  function redirectAfterLogin() {
-    console.log(redirectUrl)
-    if (redirectUrl) navigate(redirectUrl);
-    else if (user === "student") { navigate("/student/dashboard") }
-    else { navigate("/teacher/dashboard") }
-  }
 
   const handleLogin = (values) => {
     event.preventDefault();
-    localStorage.setItem('isUserLoggedIn', 'true');
 
-    redirectAfterLogin()
 
-    // Prevent default form submission
-    return;
+
     const xhr = new XMLHttpRequest();
     const url = "https://mystudies.panosgio.org:4010/loginuser"; // Replace with your Node.js server URL
 
@@ -49,8 +40,10 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
+          localStorage.setItem('isUserLoggedIn', 'true');
           window.location.href = "/student";
         } else if (xhr.status === 201) {
+          localStorage.setItem('isUserLoggedIn', 'true');
           window.location.href = "/teacher";
         } else if (xhr.status === 401) {
           alert("Wrong Credentials. Please try again");
