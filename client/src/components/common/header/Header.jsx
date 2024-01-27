@@ -92,10 +92,10 @@ const Header = () => {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item onClick={handleProfileRedirect}>
-                        <FaUserCircle /> Profile
+                        <FaUserCircle /> {headerTexts.profile}
                       </Dropdown.Item>
                       <Dropdown.Item onClick={logOut}>
-                        <FaSignOutAlt /> Logout
+                        <FaSignOutAlt /> {headerTexts.logout}
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>

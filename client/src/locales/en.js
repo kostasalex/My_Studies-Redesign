@@ -179,7 +179,9 @@ export const headerTexts = {
     about: "About",
     contact: "Contact",
     studentPortal: "Student Login",
-    teacherPortal: "Professor Login"
+    teacherPortal: "Professor Login",
+    logout: "Logout",
+    profile: "Profile"
 };
 
 export const invalidPathMsg = "The path you're trying to access does not exist. You've been redirected to the home page.";

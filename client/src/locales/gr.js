@@ -188,7 +188,9 @@ export const headerTexts = {
     about: "Σχετικά",
     contact: "Επικοινωνία",
     studentPortal: "Σύνδεση Φοιτητή",
-    teacherPortal: "Σύνδεση Καθηγητή"
+    teacherPortal: "Σύνδεση Καθηγητή",
+    logout: "Αποσύνδεση",
+    profile: "Προφίλ"
 };
 
 export const LoginAuth = {
