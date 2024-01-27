@@ -75,7 +75,7 @@ export default function Teacher() {
         <div className="d-flex flex-column">
           <div
             className="periodos"
-            style={{ textAlign: "right", fontSize: 20 }}
+            style={{ textAlign: "right", fontSize: 20, marginTop: -60,marginBottom:-40 }}
           >
             Εξεταστική Περίοδος: Χειμερινό 2023 <br />
             Περίοδος Δηλώσεων : 1/2/2023 εως 28/2/2023

@@ -1,17 +1,18 @@
 import React from "react";
-import styles from "./OpenGrades.module.css";
+import styles from "./CurrentCourses.module.css";
 import CustomButtonTeacher from "../../../common/buttons/CustomButton_Teacher.jsx";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faGraduationCap} from "@fortawesome/free-solid-svg-icons";
+import {faUser} from "@fortawesome/free-solid-svg-icons/faUser";
 // Λίστα μαθημάτων
 const grades = [
-  { title: "Μηχανική Μάθηση", semester: "Εαρινό Εξάμηνο 2023", students: 237 },
-  { title: "Γραμμική Άλγεβρα", semester: "Εαρινό Εξάμηνο 2023", students: 237 },
-  {
-    title: "Διακριτά Μαθηματικά",
-    semester: "Εαρινό Εξάμηνο 2023",
-    students: 237,
-  },
-  { title: "Προγραμματισμός", semester: "Εαρινό Εξάμηνο 2023", students: 237 },
-  // Προσθέστε περισσότερα μαθήματα αν χρειάζεται
+    {
+        title: "Δίκτυα Υπολογιστών",
+        semester: "Χειμερινό Εξάμηνο 2024",
+        students: 180,
+    },
+   { title: "Προγραμματισμός", semester: "Εαρινό Εξάμηνο 2023", students: 250 },
+
 ];
 
 const OpenGrades = () => {
@@ -20,15 +21,22 @@ const OpenGrades = () => {
       <h2>Ανοιχτές Βαθμολογίες :</h2>
       <ul>
         {grades.map((grade, index) => (
-          <li key={index}>
-            <div className="lesson">
-              {grade.title}
-              <h6>{`${grade.semester} - ${grade.students} Μαθητές`}</h6>
-            </div>
-            <div className={styles["buttons"]}>
-              <CustomButtonTeacher className="primary">Προβολή</CustomButtonTeacher>
-            </div>
-          </li>
+            <li key={index}>
+                <div className="lesson">
+                    <FontAwesomeIcon icon={faGraduationCap}/>
+                    <span>
+                  {`  ${grade.title} `}</span>
+                    <h1></h1>
+
+                    <h6><FontAwesomeIcon icon={faUser}/>{`   ${grade.students} Μαθητές`}</h6>
+                </div>
+                <div className="buttons">
+                    <a href="/teacher/current-semester">
+                        <CustomButtonTeacher className="primary">Προβολή</CustomButtonTeacher>
+                    </a>
+                </div>
+
+            </li>
         ))}
       </ul>
     </div>

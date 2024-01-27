@@ -1,17 +1,11 @@
-.section-wrapper {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 30px;
-}
 
 .section-wrapper {
-    margin-top: 40px;
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 30px;
+    grid-template-rows: 1fr auto auto;
+    gap: 15px;
+    margin-bottom: -200px;
 }
 
 .section-wrapper> :nth-child(1) {
