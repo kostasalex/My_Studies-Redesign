@@ -1,8 +1,32 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import styles from "./OldSemesters.module.css";
 import CustomButtonTeacher from "../../../common/buttons/CustomButton_Teacher.jsx";
+import file from "../../../../../public/test_doc.pdf";
+
+import {LanguageContext} from "../../../../context/LanguageContext";
+import { oldCertificatesTexts as TextsEn } from '@/locales/en';
+import { oldCertificatesTexts as TextsGr } from '@/locales/gr';
 
 const OldSemesters = () => {
+  const {language} = useContext(LanguageContext);
+  const oldCertificatesTexts = language === 'en' ? TextsEn : TextsGr;
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = file;
+    link.download = "old_semester.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleOpen = () => {
+    const link = document.createElement('a');
+    link.href = file;
+    link.target = '_blank'; // Open in a new tab
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   const Semesters = [
     {
       semester: "Φθινοπωρινό",
@@ -73,9 +97,7 @@ const OldSemesters = () => {
     setSelectedSemester(semester);
   };
 
-  const handleViewClick = () => {
-    setShowRandomCourses(true);
-  };
+
 
   const handleBackClick = () => {
     setShowRandomCourses(false);
@@ -159,10 +181,18 @@ const OldSemesters = () => {
                   <td>{course.period}</td>
                   <td>{course.year}</td>
                   <td>
-                    <CustomButtonTeacher>Προβολή</CustomButtonTeacher>
-                  </td>
-                  <td>
-                    <CustomButtonTeacher>Κατέβασμα</CustomButtonTeacher>
+                    <CustomButtonTeacher
+                        onClick={handleOpen}
+
+                    >
+                      {oldCertificatesTexts.btnshow}
+                    </CustomButtonTeacher>
+                    <CustomButtonTeacher
+                        onClick={handleDownload}
+
+                    >
+                      {oldCertificatesTexts.btndownload}
+                    </CustomButtonTeacher>
                   </td>
                 </tr>
               ))}
@@ -195,14 +225,20 @@ const OldSemesters = () => {
                 <td>{semester.students}</td>
                 <td>
                   <CustomButtonTeacher
-                    className="btn btn-primary"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleViewClick();
-                    }}
+                      onClick={handleOpen}
+
                   >
-                    Προβολή
+                    {oldCertificatesTexts.btnshow}
                   </CustomButtonTeacher>
+                  <CustomButtonTeacher
+                      onClick={handleDownload}
+
+                  >
+                    {oldCertificatesTexts.btndownload}
+                  </CustomButtonTeacher>
+
+
+
                 </td>
               </tr>
             ))}

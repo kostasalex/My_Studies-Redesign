@@ -1,6 +1,6 @@
 .custom_button_teacher {
     border: 0px solid #ffffff;
-
+    text-align: center;
     font-weight: 500;
     padding: 10px 15px;
     min-width: fit-content;
@@ -11,7 +11,7 @@
     color: #e0e0e0;
     background: no-repeat right #6c757d;
     -webkit-appearance: none;
-
+    margin-right: 10px;
 }
 .custom_button_teacher:hover {
     background: no-repeat right #5d6369;

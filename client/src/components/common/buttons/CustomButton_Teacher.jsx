@@ -1,4 +1,4 @@
-import styles from './CustomButtonTeacher.module.css';
+import styles from './CustomButton_Teacher.module.css';
 
 const CustomButtonTeacher = ({ children, onClick, disabled }) => {
     return (
