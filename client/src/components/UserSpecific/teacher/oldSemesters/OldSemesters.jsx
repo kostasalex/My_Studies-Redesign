@@ -130,14 +130,13 @@ const OldSemesters = () => {
       {showRandomCourses ? (
         <div>
           <CustomButtonTeacher
-  className="float-end"
-  onClick={handleBackClick}
-  style={{ textAlign: 'right' }}
->
-  Πίσω
-</CustomButtonTeacher>
+            className="ml-auto"
+            onClick={handleBackClick}
+            style={{ marginLeft: "auto", textAlign: "right" }}
+          >
+            Πίσω
+          </CustomButtonTeacher>
 
-          
           <h4>Τυχαία Μαθήματα</h4>
           <table className={`table table-striped ${styles["Semesters-table"]}`}>
             <thead>
@@ -160,11 +159,10 @@ const OldSemesters = () => {
                   <td>{course.period}</td>
                   <td>{course.year}</td>
                   <td>
-                    
                     <CustomButtonTeacher>Προβολή</CustomButtonTeacher>
                   </td>
                   <td>
-                  <CustomButtonTeacher>Κατέβασμα</CustomButtonTeacher>
+                    <CustomButtonTeacher>Κατέβασμα</CustomButtonTeacher>
                   </td>
                 </tr>
               ))}

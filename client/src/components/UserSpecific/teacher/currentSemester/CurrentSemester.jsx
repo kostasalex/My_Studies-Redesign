@@ -37,8 +37,6 @@ const sampleData = [
   },
 ];
 
-
-
 const CurrentSemester = () => {
   const navigate = useNavigate();
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -74,10 +72,10 @@ const CurrentSemester = () => {
   const handleEdit = (index, value) => {
     let numericValue;
 
-    if (value === '') {
+    if (value === "") {
       numericValue = 0;
     } else {
-      const stringValue = String(value).replace(',', '.');
+      const stringValue = String(value).replace(",", ".");
       numericValue = parseFloat(stringValue);
 
       if (!isNaN(numericValue) && numericValue >= 0 && numericValue <= 10) {
@@ -88,11 +86,13 @@ const CurrentSemester = () => {
     }
 
     const updatedData = [...studentsData];
-    updatedData[index] = { ...updatedData[index], grade: numericValue, editing: true };
+    updatedData[index] = {
+      ...updatedData[index],
+      grade: numericValue,
+      editing: true,
+    };
     setStudentsData(updatedData);
   };
-
-
 
   const handleSave = (index) => {
     const updatedData = [...studentsData];
@@ -159,7 +159,10 @@ const CurrentSemester = () => {
       <div className={styles.mylessons}>
         Τα Μαθήματα μου :
         {selectedOption === "grade-online" && (
-          <CustomButtonTeacher className={styles.backButton} onClick={() => closeModal()}>
+          <CustomButtonTeacher
+            className={`${styles.backButton} ${styles.moveRight}`}
+            onClick={() => closeModal()}
+          >
             Πίσω
           </CustomButtonTeacher>
         )}
@@ -174,8 +177,9 @@ const CurrentSemester = () => {
           </div>
           <div>
             <button
-              className={`btn btn-secondary ${selectedCourse === course ? "btn-green" : ""
-                }`}
+              className={`btn btn-secondary ${
+                selectedCourse === course ? "btn-green" : ""
+              }`}
               onClick={() => navigateToNewRegistration(course)}
             >
               Βαθμολόγηση Online
@@ -210,8 +214,6 @@ const CurrentSemester = () => {
                 <button onClick={toggleSuccessModal}>OK</button>
               </div>
             )}
-
-
           </div>
         </div>
       ))}
