@@ -43,7 +43,7 @@ const StudentGradesChart = () => {
   const chartSize = { width: 500, height: 300 };
 
   return (
-    <div style={{ width: 600, height: "400px", overflow: "hidden" }}>
+    <div style={{ width: 500, height: "300px", overflow: "hidden" }}>
       <h2>Κατανομή Βαθμών</h2>
       <Bar
         data={data}

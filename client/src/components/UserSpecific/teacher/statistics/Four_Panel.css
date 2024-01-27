@@ -1,27 +1,25 @@
 .four-panels-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Αλλαγή εδώ για τρία πάνελ στην ίδια γραμμή */
   grid-template-rows: repeat(2, 1fr);
   gap: 10px;
-  height: 100vh;
+  height: 400px;
 }
 
 .panel {
-  background-color: rgba(
-    250,
-    250,
-    250,
-    0.925
-  ); /* Χρησιμοποιήστε το rgba για διαφάνεια */
+  background-color: rgba(250, 250, 250, 0.925);
   border: 1px solid #ddd;
-  border-radius: 20px; /* Στρογγυλεμένες γωνίες */
+  border-radius: 20px;
   height: 100%;
 }
 
 .previous-averages {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Επιπλέον κενό ανάμεσα στις γραμμές */
+  gap: 10px;
   margin-top: 40px;
   margin-left: 280px;
 }
