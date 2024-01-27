@@ -6,6 +6,7 @@
   background-color: #f8f0f7;
   color: #000000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: -10px;
 }
 
 .header button {
@@ -78,7 +79,6 @@
 }
 
 @media screen and (min-width: 992px) {
-
   .dropdown-menu {
     top: 100px;
     right: 100px;
@@ -92,7 +92,6 @@
   .languageSwitcher {
     margin-left: 100px;
   }
-
 
   .loginbtn button {
     padding: 10px;
@@ -110,14 +109,12 @@
 }
 
 @media screen and (min-width: 1200px) {
-
   .navbarCollapse {
     margin-left: 100px;
   }
 }
 
 @media screen and (min-width: 1400px) {
-
   .navbarCollapse {
     margin-left: 300px;
   }
