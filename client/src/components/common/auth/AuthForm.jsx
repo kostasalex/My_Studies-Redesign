@@ -1,12 +1,11 @@
 
 import { useContext, useState } from "react";
 import { Form, Field } from "react-final-form";
-import { Tab, Tabs, Card, Button, Row, Col } from 'react-bootstrap';
+import { Tab, Tabs, Button, Row, Col } from 'react-bootstrap';
 import { LoginAuth as LoginAuthTextsEn } from '@/locales/en';
 import { LoginAuth as LoginAuthTextsGr } from '@/locales/gr';
 import { LanguageContext } from "../../../context/LanguageContext.jsx";
 import { StudetTeacherContext } from "../../../context/HeaderButtonContext.jsx";
-import { createRoutesFromChildren, useNavigate } from 'react-router-dom';
 import { validateWithZod, loginSchema, registerSchema } from "./validation.js";
 import styles from "./AuthForm.module.css";
 import Swal from 'sweetalert2';
@@ -18,7 +17,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
   const [key, setKey] = useState('login');
   const { language } = useContext(LanguageContext);
   const LoginAuth = language === 'en' ? LoginAuthTextsEn : LoginAuthTextsGr;
-  const navigate = useNavigate();
+
   const { user } = useContext(StudetTeacherContext);
   const usermode = user === "student" ? "My Studies Student" : "My Studies Professor";
   const authform = language === 'en' ? TextsEn : TextsGr;
@@ -32,7 +31,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
 
 
     const xhr = new XMLHttpRequest();
-    const url = "https://mystudies.panosgio.org:4010/loginuser"; // Replace with your Node.js server URL
+    const url = "https://mystudies.panosgio.org:4010/loginuser"; 
 
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -63,12 +62,10 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
 
   const usermoderegister = user === true ? true : false;
   const handleRegister = async (values) => {
-
-    // Prevent default form submission
     event.preventDefault();
 
     const xhr = new XMLHttpRequest();
-    const url = "https://mystudies.panosgio.org:4010/adduser"; // Replace with your Node.js server URL
+    const url = "https://mystudies.panosgio.org:4010/adduser";
 
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -114,12 +111,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
   return (
     <div style={{ opacity: opacity, background: bgcolor }} className={styles.authform}>
       <div className="mb-2 d-flex justify-content-center flex-column text-center align-items-center ">
-        {/* <img
-          src="https://res.cloudinary.com/drijmbypg/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1702593334/logo-large_uaskki.jpg?_s=public-apps"
-          alt="Login"
-
-        /> */}
-        <h4 className="text-black mt-1 mb-2">{usermode}</h4>
+        <h4 className="text-black mt-1 mb-1">{usermode}</h4>
       </div>
       <Tabs id="auth-tabs" activeKey={key} onSelect={(k) => setKey(k)} className="mb-2" >
         <Tab eventKey="login" title={<span className={styles.tab}>Login</span>}>
@@ -130,23 +122,23 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
               <form onSubmit={handleSubmit}>
                 <Field name="username">
                   {({ input, meta }) => (
-                    <div>
-                      <label>{LoginAuth.username}</label>
-                      <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                    <div className="form-floating mb-2 ">
+                      <input {...input} id="usernameLogin" placeholder=" " type="text" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                      <label htmlFor="usernameLogin">{LoginAuth.username}</label>
                       {meta.error && meta.touched && <p>{meta.error}</p>}
                     </div>
                   )}
                 </Field>
                 <Field name="password">
                   {({ input, meta }) => (
-                    <div>
-                      <label>{LoginAuth.password}</label>
-                      <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                    <div className="form-floating mb-2">
+                      <input {...input} id="passwordLogin" placeholder=" " type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                      <label htmlFor="passwordLogin">{LoginAuth.password}</label>
                       {meta.error && meta.touched && <p>{meta.error}</p>}
                     </div>
                   )}
                 </Field>
-                <Button className="mt-3" variant="primary" type="submit" disabled={submitting}>Login</Button>
+                <Button variant="primary" type="submit" disabled={submitting}>Login</Button>
               </form>
             )}
           />
@@ -159,22 +151,22 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
               <form onSubmit={handleSubmit}>
                 <Row>
                   <Col xs={6}>
-                    <Field name="newUsername" component="input">
+                    <Field name="newUsername">
                       {({ input, meta }) => (
-                        <div>
-                          <label>{LoginAuth.username}</label>
-                          <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                        <div className="form-floating mb-2">
+                          <input {...input} id="newUsername" placeholder=" " className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                          <label htmlFor="newUsername">{LoginAuth.username}</label>
                           {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
                     </Field>
                   </Col>
                   <Col xs={6}>
-                    <Field name="studentId" component="input">
+                    <Field name="studentId">
                       {({ input, meta }) => (
-                        <div>
-                          <label>{LoginAuth.studentId}</label>
-                          <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                        <div className="form-floating mb-2">
+                          <input {...input} id="studentId" placeholder=" " className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                          <label htmlFor="studentId">{LoginAuth.studentId}</label>
                           {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
@@ -183,53 +175,56 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
                 </Row>
                 <Row>
                   <Col xs={6}>
-                    <Field name="firstName" component="input">
+                    <Field name="firstName">
                       {({ input, meta }) => (
-                        <div>
-                          <label>{LoginAuth.firstName}</label>
-                          <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                        <div className="form-floating mb-2">
+                          <input {...input} id="firstName" placeholder=" " className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                          <label htmlFor="firstName">{LoginAuth.firstName}</label>
                           {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
                     </Field>
                   </Col>
+
                   <Col xs={6}>
-                    <Field name="lastName" component="input">
+                    <Field name="lastName">
                       {({ input, meta }) => (
-                        <div>
-                          <label>{LoginAuth.lastName}</label>
-                          <input {...input} className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                        <div className="form-floating mb-2">
+                          <input {...input} id="lastName" placeholder=" " className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                          <label htmlFor="lastName">{LoginAuth.lastName}</label>
                           {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
                     </Field>
                   </Col>
                 </Row>
+
                 <Row>
                   <Col xs={6}>
-                    <Field name="newPassword" component="input">
+                    <Field name="newPassword">
                       {({ input, meta }) => (
-                        <div>
-                          <label>{LoginAuth.password}</label>
-                          <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                        <div className="form-floating">
+                          <input {...input} id="newPassword" type="password" placeholder=" " className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                          <label htmlFor="newPassword">{LoginAuth.password}</label>
                           {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
                     </Field>
                   </Col>
                   <Col xs={6}>
-                    <Field name="confirmPassword" component="input">
+                    <Field name="confirmPassword">
                       {({ input, meta }) => (
-                        <div>
-                          <label>{LoginAuth.passwordConfirmation}</label>
-                          <input {...input} type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                        <div className="form-floating mb-3">
+                          <input {...input} id="confirmPassword" type="password" placeholder=" " className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
+                          <label htmlFor="confirmPassword">{LoginAuth.passwordConfirmation}</label>
                           {meta.error && meta.touched && <p>{meta.error}</p>}
                         </div>
                       )}
                     </Field>
                   </Col>
                 </Row>
-                <Button className="mt-3" variant="primary" type="submit" disabled={submitting}>Register</Button>
+
+                <Button variant="primary" type="submit" disabled={submitting}>Register</Button>
               </form>
             )}
           />

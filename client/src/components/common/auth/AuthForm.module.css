@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 330px;
+  width: 380px;
   height: 550px;
   padding: 20px;
   border-radius: 4px;
@@ -23,17 +23,10 @@
   width: 100px;
 }
 
-.authform label {
-  font-weight: 600;
-  font-size: 16px;
-  margin-top: 6px;
-}
-
 .login-form form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   padding: 0 20px;
 }
 
@@ -51,21 +44,25 @@
 
 }
 
+.authform form label {
+  font-size: 13px;
+  padding-left: 10px;
+  padding-bottom: 0;
+  padding-top: 12px;
+}
+
+.authform form p {
+  border-radius: 15px;
+  text-align: center;
+  color: #dc3545;
+  background-color: white;
+}
+
 .login-image {
   align-self: center;
   width: 10px;
   height: auto;
   margin-bottom: 20px;
-}
-
-
-
-.input-group input {
-  width: 90%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px;
 }
 
 .button-group {

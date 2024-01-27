@@ -32,6 +32,10 @@
   margin-right: 0px;
 }
 
+.right-section button {
+  font-size: 13px;
+}
+
 .buttons-container {
   margin-top: 20px;
   display: flex;
@@ -46,6 +50,12 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media screen and (min-width: 576px) {
+  .right-section button {
+    font-size: 15px;
+  }
 }
 
 @media screen and (min-width: 1200px) {

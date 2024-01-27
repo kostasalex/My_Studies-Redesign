@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 const englishMessages = {
   username: 'Username is required',
+  newUsername: 'Απαιτείται όνομα χρήστη',
   password: 'Password is required',
   newPassword: 'Password must be at least 6 characters long',
   confirmPassword: 'Confirm password must be at least 6 characters long',
@@ -13,6 +14,7 @@ const englishMessages = {
 
 const greekMessages = {
   username: 'Απαιτείται όνομα χρήστη',
+  newUsername: 'Απαιτείται όνομα χρήστη',
   password: 'Απαιτείται κωδικός',
   newPassword: 'Ο κωδικός πρέπει να έχει τουλάχιστον 6 χαρακτήρες',
   confirmPassword: 'Η επιβεβαίωση του κωδικού πρέπει να έχει τουλάχιστον 6 χαρακτήρες',
@@ -28,9 +30,9 @@ export const loginSchema = z.object({
 });
 
 export const registerSchema = z.object({
-  newUsername: z.string().min(1, { message: greekMessages.username }),
-  newPassword: z.string().min(6, { message: englishMessages.newPassword }),
-  confirmPassword: z.string().min(6, { message: englishMessages.confirmPassword }),
+  newUsername: z.string().min(1, { message: englishMessages.username }),
+  newPassword: z.string().min(1, { message: englishMessages.newPassword }),
+  confirmPassword: z.string().min(1, { message: englishMessages.confirmPassword }),
   studentId: z.string().min(1, { message: englishMessages.studentId }),
   firstName: z.string().min(1, { message: englishMessages.firstName }),
   lastName: z.string().min(1, { message: englishMessages.lastName }),
@@ -47,7 +49,6 @@ export const validateWithZod = (schema, language) => {
     if (!result.success) {
       const errors = {};
       for (const issue of result.error.issues) {
-        // Use the translated field name as the key for error messages
         if (issue.path[0] === 'confirmPassword') {
           errors[issue.path[0]] = messages.confirmPasswordMatch; // Custom message for confirmPassword
         } else {
