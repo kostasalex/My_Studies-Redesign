@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useContext } from 'react';
+import { LanguageContext } from "@/context/LanguageContext";
+import { RecentGradesTexts as RecentGradesTextsEn } from '@/locales/en';
+import { RecentGradesTexts as RecentGradesTextsGr } from '@/locales/gr';
 
 import styles from "./CurrentCourses.module.css";
 import CustomButtonTeacher from "../../../common/buttons/CustomButton_Teacher.jsx";
@@ -27,29 +30,31 @@ const recentGrades = [
 ];
 
 const RecentGrades = () => {
-  return (
-    <div className={styles["current-courses-section"]}>
-      <h2>Πρόσφατες Υποβολές Βαθμολογιών :</h2>
-      <ul>
-        {recentGrades.map((grade, index) => (
-            <li key={index}>
-              <div className="lesson">
-                <FontAwesomeIcon icon={faGraduationCap}/>
-                <span>
-                  {`  ${grade.title} `}</span>
-                <h1></h1>
+  const { language } = useContext(LanguageContext);
+  const RecentGradesTexts = language === 'en'
+      ? RecentGradesTextsEn
+      : RecentGradesTextsGr;
 
-                <h6><FontAwesomeIcon icon={faUser}/>{`   ${grade.students} Μαθητές`}</h6>
-              </div>
-              <div className="buttons">
-                <a href="/teacher/current-semester">
-                  <CustomButtonTeacher className="primary">Προβολή</CustomButtonTeacher>
-                </a>
-              </div>
-            </li>
-        ))}
-      </ul>
-    </div>
+  return (
+      <div className={styles["current-courses-section"]}>
+        <h2>{RecentGradesTexts.heading}:</h2>
+        <ul>
+          {recentGrades.map((grade, index) => (
+              <li key={index}>
+                <div className="lesson">
+                  <FontAwesomeIcon icon={faGraduationCap}/>
+                  <span>{`  ${grade.title} `}</span>
+                  <h6><FontAwesomeIcon icon={faUser}/>{`   ${grade.students} ${RecentGradesTexts.studentsLabel}`}</h6>
+                </div>
+                <div className="buttons">
+                  <a href="/teacher/current-semester">
+                    <CustomButtonTeacher className="primary">{RecentGradesTexts.viewButton}</CustomButtonTeacher>
+                  </a>
+                </div>
+              </li>
+          ))}
+        </ul>
+      </div>
   );
 };
 

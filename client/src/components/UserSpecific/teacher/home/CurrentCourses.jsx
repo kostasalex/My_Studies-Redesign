@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import styles from "./CurrentCourses.module.css";
 import CustomButtonTeacher from "../../../common/buttons/CustomButton_Teacher.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import {faPerson} from "@fortawesome/free-solid-svg-icons/faPerson";
 import {faUser} from "@fortawesome/free-solid-svg-icons/faUser";
+import { LanguageContext } from "@/context/LanguageContext";
+import { CurrentCoursesTexts as CurrentCoursesTextsEn } from '@/locales/en';
+import { CurrentCoursesTexts as CurrentCoursesTextsGr } from '@/locales/gr';
 
 // Λίστα μαθημάτων
 const courses = [
@@ -56,29 +59,33 @@ const courses = [
 ];
 
 const CurrentCourses = () => {
+  const { language } = useContext(LanguageContext);
+  const CurrentCoursesTexts = language === 'en'
+      ? CurrentCoursesTextsEn
+      : CurrentCoursesTextsGr;
+
   return (
-    <div>
-      <div className={styles["current-courses-section"]}>
-        <h2 className="headers">Τρέχοντα Μαθήματα :</h2>
-        <ul>
-          {courses.map((course, index) => (
-              <li key={index}>
-                <div className="lesson">
-                  <FontAwesomeIcon icon={faGraduationCap}/>
-                  <span>{`  ${course.title} `}</span>
-                  <h1></h1>
-                  <h6><FontAwesomeIcon icon={faUser}/>{`   ${course.students} Μαθητές`}</h6>
-                </div>
-                <div className="buttons">
-                  <a href="/teacher/current-semester">
-                    <CustomButtonTeacher className="primary">Προβολή</CustomButtonTeacher>
-                  </a>
-                </div>
-              </li>
-          ))}
-        </ul>
+      <div>
+        <div className={styles["current-courses-section"]}>
+          <h2 className="headers">{CurrentCoursesTexts.heading}:</h2>
+          <ul>
+            {courses.map((course, index) => (
+                <li key={index}>
+                  <div className="lesson">
+                    <FontAwesomeIcon icon={faGraduationCap}/>
+                    <span>{`  ${course.title} `}</span>
+                    <h6><FontAwesomeIcon icon={faUser}/>{` ${course.students} ${CurrentCoursesTexts.studentsLabel}`}</h6>
+                  </div>
+                  <div className="buttons">
+                    <a href="/teacher/current-semester">
+                      <CustomButtonTeacher className="primary">{CurrentCoursesTexts.viewButton}</CustomButtonTeacher>
+                    </a>
+                  </div>
+                </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
   );
 };
 

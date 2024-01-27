@@ -121,6 +121,11 @@ export const faqPage = {
     pageTitle: "Συχνές Ερωτήσεις",
 };
 
+export const ExamPeriodTexts = {
+    examPeriod: "Εξεταστική Περίοδος: Χειμερινό 2023",
+    gradingPeriod: "Περίοδος Καταχώρησης Βαθμολόγιων: 1/2/2023 εως 28/2/2023",
+
+};
 export const newCertificatesTexts = {
     title: "Αίτηση για Νέο Πιστοποιητικό:",
     certificateTypes: [
@@ -347,4 +352,25 @@ export const newRegistrationTexts = {
     nextButton: "Επόμενο",
     backButton: "Πίσω",
     finalSubmitButton: "Οριστική Υποβολή",
+};
+
+export const CurrentCoursesTexts = {
+    heading: "Τρέχων Μαθήματα ",
+    studentsLabel: "Μαθητές",
+    viewButton: "Προβολή",
+
+};
+
+export const OpenGradesTexts = {
+    heading: "Μη καταχωρημένες Βαθμολογίες",
+    studentsLabel: "Μαθητές",
+    viewButton: "Προβολή",
+
+};
+
+export const RecentGradesTexts = {
+    heading: "Πρόσφατες Υποβολές Βαθμολογιών",
+    studentsLabel: "Μαθητές",
+    viewButton: "Προβολή",
+
 };

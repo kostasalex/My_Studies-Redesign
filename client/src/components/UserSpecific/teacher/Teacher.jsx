@@ -6,7 +6,8 @@ import { LanguageContext } from "@/context/LanguageContext";
 import Home from "./home/Home";
 import { TeacherDashboardButtons as TeacherDashboardButtonsEn } from '@/locales/en';
 import { TeacherDashboardButtons as TeacherDashboardButtonsGr } from '@/locales/gr';
-
+import { ExamPeriodTexts as ExamPeriodTextsEn } from '@/locales/en';
+import { ExamPeriodTexts as ExamPeriodTextsGr } from '@/locales/gr';
 import styles from "./Teacher.module.css";
 import Profile from "./Profile/Profile";
 import CurrentSemester from "./currentSemester/CurrentSemester";
@@ -32,6 +33,8 @@ export default function Teacher() {
     ? TeacherDashboardButtonsEn
     : TeacherDashboardButtonsGr;
 
+  const ExamPeriodTexts = language === 'en' ? ExamPeriodTextsEn : ExamPeriodTextsGr;
+
 
   useEffect(() => {
     const pathSegments = location.pathname.split('/').filter(Boolean);
@@ -47,7 +50,6 @@ export default function Teacher() {
     setSelected(path);
     navigate(path);
   };
-
 
   return (
     <div className={styles.teacher}>
@@ -77,8 +79,8 @@ export default function Teacher() {
             className="periodos"
             style={{ textAlign: "right", fontSize: 20, marginTop: -60,marginBottom:-40 }}
           >
-            Εξεταστική Περίοδος: Χειμερινό 2023 <br />
-            Περίοδος Δηλώσεων : 1/2/2023 εως 28/2/2023
+            {ExamPeriodTexts.examPeriod} <br />
+            {ExamPeriodTexts.gradingPeriod}
           </div>
         </div>
 
