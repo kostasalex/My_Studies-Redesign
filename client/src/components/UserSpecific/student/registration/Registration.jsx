@@ -1,7 +1,6 @@
 
-import NewRegistrationSection from "./NewRegistrationSection";
 import OldRegistrations from "./OldRegistrationsSection";
-import RegistrationStatus from "../RegistrationStatus"; // Import the new component
+import RegistrationStatus from "../RegistrationStatus";
 
 const Registration = () => {
 
@@ -10,10 +9,6 @@ const Registration = () => {
   return (
     <div>
       <RegistrationStatus />
-      {!(savedCourses || finalSubmission) &&
-
-        <NewRegistrationSection />
-      }
       <OldRegistrations />
     </div>
   );

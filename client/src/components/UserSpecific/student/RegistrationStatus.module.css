@@ -3,9 +3,9 @@
   justify-content: center;
 }
 
-.new-registration {
+.registration-status {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 1196px;
   height: 159px;
   border-radius: 15px;
@@ -17,15 +17,15 @@
   margin-bottom: 20px;
 }
 
-.new-registration div:last-child {
+.registration-status div:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.new-registration button {
+.registration-status button {
   margin-right: 30px;
-  margin-bottom: 50px;
+  margin-left: 20px;
 }
 
 .text {

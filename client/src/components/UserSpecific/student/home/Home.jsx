@@ -1,7 +1,6 @@
 import GradesSection from "./GradesSection";
 import LatestGrades from "./LatestGradesSection";
 import NotificationsSection from "./NotificationsSection";
-import RegistrationSection from "./RegistrationSection";
 import RegistrationStatus from "../RegistrationStatus";
 import App from "./GraduationBar";
 
@@ -12,7 +11,6 @@ const Home = () => {
     <div>
       <h4>Τρέχων Εξάμηνο:</h4>
       <App />
-      {/* <RegistrationSection /> */}
       <RegistrationStatus />
       <div className={styles["section-wrapper"]}>
         <GradesSection />

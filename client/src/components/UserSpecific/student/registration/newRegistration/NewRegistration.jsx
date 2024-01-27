@@ -58,10 +58,13 @@ const NewRegistration = () => {
     const navigate = useNavigate();
 
     const handleDelete = (courseId) => {
-        setSelectedCourses(selectedCourses.filter(id => id !== courseId));
-        console.log(selectedCourses.length);
-        if (selectedCourses.length === 1) handleBack(); // Todo: fix this, after deleting all courses it always have 1 "k14"
-    };
+        const newCourses = selectedCourses.filter(id => id !== courseId);
+        console.log(selectedCourses);
+        setSelectedCourses(newCourses);
+        console.log(selectedCourses);
+        localStorage.setItem('selectedCourses', JSON.stringify(newCourses));
+        if (selectedCourses.length === 1) handleBack();
+    }
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
