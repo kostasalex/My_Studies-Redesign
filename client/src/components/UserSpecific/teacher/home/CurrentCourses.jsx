@@ -77,7 +77,7 @@ const CurrentCourses = () => {
                     <h6><FontAwesomeIcon icon={faUser}/>{` ${course.students} ${CurrentCoursesTexts.studentsLabel}`}</h6>
                   </div>
                   <div className="buttons">
-                    <a href="/teacher/current-semester">
+                    <a href="/current-semester">
                       <CustomButtonTeacher className="primary">{CurrentCoursesTexts.viewButton}</CustomButtonTeacher>
                     </a>
                   </div>

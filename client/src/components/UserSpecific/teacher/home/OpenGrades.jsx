@@ -37,7 +37,7 @@ const OpenGrades = () => {
                             <h6><FontAwesomeIcon icon={faUser}/>{`   ${grade.students} ${OpenGradesTexts.studentsLabel}`}</h6>
                         </div>
                         <div className="buttons">
-                            <a href="/teacher/current-semester">
+                            <a href="/current-semester">
                                 <CustomButtonTeacher className="primary">{OpenGradesTexts.viewButton}</CustomButtonTeacher>
                             </a>
                         </div>
