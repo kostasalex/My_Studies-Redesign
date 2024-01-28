@@ -1,0 +1,111 @@
+[{
+  "_id": {
+    "$oid": "65b5a4d95aa7b0b4ac461872"
+  },
+  "registrationNumber": "123456789",
+  "firstName": "Manos",
+  "lastName": "Manopoulos",
+  "username": "student",
+  "password": "student",
+  "role": true
+},{
+  "_id": {
+    "$oid": "65b5a6e05aa7b0b4ac461873"
+  },
+  "registrationNumber": "pp",
+  "firstName": "pp",
+  "lastName": "pp",
+  "username": "pp",
+  "password": "pppppp",
+  "role": true
+},{
+  "_id": {
+    "$oid": "65b5a7175aa7b0b4ac461874"
+  },
+  "registrationNumber": "pp",
+  "firstName": "pp",
+  "lastName": "pp",
+  "username": "pp",
+  "password": "pppppp",
+  "role": true
+},{
+  "_id": {
+    "$oid": "65b63601dfd87dd050f9fc24"
+  },
+  "registrationNumber": "1",
+  "firstName": "1",
+  "lastName": "1",
+  "username": "kostas2",
+  "password": "1",
+  "role": true
+},{
+  "_id": {
+    "$oid": "65b63629dfd87dd050f9fc25"
+  },
+  "registrationNumber": "1",
+  "firstName": "1",
+  "lastName": "1",
+  "username": "kostas3",
+  "password": "1",
+  "role": false
+},{
+  "_id": {
+    "$oid": "65b640d0dfd87dd050f9fc26"
+  },
+  "registrationNumber": "2000192",
+  "firstName": "Ioannis",
+  "lastName": "Tournis",
+  "username": "aek",
+  "password": "aekaek",
+  "role": true
+},{
+  "_id": {
+    "$oid": "65b64179dfd87dd050f9fc27"
+  },
+  "registrationNumber": "2000192",
+  "firstName": "Ioannis",
+  "lastName": "Tournis",
+  "username": "aek2",
+  "password": "aekaek",
+  "role": false
+},{
+  "_id": {
+    "$oid": "65b642e7dfd87dd050f9fc28"
+  },
+  "registrationNumber": "t",
+  "firstName": "t",
+  "lastName": "t",
+  "username": "t",
+  "password": "ttttttt",
+  "role": false
+},{
+  "_id": {
+    "$oid": "65b643dadfd87dd050f9fc29"
+  },
+  "registrationNumber": "a",
+  "firstName": "a",
+  "lastName": "a",
+  "username": "s",
+  "password": "s",
+  "role": true
+},{
+  "_id": {
+    "$oid": "65b643e6dfd87dd050f9fc2a"
+  },
+  "registrationNumber": "a",
+  "firstName": "a",
+  "lastName": "a",
+  "username": "t",
+  "password": "t",
+  "role": false
+},{
+  "_id": {
+    "$oid": "65b6440edfd87dd050f9fc2b"
+  },
+  "registrationNumber": "s",
+  "firstName": "s",
+  "lastName": "s",
+  "username": "t",
+  "password": "t",
+  "role": false
+}]
