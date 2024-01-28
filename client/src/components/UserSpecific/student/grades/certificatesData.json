@@ -1,6 +1,6 @@
 [
   {
-    "postid" : "Winter 2023",
+    "postid" : "Χειμερινό 2023",
     "id": "K15",
     "lessonID": 3,
     "semester": 1,
@@ -9,7 +9,7 @@
     "url": "https://example.com/certificate/1"
   },
   {
-    "postid" : "Winter 2023",
+    "postid" : "Χειμερινό 2023",
     "id": "K13",
     "lessonID": 2,
     "semester": 2,
@@ -19,7 +19,7 @@
   }
 ,
   {
-    "postid" : "Winter 2023",
+    "postid" : "Χειμερινό 2023",
     "id": "K16",
     "lessonID": 4,
     "semester": 2,
@@ -29,7 +29,7 @@
   }
 ,
   {
-    "postid" : "Winter 2023",
+    "postid" : "Χειμερινό 2023",
     "id": "K12",
     "lessonID": 5,
     "semester": 3,
@@ -38,7 +38,7 @@
     "url": "https://example.com/certificate/2"
   },
   {
-    "postid" : "Spring 2023",
+    "postid" : "Εαρινό 2023",
   "id": "K11",
   "lessonID": 1,
   "semester": 3,
@@ -48,7 +48,7 @@
 }
 ,
   {
-    "postid" : "Spring 2023",
+    "postid" : "Εαρινό 2023",
     "id": "K10",
     "lessonID": 6,
     "semester": 4,
@@ -58,7 +58,7 @@
   }
 ,
   {
-    "postid" : "Spring 2023",
+    "postid" : "Εαρινό 2023",
     "id": "K9",
     "lessonID": 7,
     "semester": 6,
