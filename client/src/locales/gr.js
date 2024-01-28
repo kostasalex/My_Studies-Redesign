@@ -168,6 +168,15 @@ export const oldCertificatesTexts = {
     status: "Κατάσταση",
     btnshow: "Εμφάνιση",
     btndownload: "Λήψη",
+    btnback: "Πίσω",
+    code: "Κωδικός",
+    course: "Μάθημα",
+    courses: "Μαθήματα",
+    students: "Μαθητές",
+    semester: "Εξάμηνο",
+    period: "Περίοδος",
+    year: "Έτος",
+    oldcerts: "Ιστορικό Παλαιότερων Βαθμολόγιων",
     searchbar: "Αναζήτηση Πιστοποιητικών ..",
     clearfilter: "Καθαρισμός Φίλτρων",
     types: {
@@ -180,6 +189,11 @@ export const oldCertificatesTexts = {
         1: "Εγκρίθηκε",
         2: "Εκκρεμεί",
         3: "Απορρίφθηκε",
+    },
+    periodMapping: {
+        1: "Χειμερινό",
+        2: "Εαρινό",
+
     }
 };
 

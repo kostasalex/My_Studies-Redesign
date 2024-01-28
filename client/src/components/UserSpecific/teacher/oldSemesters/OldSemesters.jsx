@@ -29,64 +29,64 @@ const OldSemesters = () => {
   };
   const Semesters = [
     {
-      semester: "Φθινοπωρινό",
+      semester: oldCertificatesTexts.periodMapping[1],
       year: "2024",
-      lessons: "5 Μάθημα",
-      students: "280 Μαθητές",
+      lessons: "5 ",
+      students: "280 ",
     },
     {
-      semester: "Καλοκαιρινό",
+      semester: oldCertificatesTexts.periodMapping[2],
       year: "2023",
-      lessons: "4 Μάθημα",
-      students: "220 Μαθητές",
+      lessons: "4 ",
+      students: "220 ",
     },
     {
-      semester: "Άνοιξη",
+      semester: oldCertificatesTexts.periodMapping[1],
       year: "2022",
-      lessons: "3 Μάθημα",
-      students: "190 Μαθητές",
+      lessons: "3 ",
+      students: "190 ",
     },
     {
-      semester: "Χειμερινό",
+      semester: oldCertificatesTexts.periodMapping[2],
       year: "2021",
-      lessons: "5 Μάθημα",
-      students: "300 Μαθητές",
+      lessons: "5 ",
+      students: "300 ",
     },
     {
-      semester: "Φθινοπωρινό",
+      semester: oldCertificatesTexts.periodMapping[1],
       year: "2020",
-      lessons: "4 Μάθημα",
-      students: "234 Μαθητές",
+      lessons: "4 ",
+      students: "234 ",
     },
     {
-      semester: "Καλοκαιρινό",
+      semester: oldCertificatesTexts.periodMapping[2],
       year: "2019",
-      lessons: "3 Μάθημα",
-      students: "200 Μαθητές",
+      lessons: "3 ",
+      students: "200 ",
     },
     {
-      semester: "Άνοιξη",
+      semester: oldCertificatesTexts.periodMapping[1],
       year: "2018",
-      lessons: "4 Μάθημα",
-      students: "220 Μαθητές",
+      lessons: "4 ",
+      students: "220 ",
     },
     {
-      semester: "Χειμερινό",
+      semester: oldCertificatesTexts.periodMapping[1],
       year: "2017",
-      lessons: "5 Μάθημα",
-      students: "260 Μαθητές",
+      lessons: "5 ",
+      students: "260 ",
     },
     {
-      semester: "Φθινοπωρινό",
+      semester: oldCertificatesTexts.periodMapping[2],
       year: "2016",
-      lessons: "3 Μάθημα",
-      students: "180 Μαθητές",
+      lessons: "3 ",
+      students: "180 ",
     },
     {
-      semester: "Καλοκαιρινό",
+      semester: oldCertificatesTexts.periodMapping[2],
       year: "2015",
-      lessons: "5 Μάθημα",
-      students: "250 Μαθητές",
+      lessons: "5 ",
+      students: "250 ",
     },
   ];
 
@@ -97,6 +97,10 @@ const OldSemesters = () => {
     setSelectedSemester(semester);
   };
 
+
+  const handleViewClick = () => {
+    setShowRandomCourses(true);
+  };
 
 
   const handleBackClick = () => {
@@ -111,35 +115,35 @@ const OldSemesters = () => {
         code: "Τ123",
         title: "Γραμμική Άλγεβρα",
         semester: "1ο",
-        period: "Χειμερινό",
+        period: oldCertificatesTexts.periodMapping[1],
         year: "2024",
       },
       {
         code: "Τ456",
         title: "Διακριτά Μαθηματικά",
         semester: "3ο",
-        period: "Χειμερινό",
+        period: oldCertificatesTexts.periodMapping[1],
         year: "2023",
       },
       {
         code: "Τ789",
         title: "Μαθηματικά Ι",
         semester: "5ο",
-        period: "Εαρινό",
+        period: oldCertificatesTexts.periodMapping[2],
         year: "2022",
       },
       {
         code: "Τ101",
         title: "Γεωμετρία",
         semester: "8ο",
-        period: "Χειμερινό",
+        period: oldCertificatesTexts.periodMapping[2],
         year: "2021",
       },
       {
         code: "Τ202",
         title: "Τσοπανολογία",
         semester: "2ο",
-        period: "Σεμπτέμβριος",
+        period: oldCertificatesTexts.periodMapping[2],
         year: "2020",
       },
     ];
@@ -147,7 +151,7 @@ const OldSemesters = () => {
 
   return (
     <div className={styles["background"]}>
-      <h3>Ιστορικό Παλαιότερων Δηλώσεων</h3>
+      <h3>{oldCertificatesTexts.oldcerts}</h3>
 
       {showRandomCourses ? (
         <div>
@@ -156,20 +160,20 @@ const OldSemesters = () => {
             onClick={handleBackClick}
             style={{ marginLeft: "auto", textAlign: "right" }}
           >
-            Πίσω
+            {oldCertificatesTexts.btnback}
           </CustomButtonTeacher>
 
-          <h4>Τυχαία Μαθήματα</h4>
+          <h4>{oldCertificatesTexts.courses}</h4>
           <table className={`table table-striped ${styles["Semesters-table"]}`}>
             <thead>
               <tr>
-                <th scope="col">Κωδικός</th>
-                <th scope="col">Μάθημα</th>
-                <th scope="col">Εξάμηνο</th>
-                <th scope="col">Περίοδος</th>
-                <th scope="col">Έτος</th>
-                <th scope="col">Προβολή</th>
-                <th scope="col">Κατέβασμα</th>
+                <th scope="col">{oldCertificatesTexts.code}</th>
+                <th scope="col">{oldCertificatesTexts.course}</th>
+                <th scope="col">{oldCertificatesTexts.semester}</th>
+                <th scope="col">{oldCertificatesTexts.period}</th>
+                <th scope="col">{oldCertificatesTexts.year}</th>
+                <th scope="col">{oldCertificatesTexts.btnshow}</th>
+                <th scope="col">{oldCertificatesTexts.btndownload}</th>
               </tr>
             </thead>
             <tbody>
@@ -177,16 +181,20 @@ const OldSemesters = () => {
                 <tr key={index}>
                   <td>{course.code}</td>
                   <td>{course.title}</td>
-                  <td>{course.semester}</td>
+                  <td>{course.semester }</td>
                   <td>{course.period}</td>
                   <td>{course.year}</td>
                   <td>
+
                     <CustomButtonTeacher
                         onClick={handleOpen}
 
                     >
                       {oldCertificatesTexts.btnshow}
                     </CustomButtonTeacher>
+
+                  </td>
+                  <td>
                     <CustomButtonTeacher
                         onClick={handleDownload}
 
@@ -203,11 +211,11 @@ const OldSemesters = () => {
         <table className={`table table-striped ${styles["Semesters-table"]}`}>
           <thead>
             <tr>
-              <th scope="col">Εξάμηνο</th>
-              <th scope="col">Έτος</th>
-              <th scope="col">Μαθήματα</th>
-              <th scope="col">Μαθητές</th>
-              <th scope="col"></th>
+              <th scope="col">{oldCertificatesTexts.period}</th>
+              <th scope="col">{oldCertificatesTexts.year}</th>
+              <th scope="col">{oldCertificatesTexts.courses}</th>
+              <th scope="col">{oldCertificatesTexts.students}</th>
+              <th scope="col">{oldCertificatesTexts.btnshow}</th>
             </tr>
           </thead>
           <tbody>
@@ -221,20 +229,18 @@ const OldSemesters = () => {
               >
                 <td>{semester.semester}</td>
                 <td>{semester.year}</td>
-                <td>{semester.lessons}</td>
-                <td>{semester.students}</td>
+                <td>{semester.lessons + oldCertificatesTexts.courses}</td>
+                <td>{semester.students+ oldCertificatesTexts.students}</td>
                 <td>
-                  <CustomButtonTeacher
-                      onClick={handleOpen}
 
+                  <CustomButtonTeacher
+                      className="btn btn-primary"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleViewClick();
+                      }}
                   >
                     {oldCertificatesTexts.btnshow}
-                  </CustomButtonTeacher>
-                  <CustomButtonTeacher
-                      onClick={handleDownload}
-
-                  >
-                    {oldCertificatesTexts.btndownload}
                   </CustomButtonTeacher>
 
 
