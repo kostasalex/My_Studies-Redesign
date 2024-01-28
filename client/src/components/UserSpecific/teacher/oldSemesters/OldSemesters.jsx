@@ -1,17 +1,17 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import styles from "./OldSemesters.module.css";
 import CustomButtonTeacher from "../../../common/buttons/CustomButton_Teacher.jsx";
 import file from "../../../../../public/test_doc.pdf";
 
-import {LanguageContext} from "../../../../context/LanguageContext";
-import { oldCertificatesTexts as TextsEn } from '@/locales/en';
-import { oldCertificatesTexts as TextsGr } from '@/locales/gr';
+import { LanguageContext } from "../../../../context/LanguageContext";
+import { oldCertificatesTexts as TextsEn } from "@/locales/en";
+import { oldCertificatesTexts as TextsGr } from "@/locales/gr";
 
 const OldSemesters = () => {
-  const {language} = useContext(LanguageContext);
-  const oldCertificatesTexts = language === 'en' ? TextsEn : TextsGr;
+  const { language } = useContext(LanguageContext);
+  const oldCertificatesTexts = language === "en" ? TextsEn : TextsGr;
   const handleDownload = () => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = file;
     link.download = "old_semester.pdf";
     document.body.appendChild(link);
@@ -20,28 +20,28 @@ const OldSemesters = () => {
   };
 
   const handleOpen = () => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = file;
-    link.target = '_blank'; // Open in a new tab
+    link.target = "_blank"; // Open in a new tab
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
   const Semesters = [
     {
-      semester: "Φθινοπωρινό",
+      semester: "Χειμερινό",
       year: "2024",
       lessons: "5 Μάθημα",
       students: "280 Μαθητές",
     },
     {
-      semester: "Καλοκαιρινό",
+      semester: "Σεμπτέμβριος",
       year: "2023",
       lessons: "4 Μάθημα",
       students: "220 Μαθητές",
     },
     {
-      semester: "Άνοιξη",
+      semester: "Εαρινό",
       year: "2022",
       lessons: "3 Μάθημα",
       students: "190 Μαθητές",
@@ -53,37 +53,37 @@ const OldSemesters = () => {
       students: "300 Μαθητές",
     },
     {
-      semester: "Φθινοπωρινό",
+      semester: "Σεμπτέμβριος",
       year: "2020",
       lessons: "4 Μάθημα",
       students: "234 Μαθητές",
     },
     {
-      semester: "Καλοκαιρινό",
+      semester: "Εαρινό",
       year: "2019",
       lessons: "3 Μάθημα",
       students: "200 Μαθητές",
     },
     {
-      semester: "Άνοιξη",
+      semester: "Χειμερινό",
       year: "2018",
       lessons: "4 Μάθημα",
       students: "220 Μαθητές",
     },
     {
-      semester: "Χειμερινό",
+      semester: "Σεμπτέμβριος",
       year: "2017",
       lessons: "5 Μάθημα",
       students: "260 Μαθητές",
     },
     {
-      semester: "Φθινοπωρινό",
+      semester: "Εαρινό",
       year: "2016",
       lessons: "3 Μάθημα",
       students: "180 Μαθητές",
     },
     {
-      semester: "Καλοκαιρινό",
+      semester: "Χειμερινό",
       year: "2015",
       lessons: "5 Μάθημα",
       students: "250 Μαθητές",
@@ -96,8 +96,6 @@ const OldSemesters = () => {
   const handleSemesterClick = (semester) => {
     setSelectedSemester(semester);
   };
-
-
 
   const handleBackClick = () => {
     setShowRandomCourses(false);
@@ -181,16 +179,10 @@ const OldSemesters = () => {
                   <td>{course.period}</td>
                   <td>{course.year}</td>
                   <td>
-                    <CustomButtonTeacher
-                        onClick={handleOpen}
-
-                    >
+                    <CustomButtonTeacher onClick={handleOpen}>
                       {oldCertificatesTexts.btnshow}
                     </CustomButtonTeacher>
-                    <CustomButtonTeacher
-                        onClick={handleDownload}
-
-                    >
+                    <CustomButtonTeacher onClick={handleDownload}>
                       {oldCertificatesTexts.btndownload}
                     </CustomButtonTeacher>
                   </td>
@@ -203,7 +195,7 @@ const OldSemesters = () => {
         <table className={`table table-striped ${styles["Semesters-table"]}`}>
           <thead>
             <tr>
-              <th scope="col">Εξάμηνο</th>
+              <th scope="col">Περίοδος</th>
               <th scope="col">Έτος</th>
               <th scope="col">Μαθήματα</th>
               <th scope="col">Μαθητές</th>
@@ -224,21 +216,12 @@ const OldSemesters = () => {
                 <td>{semester.lessons}</td>
                 <td>{semester.students}</td>
                 <td>
-                  <CustomButtonTeacher
-                      onClick={handleOpen}
-
-                  >
+                  <CustomButtonTeacher onClick={handleOpen}>
                     {oldCertificatesTexts.btnshow}
                   </CustomButtonTeacher>
-                  <CustomButtonTeacher
-                      onClick={handleDownload}
-
-                  >
+                  <CustomButtonTeacher onClick={handleDownload}>
                     {oldCertificatesTexts.btndownload}
                   </CustomButtonTeacher>
-
-
-
                 </td>
               </tr>
             ))}
