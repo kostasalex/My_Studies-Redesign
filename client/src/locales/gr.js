@@ -16,6 +16,14 @@ export const guestAnnouncementCardData = [
     }
 ];
 
+export const logoutMessagesGr = {
+    confirmationTitle: "Είστε σίγουροι;",
+    confirmationText: "Θέλετε να αποσυνδεθείτε;",
+    confirmButtonText: "Αποσύνδεση",
+    cancelButtonText: "Ακύρωση",
+  };
+  
+
 export const guestAnnouncement = {
     latestnews: 'Τελευταία Νέα:'
 };

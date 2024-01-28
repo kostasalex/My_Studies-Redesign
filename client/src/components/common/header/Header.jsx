@@ -8,13 +8,15 @@ import {
   FaSignOutAlt,
   FaUserCircle,
 } from "react-icons/fa";
+import Swal from 'sweetalert2';
 import styles from "./Header.module.css";
 import files from "../../../../public/uoalogo.svg";
 import { useNavigate } from "react-router-dom";
 
 import { LanguageContext } from "../../../context/LanguageContext.jsx";
 import { StudetTeacherContext } from "../../../context/HeaderButtonContext.jsx";
-
+import { logoutMessagesEn } from '@/locales/en';
+import { logoutMessagesGr } from '@/locales/gr';
 import { headerTexts as headerTextsEn } from "@/locales/en";
 import { headerTexts as headerTextsGr } from "@/locales/gr";
 
@@ -44,11 +46,25 @@ const Header = () => {
     changeUser(nextUser);
   };
 
+  const logoutTitle = language === "en" ? "Logout" : "Αποσύνδεση"
   const logOut = () => {
-    console.log("logout!");
-    localStorage.setItem("isUserLoggedIn", "false");
-    setIsUserLogged(false);
-    navigate("/");
+    const logoutMessages = language === "en" ? logoutMessagesEn : logoutMessagesGr;
+    Swal.fire({
+      title: logoutMessages.confirmationTitle,
+      text: logoutMessages.confirmationText,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: logoutMessages.confirmButtonText,
+      cancelButtonText: logoutMessages.cancelButtonText,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.setItem("isUserLoggedIn", "false");
+        setIsUserLogged(false);
+        navigate("/");
+      }
+    });
   };
   const loggedOutColor = "white";
 

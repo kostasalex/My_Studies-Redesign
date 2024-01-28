@@ -19,6 +19,14 @@ export const guestAnnouncementCardData = [
     }
 ];
 
+export const logoutMessagesEn = {
+    confirmationTitle: "Are you sure?",
+    confirmationText: "Do you want to logout?",
+    confirmButtonText: "Logout",
+    cancelButtonText: "Cancel",
+};
+
+
 export const guestAnnouncement = {
     latestnews: 'Lateset news :'
 };
