@@ -158,6 +158,15 @@ export const oldCertificatesTexts = {
     status: "Status",
     btnshow: "Show",
     btndownload: "Download",
+    btnback: "Back",
+    code: "Code",
+    course: "Course",
+    semester: "Semester",
+    courses: "Courses",
+    students: "Students",
+    period: "Period",
+    year: "Year",
+    oldcerts: "Past Score History",
     searchbar: "Search Certificates ..",
     clearfilter: "Claer Filters",
     types: {
@@ -170,6 +179,10 @@ export const oldCertificatesTexts = {
         1: "Approved",
         2: "Pending",
         3: "Rejected",
+    },
+    periodMapping: {
+        1: "Winter",
+        2: "Spring",
 
     }
 };
@@ -384,3 +397,4 @@ export const RecentGradesTexts = {
     viewButton: "View",
 
 };
+

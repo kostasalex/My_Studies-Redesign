@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 const RegistrationStatus = () => {
   const navigate = useNavigate();
-  const savedCourses = JSON.parse(localStorage.getItem('selectedCourses')) || [];
-  const finalSubmission = JSON.parse(localStorage.getItem('finalSubmission'));
+  const savedCourses =
+    JSON.parse(localStorage.getItem("selectedCourses")) || [];
+  const finalSubmission = JSON.parse(localStorage.getItem("finalSubmission"));
 
   const navigateToNewRegistration = () => {
     navigate("/registration/new-registration");
@@ -15,8 +16,8 @@ const RegistrationStatus = () => {
   };
 
   const handleDeleteFinalSubmission = () => {
-    localStorage.removeItem('finalSubmission');
-    navigate('/');
+    localStorage.removeItem("finalSubmission");
+    navigate("/");
   };
 
   // Case 1: Final Submission
@@ -28,7 +29,12 @@ const RegistrationStatus = () => {
             <h5>Τελική Υποβολή</h5>
             <p>Δηλώσατε επιτυχώς Μαθήματα για το τρέχον εξάμηνο!</p>
           </div>
-          <button className="btn btn-danger" onClick={handleDeleteFinalSubmission}>Διαγραφή</button>
+          <button
+            className="btn btn-danger"
+            onClick={handleDeleteFinalSubmission}
+          >
+            Διαγραφή
+          </button>
         </div>
       </div>
     );
@@ -42,8 +48,17 @@ const RegistrationStatus = () => {
           <div className={styles["text"]}>
             <h5>Αποθηκευμένη Δήλωση</h5>
             <p>Έχετε αποθηκευμένη δήλωση με {savedCourses.length} μαθήματα.</p>
+            <p>
+              Προσοχή! Για να θεωρηθεί μια Δήλωση Έγκυρη πρέπει να γίνει
+              Οριστική Υποβολή!
+            </p>
           </div>
-          <button className="btn btn-primary" onClick={handleOpenTemporarySavedCourses}>Προβολή</button>
+          <button
+            className="btn btn-primary"
+            onClick={handleOpenTemporarySavedCourses}
+          >
+            Προβολή
+          </button>
         </div>
       </div>
     );
