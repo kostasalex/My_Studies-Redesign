@@ -55,7 +55,7 @@ const App = () => {
           <PathValidator />
           <div className={styles.appContainer}>
             <Header />
-            <div className={styles.content}>
+            <div className={[styles.content, "container"].join(' ')}>
               <Routes>
                 <Route path="/*" element={<MainComponentSelector />} />
                 <Route path="/contact" element={<Contact />} />
@@ -66,7 +66,7 @@ const App = () => {
           </div>
         </Router>
       </StudetTeacherProvider>
-    </LanguageProvider>
+    </LanguageProvider >
   );
 };
 

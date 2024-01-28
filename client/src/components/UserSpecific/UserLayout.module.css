@@ -1,7 +1,7 @@
 .userLayout {
   display: flex;
   flex-direction: column;
-  margin-left: 60px;
+  /* margin-left: 60px; */
 }
 
 .content {
@@ -28,6 +28,18 @@
 
 @media screen and (min-width: 1200px) {
   .userLayout .content {
-    margin-left: 220px;
+    margin-left: 140px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .userLayout .content {
+    margin-left: 100px;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .userLayout .content {
+    margin-left: 0px;
   }
 }
