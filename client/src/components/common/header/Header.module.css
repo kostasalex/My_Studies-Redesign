@@ -41,12 +41,12 @@
 
 .languageSwitcher {
   cursor: pointer;
-  margin-top: 8px;
 }
 
 .languageSwitcher span {
   margin-left: 10px;
 }
+
 
 .imgl {
   width: 20px;
@@ -78,7 +78,29 @@
   padding: 20px;
 }
 
+.languagelogin {
+  display: flex;
+  flex-direction: column;
+  position: none;
+  margin-top: 20px;
+}
+
 @media screen and (min-width: 992px) {
+  .languagelogin {
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-top: 0;
+  }
+
+  .languageSwitcher {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 200px;
+  }
+
+
   .dropdown-menu {
     top: 100px;
     right: 100px;
@@ -87,10 +109,6 @@
   .header {
     align-items: center;
     padding-bottom: 0 !important;
-  }
-
-  .languageSwitcher {
-    margin-left: 20px;
   }
 
   .loginbtn button {
