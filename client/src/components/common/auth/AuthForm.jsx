@@ -67,7 +67,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
     xhr.send(data);
   };
 
-  const usermoderegister = user === true ? true : false;
+  const usermoderegister = user === "student" ? true : false; // true == student
   const handleRegister = async (values) => {
     event.preventDefault();
 
@@ -89,6 +89,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
             confirmButtonText: authform.signin,
             reverseButtons: true
           });
+          setKey("login");
         } else if (xhr.status === 201) {
           Swal.fire({
             text: authform.signintext,
@@ -98,6 +99,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
             confirmButtonText: authform.signin,
             reverseButtons: true
           });
+          setKey("login");
         } else {
           alert("Login failed: Error occurred");
         }
@@ -123,7 +125,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
         <h4 className="text-black mt-1 mb-1">{usermode}</h4>
       </div>
       <Tabs id="auth-tabs" activeKey={key} onSelect={(k) => setKey(k)} className="mb-2" >
-        <Tab eventKey="login" title={<span className={styles.tab}>Login</span>}>
+        <Tab eventKey="login" title={<span className={styles.tab}>{authform.signin}</span>}>
           <Form
             validate={validateWithZod(loginSchema, language)}
             onSubmit={handleLogin}
@@ -152,7 +154,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
             )}
           />
         </Tab>
-        <Tab eventKey="register" title={<span className={styles.tab}>Register</span>}>
+        <Tab eventKey="register" title={<span className={styles.tab}>{authform.register}</span>}>
           <Form
             validate={validateWithZod(registerSchema, language)}
             onSubmit={handleRegister}
