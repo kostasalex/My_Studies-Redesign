@@ -1,33 +1,33 @@
 .userLayout {
-    display: flex;
-    flex-direction: column;
-    margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
 }
 
 .content {
-    margin-top: 120px;
+  margin-top: 120px;
 }
 
 .selectedButton {
-    background-color: #e0e0e0 !important;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    font-weight: 600;
+  background-color: #e0e0e0 !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
 }
 
 @media screen and (min-width: 992px) {
-    .userLayout {
-        display: flex;
-        flex-direction: row;
-    }
+  .userLayout {
+    display: flex;
+    flex-direction: row;
+  }
 
-    .userLayout .content {
-        margin-top: 0;
-        margin-left: 80px;
-    }
+  .userLayout .content {
+    margin-top: 0;
+    margin-left: 80px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    .userLayout .content {
-        margin-left: 220px;
-    }
+  .userLayout .content {
+    margin-left: 220px;
+  }
 }
