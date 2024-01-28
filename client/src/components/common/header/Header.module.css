@@ -29,8 +29,6 @@
 .logoleft {
   max-width: 300px;
   height: fit-content;
-
-  /*margin-right: 1200px;*/
 }
 
 .icon {
@@ -97,9 +95,8 @@
     display: flex;
     align-items: center;
     position: absolute;
-    right: 200px;
+    right: 300px;
   }
-
 
   .dropdown-menu {
     top: 100px;
