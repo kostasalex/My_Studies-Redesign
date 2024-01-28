@@ -1,6 +1,13 @@
 import { useContext, useState } from "react";
 import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
-import { FaGlobe, FaUser, FaBars, FaTimes, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
+import {
+  FaGlobe,
+  FaUser,
+  FaBars,
+  FaTimes,
+  FaSignOutAlt,
+  FaUserCircle,
+} from "react-icons/fa";
 import styles from "./Header.module.css";
 import files from "../../../../public/uoalogo.svg";
 import { useNavigate } from "react-router-dom";
@@ -20,7 +27,6 @@ const Header = () => {
 
   const isUserLoggedIn = localStorage.getItem("isUserLoggedIn") === "true";
   const navigate = useNavigate();
-
 
   const handleProfileRedirect = () => {
     navigate("/profile");
@@ -64,7 +70,10 @@ const Header = () => {
           <Navbar.Brand href="/">
             <img src={files} alt="UOA Logo" className={styles.logoleft} />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleNavbar}>
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            onClick={toggleNavbar}
+          >
             {expanded ? <FaTimes /> : <FaBars />} {/* Conditional rendering */}
           </Navbar.Toggle>
           <Navbar.Collapse
@@ -83,12 +92,12 @@ const Header = () => {
               </div>
             </Nav>
             <div className={styles.languagelogin}>
-
               <div>
                 {isUserLoggedIn ? (
                   <Dropdown align="mid">
                     <Dropdown.Toggle variant="" id="dropdown-user">
                       <FaUser className={styles.icon} />
+                      <span>Νίκος Μπλέτσας</span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item onClick={handleProfileRedirect}>
@@ -119,7 +128,6 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
     </>
   );
 };

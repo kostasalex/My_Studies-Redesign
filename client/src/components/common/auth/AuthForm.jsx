@@ -124,7 +124,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
       <div className="mb-2 d-flex justify-content-center flex-column text-center align-items-center ">
         <h4 className="text-black mt-1 mb-1">{usermode}</h4>
       </div>
-      <Tabs id="auth-tabs" activeKey={key} onSelect={(k) => setKey(k)} className="mb-2" >
+      <Tabs id="auth-tabs" activeKey={key} onSelect={(k) => setKey(k)} className="m-2" >
         <Tab eventKey="login" title={<span className={styles.tab}>{authform.signin}</span>}>
           <Form
             validate={validateWithZod(loginSchema, language)}
@@ -142,7 +142,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
                 </Field>
                 <Field name="password">
                   {({ input, meta }) => (
-                    <div className="form-floating mb-2">
+                    <div className="form-floating mb-4">
                       <input {...input} id="passwordLogin" placeholder=" " type="password" className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
                       <label htmlFor="passwordLogin">{LoginAuth.password}</label>
                       {meta.error && meta.touched && <p>{meta.error}</p>}
@@ -225,7 +225,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
                   <Col xs={6}>
                     <Field name="confirmPassword">
                       {({ input, meta }) => (
-                        <div className="form-floating mb-3">
+                        <div className="form-floating mb-4">
                           <input {...input} id="confirmPassword" type="password" placeholder=" " className={`form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`} />
                           <label htmlFor="confirmPassword">{LoginAuth.passwordConfirmation}</label>
                           {meta.error && meta.touched && <p>{meta.error}</p>}
