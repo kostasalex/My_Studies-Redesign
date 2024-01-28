@@ -32,7 +32,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
 
 
     const xhr = new XMLHttpRequest();
-    const url = "https://mystudies.panosgio.org:4010/loginuser";
+    const url = "/loginuser";
 
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -72,7 +72,7 @@ const AuthForm = ({ redirectUrl, opacity, bgcolor }) => {
     event.preventDefault();
 
     const xhr = new XMLHttpRequest();
-    const url = "https://mystudies.panosgio.org:4010/adduser";
+    const url = "/adduser";
 
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
