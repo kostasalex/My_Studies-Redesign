@@ -1,15 +1,7 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 
-const StudentGradesChart = () => {
-  const gradeData = {
-    5: 20,
-    6: 30,
-    7: 25,
-    8: 15,
-    9: 10,
-    10: 3,
-  };
+const StudentGradesChart = ({ gradeData }) => {
 
   const data = {
     labels: Object.keys(gradeData),
@@ -43,7 +35,7 @@ const StudentGradesChart = () => {
   const chartSize = { width: 500, height: 300 };
 
   return (
-    <div style={{ width: 500, height: "300px", overflow: "hidden" }}>
+    <div className="p-3" style={{ width: 500, height: "300px", overflow: "hidden" }}>
       <h2>Κατανομή Βαθμών</h2>
       <Bar
         data={data}
