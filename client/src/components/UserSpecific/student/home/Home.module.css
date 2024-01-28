@@ -1,41 +1,19 @@
 .section-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "first child2"
-    "first child3"
-    "child4 child4";
+  grid-template-columns: 1fr;
+
   margin-top: 20px;
   gap: 70px;
 }
 
-.wrapper {
-  display: flex;
-  box-sizing: content-box;
-  flex-direction: column;
-  max-width: 900px;
-  margin-left: 50px;
-}
+@media screen and (min-width: 1200px) {
+  .section-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
 
-.wrapper > *:first-child {
-  margin-bottom: 30px;
-}
+  .section-wrapper> :nth-child(1) {
+    margin-left: 50px;
+  }
 
-.section-wrapper > :nth-child(1) {
-  grid-area: first;
-}
 
-.section-wrapper > :nth-child(2) {
-  grid-area: child2;
-  align-self: center; /* Τοποθετείται στο κέντρο κατακόρυφα */
-  margin-top: 8%; /* Ρυθμίζει τη θέση κατάλληλα */
-}
-
-.section-wrapper > :nth-child(3) {
-  grid-area: child3;
-  align-self: center; /* Τοποθετείται στο κέντρο κατακόρυφα */
-}
-
-.section-wrapper > :nth-child(4) {
-  grid-area: child4;
 }

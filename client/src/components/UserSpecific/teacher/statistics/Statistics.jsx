@@ -120,6 +120,7 @@ const Statistics = () => {
         />
       </div>
       <div className="four-panels-container">
+
         <div className="panel">
           <DonutChart> </DonutChart>
         </div>
