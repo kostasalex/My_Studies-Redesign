@@ -30,3 +30,12 @@
 .text {
   padding: 10px;
 }
+
+@media screen and (min-width: 768px) {
+  .registration-status {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+    width: 1196px;
+  }
+}
