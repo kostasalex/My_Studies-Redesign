@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { Breadcrumb } from "react-bootstrap";
-import { FaHome, FaUser, FaFile, FaFolder } from "react-icons/fa"; // Εισαγωγή εικονιδίων από FontAwesome
+import { FaHome, FaUser, FaGraduationCap } from "react-icons/fa"; // Εισαγωγή εικονιδίων από FontAwesome
 
 const Breadcrumbs = () => {
   const location = useLocation();
@@ -15,7 +15,8 @@ const Breadcrumbs = () => {
         const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
         const isLast = index === pathnames.length - 1;
 
-        const icon = name === "user" ? <FaUser /> : <FaFolder />;
+        // Ορίστε εικονίδιο ανάλογα με το όνομα του path
+        const icon = name === "user" ? <FaUser /> : <FaGraduationCap />;
 
         return isLast ? (
           <Breadcrumb.Item active key={name}>
