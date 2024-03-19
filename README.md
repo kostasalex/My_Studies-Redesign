@@ -2,7 +2,7 @@
 🎓 A transformative redesign of the [My-Studies](https://my-studies.uoa.gr/Secr3w/connect.aspx) university registration system. Evaluated with 🔍 Jacob's Heuristics, crafted with 📐 user-centric wireframes, and set for robust 💻 frontend/backend development.
 
 Demo:
-[https://mystudies.panosgio.org:4010](https://my-studies-uoa.vercel.app/)](https://my-studies-uoa.vercel.app/)
+https://my-studies-uoa.vercel.app/
 
 Execution for local:
 1. Install mongodb and restore the database file located at the database folder
